@@ -86,65 +86,6 @@
       </tags>
   </entry>
   <entry>
-    <title>爬虫-Selenium</title>
-    <url>/2018/08/27/crawler/Selenium/</url>
-    <content><![CDATA[<p>Selenium+Browser强大的组合拳去攻破反爬机制;<br>Selenium是自动化测试的主流框架<br>Selenium-IDE可以实现QTP的操作</p>
-<a id="more"></a>
-
-<h2 id="Browser-Driver"><a href="#Browser-Driver" class="headerlink" title="Browser Driver"></a>Browser Driver</h2><p>浏览器的驱动程序，用于驱动浏览器响应程序代码<br>驱动下载</p>
-<ul>
-<li><a href="http://chromedriver.chromium.org/downloads">谷歌 - googledriver</a></li>
-<li><a href="https://github.com/mozilla/geckodriver/releases">火狐 - geckodriver</a></li>
-</ul>
-<blockquote>
-<p>Safari - 不需要装驱动，只需要在菜单栏中<code>开发</code>选项中打开<code>允许远程自动化</code>即可。</p>
-</blockquote>
-<h3 id="phantomjs"><a href="#phantomjs" class="headerlink" title="phantomjs"></a><del><a href="http://phantomjs.org/">phantomjs</a></del></h3><ol>
-<li><del>定义 ：无界面浏览器(无头浏览器)</del></li>
-<li><del>特点</del><ul>
-<li><del>把网站加载到内存执行，运行高效</del>0</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>Phantomjs 已经被<code>Selenium</code>废弃。请使用无头浏览器替代，详见下面的<a href="###chromedriver%E8%AE%BE%E7%BD%AE%E6%97%A0%E7%95%8C%E9%9D%A2%E6%A8%A1%E5%BC%8F">chromedriver 设置无界面模式</a><br>Selenium support for PhantomJS has been deprecated, please use headless </p>
-</blockquote>
-<h2 id="Selenium"><a href="#Selenium" class="headerlink" title="Selenium"></a><a href="http://www.seleniumhq.org/">Selenium</a></h2><ol>
-<li>定义 ：Web自动化测试工具,应用于Web自动化测试</li>
-<li>特点<ol>
-<li>根据指定命令操作浏览器,让浏览器自动加载页面</li>
-<li>只是工具,不支持浏览器功能,只能与第三方浏览器结合使用</li>
-</ol>
-</li>
-<li>安装 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows cmd ：python -m pip install selenium</span><br><span class="line">Anconda prompt : conda install selenium</span><br><span class="line">Ubuntu : sudo pip3 install selenium</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="浏览器对象-browser-方法"><a href="#浏览器对象-browser-方法" class="headerlink" title="浏览器对象(browser)方法"></a>浏览器对象(browser)方法</h3><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建浏览器对象</span></span><br><span class="line">browser = webdriver.Chrome(executable_path=<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="comment"># 访问网站</span></span><br><span class="line">browser.get(url)</span><br><span class="line"><span class="comment"># 查看响应内容</span></span><br><span class="line">browser.page_source </span><br><span class="line"><span class="comment"># 从html源码中搜索指定字符串,没有找到返回：-1</span></span><br><span class="line">browser.page_source.find(<span class="string">&#x27;字符串&#x27;</span>)</span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.quit()</span><br></pre></td></tr></table></figure>
-
-<h3 id="定位节点"><a href="#定位节点" class="headerlink" title="定位节点"></a>定位节点</h3><h4 id="单元素查找-1个节点对象"><a href="#单元素查找-1个节点对象" class="headerlink" title="单元素查找(1个节点对象)"></a>单元素查找(1个节点对象)</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">browser.find_element_by_id(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_element_by_name(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_element_by_class_name(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_element_by_xpath(<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="多元素查找-节点对象列表"><a href="#多元素查找-节点对象列表" class="headerlink" title="多元素查找([节点对象列表])"></a>多元素查找([节点对象列表])</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">browser.find_elements_by_id(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_elements_by_name(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_elements_by_class_name(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_elements_by_xpath(<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="节点对象操作"><a href="#节点对象操作" class="headerlink" title="节点对象操作"></a>节点对象操作</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 搜索框发送内容</span></span><br><span class="line">ele.send_keys(<span class="string">&#x27;&#x27;</span>) </span><br><span class="line"><span class="comment"># 模拟点击</span></span><br><span class="line">ele.click()</span><br><span class="line"><span class="comment"># 获取文本内容</span></span><br><span class="line">ele.text          </span><br><span class="line"><span class="comment"># 获取属性值</span></span><br><span class="line">ele.get_attribute(<span class="string">&#x27;src&#x27;</span>) </span><br></pre></td></tr></table></figure>
-
-<h3 id="输入设备操作"><a href="#输入设备操作" class="headerlink" title="输入设备操作"></a>输入设备操作</h3><h4 id="键盘操作"><a href="#键盘操作" class="headerlink" title="键盘操作"></a>键盘操作</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">&#x27;http://www.baidu.com/&#x27;</span>)</span><br><span class="line"><span class="comment"># 1、在搜索框中输入&quot;selenium&quot;</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(<span class="string">&#x27;python&#x27;</span>)</span><br><span class="line"><span class="comment"># 2、输入空格</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(Keys.SPACE)</span><br><span class="line"><span class="comment"># 3、Ctrl+a 模拟全选</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(Keys.CONTROL, <span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="comment"># 4、Ctrl+c 模拟复制</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(Keys.CONTROL, <span class="string">&#x27;c&#x27;</span>)</span><br><span class="line"><span class="comment"># 5、Ctrl+v 模拟粘贴</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(Keys.CONTROL, <span class="string">&#x27;v&#x27;</span>)</span><br><span class="line"><span class="comment"># 6、输入回车,代替 搜索 按钮</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(Keys.ENTER)</span><br></pre></td></tr></table></figure>
-
-<h4 id="鼠标操作"><a href="#鼠标操作" class="headerlink" title="鼠标操作"></a>鼠标操作</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导入鼠标事件类</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> ActionChains</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">&#x27;http://www.baidu.com/&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找到设置节点</span></span><br><span class="line">element = browser.find_element_by_xpath(<span class="string">&#x27;//*[@id=&quot;u1&quot;]/a[8]&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把鼠标移动到 设置 节点,move_to_element()</span></span><br><span class="line">actions = ActionChains(browser)</span><br><span class="line">actions.move_to_element(element)</span><br><span class="line">actions.perform()</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找到高级设置节点,并点击</span></span><br><span class="line">browser.find_element_by_link_text(<span class="string">&#x27;高级搜索&#x27;</span>).click()</span><br></pre></td></tr></table></figure>
-
-<h3 id="chromedriver设置无界面模式"><a href="#chromedriver设置无界面模式" class="headerlink" title="chromedriver设置无界面模式"></a>chromedriver设置无界面模式</h3><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line"><span class="comment"># 添加无界面参数</span></span><br><span class="line">options.headless = <span class="literal">True</span></span><br><span class="line">browser = webdriver.Chrome(options=options)</span><br><span class="line">browser.get(<span class="string">&#x27;http://www.baidu.com/&#x27;</span>)</span><br><span class="line">browser.save_screenshot(<span class="string">&#x27;baidu.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="简易效果展示"><a href="#简易效果展示" class="headerlink" title="简易效果展示"></a>简易效果展示</h3><p><strong>使用 <code>Selenium</code> + <code>浏览器</code> ; 打开百度搜索<code>Python</code></strong></p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">&#x27;http://www.baidu.com/&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 向搜索框(id kw)输入 Python</span></span><br><span class="line">ele = browser.find_element_by_xpath(<span class="string">&#x27;//*[@id=&quot;kw&quot;]&#x27;</span>)</span><br><span class="line">ele.send_keys(<span class="string">&#x27;Python&#x27;</span>)</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 点击 百度一下 按钮(id su)</span></span><br><span class="line">su = browser.find_element_by_xpath(<span class="string">&#x27;//*[@id=&quot;su&quot;]&#x27;</span>)</span><br><span class="line">su.click()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 截图</span></span><br><span class="line">browser.save_screenshot(<span class="string">&#x27;Python.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.quit()</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>爬虫-Scrapy框架</title>
     <url>/2018/08/30/crawler/Scrapy%E6%A1%86%E6%9E%B6/</url>
     <content><![CDATA[<p>Scrapy 是 Python 领域专业的爬虫开发框架，已经完成爬虫程序的大部分通用工具，因此 Scrapy 开发爬虫项目既简单又方便。</p>
@@ -273,6 +214,65 @@
 </li>
 </ol>
 ]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫-Selenium</title>
+    <url>/2018/08/27/crawler/Selenium/</url>
+    <content><![CDATA[<p>Selenium+Browser强大的组合拳去攻破反爬机制;<br>Selenium是自动化测试的主流框架<br>Selenium-IDE可以实现QTP的操作</p>
+<a id="more"></a>
+
+<h2 id="Browser-Driver"><a href="#Browser-Driver" class="headerlink" title="Browser Driver"></a>Browser Driver</h2><p>浏览器的驱动程序，用于驱动浏览器响应程序代码<br>驱动下载</p>
+<ul>
+<li><a href="http://chromedriver.chromium.org/downloads">谷歌 - googledriver</a></li>
+<li><a href="https://github.com/mozilla/geckodriver/releases">火狐 - geckodriver</a></li>
+</ul>
+<blockquote>
+<p>Safari - 不需要装驱动，只需要在菜单栏中<code>开发</code>选项中打开<code>允许远程自动化</code>即可。</p>
+</blockquote>
+<h3 id="phantomjs"><a href="#phantomjs" class="headerlink" title="phantomjs"></a><del><a href="http://phantomjs.org/">phantomjs</a></del></h3><ol>
+<li><del>定义 ：无界面浏览器(无头浏览器)</del></li>
+<li><del>特点</del><ul>
+<li><del>把网站加载到内存执行，运行高效</del>0</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Phantomjs 已经被<code>Selenium</code>废弃。请使用无头浏览器替代，详见下面的<a href="###chromedriver%E8%AE%BE%E7%BD%AE%E6%97%A0%E7%95%8C%E9%9D%A2%E6%A8%A1%E5%BC%8F">chromedriver 设置无界面模式</a><br>Selenium support for PhantomJS has been deprecated, please use headless </p>
+</blockquote>
+<h2 id="Selenium"><a href="#Selenium" class="headerlink" title="Selenium"></a><a href="http://www.seleniumhq.org/">Selenium</a></h2><ol>
+<li>定义 ：Web自动化测试工具,应用于Web自动化测试</li>
+<li>特点<ol>
+<li>根据指定命令操作浏览器,让浏览器自动加载页面</li>
+<li>只是工具,不支持浏览器功能,只能与第三方浏览器结合使用</li>
+</ol>
+</li>
+<li>安装 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows cmd ：python -m pip install selenium</span><br><span class="line">Anconda prompt : conda install selenium</span><br><span class="line">Ubuntu : sudo pip3 install selenium</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="浏览器对象-browser-方法"><a href="#浏览器对象-browser-方法" class="headerlink" title="浏览器对象(browser)方法"></a>浏览器对象(browser)方法</h3><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建浏览器对象</span></span><br><span class="line">browser = webdriver.Chrome(executable_path=<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="comment"># 访问网站</span></span><br><span class="line">browser.get(url)</span><br><span class="line"><span class="comment"># 查看响应内容</span></span><br><span class="line">browser.page_source </span><br><span class="line"><span class="comment"># 从html源码中搜索指定字符串,没有找到返回：-1</span></span><br><span class="line">browser.page_source.find(<span class="string">&#x27;字符串&#x27;</span>)</span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.quit()</span><br></pre></td></tr></table></figure>
+
+<h3 id="定位节点"><a href="#定位节点" class="headerlink" title="定位节点"></a>定位节点</h3><h4 id="单元素查找-1个节点对象"><a href="#单元素查找-1个节点对象" class="headerlink" title="单元素查找(1个节点对象)"></a>单元素查找(1个节点对象)</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">browser.find_element_by_id(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_element_by_name(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_element_by_class_name(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_element_by_xpath(<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="多元素查找-节点对象列表"><a href="#多元素查找-节点对象列表" class="headerlink" title="多元素查找([节点对象列表])"></a>多元素查找([节点对象列表])</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">browser.find_elements_by_id(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_elements_by_name(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_elements_by_class_name(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">browser.find_elements_by_xpath(<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="节点对象操作"><a href="#节点对象操作" class="headerlink" title="节点对象操作"></a>节点对象操作</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 搜索框发送内容</span></span><br><span class="line">ele.send_keys(<span class="string">&#x27;&#x27;</span>) </span><br><span class="line"><span class="comment"># 模拟点击</span></span><br><span class="line">ele.click()</span><br><span class="line"><span class="comment"># 获取文本内容</span></span><br><span class="line">ele.text          </span><br><span class="line"><span class="comment"># 获取属性值</span></span><br><span class="line">ele.get_attribute(<span class="string">&#x27;src&#x27;</span>) </span><br></pre></td></tr></table></figure>
+
+<h3 id="输入设备操作"><a href="#输入设备操作" class="headerlink" title="输入设备操作"></a>输入设备操作</h3><h4 id="键盘操作"><a href="#键盘操作" class="headerlink" title="键盘操作"></a>键盘操作</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">&#x27;http://www.baidu.com/&#x27;</span>)</span><br><span class="line"><span class="comment"># 1、在搜索框中输入&quot;selenium&quot;</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(<span class="string">&#x27;python&#x27;</span>)</span><br><span class="line"><span class="comment"># 2、输入空格</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(Keys.SPACE)</span><br><span class="line"><span class="comment"># 3、Ctrl+a 模拟全选</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(Keys.CONTROL, <span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="comment"># 4、Ctrl+c 模拟复制</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(Keys.CONTROL, <span class="string">&#x27;c&#x27;</span>)</span><br><span class="line"><span class="comment"># 5、Ctrl+v 模拟粘贴</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(Keys.CONTROL, <span class="string">&#x27;v&#x27;</span>)</span><br><span class="line"><span class="comment"># 6、输入回车,代替 搜索 按钮</span></span><br><span class="line">browser.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(Keys.ENTER)</span><br></pre></td></tr></table></figure>
+
+<h4 id="鼠标操作"><a href="#鼠标操作" class="headerlink" title="鼠标操作"></a>鼠标操作</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导入鼠标事件类</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> ActionChains</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">&#x27;http://www.baidu.com/&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找到设置节点</span></span><br><span class="line">element = browser.find_element_by_xpath(<span class="string">&#x27;//*[@id=&quot;u1&quot;]/a[8]&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把鼠标移动到 设置 节点,move_to_element()</span></span><br><span class="line">actions = ActionChains(browser)</span><br><span class="line">actions.move_to_element(element)</span><br><span class="line">actions.perform()</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找到高级设置节点,并点击</span></span><br><span class="line">browser.find_element_by_link_text(<span class="string">&#x27;高级搜索&#x27;</span>).click()</span><br></pre></td></tr></table></figure>
+
+<h3 id="chromedriver设置无界面模式"><a href="#chromedriver设置无界面模式" class="headerlink" title="chromedriver设置无界面模式"></a>chromedriver设置无界面模式</h3><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line"><span class="comment"># 添加无界面参数</span></span><br><span class="line">options.headless = <span class="literal">True</span></span><br><span class="line">browser = webdriver.Chrome(options=options)</span><br><span class="line">browser.get(<span class="string">&#x27;http://www.baidu.com/&#x27;</span>)</span><br><span class="line">browser.save_screenshot(<span class="string">&#x27;baidu.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="简易效果展示"><a href="#简易效果展示" class="headerlink" title="简易效果展示"></a>简易效果展示</h3><p><strong>使用 <code>Selenium</code> + <code>浏览器</code> ; 打开百度搜索<code>Python</code></strong></p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">&#x27;http://www.baidu.com/&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 向搜索框(id kw)输入 Python</span></span><br><span class="line">ele = browser.find_element_by_xpath(<span class="string">&#x27;//*[@id=&quot;kw&quot;]&#x27;</span>)</span><br><span class="line">ele.send_keys(<span class="string">&#x27;Python&#x27;</span>)</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 点击 百度一下 按钮(id su)</span></span><br><span class="line">su = browser.find_element_by_xpath(<span class="string">&#x27;//*[@id=&quot;su&quot;]&#x27;</span>)</span><br><span class="line">su.click()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 截图</span></span><br><span class="line">browser.save_screenshot(<span class="string">&#x27;Python.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 关闭浏览器</span></span><br><span class="line">browser.quit()</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>教程</category>
       </categories>
@@ -599,67 +599,6 @@
       </tags>
   </entry>
   <entry>
-    <title>爬虫-工具集</title>
-    <url>/2018/08/26/crawler/%E5%B7%A5%E5%85%B7%E9%9B%86/</url>
-    <content><![CDATA[<p>实现爬虫的敏捷开发</p>
-<a id="more"></a>
-
-<h2 id="Chrome插件"><a href="#Chrome插件" class="headerlink" title="Chrome插件"></a>Chrome插件</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-<th>下载地址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>xpath Helper</td>
-<td>网页解析的快捷工具</td>
-<td><a href="https://object.renchengqi.com/software/chrome/XPath%20Helper%EF%BC%9Achrome%E7%88%AC%E8%99%AB%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7.crx">博主</a></td>
-</tr>
-<tr>
-<td>JSONView</td>
-<td>网页获取json的格式化工具</td>
-<td><a href="https://object.renchengqi.com/software/chrome/JSONView%EF%BC%9Aweb%E5%BC%80%E5%8F%91%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%92%8C%E9%AB%98%E4%BA%AE%E6%8F%92%E4%BB%B6.crx">博主</a></td>
-</tr>
-<tr>
-<td>Proxy-SwitchyOmega</td>
-<td>浏览器加代理</td>
-<td><a href="https://object.renchengqi.com/software/chrome/Proxy-SwitchyOmega-Chromium-2.5.15.crx">博主</a></td>
-</tr>
-</tbody></table>
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-<th>下载地址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>XMLQuire</td>
-<td>XPath表达式工具</td>
-<td><a href="https://object.renchengqi.com/software/windows/XMLQuire.zip">博主</a></td>
-</tr>
-</tbody></table>
-]]></content>
-      <tags>
-        <tag>爬虫</tag>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫常见问题汇总</title>
-    <url>/2018/08/18/crawler/%E7%88%AC%E8%99%AB%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
-    <content><![CDATA[<p>汇总一下，爬虫常见的问题（坑）；</p>
-<a id="more"></a>
-
-<h2 id="requests请求中文乱码"><a href="#requests请求中文乱码" class="headerlink" title="requests请求中文乱码"></a>requests请求中文乱码</h2><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">req = requests.get(<span class="string">&quot;http://news.sina.com.cn/&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> req.encoding == <span class="string">&#x27;ISO-8859-1&#x27;</span>:</span><br><span class="line">    encodings = requests.utils.get_encodings_from_content(req.text)</span><br><span class="line">    <span class="keyword">if</span> encodings:</span><br><span class="line">        encoding = encodings[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        encoding = req.apparent_encoding</span><br><span class="line">    encode_content = req.content.decode(encoding, <span class="string">&#x27;replace&#x27;</span>) <span class="comment">#如果设置为replace，则会用?取代非法字符；</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>爬虫-数据持久化</title>
     <url>/2018/08/08/crawler/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/</url>
     <content><![CDATA[<p>这篇文章主要是将请求下来的数据，进行数据分析，并且进行存储</p>
@@ -773,6 +712,67 @@
       </tags>
   </entry>
   <entry>
+    <title>爬虫-工具集</title>
+    <url>/2018/08/26/crawler/%E5%B7%A5%E5%85%B7%E9%9B%86/</url>
+    <content><![CDATA[<p>实现爬虫的敏捷开发</p>
+<a id="more"></a>
+
+<h2 id="Chrome插件"><a href="#Chrome插件" class="headerlink" title="Chrome插件"></a>Chrome插件</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>下载地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>xpath Helper</td>
+<td>网页解析的快捷工具</td>
+<td><a href="https://object.renchengqi.com/software/chrome/XPath%20Helper%EF%BC%9Achrome%E7%88%AC%E8%99%AB%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7.crx">博主</a></td>
+</tr>
+<tr>
+<td>JSONView</td>
+<td>网页获取json的格式化工具</td>
+<td><a href="https://object.renchengqi.com/software/chrome/JSONView%EF%BC%9Aweb%E5%BC%80%E5%8F%91%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%92%8C%E9%AB%98%E4%BA%AE%E6%8F%92%E4%BB%B6.crx">博主</a></td>
+</tr>
+<tr>
+<td>Proxy-SwitchyOmega</td>
+<td>浏览器加代理</td>
+<td><a href="https://object.renchengqi.com/software/chrome/Proxy-SwitchyOmega-Chromium-2.5.15.crx">博主</a></td>
+</tr>
+</tbody></table>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>下载地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>XMLQuire</td>
+<td>XPath表达式工具</td>
+<td><a href="https://object.renchengqi.com/software/windows/XMLQuire.zip">博主</a></td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>爬虫</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫常见问题汇总</title>
+    <url>/2018/08/18/crawler/%E7%88%AC%E8%99%AB%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<p>汇总一下，爬虫常见的问题（坑）；</p>
+<a id="more"></a>
+
+<h2 id="requests请求中文乱码"><a href="#requests请求中文乱码" class="headerlink" title="requests请求中文乱码"></a>requests请求中文乱码</h2><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">req = requests.get(<span class="string">&quot;http://news.sina.com.cn/&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> req.encoding == <span class="string">&#x27;ISO-8859-1&#x27;</span>:</span><br><span class="line">    encodings = requests.utils.get_encodings_from_content(req.text)</span><br><span class="line">    <span class="keyword">if</span> encodings:</span><br><span class="line">        encoding = encodings[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        encoding = req.apparent_encoding</span><br><span class="line">    encode_content = req.content.decode(encoding, <span class="string">&#x27;replace&#x27;</span>) <span class="comment">#如果设置为replace，则会用?取代非法字符；</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据分析-概述</title>
     <url>/2018/11/29/datascience/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<p>数据分析是指用适当的统计分析方法对收集来的大量数据进行分析，提取有用信息和形成结论而对数据加以详细研究和概括总结的过程。</p>
@@ -792,6 +792,65 @@
       <tags>
         <tag>数据分析</tag>
         <tag>AI进阶</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker问题解决</title>
+    <url>/2017/10/11/docker/Docker%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<p>常见docker问题解决</p>
+<a id="more"></a>
+<h2 id="Docker-容器一启动就退出"><a href="#Docker-容器一启动就退出" class="headerlink" title="Docker 容器一启动就退出"></a>Docker 容器一启动就退出</h2><p>根据镜像启动容器，执行命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name npm -d node</span><br></pre></td></tr></table></figure>
+<p>通过<code>docker ps</code>查看正在运行中容器，却找不到<code>npm</code>容器。再次通过<code>docker ps -a</code>查看发现，<code>npm</code>容器已经处于停止状态了。<br><strong>原因</strong><br>Docker容器后台运行,就必须有一个前台进程.<br>容器运行的命令如果不是那些一直挂起的命令（eg. 运行top，tail等），就是会自动退出<br>这个是 docker 的机制问题，比如我们的 web 容器，以 nginx 和 fpm 为例,<br>正常情况下，启动服务只需启动相应的 service 即可，例如：service nginx start &amp;&amp; service php5-fpm start，但是，这样做, nginx 和 fpm 均以后台进程模式运行，就会导致 docker 前台没有正在运行的应用，so，容器会立即自杀，因为他觉得没事可做了。</p>
+<p><strong>解决方案</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name npm -P -d node &#x2F;bin&#x2F;sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker运行Nginx</title>
+    <url>/2019/10/09/docker/Docker%E8%BF%90%E8%A1%8CNginx/</url>
+    <content><![CDATA[<p>如果我们有自己的服务器，就经常肯定会使用到Nginx，下面我们就用Docker来部署一个Nginx</p>
+<a id="more"></a>
+
+<h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><p><strong>移除旧版本</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-selinux \</span><br><span class="line">                  docker-engine-selinux \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></table></figure>
+<p><strong>安装一些必要的系统工具:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+<p><strong>添加软件源信息：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;docker-ce&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p><strong>更新 yum 缓存</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br></pre></td></tr></table></figure>
+<p><strong>安装 Docker-ce：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#安装 Docker</span></span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+<p><strong>启动 Docker 后台服务:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+<p><strong>测试运行 hello-world</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+<p>出现<code>hello world</code>就证明安装正常了</p>
+<h2 id="安装-Nginx"><a href="#安装-Nginx" class="headerlink" title="安装 Nginx"></a>安装 Nginx</h2><p>安装<code>nginx</code>前，我们现在本地建立几个文件，用于存放<code>nginx</code>的配置文件等</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到服务器根目录</span></span><br><span class="line"><span class="built_in">cd</span> /</span><br><span class="line"><span class="comment"># 创建主目录</span></span><br><span class="line">mkdir dockerData</span><br><span class="line"><span class="comment"># 创建文件</span></span><br><span class="line">mkdir dockerData/nginx dockerData/nginx/conf dockerData/nginx/logs dockerData/nginx/www dockerData/nginx/ssl</span><br></pre></td></tr></table></figure>
+<p>上面的 <code>dockerData</code> 可以换成自己喜欢的名字</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dockerData&#x2F;nginx 用于存放 docker 下 nginx 自定义文件</span><br><span class="line">dockerData&#x2F;nginx&#x2F;conf 存放 nginx 配置文件</span><br><span class="line">dockerData&#x2F;nginx&#x2F;log 存放 nginx 日志文件</span><br><span class="line">dockerData&#x2F;nginx&#x2F;www 存放 nginx 访问的资源文件</span><br><span class="line">dockerData&#x2F;nginx&#x2F;ssl 存放 ssl 证书</span><br></pre></td></tr></table></figure>
+
+<p>启动 nginx</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name nginx -p 80:80 -d --rm nginx</span><br></pre></td></tr></table></figure>
+<p>如果你没有备案，可以将上面的<code>80:80</code>换成<code>8081:80</code>，因为这个东西一会儿也要删掉，所以加上<code>--rm</code>参数，命令执行玩后通过 <code>docker ps</code> 查看 <code>nginx</code> 是否在运行，在运行的情况下访问你的域名加端口号查看是否正常安装，<code>80</code>直接省略。如下表示访问成功</p>
+<p>导出配置文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker cp nginx:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;nginx.conf 导出配置文件 nginx.conf</span><br><span class="line">docker cp nginx:&#x2F;etc&#x2F;nginx&#x2F;conf.d &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;conf.d 导出配置为你 nginx.conf</span><br></pre></td></tr></table></figure>
+<p>执行 <code>docker stop nginx</code> ，会自动删除现在的 <code>nginx</code> 容器，然后执行如下命令重新启动一个 <code>nginx</code> 容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d -p 80:80 --name nginx \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;nginx.conf:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;ssl:&#x2F;etc&#x2F;nginx&#x2F;ssl \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;conf.d:&#x2F;etc&#x2F;nginx&#x2F;conf.d \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;www:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;logs:&#x2F;var&#x2F;log&#x2F;nginx nginx</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;nginx.conf:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf \ 挂载配置文件nginx.conf</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;conf.d:&#x2F;etc&#x2F;nginx&#x2F;conf.d 挂载配置文件default.conf</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;www:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html  挂载项目文件</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;logs:&#x2F;var&#x2F;log&#x2F;nginx 挂载配置文件</span><br></pre></td></tr></table></figure>
+
+<p>访问你的域名，你会发现报错了<br>这时我们可以前往 <code>/dockerData/nginx/logs</code> 下查看日志文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2019&#x2F;08&#x2F;05 14:57:54 [error] 6#6: *3 directory index of &quot;&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html&#x2F;&quot; is forbidden, client: 121.32.33.217, server: localhost, request: &quot;GET &#x2F; HTTP&#x2F;1.1&quot;, host: &quot;www.jinjianh.com&quot; </span><br></pre></td></tr></table></figure>
+<p>因为 <code>/usr/share/nginx/html/</code> 被挂载到了服务器上面的/dockerData/nginx/www目录下，原来的欢迎页面在 <code>dockerData/nginx/www</code> 是没有的，所有就报错了，这里我们随便建一个。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 打开项目文件</span><br><span class="line">cd &#x2F;dockerData&#x2F;nginx&#x2F;www</span><br><span class="line"># 使用vim 创建并编辑文件</span><br><span class="line">vim index.html</span><br><span class="line"># 此时我们会进入vim界面，按 i 插入，然后输入</span><br><span class="line">&lt;h1&gt;Hello Docker-Nginx&lt;&#x2F;h1&gt;</span><br><span class="line"># 输入完后，按 esc，然后输入 :wq</span><br></pre></td></tr></table></figure>
+<p>再次访问我们的域名就可以看到我们刚刚写的h1标签内容</p>
+]]></content>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1385,71 +1444,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Flutter异步编程</title>
-    <url>/2020/02/25/flutter/Flutter%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<p>首先<code>Dart</code>是一门单线程的语言，那么Dart对异步操作对支持，可以使我们在编写Dart程序时可以异步的来执行耗时操作。从而可以在等待一个操作完成的同时进行别的操作以下是一些常见的异步操作：</p>
-<ul>
-<li>通过网络获取数据。</li>
-<li>写入数据库。</li>
-<li>从文件读取数据。</li>
-</ul>
-<p>要在Dart中执行异步操作，可以使用Future类和async/await关键字。</p>
-<a id="more"></a>    
-
-<h2 id="Dart的事件循环-event-loop"><a href="#Dart的事件循环-event-loop" class="headerlink" title="Dart的事件循环(event loop)"></a>Dart的事件循环(event loop)</h2><p>在Dart中，实际上有两种队列：</p>
-<ol>
-<li>事件队列(event queue)，包含所有的外来事件：I/O、mouse events、drawing events、timers、isolate之间的信息传递。</li>
-<li>微任务队列(microtask queue)，表示一个短时间内就会完成的异步任务。它的优先级最高，高于event queue，只要队列中还有任务，就可以一直霸占着事件循环。microtask queue添加的任务主要是由Dart内部产生。</li>
-</ol>
-<blockquote>
-<p>因为<code>microtask queue</code>的优先级高于<code>event queue</code>，所以如果<code>microtask queue</code>有太多的微任务， 那么就可能会霸占住当前的<code>event loop</code>。从而对event queue中的触摸、绘制等外部事件造成阻塞卡顿。</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Flutter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flutter - 架构</title>
-    <url>/2020/01/16/flutter/Flutter%E6%9E%B6%E6%9E%84/</url>
-    <content><![CDATA[<p>Flutter 架构图<br><img src="https://object.renchengqi.com/blog/whz3d.png"></p>
-<a id="more"></a>
-
-
-<h2 id="分层架构"><a href="#分层架构" class="headerlink" title="分层架构"></a>分层架构</h2><p><img src="https://object.renchengqi.com/blog/oz4iy.png"></p>
-<ul>
-<li>高性能渲染引擎（Engine 层）是最核心的部分。Flutter不使用浏览器技术，也不使用Native的原生控件，它使用自己的渲染引擎来绘制widget。<ul>
-<li>在Android平台，Flutter引擎的C/C++代码是由NDK编译</li>
-<li>在iOS平台，则是由LLVM编译</li>
-<li>两个平台的Dart代码都是AOT编译为本地代码</li>
-<li>Flutter应用程序使用本机指令集运行。</li>
-<li>Flutter正是是通过使用相同的渲染器、框架和一组widget，来同时构建iOS和Android应用，而无需维护两套独立的代码库。</li>
-</ul>
-</li>
-<li><code>Foundation</code>层由<code>dart:ui</code>实现。 <code>dart:ui</code>提供了<code>Framework</code>能够运行的最基础功能，比如绘图，界面刷新，触屏，鼠标等事件的原始信息等。</li>
-<li><code>Rendering</code>层由几个子模块组成：<code>Animation</code>, <code>Painting</code>, <code>Gestures</code>. 在这一层，Flutter提供<code>RenderObject</code>，实现完整的布局，绘制功能。</li>
-<li><code>Widgets</code>层是开发者最常接触到的一层。 <code>Widget</code>是对<code>RenderObject</code>的封装。在<code>Widget</code>层，Flutter实现了响应式开发框架。</li>
-<li><code>Material</code>,<code>Cupertino</code>层: 在这一层，Flutter提供了一系列的<code>Widget</code>，其中<code>Material Widget</code>实现了<code>Material Design</code>。<code>Cupertino</code>提供了一系列的<code>iOS-Style</code>的控件。</li>
-</ul>
-<h2 id="图形管道"><a href="#图形管道" class="headerlink" title="图形管道"></a>图形管道</h2><p><img src="https://object.renchengqi.com/blog/f3cdp.png"></p>
-<ol>
-<li>GPU的Vsync信号同步到UI线程</li>
-<li>UI线程使用Dart来构建抽象的视图结构</li>
-<li>视图结构在GPU线程中进行图层合成</li>
-<li>合成后的视图数据提供给Skia图形引擎处理成GPU数据</li>
-<li>数据再通过OpenGL或Vulkan提供给GPU进行渲染</li>
-</ol>
-<h2 id="Widget生命周期"><a href="#Widget生命周期" class="headerlink" title="Widget生命周期"></a>Widget生命周期</h2><p><img src="https://object.renchengqi.com/blog/tc801.png"></p>
-<h2 id="State生命周期"><a href="#State生命周期" class="headerlink" title="State生命周期"></a>State<T>生命周期</h2><p><img src="https://object.renchengqi.com/blog/z68lu.png"></p>
-<blockquote>
-<p>转载自<a href="https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_187">Google官方文档</a></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Flutter</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Flutter - Future与FutureBuilder实用技巧</title>
     <url>/2020/02/24/flutter/Flutter%E5%BC%82%E6%AD%A5/</url>
     <content><![CDATA[<p>我们知道Dart语言的执行环境是”单线程”。也就是指一次只能完成一件任务。如果有多个任务，就必须排队，前面一个任务完成，再执行后面一个任务。</p>
@@ -1524,6 +1518,71 @@
 <ul>
 <li><a href="https://flutter-academy.com/async-in-flutter-futurebuilder/">https://flutter-academy.com/async-in-flutter-futurebuilder/</a></li>
 </ul>
+]]></content>
+      <tags>
+        <tag>Flutter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flutter异步编程</title>
+    <url>/2020/02/25/flutter/Flutter%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<p>首先<code>Dart</code>是一门单线程的语言，那么Dart对异步操作对支持，可以使我们在编写Dart程序时可以异步的来执行耗时操作。从而可以在等待一个操作完成的同时进行别的操作以下是一些常见的异步操作：</p>
+<ul>
+<li>通过网络获取数据。</li>
+<li>写入数据库。</li>
+<li>从文件读取数据。</li>
+</ul>
+<p>要在Dart中执行异步操作，可以使用Future类和async/await关键字。</p>
+<a id="more"></a>    
+
+<h2 id="Dart的事件循环-event-loop"><a href="#Dart的事件循环-event-loop" class="headerlink" title="Dart的事件循环(event loop)"></a>Dart的事件循环(event loop)</h2><p>在Dart中，实际上有两种队列：</p>
+<ol>
+<li>事件队列(event queue)，包含所有的外来事件：I/O、mouse events、drawing events、timers、isolate之间的信息传递。</li>
+<li>微任务队列(microtask queue)，表示一个短时间内就会完成的异步任务。它的优先级最高，高于event queue，只要队列中还有任务，就可以一直霸占着事件循环。microtask queue添加的任务主要是由Dart内部产生。</li>
+</ol>
+<blockquote>
+<p>因为<code>microtask queue</code>的优先级高于<code>event queue</code>，所以如果<code>microtask queue</code>有太多的微任务， 那么就可能会霸占住当前的<code>event loop</code>。从而对event queue中的触摸、绘制等外部事件造成阻塞卡顿。</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Flutter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flutter - 架构</title>
+    <url>/2020/01/16/flutter/Flutter%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<p>Flutter 架构图<br><img src="https://object.renchengqi.com/blog/whz3d.png"></p>
+<a id="more"></a>
+
+
+<h2 id="分层架构"><a href="#分层架构" class="headerlink" title="分层架构"></a>分层架构</h2><p><img src="https://object.renchengqi.com/blog/oz4iy.png"></p>
+<ul>
+<li>高性能渲染引擎（Engine 层）是最核心的部分。Flutter不使用浏览器技术，也不使用Native的原生控件，它使用自己的渲染引擎来绘制widget。<ul>
+<li>在Android平台，Flutter引擎的C/C++代码是由NDK编译</li>
+<li>在iOS平台，则是由LLVM编译</li>
+<li>两个平台的Dart代码都是AOT编译为本地代码</li>
+<li>Flutter应用程序使用本机指令集运行。</li>
+<li>Flutter正是是通过使用相同的渲染器、框架和一组widget，来同时构建iOS和Android应用，而无需维护两套独立的代码库。</li>
+</ul>
+</li>
+<li><code>Foundation</code>层由<code>dart:ui</code>实现。 <code>dart:ui</code>提供了<code>Framework</code>能够运行的最基础功能，比如绘图，界面刷新，触屏，鼠标等事件的原始信息等。</li>
+<li><code>Rendering</code>层由几个子模块组成：<code>Animation</code>, <code>Painting</code>, <code>Gestures</code>. 在这一层，Flutter提供<code>RenderObject</code>，实现完整的布局，绘制功能。</li>
+<li><code>Widgets</code>层是开发者最常接触到的一层。 <code>Widget</code>是对<code>RenderObject</code>的封装。在<code>Widget</code>层，Flutter实现了响应式开发框架。</li>
+<li><code>Material</code>,<code>Cupertino</code>层: 在这一层，Flutter提供了一系列的<code>Widget</code>，其中<code>Material Widget</code>实现了<code>Material Design</code>。<code>Cupertino</code>提供了一系列的<code>iOS-Style</code>的控件。</li>
+</ul>
+<h2 id="图形管道"><a href="#图形管道" class="headerlink" title="图形管道"></a>图形管道</h2><p><img src="https://object.renchengqi.com/blog/f3cdp.png"></p>
+<ol>
+<li>GPU的Vsync信号同步到UI线程</li>
+<li>UI线程使用Dart来构建抽象的视图结构</li>
+<li>视图结构在GPU线程中进行图层合成</li>
+<li>合成后的视图数据提供给Skia图形引擎处理成GPU数据</li>
+<li>数据再通过OpenGL或Vulkan提供给GPU进行渲染</li>
+</ol>
+<h2 id="Widget生命周期"><a href="#Widget生命周期" class="headerlink" title="Widget生命周期"></a>Widget生命周期</h2><p><img src="https://object.renchengqi.com/blog/tc801.png"></p>
+<h2 id="State生命周期"><a href="#State生命周期" class="headerlink" title="State生命周期"></a>State<T>生命周期</h2><p><img src="https://object.renchengqi.com/blog/z68lu.png"></p>
+<blockquote>
+<p>转载自<a href="https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_187">Google官方文档</a></p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>Flutter</tag>
@@ -1717,65 +1776,6 @@
 ]]></content>
       <tags>
         <tag>Flutter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Docker运行Nginx</title>
-    <url>/2019/10/09/docker/Docker%E8%BF%90%E8%A1%8CNginx/</url>
-    <content><![CDATA[<p>如果我们有自己的服务器，就经常肯定会使用到Nginx，下面我们就用Docker来部署一个Nginx</p>
-<a id="more"></a>
-
-<h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><p><strong>移除旧版本</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-selinux \</span><br><span class="line">                  docker-engine-selinux \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></table></figure>
-<p><strong>安装一些必要的系统工具:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-<p><strong>添加软件源信息：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;docker-ce&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo</span><br></pre></td></tr></table></figure>
-<p><strong>更新 yum 缓存</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br></pre></td></tr></table></figure>
-<p><strong>安装 Docker-ce：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#安装 Docker</span></span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
-<p><strong>启动 Docker 后台服务:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
-<p><strong>测试运行 hello-world</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
-<p>出现<code>hello world</code>就证明安装正常了</p>
-<h2 id="安装-Nginx"><a href="#安装-Nginx" class="headerlink" title="安装 Nginx"></a>安装 Nginx</h2><p>安装<code>nginx</code>前，我们现在本地建立几个文件，用于存放<code>nginx</code>的配置文件等</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到服务器根目录</span></span><br><span class="line"><span class="built_in">cd</span> /</span><br><span class="line"><span class="comment"># 创建主目录</span></span><br><span class="line">mkdir dockerData</span><br><span class="line"><span class="comment"># 创建文件</span></span><br><span class="line">mkdir dockerData/nginx dockerData/nginx/conf dockerData/nginx/logs dockerData/nginx/www dockerData/nginx/ssl</span><br></pre></td></tr></table></figure>
-<p>上面的 <code>dockerData</code> 可以换成自己喜欢的名字</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dockerData&#x2F;nginx 用于存放 docker 下 nginx 自定义文件</span><br><span class="line">dockerData&#x2F;nginx&#x2F;conf 存放 nginx 配置文件</span><br><span class="line">dockerData&#x2F;nginx&#x2F;log 存放 nginx 日志文件</span><br><span class="line">dockerData&#x2F;nginx&#x2F;www 存放 nginx 访问的资源文件</span><br><span class="line">dockerData&#x2F;nginx&#x2F;ssl 存放 ssl 证书</span><br></pre></td></tr></table></figure>
-
-<p>启动 nginx</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name nginx -p 80:80 -d --rm nginx</span><br></pre></td></tr></table></figure>
-<p>如果你没有备案，可以将上面的<code>80:80</code>换成<code>8081:80</code>，因为这个东西一会儿也要删掉，所以加上<code>--rm</code>参数，命令执行玩后通过 <code>docker ps</code> 查看 <code>nginx</code> 是否在运行，在运行的情况下访问你的域名加端口号查看是否正常安装，<code>80</code>直接省略。如下表示访问成功</p>
-<p>导出配置文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker cp nginx:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;nginx.conf 导出配置文件 nginx.conf</span><br><span class="line">docker cp nginx:&#x2F;etc&#x2F;nginx&#x2F;conf.d &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;conf.d 导出配置为你 nginx.conf</span><br></pre></td></tr></table></figure>
-<p>执行 <code>docker stop nginx</code> ，会自动删除现在的 <code>nginx</code> 容器，然后执行如下命令重新启动一个 <code>nginx</code> 容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d -p 80:80 --name nginx \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;nginx.conf:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;ssl:&#x2F;etc&#x2F;nginx&#x2F;ssl \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;conf.d:&#x2F;etc&#x2F;nginx&#x2F;conf.d \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;www:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;logs:&#x2F;var&#x2F;log&#x2F;nginx nginx</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;nginx.conf:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf \ 挂载配置文件nginx.conf</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;conf.d:&#x2F;etc&#x2F;nginx&#x2F;conf.d 挂载配置文件default.conf</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;www:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html  挂载项目文件</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;logs:&#x2F;var&#x2F;log&#x2F;nginx 挂载配置文件</span><br></pre></td></tr></table></figure>
-
-<p>访问你的域名，你会发现报错了<br>这时我们可以前往 <code>/dockerData/nginx/logs</code> 下查看日志文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2019&#x2F;08&#x2F;05 14:57:54 [error] 6#6: *3 directory index of &quot;&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html&#x2F;&quot; is forbidden, client: 121.32.33.217, server: localhost, request: &quot;GET &#x2F; HTTP&#x2F;1.1&quot;, host: &quot;www.jinjianh.com&quot; </span><br></pre></td></tr></table></figure>
-<p>因为 <code>/usr/share/nginx/html/</code> 被挂载到了服务器上面的/dockerData/nginx/www目录下，原来的欢迎页面在 <code>dockerData/nginx/www</code> 是没有的，所有就报错了，这里我们随便建一个。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 打开项目文件</span><br><span class="line">cd &#x2F;dockerData&#x2F;nginx&#x2F;www</span><br><span class="line"># 使用vim 创建并编辑文件</span><br><span class="line">vim index.html</span><br><span class="line"># 此时我们会进入vim界面，按 i 插入，然后输入</span><br><span class="line">&lt;h1&gt;Hello Docker-Nginx&lt;&#x2F;h1&gt;</span><br><span class="line"># 输入完后，按 esc，然后输入 :wq</span><br></pre></td></tr></table></figure>
-<p>再次访问我们的域名就可以看到我们刚刚写的h1标签内容</p>
-]]></content>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Docker问题解决</title>
-    <url>/2017/10/11/docker/Docker%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<p>常见docker问题解决</p>
-<a id="more"></a>
-<h2 id="Docker-容器一启动就退出"><a href="#Docker-容器一启动就退出" class="headerlink" title="Docker 容器一启动就退出"></a>Docker 容器一启动就退出</h2><p>根据镜像启动容器，执行命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name npm -d node</span><br></pre></td></tr></table></figure>
-<p>通过<code>docker ps</code>查看正在运行中容器，却找不到<code>npm</code>容器。再次通过<code>docker ps -a</code>查看发现，<code>npm</code>容器已经处于停止状态了。<br><strong>原因</strong><br>Docker容器后台运行,就必须有一个前台进程.<br>容器运行的命令如果不是那些一直挂起的命令（eg. 运行top，tail等），就是会自动退出<br>这个是 docker 的机制问题，比如我们的 web 容器，以 nginx 和 fpm 为例,<br>正常情况下，启动服务只需启动相应的 service 即可，例如：service nginx start &amp;&amp; service php5-fpm start，但是，这样做, nginx 和 fpm 均以后台进程模式运行，就会导致 docker 前台没有正在运行的应用，so，容器会立即自杀，因为他觉得没事可做了。</p>
-<p><strong>解决方案</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name npm -P -d node &#x2F;bin&#x2F;sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -2080,17 +2080,6 @@ chown -R tarena:tarena fly.git
       </tags>
   </entry>
   <entry>
-    <title>鸡汤</title>
-    <url>/2015/09/04/life/%E5%BF%83%E7%81%B5%E9%B8%A1%E6%B1%A4/</url>
-    <content><![CDATA[<p>MARK一些鸡汤，灌给自己</p>
-<a id="more"></a>
-
-<h2 id="奋斗篇"><a href="#奋斗篇" class="headerlink" title="奋斗篇"></a>奋斗篇</h2><p><strong>请不要在该奋斗的年纪选择了安逸！</strong></p>
-<p><code>20</code>岁的贪玩，造就了<code>30</code>岁的无奈<br><code>30</code>岁的无奈，造就了<code>40</code>岁的无为<br><code>40</code>岁的无为，造就了<code>50</code>岁的失败</p>
-<p>当<code>父母</code>需要你时，除了泪水，你一无所有。<br>当<code>孩子</code>需要你时，除了惭愧，你一无所有。<br>当<code>你</code>回首过去， 你还是<code>一无所有</code>。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>价值观</title>
     <url>/2016/10/28/life/%E4%BB%B7%E5%80%BC%E8%A7%82/</url>
     <content><![CDATA[<p>今天跟朋友讨论了一下关于价值观的问题。写在这里面告诫一下自己</p>
@@ -2107,6 +2096,17 @@ chown -R tarena:tarena fly.git
       <tags>
         <tag>教育</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>鸡汤</title>
+    <url>/2015/09/04/life/%E5%BF%83%E7%81%B5%E9%B8%A1%E6%B1%A4/</url>
+    <content><![CDATA[<p>MARK一些鸡汤，灌给自己</p>
+<a id="more"></a>
+
+<h2 id="奋斗篇"><a href="#奋斗篇" class="headerlink" title="奋斗篇"></a>奋斗篇</h2><p><strong>请不要在该奋斗的年纪选择了安逸！</strong></p>
+<p><code>20</code>岁的贪玩，造就了<code>30</code>岁的无奈<br><code>30</code>岁的无奈，造就了<code>40</code>岁的无为<br><code>40</code>岁的无为，造就了<code>50</code>岁的失败</p>
+<p>当<code>父母</code>需要你时，除了泪水，你一无所有。<br>当<code>孩子</code>需要你时，除了惭愧，你一无所有。<br>当<code>你</code>回首过去， 你还是<code>一无所有</code>。</p>
+]]></content>
   </entry>
   <entry>
     <title>Google身份验证器</title>
@@ -2426,7 +2426,7 @@ chown -R tarena:tarena fly.git
 <blockquote>
 <p>引用：如果想要插入空白换行<code>即&lt;br /&gt;标签</code>，在插入处先键入两个以上的空格然后回车即可，<a href="https://www.xx.com/">普通链接</a>。</p>
 </blockquote>
-<h3 id="锚点与链接-Links"><a href="#锚点与链接-Links" class="headerlink" title="锚点与链接 Links"></a>锚点与链接 Links</h3><p><a href="https://www.xx.com/">普通链接</a><br><a href="https://www.xx.com/" title="普通链接带标题">普通链接带标题</a><br>直接链接：<a href="https://www.xx.com/">https://www.XX.com</a><br>[锚点链接][anchor-id]<br>[anchor-id]: <a href="https://www.xx.com/">https://www.XX.com/</a><br><a href="mailto:test.test@gmail.com">mailto:test.test@gmail.com</a><br>GFM a-tail link @pandao<br>邮箱地址自动链接 <a href="mailto:&#116;&#101;&#115;&#116;&#46;&#x74;&#101;&#x73;&#116;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;">&#116;&#101;&#115;&#116;&#46;&#x74;&#101;&#x73;&#116;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;</a>  <a href="mailto:&#119;&#119;&#119;&#x40;&#118;&#105;&#112;&#46;&#113;&#113;&#46;&#x63;&#x6f;&#x6d;">&#119;&#119;&#119;&#x40;&#118;&#105;&#112;&#46;&#113;&#113;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<h3 id="锚点与链接-Links"><a href="#锚点与链接-Links" class="headerlink" title="锚点与链接 Links"></a>锚点与链接 Links</h3><p><a href="https://www.xx.com/">普通链接</a><br><a href="https://www.xx.com/" title="普通链接带标题">普通链接带标题</a><br>直接链接：<a href="https://www.xx.com/">https://www.XX.com</a><br>[锚点链接][anchor-id]<br>[anchor-id]: <a href="https://www.xx.com/">https://www.XX.com/</a><br><a href="mailto:test.test@gmail.com">mailto:test.test@gmail.com</a><br>GFM a-tail link @pandao<br>邮箱地址自动链接 <a href="mailto:&#x74;&#101;&#115;&#116;&#x2e;&#x74;&#101;&#115;&#x74;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x74;&#101;&#115;&#116;&#x2e;&#x74;&#101;&#115;&#x74;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;</a>  <a href="mailto:&#x77;&#119;&#119;&#64;&#118;&#x69;&#x70;&#46;&#113;&#x71;&#46;&#x63;&#111;&#x6d;">&#x77;&#119;&#119;&#64;&#118;&#x69;&#x70;&#46;&#113;&#x71;&#46;&#x63;&#111;&#x6d;</a></p>
 <blockquote>
 <p>@pandao</p>
 </blockquote>
@@ -5917,6 +5917,42 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>iOS - App架构</title>
+    <url>/2019/04/08/ios/general/iOS-App%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<p>不想成为架构的程序员不是好程序员。这篇文章主要是对App架构的理解，并不是说如何成为架构师😑</p>
+<a id="more"></a>
+
+
+<p><strong>架构（Architecture）</strong></p>
+<ul>
+<li>软件开发中的设计方案</li>
+<li>类与类之间的关系、模块与模块之间的关系、客户端与服务端的关系</li>
+</ul>
+<p><strong>经常听到的架构名词</strong></p>
+<ul>
+<li>MVC、MVP、MVVM、VIPER、CDD</li>
+<li>三层架构、四层架构</li>
+<li>……</li>
+</ul>
+<h2 id="MVC-Apple官方推荐"><a href="#MVC-Apple官方推荐" class="headerlink" title="MVC - Apple官方推荐"></a>MVC - Apple官方推荐</h2><ul>
+<li>Model</li>
+<li>View</li>
+<li>Controller</li>
+</ul>
+<p><img src="https://object.renchengqi.com/blog/tctei.png"></p>
+<p>优点：View、Model可以重复利用，可以独立使用<br>缺点：Controller的代码过于臃肿</p>
+<h2 id="MVC-变种"><a href="#MVC-变种" class="headerlink" title="MVC - 变种"></a>MVC - 变种</h2><p><img src="https://object.renchengqi.com/blog/2fquy.png"></p>
+<p>优点：对Controller进行瘦身，将View内部的细节封装起来了，外界不知道View内部的具体实现<br>缺点：View依赖于Model</p>
+<h2 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h2><p><img src="https://object.renchengqi.com/blog/4llxs.png"></p>
+<p>优点：对Controller进行瘦身，将Controller的一些业务代码移植到了Presenter里面</p>
+<h2 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h2><p><img src="https://object.renchengqi.com/blog/al2uf.png"><br>一般搭配KVO实现双向绑定；</p>
+<h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><p>架构进行分层理解<br><img src="https://object.renchengqi.com/blog/8xdfb.png"></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Type Encodings</title>
     <url>/2018/04/06/ios/general/TypeEncodings/</url>
     <content><![CDATA[<a id="more"></a>
@@ -5969,42 +6005,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
 <li>勾选需要转换的framework或者工程<br> 比如：我司项目使用了一个swift库<a href="https://github.com/danielgindi/Charts">Charts</a>，使用pod引入最新支持2.3的版本后，xcode8会报错让执行迁移引导，实际上勾选并点击next后，会提示不需要转换。（此图是已经进行过迁移引导后的截图，所以下方会提示已经转换成2.3的语法了）<br> <img src="https://object.renchengqi.com/blog/iyvwi.png"></li>
 <li>目前还有pod useFramework导致其他库.h文件找不到问题，还在尝试解决</li>
 </ol>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS - App架构</title>
-    <url>/2019/04/08/ios/general/iOS-App%E6%9E%B6%E6%9E%84/</url>
-    <content><![CDATA[<p>不想成为架构的程序员不是好程序员。这篇文章主要是对App架构的理解，并不是说如何成为架构师😑</p>
-<a id="more"></a>
-
-
-<p><strong>架构（Architecture）</strong></p>
-<ul>
-<li>软件开发中的设计方案</li>
-<li>类与类之间的关系、模块与模块之间的关系、客户端与服务端的关系</li>
-</ul>
-<p><strong>经常听到的架构名词</strong></p>
-<ul>
-<li>MVC、MVP、MVVM、VIPER、CDD</li>
-<li>三层架构、四层架构</li>
-<li>……</li>
-</ul>
-<h2 id="MVC-Apple官方推荐"><a href="#MVC-Apple官方推荐" class="headerlink" title="MVC - Apple官方推荐"></a>MVC - Apple官方推荐</h2><ul>
-<li>Model</li>
-<li>View</li>
-<li>Controller</li>
-</ul>
-<p><img src="https://object.renchengqi.com/blog/tctei.png"></p>
-<p>优点：View、Model可以重复利用，可以独立使用<br>缺点：Controller的代码过于臃肿</p>
-<h2 id="MVC-变种"><a href="#MVC-变种" class="headerlink" title="MVC - 变种"></a>MVC - 变种</h2><p><img src="https://object.renchengqi.com/blog/2fquy.png"></p>
-<p>优点：对Controller进行瘦身，将View内部的细节封装起来了，外界不知道View内部的具体实现<br>缺点：View依赖于Model</p>
-<h2 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h2><p><img src="https://object.renchengqi.com/blog/4llxs.png"></p>
-<p>优点：对Controller进行瘦身，将Controller的一些业务代码移植到了Presenter里面</p>
-<h2 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h2><p><img src="https://object.renchengqi.com/blog/al2uf.png"><br>一般搭配KVO实现双向绑定；</p>
-<h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><p>架构进行分层理解<br><img src="https://object.renchengqi.com/blog/8xdfb.png"></p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -6077,30 +6077,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>iOS12和Xcode10踩坑</title>
-    <url>/2018/07/05/ios/general/iOS12%E5%92%8CXcode10%E8%B8%A9%E5%9D%91/</url>
-    <content><![CDATA[<p><img src="https://object.renchengqi.com/blog/tgezo.png"></p>
-<a id="more"></a>
-
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>昨晚熬夜看完了<code>WWDC 2018</code>，睡前电脑挂着下载<code>xcode10</code>。手机装好了<code>iOS12</code>，体验了一番，感觉比iOS11快多了，看了一眼各家App和我司的App，松了一口气，初步看来今年应该不需要做太多的适配工作，然后就睡了。（然而，果然不能立flag！😂）</p>
-<p>早上晚到了一些，xcode10解压了一下，开始初步评估一下适配。emmmm，工程跑不起来了…好了果然不能低估，开干。</p>
-<h1 id="问题与解决"><a href="#问题与解决" class="headerlink" title="问题与解决"></a>问题与解决</h1><h2 id="重复文件报错"><a href="#重复文件报错" class="headerlink" title="重复文件报错"></a>重复文件报错</h2><p>一上来就是build没2秒就报错了，看报错的说法是有重复的info.plist。<br><img src="https://object.renchengqi.com/blog/jde81.png"><br>我们组件化后把一些三方库和封装方法打成了一个私有库。进去看了一下，我们使用了<code>阿里云统计 + 推送 + Alipay</code>，里面确实有好几个<code>info.plist</code>，删除了就好了</p>
-<h2 id="c-6-0-9消失了？"><a href="#c-6-0-9消失了？" class="headerlink" title="c++.6.0.9消失了？"></a>c++.6.0.9消失了？</h2><p>报错：<code>library not found for -lstdc++.6.0.9</code><br><img src="https://object.renchengqi.com/blog/u4m2x.png"></p>
-<p>第一反应是去<code>Build Phases</code>里的<code>Link Binary With Libraries</code>进行添加，然后发现选择<code>frameworks and libraries</code>里已经没有了这个库了😂，又回去看了一下Xcode9里是有的。<br><img src="https://object.renchengqi.com/blog/jhb6u.png"></p>
-<p>但是因为之前在Xcode9上是正常跑的项目，而且我们组件化后，依赖是在私有库的podspec里定义的，全局搜了下所有的podspec并没有依赖过这个lib。</p>
-<p>想起来<code>pod isntall</code>后会有一个<code>Pods-xxxx.xcconfig</code>文件，果然找到了这个<code>-l stdc++.6.0.9</code>，但是这边是汇总了所有的依赖，无法找到源头。<br><img src="https://object.renchengqi.com/blog/9kbxl.png"></p>
-<p>那如果直接在这里删掉这个依赖呢？是不是会爆出更清晰的错？<br>答案是就如下图，因为删掉了这个依赖，那依赖这个lib的源码就出现了一些调用方法的报错，如下图，很明显的发现了这个叫<code>libQYSDK.a</code>的库。恩，就是三方库<code>七鱼客服</code>了😂，赶紧联系了一波工具提供方。<br><img src="https://object.renchengqi.com/blog/asl42.png"></p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>将Xcode9的libstdc++6.0.9.tbd拷贝到28-xcode10中使用。</p>
-<h2 id="Copy-Pods-Resources失效"><a href="#Copy-Pods-Resources失效" class="headerlink" title="Copy Pods Resources失效"></a>Copy Pods Resources失效</h2><p>经过上面一波操作后，终于编译通过了，也跑起来，就在以为一切都正常起来的时候，突然 崩！溃！了！</p>
-<p>一看报错原因，是<code>Profile.StoryBoard</code>没有找到，我们做了组件化后很多资源文件是在各自的pod里的，理论上这个sb应该在执行<code>Copy Pods Resources</code>后被copy到在<code>*.app</code>的包里<br><img src="https://object.renchengqi.com/blog/84eww.png"><br>于是去查看了一下编译后生成的Product，所有组件库的资源文件 都！不！在！</p>
-<p>怀疑是这个指令没有执行，然后clear重新编译，盯着编译过程。果然，只执行了<code>Check Pods Manifest.lock</code>和<code>Embed Pods Frameworks</code>。<br><img src="https://object.renchengqi.com/blog/kocwh.jpg"></p>
-<p>看了下<code>CocoaPods</code>的issues里没有人提到这些，估计新版是好的，赶紧装了<code>CocoaPods-1.5.3</code>再把Pods文件夹删了重新install一下，就好了。需要升级CocoaPods版本<code>&gt;=1.4.0</code>以上</p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iOS13和Xcode11踩坑</title>
     <url>/2019/07/24/ios/general/iOS13%E5%92%8CXcode11%E8%B8%A9%E5%9D%91/</url>
     <content><![CDATA[<p><img src="https://object.renchengqi.com/blog/g8big.png"></p>
@@ -6167,6 +6143,30 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
 
 <p><strong>解决方式</strong></p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">NSAttributedString</span> *attrString = [[<span class="built_in">NSAttributedString</span> alloc] initWithString:<span class="string">@&quot;请输入占位文字&quot;</span> attributes:@&#123;<span class="built_in">NSForegroundColorAttributeName</span>:HexColor(<span class="number">0x999999</span>), <span class="built_in">NSFontAttributeName</span>:textField.font&#125;];</span><br><span class="line">textField.attributedPlaceholder = attrString;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS12和Xcode10踩坑</title>
+    <url>/2018/07/05/ios/general/iOS12%E5%92%8CXcode10%E8%B8%A9%E5%9D%91/</url>
+    <content><![CDATA[<p><img src="https://object.renchengqi.com/blog/tgezo.png"></p>
+<a id="more"></a>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>昨晚熬夜看完了<code>WWDC 2018</code>，睡前电脑挂着下载<code>xcode10</code>。手机装好了<code>iOS12</code>，体验了一番，感觉比iOS11快多了，看了一眼各家App和我司的App，松了一口气，初步看来今年应该不需要做太多的适配工作，然后就睡了。（然而，果然不能立flag！😂）</p>
+<p>早上晚到了一些，xcode10解压了一下，开始初步评估一下适配。emmmm，工程跑不起来了…好了果然不能低估，开干。</p>
+<h1 id="问题与解决"><a href="#问题与解决" class="headerlink" title="问题与解决"></a>问题与解决</h1><h2 id="重复文件报错"><a href="#重复文件报错" class="headerlink" title="重复文件报错"></a>重复文件报错</h2><p>一上来就是build没2秒就报错了，看报错的说法是有重复的info.plist。<br><img src="https://object.renchengqi.com/blog/jde81.png"><br>我们组件化后把一些三方库和封装方法打成了一个私有库。进去看了一下，我们使用了<code>阿里云统计 + 推送 + Alipay</code>，里面确实有好几个<code>info.plist</code>，删除了就好了</p>
+<h2 id="c-6-0-9消失了？"><a href="#c-6-0-9消失了？" class="headerlink" title="c++.6.0.9消失了？"></a>c++.6.0.9消失了？</h2><p>报错：<code>library not found for -lstdc++.6.0.9</code><br><img src="https://object.renchengqi.com/blog/u4m2x.png"></p>
+<p>第一反应是去<code>Build Phases</code>里的<code>Link Binary With Libraries</code>进行添加，然后发现选择<code>frameworks and libraries</code>里已经没有了这个库了😂，又回去看了一下Xcode9里是有的。<br><img src="https://object.renchengqi.com/blog/jhb6u.png"></p>
+<p>但是因为之前在Xcode9上是正常跑的项目，而且我们组件化后，依赖是在私有库的podspec里定义的，全局搜了下所有的podspec并没有依赖过这个lib。</p>
+<p>想起来<code>pod isntall</code>后会有一个<code>Pods-xxxx.xcconfig</code>文件，果然找到了这个<code>-l stdc++.6.0.9</code>，但是这边是汇总了所有的依赖，无法找到源头。<br><img src="https://object.renchengqi.com/blog/9kbxl.png"></p>
+<p>那如果直接在这里删掉这个依赖呢？是不是会爆出更清晰的错？<br>答案是就如下图，因为删掉了这个依赖，那依赖这个lib的源码就出现了一些调用方法的报错，如下图，很明显的发现了这个叫<code>libQYSDK.a</code>的库。恩，就是三方库<code>七鱼客服</code>了😂，赶紧联系了一波工具提供方。<br><img src="https://object.renchengqi.com/blog/asl42.png"></p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>将Xcode9的libstdc++6.0.9.tbd拷贝到28-xcode10中使用。</p>
+<h2 id="Copy-Pods-Resources失效"><a href="#Copy-Pods-Resources失效" class="headerlink" title="Copy Pods Resources失效"></a>Copy Pods Resources失效</h2><p>经过上面一波操作后，终于编译通过了，也跑起来，就在以为一切都正常起来的时候，突然 崩！溃！了！</p>
+<p>一看报错原因，是<code>Profile.StoryBoard</code>没有找到，我们做了组件化后很多资源文件是在各自的pod里的，理论上这个sb应该在执行<code>Copy Pods Resources</code>后被copy到在<code>*.app</code>的包里<br><img src="https://object.renchengqi.com/blog/84eww.png"><br>于是去查看了一下编译后生成的Product，所有组件库的资源文件 都！不！在！</p>
+<p>怀疑是这个指令没有执行，然后clear重新编译，盯着编译过程。果然，只执行了<code>Check Pods Manifest.lock</code>和<code>Embed Pods Frameworks</code>。<br><img src="https://object.renchengqi.com/blog/kocwh.jpg"></p>
+<p>看了下<code>CocoaPods</code>的issues里没有人提到这些，估计新版是好的，赶紧装了<code>CocoaPods-1.5.3</code>再把Pods文件夹删了重新install一下，就好了。需要升级CocoaPods版本<code>&gt;=1.4.0</code>以上</p>
+]]></content>
       <tags>
         <tag>iOS</tag>
       </tags>
@@ -7889,6 +7889,356 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>Numpy</title>
+    <url>/2018/11/30/datascience/Numpy/</url>
+    <content><![CDATA[<p>NumPy(Numerical Python) 是 Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。</p>
+<a id="more"></a>
+
+<h2 id="numpy概述"><a href="#numpy概述" class="headerlink" title="numpy概述"></a>numpy概述</h2><ol>
+<li>Numerical Python，数值的Python，补充了Python语言所欠缺的数值计算能力。</li>
+<li>Numpy是其它数据分析及机器学习库的底层库。</li>
+<li>Numpy完全标准C语言实现，运行效率充分优化。</li>
+<li>Numpy开源免费。</li>
+</ol>
+<h3 id="numpy历史"><a href="#numpy历史" class="headerlink" title="numpy历史"></a>numpy历史</h3><ol>
+<li>1995年，Numeric，Python语言数值计算扩充。</li>
+<li>2001年，Scipy-&gt;Numarray，多维数组运算。</li>
+<li>2005年，Numeric+Numarray-&gt;Numpy。</li>
+<li>2006年，Numpy脱离Scipy成为独立的项目。</li>
+</ol>
+<h3 id="numpy的核心：多维数组"><a href="#numpy的核心：多维数组" class="headerlink" title="numpy的核心：多维数组"></a>numpy的核心：多维数组</h3><ol>
+<li>代码简洁：减少Python代码中的循环。</li>
+<li>底层实现：厚内核(C)+薄接口(Python)，保证性能。</li>
+</ol>
+<h2 id="numpy基础"><a href="#numpy基础" class="headerlink" title="numpy基础"></a>numpy基础</h2><h3 id="ndarray数组"><a href="#ndarray数组" class="headerlink" title="ndarray数组"></a>ndarray数组</h3><p>用np.ndarray类的对象表示n维数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">ary = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line">print(type(ary))</span><br></pre></td></tr></table></figure>
+
+<h4 id="内存中的ndarray对象"><a href="#内存中的ndarray对象" class="headerlink" title="内存中的ndarray对象"></a>内存中的ndarray对象</h4><p><strong>元数据（metadata）</strong></p>
+<p>存储对目标数组的描述信息，</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dim</td>
+<td>轴</td>
+</tr>
+<tr>
+<td>count</td>
+<td>长度</td>
+</tr>
+<tr>
+<td>dimensions</td>
+<td></td>
+</tr>
+<tr>
+<td>dtype</td>
+<td>类型</td>
+</tr>
+<tr>
+<td>data</td>
+<td>数据</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody></table>
+<p><strong>实际数据</strong></p>
+<p>完整的数组数据</p>
+<blockquote>
+<p>将实际数据与元数据分开存放，一方面提高了内存空间的使用效率，另一方面减少对实际数据的访问频率，提高性能。</p>
+</blockquote>
+<h4 id="ndarray数组对象的特点"><a href="#ndarray数组对象的特点" class="headerlink" title="ndarray数组对象的特点"></a>ndarray数组对象的特点</h4><ol>
+<li>Numpy数组是<strong>同质数组</strong>，即所有元素的<strong>数据类型必须相同</strong></li>
+<li>Numpy数组的下标从0开始，最后一个元素的下标为数组长度减1</li>
+</ol>
+<h4 id="ndarray数组对象的创建"><a href="#ndarray数组对象的创建" class="headerlink" title="ndarray数组对象的创建"></a>ndarray数组对象的创建</h4><p>np.array(任何可被解释为Numpy数组的逻辑结构)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<p>np.arange(起始值(0),终止值,步长(1))</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># arange 生成一个等差数列</span></span><br><span class="line">a = np.arange(<span class="number">0</span>, <span class="number">5</span>, <span class="number">1</span>)</span><br><span class="line">print(a)</span><br><span class="line">b = np.arange(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<p>np.zeros(数组元素个数, dtype=’类型’)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.zeros(<span class="number">10</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<p>np.ones(数组元素个数, dtype=’类型’)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.ones(<span class="number">10</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<h4 id="ndarray对象属性的基本操作"><a href="#ndarray对象属性的基本操作" class="headerlink" title="ndarray对象属性的基本操作"></a>ndarray对象属性的基本操作</h4><p><strong>数组的维度：</strong>np.ndarray.shape</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">ary = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line">print(type(ary), ary, ary.shape)</span><br><span class="line"><span class="comment">#二维数组</span></span><br><span class="line">ary = np.array([</span><br><span class="line">    [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],</span><br><span class="line">    [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line">])</span><br><span class="line">print(type(ary), ary, ary.shape)</span><br></pre></td></tr></table></figure>
+
+<p><strong>元素的类型：</strong>np.ndarray.dtype</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># test ndarray.dtype</span></span><br><span class="line">ary = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">print(ary, ary.dtype)</span><br><span class="line"><span class="comment"># ary.dtype = &#x27;int64&#x27;    error</span></span><br><span class="line"><span class="comment"># print(ary, ary.dtype)</span></span><br><span class="line"><span class="comment"># 源数组类型不变</span></span><br><span class="line">ary = ary.astype(<span class="string">&#x27;float64&#x27;</span>) <span class="comment"># 返回新的对象</span></span><br><span class="line">print(ary, ary.dtype)</span><br><span class="line">ary = ary.astype(<span class="string">&#x27;str&#x27;</span>) <span class="comment"># 返回新的对象</span></span><br><span class="line">print(ary, ary.dtype)</span><br></pre></td></tr></table></figure>
+
+<p><strong>数组元素的个数：</strong>np.ndarray.size </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">ary = np.array([</span><br><span class="line">    [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],</span><br><span class="line">    [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line">])</span><br><span class="line"><span class="comment">#观察维度，size，len的区别</span></span><br><span class="line">print(ary.shape, ary.size, len(ary))</span><br></pre></td></tr></table></figure>
+
+<p><strong>数组元素索引(下标)</strong></p>
+<p>数组对象[…, 页号, 行号, 列号]</p>
+<p>下标从0开始，到数组len-1结束。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([[[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">               [<span class="number">3</span>, <span class="number">4</span>]],</span><br><span class="line">              [[<span class="number">5</span>, <span class="number">6</span>],</span><br><span class="line">               [<span class="number">7</span>, <span class="number">8</span>]]])</span><br><span class="line">print(a, a.shape)</span><br><span class="line">print(a[<span class="number">0</span>])</span><br><span class="line">print(a[<span class="number">0</span>][<span class="number">0</span>])</span><br><span class="line">print(a[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>])</span><br><span class="line">print(a[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(a.shape[<span class="number">0</span>]):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(a.shape[<span class="number">1</span>]):</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(a.shape[<span class="number">2</span>]):</span><br><span class="line">            print(a[i, j, k])</span><br></pre></td></tr></table></figure>
+
+<h4 id="ndarray对象属性操作详解"><a href="#ndarray对象属性操作详解" class="headerlink" title="ndarray对象属性操作详解"></a>ndarray对象属性操作详解</h4><p><strong>Numpy的内部基本数据类型</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型名</th>
+<th>类型表示符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>布尔型</td>
+<td>bool_</td>
+</tr>
+<tr>
+<td>有符号整数型</td>
+<td>int8(-128~127)/int16/int32/int64</td>
+</tr>
+<tr>
+<td>无符号整数型</td>
+<td>uint8(0~255)/uint16/uint32/uint64</td>
+</tr>
+<tr>
+<td>浮点型</td>
+<td>float16/float32/float64</td>
+</tr>
+<tr>
+<td>复数型</td>
+<td>complex64/complex128        3</td>
+</tr>
+<tr>
+<td>字串型</td>
+<td>str_，每个字符用32位Unicode编码表示</td>
+</tr>
+</tbody></table>
+<p><strong>自定义复合类型</strong><br>同时演示设置dtype的几种方式</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">data = [(<span class="string">&#x27;zs&#x27;</span>, [<span class="number">50</span>,<span class="number">51</span>,<span class="number">52</span>], <span class="number">15</span>),</span><br><span class="line">		(<span class="string">&#x27;ls&#x27;</span>, [<span class="number">83</span>,<span class="number">71</span>,<span class="number">62</span>], <span class="number">16</span>),</span><br><span class="line">		(<span class="string">&#x27;ww&#x27;</span>, [<span class="number">90</span>,<span class="number">91</span>,<span class="number">92</span>], <span class="number">17</span>)]</span><br><span class="line"></span><br><span class="line"><span class="comment">#第一种dtype的设置方式</span></span><br><span class="line">ary = np.array(data,dtype=<span class="string">&#x27;U2, 3int32, int32&#x27;</span>)</span><br><span class="line">print(ary, ary[<span class="number">0</span>][<span class="number">1</span>])</span><br><span class="line">print(ary[<span class="number">0</span>][<span class="string">&#x27;f0&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#第二种dtype的设置方式</span></span><br><span class="line">ary = np.array(data, </span><br><span class="line">		dtype=[ (<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;str&#x27;</span>, <span class="number">2</span>), </span><br><span class="line">				(<span class="string">&#x27;scores&#x27;</span>, <span class="string">&#x27;int32&#x27;</span>, <span class="number">3</span>), </span><br><span class="line">				(<span class="string">&#x27;age&#x27;</span>, <span class="string">&#x27;int32&#x27;</span>, <span class="number">1</span>)])</span><br><span class="line">print(<span class="string">&#x27;-&#x27;</span> * <span class="number">45</span>)</span><br><span class="line">print(ary, ary.dtype)</span><br><span class="line">print(ary[<span class="number">0</span>][<span class="string">&#x27;age&#x27;</span>]) <span class="comment"># 返回zs的年龄</span></span><br><span class="line">print(ary[<span class="number">2</span>][<span class="string">&#x27;scores&#x27;</span>]) <span class="comment"># 返回ww的成绩</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三种dtype的设置方式</span></span><br><span class="line">ary = np.array(data, dtype=&#123;</span><br><span class="line">	<span class="string">&#x27;names&#x27;</span>:[<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;scores&#x27;</span>, <span class="string">&#x27;age&#x27;</span>],</span><br><span class="line">	<span class="string">&#x27;formats&#x27;</span>:[<span class="string">&#x27;U2&#x27;</span>, <span class="string">&#x27;3int32&#x27;</span>, <span class="string">&#x27;int32&#x27;</span>]&#125;)</span><br><span class="line">print(ary)</span><br><span class="line">print(ary[<span class="number">0</span>][<span class="string">&#x27;age&#x27;</span>]) <span class="comment"># 返回zs的年龄</span></span><br><span class="line">print(ary[<span class="number">2</span>][<span class="string">&#x27;scores&#x27;</span>]) <span class="comment"># 返回ww的成绩</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第四种dtype的设置方式</span></span><br><span class="line">d = np.array(data, dtype=&#123;<span class="string">&#x27;name&#x27;</span>: (<span class="string">&#x27;U3&#x27;</span>, <span class="number">0</span>),</span><br><span class="line">                    <span class="string">&#x27;scores&#x27;</span>: (<span class="string">&#x27;3int32&#x27;</span>, <span class="number">16</span>),</span><br><span class="line">                    <span class="string">&#x27;age&#x27;</span>: (<span class="string">&#x27;int32&#x27;</span>, <span class="number">28</span>)&#125;)</span><br><span class="line">print(d[<span class="number">0</span>][<span class="string">&#x27;name&#x27;</span>], d[<span class="number">0</span>][<span class="string">&#x27;scores&#x27;</span>], d.itemsize)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ndarray数组存放日期数据</span></span><br><span class="line">dates = [<span class="string">&#x27;2011-01-01&#x27;</span>, <span class="string">&#x27;2012-01-01&#x27;</span>, </span><br><span class="line">		 <span class="string">&#x27;2011-02-01&#x27;</span>, <span class="string">&#x27;2012&#x27;</span>, </span><br><span class="line">		 <span class="string">&#x27;2011-01-01 10:10:10&#x27;</span>]</span><br><span class="line">ary = np.array(dates)</span><br><span class="line">print(ary, ary.dtype)</span><br><span class="line">ary = ary.astype(<span class="string">&#x27;M8[D]&#x27;</span>)</span><br><span class="line">print(ary, ary.dtype, ary[<span class="number">1</span>]-ary[<span class="number">0</span>])</span><br><span class="line"><span class="comment"># 输出31 days</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>类型字符码</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>字符码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>np.bool_</td>
+<td>?</td>
+</tr>
+<tr>
+<td>np.int8/16/32/64</td>
+<td>i1/i2/i4/i8</td>
+</tr>
+<tr>
+<td>np.uint8/16/32/64</td>
+<td>u1/u2/u4/u8</td>
+</tr>
+<tr>
+<td>np.float/16/32/64</td>
+<td>f2/f4/f8</td>
+</tr>
+<tr>
+<td>np.complex64/128</td>
+<td>c8/c16</td>
+</tr>
+<tr>
+<td>np.str_</td>
+<td>U&lt;字符数&gt;</td>
+</tr>
+<tr>
+<td>np.datetime64</td>
+<td>M8[Y] M8[M] M8[D] M8[h] M8[m] M8[s]</td>
+</tr>
+</tbody></table>
+<p><strong>字节序前缀，用于多字节整数和字符串：</strong><br><code>&lt;/&gt;/[=]分别表示小端/大端/硬件字节序。</code></p>
+<p><strong>类型字符码格式</strong></p>
+<p>&lt;字节序前缀&gt;&lt;维度&gt;&lt;类型&gt;&lt;字节数或字符数&gt;</p>
+<table>
+<thead>
+<tr>
+<th>3i4</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3i4</td>
+<td>3个元素的一维数组，每个元素都是整型，每个整型元素占4个字节。</td>
+</tr>
+<tr>
+<td>&lt;(2,3)u8</td>
+<td>小端字节序，6个元素2行3列的二维数组，每个元素都是无符号整型，每个无符号整型元素占8个字节。</td>
+</tr>
+<tr>
+<td>U7</td>
+<td>包含7个字符的Unicode字符串，每个字符占4个字节，采用默认字节序。</td>
+</tr>
+</tbody></table>
+<h5 id="ndarray数组对象的维度操作"><a href="#ndarray数组对象的维度操作" class="headerlink" title="ndarray数组对象的维度操作"></a>ndarray数组对象的维度操作</h5><p><strong>视图变维（数据共享）：</strong> reshape() 与 ravel() </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">9</span>)</span><br><span class="line">print(a)		<span class="comment"># [1 2 3 4 5 6 7 8]</span></span><br><span class="line">b = a.reshape(<span class="number">2</span>, <span class="number">4</span>)	<span class="comment">#视图变维  : 变为2行4列的二维数组</span></span><br><span class="line">print(b)</span><br><span class="line">c = b.reshape(<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>) <span class="comment">#视图变维    变为2页2行2列的三维数组</span></span><br><span class="line">print(c)</span><br><span class="line">d = c.ravel()	<span class="comment">#视图变维	变为1维数组</span></span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+
+<p><strong>复制变维（数据独立）：</strong>flatten()</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">e = c.flatten()</span><br><span class="line">print(e)</span><br><span class="line">a += <span class="number">10</span></span><br><span class="line">print(a, e, sep=<span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>就地变维：直接改变原数组对象的维度，不返回新数组</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.shape = (<span class="number">2</span>, <span class="number">4</span>)</span><br><span class="line">print(a)</span><br><span class="line">a.resize(<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<h5 id="ndarray数组切片操作"><a href="#ndarray数组切片操作" class="headerlink" title="ndarray数组切片操作"></a>ndarray数组切片操作</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#数组对象切片的参数设置与列表切面参数类似</span></span><br><span class="line"><span class="comment">#  步长+：默认切从首到尾</span></span><br><span class="line"><span class="comment">#  步长-：默认切从尾到首</span></span><br><span class="line">数组对象[起始位置:终止位置:步长]</span><br><span class="line"><span class="comment">#默认位置步长：1</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">print(a)  <span class="comment"># 1 2 3 4 5 6 7 8 9</span></span><br><span class="line">print(a[:<span class="number">3</span>])  <span class="comment"># 1 2 3</span></span><br><span class="line">print(a[<span class="number">3</span>:<span class="number">6</span>])   <span class="comment"># 4 5 6</span></span><br><span class="line">print(a[<span class="number">6</span>:])  <span class="comment"># 7 8 9</span></span><br><span class="line">print(a[::<span class="number">-1</span>])  <span class="comment"># 9 8 7 6 5 4 3 2 1</span></span><br><span class="line">print(a[:<span class="number">-4</span>:<span class="number">-1</span>])  <span class="comment"># 9 8 7</span></span><br><span class="line">print(a[<span class="number">-4</span>:<span class="number">-7</span>:<span class="number">-1</span>])  <span class="comment"># 6 5 4</span></span><br><span class="line">print(a[<span class="number">-7</span>::<span class="number">-1</span>])  <span class="comment"># 3 2 1</span></span><br><span class="line">print(a[::])  <span class="comment"># 1 2 3 4 5 6 7 8 9</span></span><br><span class="line">print(a[:])  <span class="comment"># 1 2 3 4 5 6 7 8 9</span></span><br><span class="line">print(a[::<span class="number">3</span>])  <span class="comment"># 1 4 7</span></span><br><span class="line">print(a[<span class="number">1</span>::<span class="number">3</span>])  <span class="comment"># 2 5 8</span></span><br><span class="line">print(a[<span class="number">2</span>::<span class="number">3</span>])  <span class="comment"># 3 6 9</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>多维数组的切片操作</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 多维数组切片</span></span><br><span class="line">print(<span class="string">&#x27;-&#x27;</span> * <span class="number">45</span>)</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">a = a.reshape(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">print(a)</span><br><span class="line">print(a[:<span class="number">2</span>, :])  <span class="comment"># 切出前两行数据</span></span><br><span class="line">print(a[:<span class="number">2</span>, :<span class="number">2</span>])  <span class="comment"># 切出前两行两列数据</span></span><br><span class="line">print(a[::<span class="number">2</span>, :])  <span class="comment"># </span></span><br></pre></td></tr></table></figure>
+
+<h5 id="ndarray数组的掩码操作"><a href="#ndarray数组的掩码操作" class="headerlink" title="ndarray数组的掩码操作"></a><strong>ndarray数组的掩码操作</strong></h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">print(a + <span class="number">10</span>)</span><br><span class="line">print(a * <span class="number">2.5</span>)</span><br><span class="line">print(a + a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出100以内3的倍数</span></span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">mask = a % <span class="number">3</span> == <span class="number">0</span></span><br><span class="line">print(mask)</span><br><span class="line">print(a[mask])</span><br><span class="line"></span><br><span class="line">mask = [<span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">4</span>, <span class="number">4</span>]</span><br><span class="line">print(a)</span><br><span class="line">print(a[mask])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>常用语从大数组中获取子集的操作</p>
+</blockquote>
+<h5 id="多维数组的组合与拆分"><a href="#多维数组的组合与拆分" class="headerlink" title="多维数组的组合与拆分"></a>多维数组的组合与拆分</h5><p>垂直方向操作：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">7</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">b = np.arange(<span class="number">7</span>, <span class="number">13</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># 垂直方向完成组合操作，生成新数组</span></span><br><span class="line">c = np.vstack((a, b))</span><br><span class="line"><span class="comment"># 垂直方向完成拆分操作，生成两个数组</span></span><br><span class="line">d, e = np.vsplit(c, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>水平方向操作：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">7</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">b = np.arange(<span class="number">7</span>, <span class="number">13</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># 水平方向完成组合操作，生成新数组 </span></span><br><span class="line">c = np.hstack((a, b))</span><br><span class="line"><span class="comment"># 水平方向完成拆分操作，生成两个数组</span></span><br><span class="line">d, e = np.hsplit(c, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>深度方向操作：（3维）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">7</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">b = np.arange(<span class="number">7</span>, <span class="number">13</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># 深度方向（3维）完成组合操作，生成新数组</span></span><br><span class="line">i = np.dstack((a, b))</span><br><span class="line"><span class="comment"># 深度方向（3维）完成拆分操作，生成两个数组</span></span><br><span class="line">k, l = np.dsplit(i, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>多维数组组合与拆分的相关函数：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过axis作为关键字参数指定组合的方向，取值如下：</span></span><br><span class="line"><span class="comment"># 若待组合的数组都是二维数组：</span></span><br><span class="line"><span class="comment">#	0: 垂直方向组合</span></span><br><span class="line"><span class="comment">#	1: 水平方向组合</span></span><br><span class="line"><span class="comment"># 若待组合的数组都是三维数组：</span></span><br><span class="line"><span class="comment">#	0: 垂直方向组合</span></span><br><span class="line"><span class="comment">#	1: 水平方向组合</span></span><br><span class="line"><span class="comment">#	2: 深度方向组合</span></span><br><span class="line">np.concatenate((a, b), axis=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 通过给出的数组与要拆分的份数，按照某个方向进行拆分，axis的取值同上</span></span><br><span class="line">np.split(c, <span class="number">2</span>, axis=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>长度不等的数组组合：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line">b = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line"><span class="comment"># 填充b数组使其长度与a相同</span></span><br><span class="line"><span class="comment"># pad_width=(a, b)：在数组首部补a个元素，尾部补b个元素</span></span><br><span class="line">b = np.pad(b, pad_width=(<span class="number">0</span>, <span class="number">1</span>), mode=<span class="string">&#x27;constant&#x27;</span>, constant_values=<span class="number">-1</span>)</span><br><span class="line">print(b)</span><br><span class="line"><span class="comment"># 垂直方向完成组合操作，生成新数组</span></span><br><span class="line">c = np.vstack((a, b))</span><br><span class="line">print(c)</span><br></pre></td></tr></table></figure>
+
+
+<p>简单的一维数组组合方案</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = np.arange(<span class="number">1</span>,<span class="number">9</span>)		<span class="comment">#[1, 2, 3, 4, 5, 6, 7, 8]</span></span><br><span class="line">b = np.arange(<span class="number">9</span>,<span class="number">17</span>)		<span class="comment">#[9,10,11,12,13,14,15,16]</span></span><br><span class="line"><span class="comment">#把两个数组摞在一起成两行</span></span><br><span class="line">c = np.row_stack((a, b))</span><br><span class="line">print(c)</span><br><span class="line"><span class="comment">#把两个数组组合在一起成两列</span></span><br><span class="line">d = np.column_stack((a, b))</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+
+<h4 id="ndarray类的其他属性"><a href="#ndarray类的其他属性" class="headerlink" title="ndarray类的其他属性"></a>ndarray类的其他属性</h4><ul>
+<li>shape - 维度</li>
+<li>dtype - 元素类型</li>
+<li>size - 元素数量</li>
+<li>ndim - 维数，len(shape)</li>
+<li>itemsize - 元素字节数</li>
+<li>nbytes - 总字节数 = size x itemsize</li>
+<li>real - 复数数组的实部数组</li>
+<li>imag - 复数数组的虚部数组</li>
+<li>T - 数组对象的转置视图</li>
+<li>flat - 扁平迭代器</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([[<span class="number">1</span> + <span class="number">1j</span>, <span class="number">2</span> + <span class="number">4j</span>, <span class="number">3</span> + <span class="number">7j</span>],</span><br><span class="line">              [<span class="number">4</span> + <span class="number">2j</span>, <span class="number">5</span> + <span class="number">5j</span>, <span class="number">6</span> + <span class="number">8j</span>],</span><br><span class="line">              [<span class="number">7</span> + <span class="number">3j</span>, <span class="number">8</span> + <span class="number">6j</span>, <span class="number">9</span> + <span class="number">9j</span>]])</span><br><span class="line">print(a.shape)</span><br><span class="line">print(a.dtype)</span><br><span class="line">print(a.ndim)</span><br><span class="line">print(a.size)</span><br><span class="line">print(a.itemsize)</span><br><span class="line">print(a.nbytes)</span><br><span class="line">print(a.real, a.imag, sep=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">print(a.T)</span><br><span class="line">print([elem <span class="keyword">for</span> elem <span class="keyword">in</span> a.flat])</span><br><span class="line">b = a.tolist()</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h3><h4 id="算数平均值"><a href="#算数平均值" class="headerlink" title="算数平均值"></a>算数平均值</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">S &#x3D; [s1, s2, ..., sn]</span><br></pre></td></tr></table></figure>
+
+<p>样本中的每个值都是真值与误差的和。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">算数平均值：</span><br><span class="line">m &#x3D; (s1 + s2 + ... + sn) &#x2F; n</span><br></pre></td></tr></table></figure>
+
+<p>算数平均值表示对真值的无偏估计。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.mean(array)</span><br></pre></td></tr></table></figure>
+
+<p>案例：计算收盘价的算术平均值。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">closing_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">6</span>), unpack=<span class="literal">True</span>)</span><br><span class="line">mean = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> closing_price <span class="keyword">in</span> closing_prices:</span><br><span class="line">    mean += closing_price</span><br><span class="line">mean /= closing_prices.size</span><br><span class="line">print(mean)</span><br><span class="line">mean = np.mean(closing_prices)</span><br><span class="line">print(mean)</span><br></pre></td></tr></table></figure>
+
+<h4 id="加权平均值"><a href="#加权平均值" class="headerlink" title="加权平均值"></a>加权平均值</h4><p>样本：S = [s<sub>1</sub>, s<sub>2</sub>, …, s<sub>n</sub>]</p>
+<p>权重：W = [w<sub>1</sub>, w<sub>2</sub>, …, w<sub>n</sub>]</p>
+<p>加权平均值：a = (s<sub>1</sub>w<sub>1</sub>+s<sub>2</sub>w<sub>2</sub>+…+s<sub>n</sub>w<sub>n</sub>)/(w<sub>1</sub>+w<sub>2</sub>+…+w<sub>n</sub>)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.average(closing_prices, weights=volumes)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>VWAP - 成交量加权平均价格（成交量体现了市场对当前交易价格的认可度，成交量加权平均价格将会更接近这支股票的真实价值）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">closing_prices, volumes = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">6</span>, <span class="number">7</span>), unpack=<span class="literal">True</span>)</span><br><span class="line">vwap, wsum = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> closing_price, volume <span class="keyword">in</span> zip(</span><br><span class="line">        closing_prices, volumes):</span><br><span class="line">    vwap += closing_price * volume</span><br><span class="line">    wsum += volume</span><br><span class="line">vwap /= wsum</span><br><span class="line">print(vwap)</span><br><span class="line">vwap = np.average(closing_prices, weights=volumes)</span><br><span class="line">print(vwap)</span><br></pre></td></tr></table></figure>
+
+<p>TWAP - 时间加权平均价格（时间越晚权重越高，参考意义越大）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dmy2days</span>(<span class="params">dmy</span>):</span></span><br><span class="line">    dmy = str(dmy, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    date = dt.datetime.strptime(dmy, <span class="string">&#x27;%d-%m-%Y&#x27;</span>).date()</span><br><span class="line">    days = (date - dt.date.min).days</span><br><span class="line">    <span class="keyword">return</span> days</span><br><span class="line"></span><br><span class="line">days, closing_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">1</span>, <span class="number">6</span>), unpack=<span class="literal">True</span>,</span><br><span class="line">    converters=&#123;<span class="number">1</span>: dmy2days&#125;)</span><br><span class="line">twap = np.average(closing_prices, weights=days)</span><br><span class="line">print(twap)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="最值"><a href="#最值" class="headerlink" title="最值"></a>最值</h4><p><strong>np.max()  np.min() np.ptp()：</strong> 返回一个数组中最大值/最小值/极差</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 产生9个介于[10, 100)区间的随机数</span></span><br><span class="line">a = np.random.randint(<span class="number">10</span>, <span class="number">100</span>, <span class="number">9</span>)</span><br><span class="line">print(a)</span><br><span class="line">print(np.max(a), np.min(a), np.ptp(a))</span><br></pre></td></tr></table></figure>
+
+<p><strong>np.argmax() mp.argmin()：</strong> 返回一个数组中最大/最小元素的下标</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(np.argmax(a), np.argmin(a))</span><br></pre></td></tr></table></figure>
+
+<p><strong>np.maximum() np.minimum()：</strong> 将两个同维数组中对应元素中最大/最小元素构成一个新的数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(np.maximum(a, b), np.minimum(a, b), sep=<span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>案例：评估AAPL股票的波动性。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">highest_prices, lowest_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">4</span>, <span class="number">5</span>), dtype=<span class="string">&#x27;f8, f8&#x27;</span>, unpack=<span class="literal">True</span>)</span><br><span class="line">max_price = np.max(highest_prices)</span><br><span class="line">min_price = np.min(lowest_prices)</span><br><span class="line">print(min_price, <span class="string">&#x27;~&#x27;</span>, max_price)</span><br></pre></td></tr></table></figure>
+
+<p>查看AAPL股票最大最小值的日期，分析为什么这一天出现最大最小值。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">dates, highest_prices, lowest_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>), dtype=<span class="string">&#x27;U10, f8, f8&#x27;</span>,</span><br><span class="line">    unpack=<span class="literal">True</span>)</span><br><span class="line">max_index = np.argmax(highest_prices)</span><br><span class="line">min_index = np.argmin(lowest_prices)</span><br><span class="line">print(dates[min_index], dates[max_index])</span><br></pre></td></tr></table></figure>
+
+<p>观察最高价与最低价的<strong>波动范围</strong>，分析这支股票底部是否坚挺。  </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">dates, highest_prices, lowest_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>), dtype=<span class="string">&#x27;U10, f8, f8&#x27;</span>,</span><br><span class="line">    unpack=<span class="literal">True</span>)</span><br><span class="line">highest_ptp = np.ptp(highest_prices)</span><br><span class="line">lowest_ptp = np.ptp(lowest_prices)</span><br><span class="line">print(lowest_ptp, highest_ptp)</span><br></pre></td></tr></table></figure>
+
+<h4 id="中位数"><a href="#中位数" class="headerlink" title="中位数"></a>中位数</h4><p>将多个样本按照大小排序，取中间位置的元素。</p>
+<p><strong>若样本数量为奇数，中位数为最中间的元素</strong></p>
+<p>1 2000 3000 4000 10000000</p>
+<p><strong>若样本数量为偶数，中位数为最中间的两个元素的平均值</strong></p>
+<p>1 2000 3000 4000 5000 10000000</p>
+<p>案例：分析中位数的算法，测试numpy提供的中位数API：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">closing_prices = np.loadtxt( <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, </span><br><span class="line">	delimiter=<span class="string">&#x27;,&#x27;</span>, usecols=(<span class="number">6</span>), unpack=<span class="literal">True</span>)</span><br><span class="line">size = closing_prices.size</span><br><span class="line">sorted_prices = np.msort(closing_prices)</span><br><span class="line">median = (sorted_prices[int((size - <span class="number">1</span>) / <span class="number">2</span>)] + sorted_prices[int(size / <span class="number">2</span>)]) / <span class="number">2</span></span><br><span class="line">print(median)</span><br><span class="line">median = np.median(closing_prices)</span><br><span class="line">print(median)</span><br></pre></td></tr></table></figure>
+
+<h4 id="标准差"><a href="#标准差" class="headerlink" title="标准差"></a>标准差</h4><p>样本：S = [s1, s2, …, sn]<br>平均值：m = (s1+s2+…+sn)/n<br>离差：D = [d1, d2, …, dn], di = si-m<br>离差方：Q = [q1, q2, …, qn], qi = di<sup>2</sup><br>总体方差：v = (q1+q2+…+qn)/n<br>总体标准差：s = sqrt(v)，方均根<br>样本方差：v’ = (q1+q2+…+qn)/(n-1)<br>样本标准差：s’ = sqrt(v’)，方均根</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">closing_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>, usecols=(<span class="number">6</span>), unpack=<span class="literal">True</span>)</span><br><span class="line">mean = np.mean(closing_prices)         <span class="comment"># 算数平均值</span></span><br><span class="line">devs = closing_prices - mean           <span class="comment"># 离差</span></span><br><span class="line">dsqs = devs ** <span class="number">2</span>                       <span class="comment"># 离差方</span></span><br><span class="line">pvar = np.sum(dsqs) / dsqs.size        <span class="comment"># 总体方差</span></span><br><span class="line">pstd = np.sqrt(pvar)                   <span class="comment"># 总体标准差</span></span><br><span class="line">svar = np.sum(dsqs) / (dsqs.size - <span class="number">1</span>)  <span class="comment"># 样本方差</span></span><br><span class="line">sstd = np.sqrt(svar)                   <span class="comment"># 样本标准差</span></span><br><span class="line">print(pstd, sstd)</span><br><span class="line">pstd = np.std(closing_prices)          <span class="comment"># 总体标准差</span></span><br><span class="line">sstd = np.std(closing_prices, ddof=<span class="number">1</span>)  <span class="comment"># 样本标准差</span></span><br><span class="line">print(pstd, sstd)</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="时间数据处理"><a href="#时间数据处理" class="headerlink" title="时间数据处理"></a>时间数据处理</h4><p>案例：统计每个周一、周二、…、周五的收盘价的平均值，并放入一个数组。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换器函数：将日-月-年格式的日期字符串转换为星期</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dmy2wday</span>(<span class="params">dmy</span>):</span></span><br><span class="line">    dmy = str(dmy, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    date = dt.datetime.strptime(dmy, <span class="string">&#x27;%d-%m-%Y&#x27;</span>).date()</span><br><span class="line">    wday = date.weekday()  <span class="comment"># 用 周日</span></span><br><span class="line">    <span class="keyword">return</span> wday</span><br><span class="line"></span><br><span class="line">wdays, closing_prices = np.loadtxt(<span class="string">&#x27;../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    	usecols=(<span class="number">1</span>, <span class="number">6</span>), unpack=<span class="literal">True</span>, converters=&#123;<span class="number">1</span>: dmy2wday&#125;)</span><br><span class="line"></span><br><span class="line">ave_closing_prices = np.zeros(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">for</span> wday <span class="keyword">in</span> range(ave_closing_prices.size):</span><br><span class="line">    ave_closing_prices[wday] = closing_prices[wdays == wday].mean()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> wday, ave_closing_price <span class="keyword">in</span> zip(</span><br><span class="line">    	[<span class="string">&#x27;MON&#x27;</span>, <span class="string">&#x27;TUE&#x27;</span>, <span class="string">&#x27;WED&#x27;</span>, <span class="string">&#x27;THU&#x27;</span>, <span class="string">&#x27;FRI&#x27;</span>],</span><br><span class="line">        ave_closing_prices):</span><br><span class="line">    print(wday, np.round(ave_closing_price, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组的轴向汇总"><a href="#数组的轴向汇总" class="headerlink" title="数组的轴向汇总"></a>数组的轴向汇总</h4><p>案例：汇总每周的最高价，最低价，开盘价，收盘价。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">data</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="comment">#func 	处理函数</span></span><br><span class="line"><span class="comment">#axis 	轴向 [0,1]</span></span><br><span class="line"><span class="comment">#array 	数组</span></span><br><span class="line">np.apply_along_axis(func, axis, array)</span><br></pre></td></tr></table></figure>
+
+<p>沿着数组中所指定的轴向，调用处理函数，并将每次调用的返回值重新组织成数组返回。</p>
+<h4 id="移动均线"><a href="#移动均线" class="headerlink" title="移动均线"></a>移动均线</h4><p>收盘价5日均线：从第五天开始，每天计算最近五天的收盘价的平均值所构成的一条线。</p>
+<p>移动均线算法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">(a+b+c+d+e)/<span class="number">5</span></span><br><span class="line">(b+c+d+e+f)/<span class="number">5</span></span><br><span class="line">(c+d+e+f+g)/<span class="number">5</span></span><br><span class="line">...</span><br><span class="line">(f+g+h+i+j)/<span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>在K线图中绘制5日均线图</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> mp</span><br><span class="line"><span class="keyword">import</span> matplotlib.dates <span class="keyword">as</span> md</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dmy2ymd</span>(<span class="params">dmy</span>):</span></span><br><span class="line">    dmy = str(dmy, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    date = dt.datetime.strptime(dmy, <span class="string">&#x27;%d-%m-%Y&#x27;</span>).date()</span><br><span class="line">    ymd = date.strftime(<span class="string">&#x27;%Y-%m-%d&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> ymd</span><br><span class="line"></span><br><span class="line">dates, closing_prices = np.loadtxt(<span class="string">&#x27;../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">1</span>, <span class="number">6</span>), unpack=<span class="literal">True</span>, dtype=<span class="string">&#x27;M8[D], f8&#x27;</span>, converters=&#123;<span class="number">1</span>: dmy2ymd&#125;)</span><br><span class="line">sma51 = np.zeros(closing_prices.size - <span class="number">4</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(sma51.size):</span><br><span class="line">    sma51[i] = closing_prices[i:i + <span class="number">5</span>].mean()</span><br><span class="line"><span class="comment"># 开始绘制5日均线</span></span><br><span class="line">mp.figure(<span class="string">&#x27;Simple Moving Average&#x27;</span>, facecolor=<span class="string">&#x27;lightgray&#x27;</span>)</span><br><span class="line">mp.title(<span class="string">&#x27;Simple Moving Average&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">mp.xlabel(<span class="string">&#x27;Date&#x27;</span>, fontsize=<span class="number">14</span>)</span><br><span class="line">mp.ylabel(<span class="string">&#x27;Price&#x27;</span>, fontsize=<span class="number">14</span>)</span><br><span class="line">ax = mp.gca()</span><br><span class="line"><span class="comment"># 设置水平坐标每个星期一为主刻度</span></span><br><span class="line">ax.xaxis.set_major_locator(md.WeekdayLocator( byweekday=md.MO))</span><br><span class="line"><span class="comment"># 设置水平坐标每一天为次刻度</span></span><br><span class="line">ax.xaxis.set_minor_locator(md.DayLocator())</span><br><span class="line"><span class="comment"># 设置水平坐标主刻度标签格式</span></span><br><span class="line">ax.xaxis.set_major_formatter(md.DateFormatter(<span class="string">&#x27;%d %b %Y&#x27;</span>))</span><br><span class="line">mp.tick_params(labelsize=<span class="number">10</span>)</span><br><span class="line">mp.grid(linestyle=<span class="string">&#x27;:&#x27;</span>)</span><br><span class="line">dates = dates.astype(md.datetime.datetime)</span><br><span class="line">mp.plot(dates, closing_prices, c=<span class="string">&#x27;lightgray&#x27;</span>, label=<span class="string">&#x27;Closing Price&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], sma51, c=<span class="string">&#x27;orangered&#x27;</span>, label=<span class="string">&#x27;SMA-5(1)&#x27;</span>)</span><br><span class="line">mp.legend()</span><br><span class="line">mp.gcf().autofmt_xdate()</span><br><span class="line">mp.show()</span><br></pre></td></tr></table></figure>
+
+<h4 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h4><p>激励函数：g(t)</p>
+<p>单位激励下的响应函数：f(t)</p>
+<p>绘制时间（t）与痛感（h）的函数关系图。</p>
+<p>a = [1 2 3 4 5]    （理解为某单位时间的击打力度序列）</p>
+<p>b = [6 7 8]        （理解为痛感系数序列）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = numpy.convolve(a, b, 卷积类型)</span><br><span class="line"></span><br><span class="line">                <span class="number">40</span>  <span class="number">61</span>  <span class="number">82</span>         - 有效卷积(valid)</span><br><span class="line">            <span class="number">19</span>  <span class="number">40</span>  <span class="number">61</span>  <span class="number">82</span>  <span class="number">67</span>     - 同维卷积(same)</span><br><span class="line">        <span class="number">6</span>   <span class="number">19</span>  <span class="number">40</span>  <span class="number">61</span>  <span class="number">82</span>  <span class="number">67</span>  <span class="number">40</span> - 完全卷积(full)</span><br><span class="line"><span class="number">0</span>   <span class="number">0</span>   <span class="number">1</span>   <span class="number">2</span>   <span class="number">3</span>   <span class="number">4</span>   <span class="number">5</span>   <span class="number">0</span>   <span class="number">0</span></span><br><span class="line"><span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">    <span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">        <span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">            <span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">                <span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">                    <span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">                        <span class="number">8</span>    <span class="number">7</span>   <span class="number">6</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>5日移动均线序列可以直接使用卷积实现</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = [a, b, c, d, e, f, g, h, i, j] </span><br><span class="line">b = [<span class="number">1</span>/<span class="number">5</span>, <span class="number">1</span>/<span class="number">5</span>, <span class="number">1</span>/<span class="number">5</span>, <span class="number">1</span>/<span class="number">5</span>, <span class="number">1</span>/<span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用卷积函数numpy.convolve(a, b, 卷积类型)实现5日均线</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sma52 = np.convolve( closing_prices, np.ones(<span class="number">5</span>) / <span class="number">5</span>, <span class="string">&#x27;valid&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], sma52, c=<span class="string">&#x27;limegreen&#x27;</span>, alpha=<span class="number">0.5</span>,</span><br><span class="line">        linewidth=<span class="number">6</span>, label=<span class="string">&#x27;SMA-5(2)&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用卷积函数numpy.convolve(a, b, 卷积类型)实现10日均线</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sma10 = np.convolve(closing_prices, np.ones(<span class="number">10</span>) / <span class="number">10</span>, <span class="string">&#x27;valid&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">9</span>:], sma10, c=<span class="string">&#x27;dodgerblue&#x27;</span>, label=<span class="string">&#x27;SMA-10&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用卷积函数numpy.convolve(a, b, 卷积类型)实现加权5日均线</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">weights = np.exp(np.linspace(<span class="number">-1</span>, <span class="number">0</span>, <span class="number">5</span>))</span><br><span class="line">weights /= weights.sum()</span><br><span class="line">ema5 = np.convolve(closing_prices, weights[::<span class="number">-1</span>], <span class="string">&#x27;valid&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], sma52, c=<span class="string">&#x27;limegreen&#x27;</span>, alpha=<span class="number">0.5</span>,</span><br><span class="line">        linewidth=<span class="number">6</span>, label=<span class="string">&#x27;SMA-5&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="布林带"><a href="#布林带" class="headerlink" title="布林带"></a>布林带</h4><p>布林带由三条线组成：</p>
+<p>中轨：移动平均线</p>
+<p>上轨：中轨+2x5日收盘价标准差    （顶部的压力）</p>
+<p>下轨：中轨-2x5日收盘价标准差     （底部的支撑力）</p>
+<p>布林带收窄代表稳定的趋势，布林带张开代表有较大的波动空间的趋势。</p>
+<p><strong>绘制5日均线的布林带</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">weights = np.exp(np.linspace(<span class="number">-1</span>, <span class="number">0</span>, <span class="number">5</span>))</span><br><span class="line">weights /= weights.sum()</span><br><span class="line">em5 = np.convolve(closing_prices, weights[::<span class="number">-1</span>], <span class="string">&#x27;valid&#x27;</span>)</span><br><span class="line">stds = np.zeros(em5.size)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(stds.size):</span><br><span class="line">    stds[i] = closing_prices[i:i + <span class="number">5</span>].std()</span><br><span class="line">stds *= <span class="number">2</span></span><br><span class="line">lowers = medios - stds</span><br><span class="line">uppers = medios + stds</span><br><span class="line"></span><br><span class="line">mp.plot(dates, closing_prices, c=<span class="string">&#x27;lightgray&#x27;</span>, label=<span class="string">&#x27;Closing Price&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], medios, c=<span class="string">&#x27;dodgerblue&#x27;</span>, label=<span class="string">&#x27;Medio&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], lowers, c=<span class="string">&#x27;limegreen&#x27;</span>, label=<span class="string">&#x27;Lower&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], uppers, c=<span class="string">&#x27;orangered&#x27;</span>, label=<span class="string">&#x27;Upper&#x27;</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>数据分析</tag>
+        <tag>AI进阶</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Matplotlib</title>
     <url>/2018/12/03/datascience/Matplotlib/</url>
     <content><![CDATA[<p>Matplotlib 是 Python 的绘图库。 它可与 NumPy 一起使用，提供了一种有效的 MatLab 开源替代方案。使用它可以很方便的绘制出版质量级别的图形。</p>
@@ -8285,356 +8635,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
 <h3 id="cmap颜色映射表"><a href="#cmap颜色映射表" class="headerlink" title="cmap颜色映射表"></a>cmap颜色映射表</h3><p><img src="https://object.renchengqi.com/blog/whkot.png"></p>
 <h3 id="point样式"><a href="#point样式" class="headerlink" title="point样式"></a>point样式</h3><p><img src="https://object.renchengqi.com/blog/omq6w.png"></p>
 ]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>数据分析</tag>
-        <tag>AI进阶</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Numpy</title>
-    <url>/2018/11/30/datascience/Numpy/</url>
-    <content><![CDATA[<p>NumPy(Numerical Python) 是 Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。</p>
-<a id="more"></a>
-
-<h2 id="numpy概述"><a href="#numpy概述" class="headerlink" title="numpy概述"></a>numpy概述</h2><ol>
-<li>Numerical Python，数值的Python，补充了Python语言所欠缺的数值计算能力。</li>
-<li>Numpy是其它数据分析及机器学习库的底层库。</li>
-<li>Numpy完全标准C语言实现，运行效率充分优化。</li>
-<li>Numpy开源免费。</li>
-</ol>
-<h3 id="numpy历史"><a href="#numpy历史" class="headerlink" title="numpy历史"></a>numpy历史</h3><ol>
-<li>1995年，Numeric，Python语言数值计算扩充。</li>
-<li>2001年，Scipy-&gt;Numarray，多维数组运算。</li>
-<li>2005年，Numeric+Numarray-&gt;Numpy。</li>
-<li>2006年，Numpy脱离Scipy成为独立的项目。</li>
-</ol>
-<h3 id="numpy的核心：多维数组"><a href="#numpy的核心：多维数组" class="headerlink" title="numpy的核心：多维数组"></a>numpy的核心：多维数组</h3><ol>
-<li>代码简洁：减少Python代码中的循环。</li>
-<li>底层实现：厚内核(C)+薄接口(Python)，保证性能。</li>
-</ol>
-<h2 id="numpy基础"><a href="#numpy基础" class="headerlink" title="numpy基础"></a>numpy基础</h2><h3 id="ndarray数组"><a href="#ndarray数组" class="headerlink" title="ndarray数组"></a>ndarray数组</h3><p>用np.ndarray类的对象表示n维数组</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">ary = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line">print(type(ary))</span><br></pre></td></tr></table></figure>
-
-<h4 id="内存中的ndarray对象"><a href="#内存中的ndarray对象" class="headerlink" title="内存中的ndarray对象"></a>内存中的ndarray对象</h4><p><strong>元数据（metadata）</strong></p>
-<p>存储对目标数组的描述信息，</p>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>dim</td>
-<td>轴</td>
-</tr>
-<tr>
-<td>count</td>
-<td>长度</td>
-</tr>
-<tr>
-<td>dimensions</td>
-<td></td>
-</tr>
-<tr>
-<td>dtype</td>
-<td>类型</td>
-</tr>
-<tr>
-<td>data</td>
-<td>数据</td>
-</tr>
-<tr>
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody></table>
-<p><strong>实际数据</strong></p>
-<p>完整的数组数据</p>
-<blockquote>
-<p>将实际数据与元数据分开存放，一方面提高了内存空间的使用效率，另一方面减少对实际数据的访问频率，提高性能。</p>
-</blockquote>
-<h4 id="ndarray数组对象的特点"><a href="#ndarray数组对象的特点" class="headerlink" title="ndarray数组对象的特点"></a>ndarray数组对象的特点</h4><ol>
-<li>Numpy数组是<strong>同质数组</strong>，即所有元素的<strong>数据类型必须相同</strong></li>
-<li>Numpy数组的下标从0开始，最后一个元素的下标为数组长度减1</li>
-</ol>
-<h4 id="ndarray数组对象的创建"><a href="#ndarray数组对象的创建" class="headerlink" title="ndarray数组对象的创建"></a>ndarray数组对象的创建</h4><p>np.array(任何可被解释为Numpy数组的逻辑结构)</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
-
-<p>np.arange(起始值(0),终止值,步长(1))</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># arange 生成一个等差数列</span></span><br><span class="line">a = np.arange(<span class="number">0</span>, <span class="number">5</span>, <span class="number">1</span>)</span><br><span class="line">print(a)</span><br><span class="line">b = np.arange(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
-
-<p>np.zeros(数组元素个数, dtype=’类型’)</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.zeros(<span class="number">10</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
-
-<p>np.ones(数组元素个数, dtype=’类型’)</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.ones(<span class="number">10</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
-
-<h4 id="ndarray对象属性的基本操作"><a href="#ndarray对象属性的基本操作" class="headerlink" title="ndarray对象属性的基本操作"></a>ndarray对象属性的基本操作</h4><p><strong>数组的维度：</strong>np.ndarray.shape</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">ary = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line">print(type(ary), ary, ary.shape)</span><br><span class="line"><span class="comment">#二维数组</span></span><br><span class="line">ary = np.array([</span><br><span class="line">    [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],</span><br><span class="line">    [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line">])</span><br><span class="line">print(type(ary), ary, ary.shape)</span><br></pre></td></tr></table></figure>
-
-<p><strong>元素的类型：</strong>np.ndarray.dtype</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># test ndarray.dtype</span></span><br><span class="line">ary = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">print(ary, ary.dtype)</span><br><span class="line"><span class="comment"># ary.dtype = &#x27;int64&#x27;    error</span></span><br><span class="line"><span class="comment"># print(ary, ary.dtype)</span></span><br><span class="line"><span class="comment"># 源数组类型不变</span></span><br><span class="line">ary = ary.astype(<span class="string">&#x27;float64&#x27;</span>) <span class="comment"># 返回新的对象</span></span><br><span class="line">print(ary, ary.dtype)</span><br><span class="line">ary = ary.astype(<span class="string">&#x27;str&#x27;</span>) <span class="comment"># 返回新的对象</span></span><br><span class="line">print(ary, ary.dtype)</span><br></pre></td></tr></table></figure>
-
-<p><strong>数组元素的个数：</strong>np.ndarray.size </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">ary = np.array([</span><br><span class="line">    [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],</span><br><span class="line">    [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line">])</span><br><span class="line"><span class="comment">#观察维度，size，len的区别</span></span><br><span class="line">print(ary.shape, ary.size, len(ary))</span><br></pre></td></tr></table></figure>
-
-<p><strong>数组元素索引(下标)</strong></p>
-<p>数组对象[…, 页号, 行号, 列号]</p>
-<p>下标从0开始，到数组len-1结束。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([[[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">               [<span class="number">3</span>, <span class="number">4</span>]],</span><br><span class="line">              [[<span class="number">5</span>, <span class="number">6</span>],</span><br><span class="line">               [<span class="number">7</span>, <span class="number">8</span>]]])</span><br><span class="line">print(a, a.shape)</span><br><span class="line">print(a[<span class="number">0</span>])</span><br><span class="line">print(a[<span class="number">0</span>][<span class="number">0</span>])</span><br><span class="line">print(a[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>])</span><br><span class="line">print(a[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(a.shape[<span class="number">0</span>]):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(a.shape[<span class="number">1</span>]):</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(a.shape[<span class="number">2</span>]):</span><br><span class="line">            print(a[i, j, k])</span><br></pre></td></tr></table></figure>
-
-<h4 id="ndarray对象属性操作详解"><a href="#ndarray对象属性操作详解" class="headerlink" title="ndarray对象属性操作详解"></a>ndarray对象属性操作详解</h4><p><strong>Numpy的内部基本数据类型</strong></p>
-<table>
-<thead>
-<tr>
-<th>类型名</th>
-<th>类型表示符</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>布尔型</td>
-<td>bool_</td>
-</tr>
-<tr>
-<td>有符号整数型</td>
-<td>int8(-128~127)/int16/int32/int64</td>
-</tr>
-<tr>
-<td>无符号整数型</td>
-<td>uint8(0~255)/uint16/uint32/uint64</td>
-</tr>
-<tr>
-<td>浮点型</td>
-<td>float16/float32/float64</td>
-</tr>
-<tr>
-<td>复数型</td>
-<td>complex64/complex128        3</td>
-</tr>
-<tr>
-<td>字串型</td>
-<td>str_，每个字符用32位Unicode编码表示</td>
-</tr>
-</tbody></table>
-<p><strong>自定义复合类型</strong><br>同时演示设置dtype的几种方式</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">data = [(<span class="string">&#x27;zs&#x27;</span>, [<span class="number">50</span>,<span class="number">51</span>,<span class="number">52</span>], <span class="number">15</span>),</span><br><span class="line">		(<span class="string">&#x27;ls&#x27;</span>, [<span class="number">83</span>,<span class="number">71</span>,<span class="number">62</span>], <span class="number">16</span>),</span><br><span class="line">		(<span class="string">&#x27;ww&#x27;</span>, [<span class="number">90</span>,<span class="number">91</span>,<span class="number">92</span>], <span class="number">17</span>)]</span><br><span class="line"></span><br><span class="line"><span class="comment">#第一种dtype的设置方式</span></span><br><span class="line">ary = np.array(data,dtype=<span class="string">&#x27;U2, 3int32, int32&#x27;</span>)</span><br><span class="line">print(ary, ary[<span class="number">0</span>][<span class="number">1</span>])</span><br><span class="line">print(ary[<span class="number">0</span>][<span class="string">&#x27;f0&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#第二种dtype的设置方式</span></span><br><span class="line">ary = np.array(data, </span><br><span class="line">		dtype=[ (<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;str&#x27;</span>, <span class="number">2</span>), </span><br><span class="line">				(<span class="string">&#x27;scores&#x27;</span>, <span class="string">&#x27;int32&#x27;</span>, <span class="number">3</span>), </span><br><span class="line">				(<span class="string">&#x27;age&#x27;</span>, <span class="string">&#x27;int32&#x27;</span>, <span class="number">1</span>)])</span><br><span class="line">print(<span class="string">&#x27;-&#x27;</span> * <span class="number">45</span>)</span><br><span class="line">print(ary, ary.dtype)</span><br><span class="line">print(ary[<span class="number">0</span>][<span class="string">&#x27;age&#x27;</span>]) <span class="comment"># 返回zs的年龄</span></span><br><span class="line">print(ary[<span class="number">2</span>][<span class="string">&#x27;scores&#x27;</span>]) <span class="comment"># 返回ww的成绩</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三种dtype的设置方式</span></span><br><span class="line">ary = np.array(data, dtype=&#123;</span><br><span class="line">	<span class="string">&#x27;names&#x27;</span>:[<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;scores&#x27;</span>, <span class="string">&#x27;age&#x27;</span>],</span><br><span class="line">	<span class="string">&#x27;formats&#x27;</span>:[<span class="string">&#x27;U2&#x27;</span>, <span class="string">&#x27;3int32&#x27;</span>, <span class="string">&#x27;int32&#x27;</span>]&#125;)</span><br><span class="line">print(ary)</span><br><span class="line">print(ary[<span class="number">0</span>][<span class="string">&#x27;age&#x27;</span>]) <span class="comment"># 返回zs的年龄</span></span><br><span class="line">print(ary[<span class="number">2</span>][<span class="string">&#x27;scores&#x27;</span>]) <span class="comment"># 返回ww的成绩</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第四种dtype的设置方式</span></span><br><span class="line">d = np.array(data, dtype=&#123;<span class="string">&#x27;name&#x27;</span>: (<span class="string">&#x27;U3&#x27;</span>, <span class="number">0</span>),</span><br><span class="line">                    <span class="string">&#x27;scores&#x27;</span>: (<span class="string">&#x27;3int32&#x27;</span>, <span class="number">16</span>),</span><br><span class="line">                    <span class="string">&#x27;age&#x27;</span>: (<span class="string">&#x27;int32&#x27;</span>, <span class="number">28</span>)&#125;)</span><br><span class="line">print(d[<span class="number">0</span>][<span class="string">&#x27;name&#x27;</span>], d[<span class="number">0</span>][<span class="string">&#x27;scores&#x27;</span>], d.itemsize)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ndarray数组存放日期数据</span></span><br><span class="line">dates = [<span class="string">&#x27;2011-01-01&#x27;</span>, <span class="string">&#x27;2012-01-01&#x27;</span>, </span><br><span class="line">		 <span class="string">&#x27;2011-02-01&#x27;</span>, <span class="string">&#x27;2012&#x27;</span>, </span><br><span class="line">		 <span class="string">&#x27;2011-01-01 10:10:10&#x27;</span>]</span><br><span class="line">ary = np.array(dates)</span><br><span class="line">print(ary, ary.dtype)</span><br><span class="line">ary = ary.astype(<span class="string">&#x27;M8[D]&#x27;</span>)</span><br><span class="line">print(ary, ary.dtype, ary[<span class="number">1</span>]-ary[<span class="number">0</span>])</span><br><span class="line"><span class="comment"># 输出31 days</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>类型字符码</strong></p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>字符码</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>np.bool_</td>
-<td>?</td>
-</tr>
-<tr>
-<td>np.int8/16/32/64</td>
-<td>i1/i2/i4/i8</td>
-</tr>
-<tr>
-<td>np.uint8/16/32/64</td>
-<td>u1/u2/u4/u8</td>
-</tr>
-<tr>
-<td>np.float/16/32/64</td>
-<td>f2/f4/f8</td>
-</tr>
-<tr>
-<td>np.complex64/128</td>
-<td>c8/c16</td>
-</tr>
-<tr>
-<td>np.str_</td>
-<td>U&lt;字符数&gt;</td>
-</tr>
-<tr>
-<td>np.datetime64</td>
-<td>M8[Y] M8[M] M8[D] M8[h] M8[m] M8[s]</td>
-</tr>
-</tbody></table>
-<p><strong>字节序前缀，用于多字节整数和字符串：</strong><br><code>&lt;/&gt;/[=]分别表示小端/大端/硬件字节序。</code></p>
-<p><strong>类型字符码格式</strong></p>
-<p>&lt;字节序前缀&gt;&lt;维度&gt;&lt;类型&gt;&lt;字节数或字符数&gt;</p>
-<table>
-<thead>
-<tr>
-<th>3i4</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>3i4</td>
-<td>3个元素的一维数组，每个元素都是整型，每个整型元素占4个字节。</td>
-</tr>
-<tr>
-<td>&lt;(2,3)u8</td>
-<td>小端字节序，6个元素2行3列的二维数组，每个元素都是无符号整型，每个无符号整型元素占8个字节。</td>
-</tr>
-<tr>
-<td>U7</td>
-<td>包含7个字符的Unicode字符串，每个字符占4个字节，采用默认字节序。</td>
-</tr>
-</tbody></table>
-<h5 id="ndarray数组对象的维度操作"><a href="#ndarray数组对象的维度操作" class="headerlink" title="ndarray数组对象的维度操作"></a>ndarray数组对象的维度操作</h5><p><strong>视图变维（数据共享）：</strong> reshape() 与 ravel() </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">9</span>)</span><br><span class="line">print(a)		<span class="comment"># [1 2 3 4 5 6 7 8]</span></span><br><span class="line">b = a.reshape(<span class="number">2</span>, <span class="number">4</span>)	<span class="comment">#视图变维  : 变为2行4列的二维数组</span></span><br><span class="line">print(b)</span><br><span class="line">c = b.reshape(<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>) <span class="comment">#视图变维    变为2页2行2列的三维数组</span></span><br><span class="line">print(c)</span><br><span class="line">d = c.ravel()	<span class="comment">#视图变维	变为1维数组</span></span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
-
-<p><strong>复制变维（数据独立）：</strong>flatten()</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">e = c.flatten()</span><br><span class="line">print(e)</span><br><span class="line">a += <span class="number">10</span></span><br><span class="line">print(a, e, sep=<span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>就地变维：直接改变原数组对象的维度，不返回新数组</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.shape = (<span class="number">2</span>, <span class="number">4</span>)</span><br><span class="line">print(a)</span><br><span class="line">a.resize(<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
-
-<h5 id="ndarray数组切片操作"><a href="#ndarray数组切片操作" class="headerlink" title="ndarray数组切片操作"></a>ndarray数组切片操作</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#数组对象切片的参数设置与列表切面参数类似</span></span><br><span class="line"><span class="comment">#  步长+：默认切从首到尾</span></span><br><span class="line"><span class="comment">#  步长-：默认切从尾到首</span></span><br><span class="line">数组对象[起始位置:终止位置:步长]</span><br><span class="line"><span class="comment">#默认位置步长：1</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">print(a)  <span class="comment"># 1 2 3 4 5 6 7 8 9</span></span><br><span class="line">print(a[:<span class="number">3</span>])  <span class="comment"># 1 2 3</span></span><br><span class="line">print(a[<span class="number">3</span>:<span class="number">6</span>])   <span class="comment"># 4 5 6</span></span><br><span class="line">print(a[<span class="number">6</span>:])  <span class="comment"># 7 8 9</span></span><br><span class="line">print(a[::<span class="number">-1</span>])  <span class="comment"># 9 8 7 6 5 4 3 2 1</span></span><br><span class="line">print(a[:<span class="number">-4</span>:<span class="number">-1</span>])  <span class="comment"># 9 8 7</span></span><br><span class="line">print(a[<span class="number">-4</span>:<span class="number">-7</span>:<span class="number">-1</span>])  <span class="comment"># 6 5 4</span></span><br><span class="line">print(a[<span class="number">-7</span>::<span class="number">-1</span>])  <span class="comment"># 3 2 1</span></span><br><span class="line">print(a[::])  <span class="comment"># 1 2 3 4 5 6 7 8 9</span></span><br><span class="line">print(a[:])  <span class="comment"># 1 2 3 4 5 6 7 8 9</span></span><br><span class="line">print(a[::<span class="number">3</span>])  <span class="comment"># 1 4 7</span></span><br><span class="line">print(a[<span class="number">1</span>::<span class="number">3</span>])  <span class="comment"># 2 5 8</span></span><br><span class="line">print(a[<span class="number">2</span>::<span class="number">3</span>])  <span class="comment"># 3 6 9</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>多维数组的切片操作</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 多维数组切片</span></span><br><span class="line">print(<span class="string">&#x27;-&#x27;</span> * <span class="number">45</span>)</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">a = a.reshape(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">print(a)</span><br><span class="line">print(a[:<span class="number">2</span>, :])  <span class="comment"># 切出前两行数据</span></span><br><span class="line">print(a[:<span class="number">2</span>, :<span class="number">2</span>])  <span class="comment"># 切出前两行两列数据</span></span><br><span class="line">print(a[::<span class="number">2</span>, :])  <span class="comment"># </span></span><br></pre></td></tr></table></figure>
-
-<h5 id="ndarray数组的掩码操作"><a href="#ndarray数组的掩码操作" class="headerlink" title="ndarray数组的掩码操作"></a><strong>ndarray数组的掩码操作</strong></h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">print(a + <span class="number">10</span>)</span><br><span class="line">print(a * <span class="number">2.5</span>)</span><br><span class="line">print(a + a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出100以内3的倍数</span></span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">mask = a % <span class="number">3</span> == <span class="number">0</span></span><br><span class="line">print(mask)</span><br><span class="line">print(a[mask])</span><br><span class="line"></span><br><span class="line">mask = [<span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">4</span>, <span class="number">4</span>]</span><br><span class="line">print(a)</span><br><span class="line">print(a[mask])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>常用语从大数组中获取子集的操作</p>
-</blockquote>
-<h5 id="多维数组的组合与拆分"><a href="#多维数组的组合与拆分" class="headerlink" title="多维数组的组合与拆分"></a>多维数组的组合与拆分</h5><p>垂直方向操作：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">7</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">b = np.arange(<span class="number">7</span>, <span class="number">13</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># 垂直方向完成组合操作，生成新数组</span></span><br><span class="line">c = np.vstack((a, b))</span><br><span class="line"><span class="comment"># 垂直方向完成拆分操作，生成两个数组</span></span><br><span class="line">d, e = np.vsplit(c, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-<p>水平方向操作：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">7</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">b = np.arange(<span class="number">7</span>, <span class="number">13</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># 水平方向完成组合操作，生成新数组 </span></span><br><span class="line">c = np.hstack((a, b))</span><br><span class="line"><span class="comment"># 水平方向完成拆分操作，生成两个数组</span></span><br><span class="line">d, e = np.hsplit(c, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-<p>深度方向操作：（3维）</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">1</span>, <span class="number">7</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">b = np.arange(<span class="number">7</span>, <span class="number">13</span>).reshape(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># 深度方向（3维）完成组合操作，生成新数组</span></span><br><span class="line">i = np.dstack((a, b))</span><br><span class="line"><span class="comment"># 深度方向（3维）完成拆分操作，生成两个数组</span></span><br><span class="line">k, l = np.dsplit(i, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-<p>多维数组组合与拆分的相关函数：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过axis作为关键字参数指定组合的方向，取值如下：</span></span><br><span class="line"><span class="comment"># 若待组合的数组都是二维数组：</span></span><br><span class="line"><span class="comment">#	0: 垂直方向组合</span></span><br><span class="line"><span class="comment">#	1: 水平方向组合</span></span><br><span class="line"><span class="comment"># 若待组合的数组都是三维数组：</span></span><br><span class="line"><span class="comment">#	0: 垂直方向组合</span></span><br><span class="line"><span class="comment">#	1: 水平方向组合</span></span><br><span class="line"><span class="comment">#	2: 深度方向组合</span></span><br><span class="line">np.concatenate((a, b), axis=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 通过给出的数组与要拆分的份数，按照某个方向进行拆分，axis的取值同上</span></span><br><span class="line">np.split(c, <span class="number">2</span>, axis=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-
-<p>长度不等的数组组合：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line">b = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line"><span class="comment"># 填充b数组使其长度与a相同</span></span><br><span class="line"><span class="comment"># pad_width=(a, b)：在数组首部补a个元素，尾部补b个元素</span></span><br><span class="line">b = np.pad(b, pad_width=(<span class="number">0</span>, <span class="number">1</span>), mode=<span class="string">&#x27;constant&#x27;</span>, constant_values=<span class="number">-1</span>)</span><br><span class="line">print(b)</span><br><span class="line"><span class="comment"># 垂直方向完成组合操作，生成新数组</span></span><br><span class="line">c = np.vstack((a, b))</span><br><span class="line">print(c)</span><br></pre></td></tr></table></figure>
-
-
-<p>简单的一维数组组合方案</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = np.arange(<span class="number">1</span>,<span class="number">9</span>)		<span class="comment">#[1, 2, 3, 4, 5, 6, 7, 8]</span></span><br><span class="line">b = np.arange(<span class="number">9</span>,<span class="number">17</span>)		<span class="comment">#[9,10,11,12,13,14,15,16]</span></span><br><span class="line"><span class="comment">#把两个数组摞在一起成两行</span></span><br><span class="line">c = np.row_stack((a, b))</span><br><span class="line">print(c)</span><br><span class="line"><span class="comment">#把两个数组组合在一起成两列</span></span><br><span class="line">d = np.column_stack((a, b))</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
-
-<h4 id="ndarray类的其他属性"><a href="#ndarray类的其他属性" class="headerlink" title="ndarray类的其他属性"></a>ndarray类的其他属性</h4><ul>
-<li>shape - 维度</li>
-<li>dtype - 元素类型</li>
-<li>size - 元素数量</li>
-<li>ndim - 维数，len(shape)</li>
-<li>itemsize - 元素字节数</li>
-<li>nbytes - 总字节数 = size x itemsize</li>
-<li>real - 复数数组的实部数组</li>
-<li>imag - 复数数组的虚部数组</li>
-<li>T - 数组对象的转置视图</li>
-<li>flat - 扁平迭代器</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([[<span class="number">1</span> + <span class="number">1j</span>, <span class="number">2</span> + <span class="number">4j</span>, <span class="number">3</span> + <span class="number">7j</span>],</span><br><span class="line">              [<span class="number">4</span> + <span class="number">2j</span>, <span class="number">5</span> + <span class="number">5j</span>, <span class="number">6</span> + <span class="number">8j</span>],</span><br><span class="line">              [<span class="number">7</span> + <span class="number">3j</span>, <span class="number">8</span> + <span class="number">6j</span>, <span class="number">9</span> + <span class="number">9j</span>]])</span><br><span class="line">print(a.shape)</span><br><span class="line">print(a.dtype)</span><br><span class="line">print(a.ndim)</span><br><span class="line">print(a.size)</span><br><span class="line">print(a.itemsize)</span><br><span class="line">print(a.nbytes)</span><br><span class="line">print(a.real, a.imag, sep=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">print(a.T)</span><br><span class="line">print([elem <span class="keyword">for</span> elem <span class="keyword">in</span> a.flat])</span><br><span class="line">b = a.tolist()</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h3><h4 id="算数平均值"><a href="#算数平均值" class="headerlink" title="算数平均值"></a>算数平均值</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">S &#x3D; [s1, s2, ..., sn]</span><br></pre></td></tr></table></figure>
-
-<p>样本中的每个值都是真值与误差的和。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">算数平均值：</span><br><span class="line">m &#x3D; (s1 + s2 + ... + sn) &#x2F; n</span><br></pre></td></tr></table></figure>
-
-<p>算数平均值表示对真值的无偏估计。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.mean(array)</span><br></pre></td></tr></table></figure>
-
-<p>案例：计算收盘价的算术平均值。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">closing_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">6</span>), unpack=<span class="literal">True</span>)</span><br><span class="line">mean = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> closing_price <span class="keyword">in</span> closing_prices:</span><br><span class="line">    mean += closing_price</span><br><span class="line">mean /= closing_prices.size</span><br><span class="line">print(mean)</span><br><span class="line">mean = np.mean(closing_prices)</span><br><span class="line">print(mean)</span><br></pre></td></tr></table></figure>
-
-<h4 id="加权平均值"><a href="#加权平均值" class="headerlink" title="加权平均值"></a>加权平均值</h4><p>样本：S = [s<sub>1</sub>, s<sub>2</sub>, …, s<sub>n</sub>]</p>
-<p>权重：W = [w<sub>1</sub>, w<sub>2</sub>, …, w<sub>n</sub>]</p>
-<p>加权平均值：a = (s<sub>1</sub>w<sub>1</sub>+s<sub>2</sub>w<sub>2</sub>+…+s<sub>n</sub>w<sub>n</sub>)/(w<sub>1</sub>+w<sub>2</sub>+…+w<sub>n</sub>)</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.average(closing_prices, weights=volumes)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>VWAP - 成交量加权平均价格（成交量体现了市场对当前交易价格的认可度，成交量加权平均价格将会更接近这支股票的真实价值）</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">closing_prices, volumes = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">6</span>, <span class="number">7</span>), unpack=<span class="literal">True</span>)</span><br><span class="line">vwap, wsum = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> closing_price, volume <span class="keyword">in</span> zip(</span><br><span class="line">        closing_prices, volumes):</span><br><span class="line">    vwap += closing_price * volume</span><br><span class="line">    wsum += volume</span><br><span class="line">vwap /= wsum</span><br><span class="line">print(vwap)</span><br><span class="line">vwap = np.average(closing_prices, weights=volumes)</span><br><span class="line">print(vwap)</span><br></pre></td></tr></table></figure>
-
-<p>TWAP - 时间加权平均价格（时间越晚权重越高，参考意义越大）</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dmy2days</span>(<span class="params">dmy</span>):</span></span><br><span class="line">    dmy = str(dmy, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    date = dt.datetime.strptime(dmy, <span class="string">&#x27;%d-%m-%Y&#x27;</span>).date()</span><br><span class="line">    days = (date - dt.date.min).days</span><br><span class="line">    <span class="keyword">return</span> days</span><br><span class="line"></span><br><span class="line">days, closing_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">1</span>, <span class="number">6</span>), unpack=<span class="literal">True</span>,</span><br><span class="line">    converters=&#123;<span class="number">1</span>: dmy2days&#125;)</span><br><span class="line">twap = np.average(closing_prices, weights=days)</span><br><span class="line">print(twap)</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="最值"><a href="#最值" class="headerlink" title="最值"></a>最值</h4><p><strong>np.max()  np.min() np.ptp()：</strong> 返回一个数组中最大值/最小值/极差</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 产生9个介于[10, 100)区间的随机数</span></span><br><span class="line">a = np.random.randint(<span class="number">10</span>, <span class="number">100</span>, <span class="number">9</span>)</span><br><span class="line">print(a)</span><br><span class="line">print(np.max(a), np.min(a), np.ptp(a))</span><br></pre></td></tr></table></figure>
-
-<p><strong>np.argmax() mp.argmin()：</strong> 返回一个数组中最大/最小元素的下标</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(np.argmax(a), np.argmin(a))</span><br></pre></td></tr></table></figure>
-
-<p><strong>np.maximum() np.minimum()：</strong> 将两个同维数组中对应元素中最大/最小元素构成一个新的数组</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(np.maximum(a, b), np.minimum(a, b), sep=<span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>案例：评估AAPL股票的波动性。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">highest_prices, lowest_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">4</span>, <span class="number">5</span>), dtype=<span class="string">&#x27;f8, f8&#x27;</span>, unpack=<span class="literal">True</span>)</span><br><span class="line">max_price = np.max(highest_prices)</span><br><span class="line">min_price = np.min(lowest_prices)</span><br><span class="line">print(min_price, <span class="string">&#x27;~&#x27;</span>, max_price)</span><br></pre></td></tr></table></figure>
-
-<p>查看AAPL股票最大最小值的日期，分析为什么这一天出现最大最小值。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">dates, highest_prices, lowest_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>), dtype=<span class="string">&#x27;U10, f8, f8&#x27;</span>,</span><br><span class="line">    unpack=<span class="literal">True</span>)</span><br><span class="line">max_index = np.argmax(highest_prices)</span><br><span class="line">min_index = np.argmin(lowest_prices)</span><br><span class="line">print(dates[min_index], dates[max_index])</span><br></pre></td></tr></table></figure>
-
-<p>观察最高价与最低价的<strong>波动范围</strong>，分析这支股票底部是否坚挺。  </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">dates, highest_prices, lowest_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>), dtype=<span class="string">&#x27;U10, f8, f8&#x27;</span>,</span><br><span class="line">    unpack=<span class="literal">True</span>)</span><br><span class="line">highest_ptp = np.ptp(highest_prices)</span><br><span class="line">lowest_ptp = np.ptp(lowest_prices)</span><br><span class="line">print(lowest_ptp, highest_ptp)</span><br></pre></td></tr></table></figure>
-
-<h4 id="中位数"><a href="#中位数" class="headerlink" title="中位数"></a>中位数</h4><p>将多个样本按照大小排序，取中间位置的元素。</p>
-<p><strong>若样本数量为奇数，中位数为最中间的元素</strong></p>
-<p>1 2000 3000 4000 10000000</p>
-<p><strong>若样本数量为偶数，中位数为最中间的两个元素的平均值</strong></p>
-<p>1 2000 3000 4000 5000 10000000</p>
-<p>案例：分析中位数的算法，测试numpy提供的中位数API：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">closing_prices = np.loadtxt( <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, </span><br><span class="line">	delimiter=<span class="string">&#x27;,&#x27;</span>, usecols=(<span class="number">6</span>), unpack=<span class="literal">True</span>)</span><br><span class="line">size = closing_prices.size</span><br><span class="line">sorted_prices = np.msort(closing_prices)</span><br><span class="line">median = (sorted_prices[int((size - <span class="number">1</span>) / <span class="number">2</span>)] + sorted_prices[int(size / <span class="number">2</span>)]) / <span class="number">2</span></span><br><span class="line">print(median)</span><br><span class="line">median = np.median(closing_prices)</span><br><span class="line">print(median)</span><br></pre></td></tr></table></figure>
-
-<h4 id="标准差"><a href="#标准差" class="headerlink" title="标准差"></a>标准差</h4><p>样本：S = [s1, s2, …, sn]<br>平均值：m = (s1+s2+…+sn)/n<br>离差：D = [d1, d2, …, dn], di = si-m<br>离差方：Q = [q1, q2, …, qn], qi = di<sup>2</sup><br>总体方差：v = (q1+q2+…+qn)/n<br>总体标准差：s = sqrt(v)，方均根<br>样本方差：v’ = (q1+q2+…+qn)/(n-1)<br>样本标准差：s’ = sqrt(v’)，方均根</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">closing_prices = np.loadtxt(</span><br><span class="line">    <span class="string">&#x27;../../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>, usecols=(<span class="number">6</span>), unpack=<span class="literal">True</span>)</span><br><span class="line">mean = np.mean(closing_prices)         <span class="comment"># 算数平均值</span></span><br><span class="line">devs = closing_prices - mean           <span class="comment"># 离差</span></span><br><span class="line">dsqs = devs ** <span class="number">2</span>                       <span class="comment"># 离差方</span></span><br><span class="line">pvar = np.sum(dsqs) / dsqs.size        <span class="comment"># 总体方差</span></span><br><span class="line">pstd = np.sqrt(pvar)                   <span class="comment"># 总体标准差</span></span><br><span class="line">svar = np.sum(dsqs) / (dsqs.size - <span class="number">1</span>)  <span class="comment"># 样本方差</span></span><br><span class="line">sstd = np.sqrt(svar)                   <span class="comment"># 样本标准差</span></span><br><span class="line">print(pstd, sstd)</span><br><span class="line">pstd = np.std(closing_prices)          <span class="comment"># 总体标准差</span></span><br><span class="line">sstd = np.std(closing_prices, ddof=<span class="number">1</span>)  <span class="comment"># 样本标准差</span></span><br><span class="line">print(pstd, sstd)</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="时间数据处理"><a href="#时间数据处理" class="headerlink" title="时间数据处理"></a>时间数据处理</h4><p>案例：统计每个周一、周二、…、周五的收盘价的平均值，并放入一个数组。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换器函数：将日-月-年格式的日期字符串转换为星期</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dmy2wday</span>(<span class="params">dmy</span>):</span></span><br><span class="line">    dmy = str(dmy, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    date = dt.datetime.strptime(dmy, <span class="string">&#x27;%d-%m-%Y&#x27;</span>).date()</span><br><span class="line">    wday = date.weekday()  <span class="comment"># 用 周日</span></span><br><span class="line">    <span class="keyword">return</span> wday</span><br><span class="line"></span><br><span class="line">wdays, closing_prices = np.loadtxt(<span class="string">&#x27;../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    	usecols=(<span class="number">1</span>, <span class="number">6</span>), unpack=<span class="literal">True</span>, converters=&#123;<span class="number">1</span>: dmy2wday&#125;)</span><br><span class="line"></span><br><span class="line">ave_closing_prices = np.zeros(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">for</span> wday <span class="keyword">in</span> range(ave_closing_prices.size):</span><br><span class="line">    ave_closing_prices[wday] = closing_prices[wdays == wday].mean()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> wday, ave_closing_price <span class="keyword">in</span> zip(</span><br><span class="line">    	[<span class="string">&#x27;MON&#x27;</span>, <span class="string">&#x27;TUE&#x27;</span>, <span class="string">&#x27;WED&#x27;</span>, <span class="string">&#x27;THU&#x27;</span>, <span class="string">&#x27;FRI&#x27;</span>],</span><br><span class="line">        ave_closing_prices):</span><br><span class="line">    print(wday, np.round(ave_closing_price, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-
-<h4 id="数组的轴向汇总"><a href="#数组的轴向汇总" class="headerlink" title="数组的轴向汇总"></a>数组的轴向汇总</h4><p>案例：汇总每周的最高价，最低价，开盘价，收盘价。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">data</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="comment">#func 	处理函数</span></span><br><span class="line"><span class="comment">#axis 	轴向 [0,1]</span></span><br><span class="line"><span class="comment">#array 	数组</span></span><br><span class="line">np.apply_along_axis(func, axis, array)</span><br></pre></td></tr></table></figure>
-
-<p>沿着数组中所指定的轴向，调用处理函数，并将每次调用的返回值重新组织成数组返回。</p>
-<h4 id="移动均线"><a href="#移动均线" class="headerlink" title="移动均线"></a>移动均线</h4><p>收盘价5日均线：从第五天开始，每天计算最近五天的收盘价的平均值所构成的一条线。</p>
-<p>移动均线算法：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">(a+b+c+d+e)/<span class="number">5</span></span><br><span class="line">(b+c+d+e+f)/<span class="number">5</span></span><br><span class="line">(c+d+e+f+g)/<span class="number">5</span></span><br><span class="line">...</span><br><span class="line">(f+g+h+i+j)/<span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-<p>在K线图中绘制5日均线图</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> mp</span><br><span class="line"><span class="keyword">import</span> matplotlib.dates <span class="keyword">as</span> md</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dmy2ymd</span>(<span class="params">dmy</span>):</span></span><br><span class="line">    dmy = str(dmy, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    date = dt.datetime.strptime(dmy, <span class="string">&#x27;%d-%m-%Y&#x27;</span>).date()</span><br><span class="line">    ymd = date.strftime(<span class="string">&#x27;%Y-%m-%d&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> ymd</span><br><span class="line"></span><br><span class="line">dates, closing_prices = np.loadtxt(<span class="string">&#x27;../data/aapl.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">    usecols=(<span class="number">1</span>, <span class="number">6</span>), unpack=<span class="literal">True</span>, dtype=<span class="string">&#x27;M8[D], f8&#x27;</span>, converters=&#123;<span class="number">1</span>: dmy2ymd&#125;)</span><br><span class="line">sma51 = np.zeros(closing_prices.size - <span class="number">4</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(sma51.size):</span><br><span class="line">    sma51[i] = closing_prices[i:i + <span class="number">5</span>].mean()</span><br><span class="line"><span class="comment"># 开始绘制5日均线</span></span><br><span class="line">mp.figure(<span class="string">&#x27;Simple Moving Average&#x27;</span>, facecolor=<span class="string">&#x27;lightgray&#x27;</span>)</span><br><span class="line">mp.title(<span class="string">&#x27;Simple Moving Average&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">mp.xlabel(<span class="string">&#x27;Date&#x27;</span>, fontsize=<span class="number">14</span>)</span><br><span class="line">mp.ylabel(<span class="string">&#x27;Price&#x27;</span>, fontsize=<span class="number">14</span>)</span><br><span class="line">ax = mp.gca()</span><br><span class="line"><span class="comment"># 设置水平坐标每个星期一为主刻度</span></span><br><span class="line">ax.xaxis.set_major_locator(md.WeekdayLocator( byweekday=md.MO))</span><br><span class="line"><span class="comment"># 设置水平坐标每一天为次刻度</span></span><br><span class="line">ax.xaxis.set_minor_locator(md.DayLocator())</span><br><span class="line"><span class="comment"># 设置水平坐标主刻度标签格式</span></span><br><span class="line">ax.xaxis.set_major_formatter(md.DateFormatter(<span class="string">&#x27;%d %b %Y&#x27;</span>))</span><br><span class="line">mp.tick_params(labelsize=<span class="number">10</span>)</span><br><span class="line">mp.grid(linestyle=<span class="string">&#x27;:&#x27;</span>)</span><br><span class="line">dates = dates.astype(md.datetime.datetime)</span><br><span class="line">mp.plot(dates, closing_prices, c=<span class="string">&#x27;lightgray&#x27;</span>, label=<span class="string">&#x27;Closing Price&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], sma51, c=<span class="string">&#x27;orangered&#x27;</span>, label=<span class="string">&#x27;SMA-5(1)&#x27;</span>)</span><br><span class="line">mp.legend()</span><br><span class="line">mp.gcf().autofmt_xdate()</span><br><span class="line">mp.show()</span><br></pre></td></tr></table></figure>
-
-<h4 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h4><p>激励函数：g(t)</p>
-<p>单位激励下的响应函数：f(t)</p>
-<p>绘制时间（t）与痛感（h）的函数关系图。</p>
-<p>a = [1 2 3 4 5]    （理解为某单位时间的击打力度序列）</p>
-<p>b = [6 7 8]        （理解为痛感系数序列）</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = numpy.convolve(a, b, 卷积类型)</span><br><span class="line"></span><br><span class="line">                <span class="number">40</span>  <span class="number">61</span>  <span class="number">82</span>         - 有效卷积(valid)</span><br><span class="line">            <span class="number">19</span>  <span class="number">40</span>  <span class="number">61</span>  <span class="number">82</span>  <span class="number">67</span>     - 同维卷积(same)</span><br><span class="line">        <span class="number">6</span>   <span class="number">19</span>  <span class="number">40</span>  <span class="number">61</span>  <span class="number">82</span>  <span class="number">67</span>  <span class="number">40</span> - 完全卷积(full)</span><br><span class="line"><span class="number">0</span>   <span class="number">0</span>   <span class="number">1</span>   <span class="number">2</span>   <span class="number">3</span>   <span class="number">4</span>   <span class="number">5</span>   <span class="number">0</span>   <span class="number">0</span></span><br><span class="line"><span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">    <span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">        <span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">            <span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">                <span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">                    <span class="number">8</span>   <span class="number">7</span>   <span class="number">6</span></span><br><span class="line">                        <span class="number">8</span>    <span class="number">7</span>   <span class="number">6</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>5日移动均线序列可以直接使用卷积实现</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = [a, b, c, d, e, f, g, h, i, j] </span><br><span class="line">b = [<span class="number">1</span>/<span class="number">5</span>, <span class="number">1</span>/<span class="number">5</span>, <span class="number">1</span>/<span class="number">5</span>, <span class="number">1</span>/<span class="number">5</span>, <span class="number">1</span>/<span class="number">5</span>]</span><br></pre></td></tr></table></figure>
-
-<p><strong>使用卷积函数numpy.convolve(a, b, 卷积类型)实现5日均线</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sma52 = np.convolve( closing_prices, np.ones(<span class="number">5</span>) / <span class="number">5</span>, <span class="string">&#x27;valid&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], sma52, c=<span class="string">&#x27;limegreen&#x27;</span>, alpha=<span class="number">0.5</span>,</span><br><span class="line">        linewidth=<span class="number">6</span>, label=<span class="string">&#x27;SMA-5(2)&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>使用卷积函数numpy.convolve(a, b, 卷积类型)实现10日均线</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sma10 = np.convolve(closing_prices, np.ones(<span class="number">10</span>) / <span class="number">10</span>, <span class="string">&#x27;valid&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">9</span>:], sma10, c=<span class="string">&#x27;dodgerblue&#x27;</span>, label=<span class="string">&#x27;SMA-10&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>使用卷积函数numpy.convolve(a, b, 卷积类型)实现加权5日均线</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">weights = np.exp(np.linspace(<span class="number">-1</span>, <span class="number">0</span>, <span class="number">5</span>))</span><br><span class="line">weights /= weights.sum()</span><br><span class="line">ema5 = np.convolve(closing_prices, weights[::<span class="number">-1</span>], <span class="string">&#x27;valid&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], sma52, c=<span class="string">&#x27;limegreen&#x27;</span>, alpha=<span class="number">0.5</span>,</span><br><span class="line">        linewidth=<span class="number">6</span>, label=<span class="string">&#x27;SMA-5&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="布林带"><a href="#布林带" class="headerlink" title="布林带"></a>布林带</h4><p>布林带由三条线组成：</p>
-<p>中轨：移动平均线</p>
-<p>上轨：中轨+2x5日收盘价标准差    （顶部的压力）</p>
-<p>下轨：中轨-2x5日收盘价标准差     （底部的支撑力）</p>
-<p>布林带收窄代表稳定的趋势，布林带张开代表有较大的波动空间的趋势。</p>
-<p><strong>绘制5日均线的布林带</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">weights = np.exp(np.linspace(<span class="number">-1</span>, <span class="number">0</span>, <span class="number">5</span>))</span><br><span class="line">weights /= weights.sum()</span><br><span class="line">em5 = np.convolve(closing_prices, weights[::<span class="number">-1</span>], <span class="string">&#x27;valid&#x27;</span>)</span><br><span class="line">stds = np.zeros(em5.size)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(stds.size):</span><br><span class="line">    stds[i] = closing_prices[i:i + <span class="number">5</span>].std()</span><br><span class="line">stds *= <span class="number">2</span></span><br><span class="line">lowers = medios - stds</span><br><span class="line">uppers = medios + stds</span><br><span class="line"></span><br><span class="line">mp.plot(dates, closing_prices, c=<span class="string">&#x27;lightgray&#x27;</span>, label=<span class="string">&#x27;Closing Price&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], medios, c=<span class="string">&#x27;dodgerblue&#x27;</span>, label=<span class="string">&#x27;Medio&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], lowers, c=<span class="string">&#x27;limegreen&#x27;</span>, label=<span class="string">&#x27;Lower&#x27;</span>)</span><br><span class="line">mp.plot(dates[<span class="number">4</span>:], uppers, c=<span class="string">&#x27;orangered&#x27;</span>, label=<span class="string">&#x27;Upper&#x27;</span>)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>教程</category>
       </categories>
