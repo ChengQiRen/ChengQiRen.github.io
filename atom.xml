@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Johan&#39;s Blog</title>
+  <title>Cheng&#39;s Blog</title>
   
   <subtitle>Enjoy the journey of life</subtitle>
   <link href="https://rencheng.cc/atom.xml" rel="self"/>
@@ -541,9 +541,9 @@
     
     
     
-    <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
-    
     <category term="教程" scheme="https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
     
   </entry>
   
@@ -1183,9 +1183,9 @@
     
     
     
-    <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
-    
     <category term="教程" scheme="https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
     
   </entry>
   

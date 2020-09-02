@@ -16,6 +16,8 @@
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
@@ -26,7 +28,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="markdown-基础语法">
 <meta property="og:url" content="https://rencheng.cc/2018/03/01/markdown/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
-<meta property="og:site_name" content="Johan&#39;s Blog">
+<meta property="og:site_name" content="Cheng&#39;s Blog">
 <meta property="og:description" content="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png">
@@ -52,7 +54,7 @@
   };
 </script>
 
-  <title>markdown-基础语法 | Johan's Blog</title>
+  <title>markdown-基础语法 | Cheng's Blog</title>
   
 
 
@@ -95,7 +97,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Johan's Blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="Cheng's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -116,7 +118,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Johan's Blog</h1>
+      <h1 class="site-title">Cheng's Blog</h1>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Enjoy the journey of life</p>
@@ -297,7 +299,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Johan's Blog">
+      <meta itemprop="name" content="Cheng's Blog">
     </span>
 
     
@@ -337,6 +339,13 @@
       <span class="post-meta-item-text">本文字数：</span>
       <span>4.8k</span>
     </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
 </div>
 
         </div>
@@ -373,7 +382,7 @@
 <blockquote>
 <p>引用：如果想要插入空白换行<code>即&lt;br /&gt;标签</code>，在插入处先键入两个以上的空格然后回车即可，<a target="_blank" rel="noopener" href="https://www.xx.com/">普通链接</a>。</p>
 </blockquote>
-<h3 id="锚点与链接-Links"><a href="#锚点与链接-Links" class="headerlink" title="锚点与链接 Links"></a>锚点与链接 Links</h3><p><a target="_blank" rel="noopener" href="https://www.xx.com/">普通链接</a><br><a target="_blank" rel="noopener" href="https://www.xx.com/" title="普通链接带标题">普通链接带标题</a><br>直接链接：<a target="_blank" rel="noopener" href="https://www.xx.com/">https://www.XX.com</a><br>[锚点链接][anchor-id]<br>[anchor-id]: <a target="_blank" rel="noopener" href="https://www.xx.com/">https://www.XX.com/</a><br><a href="mailto:test.test@gmail.com">mailto:test.test@gmail.com</a><br>GFM a-tail link @pandao<br>邮箱地址自动链接 <a href="mailto:&#116;&#x65;&#115;&#116;&#46;&#116;&#x65;&#x73;&#116;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#111;&#x6d;">&#116;&#x65;&#115;&#116;&#46;&#116;&#x65;&#x73;&#116;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#111;&#x6d;</a>  <a href="mailto:&#x77;&#x77;&#x77;&#x40;&#118;&#x69;&#x70;&#x2e;&#x71;&#x71;&#46;&#99;&#111;&#x6d;">&#x77;&#x77;&#x77;&#x40;&#118;&#x69;&#x70;&#x2e;&#x71;&#x71;&#46;&#99;&#111;&#x6d;</a></p>
+<h3 id="锚点与链接-Links"><a href="#锚点与链接-Links" class="headerlink" title="锚点与链接 Links"></a>锚点与链接 Links</h3><p><a target="_blank" rel="noopener" href="https://www.xx.com/">普通链接</a><br><a target="_blank" rel="noopener" href="https://www.xx.com/" title="普通链接带标题">普通链接带标题</a><br>直接链接：<a target="_blank" rel="noopener" href="https://www.xx.com/">https://www.XX.com</a><br>[锚点链接][anchor-id]<br>[anchor-id]: <a target="_blank" rel="noopener" href="https://www.xx.com/">https://www.XX.com/</a><br><a href="mailto:test.test@gmail.com">mailto:test.test@gmail.com</a><br>GFM a-tail link @pandao<br>邮箱地址自动链接 <a href="mailto:&#116;&#101;&#115;&#x74;&#x2e;&#116;&#x65;&#x73;&#116;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#116;&#101;&#115;&#x74;&#x2e;&#116;&#x65;&#x73;&#116;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a>  <a href="mailto:&#x77;&#119;&#119;&#64;&#x76;&#105;&#112;&#x2e;&#113;&#113;&#x2e;&#99;&#111;&#x6d;">&#x77;&#119;&#119;&#64;&#x76;&#105;&#112;&#x2e;&#113;&#113;&#x2e;&#99;&#111;&#x6d;</a></p>
 <blockquote>
 <p>@pandao</p>
 </blockquote>
@@ -719,6 +728,13 @@
     </span>
       <span>站点总字数：</span>
     <span title="站点总字数">495k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:30</span>
   </span>
 </div>
 

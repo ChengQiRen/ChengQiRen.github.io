@@ -16,6 +16,8 @@
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
@@ -26,7 +28,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flutter - iOS集成开发">
 <meta property="og:url" content="https://rencheng.cc/2020/03/02/flutter/Flutter%E4%B8%8EiOS%E9%9B%86%E6%88%90/index.html">
-<meta property="og:site_name" content="Johan&#39;s Blog">
+<meta property="og:site_name" content="Cheng&#39;s Blog">
 <meta property="og:description" content="在Flutter的应用场景中，有时候一个APP只有部分页面是由Flutter实现的，比如：我们常用的闲鱼App，它宝贝详情页面是由Flutter实现的，这种开发模式被称为混合开发。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://object.renchengqi.com/blog/oxz8q.png">
@@ -61,7 +63,7 @@
   };
 </script>
 
-  <title>Flutter - iOS集成开发 | Johan's Blog</title>
+  <title>Flutter - iOS集成开发 | Cheng's Blog</title>
   
 
 
@@ -104,7 +106,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Johan's Blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="Cheng's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -125,7 +127,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Johan's Blog</h1>
+      <h1 class="site-title">Cheng's Blog</h1>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Enjoy the journey of life</p>
@@ -306,7 +308,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Johan's Blog">
+      <meta itemprop="name" content="Cheng's Blog">
     </span>
 
     
@@ -336,6 +338,13 @@
       </span>
       <span class="post-meta-item-text">本文字数：</span>
       <span>10k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
     </span>
 </div>
 
@@ -680,6 +689,13 @@ Widget _widgetForRoute(String route) &#123;
     </span>
       <span>站点总字数：</span>
     <span title="站点总字数">495k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:30</span>
   </span>
 </div>
 
