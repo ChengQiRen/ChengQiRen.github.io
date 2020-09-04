@@ -795,6 +795,20 @@
       </tags>
   </entry>
   <entry>
+    <title>Docker问题解决</title>
+    <url>/2017/10/11/docker/Docker%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<p>常见docker问题解决</p>
+<a id="more"></a>
+<h2 id="Docker-容器一启动就退出"><a href="#Docker-容器一启动就退出" class="headerlink" title="Docker 容器一启动就退出"></a>Docker 容器一启动就退出</h2><p>根据镜像启动容器，执行命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name npm -d node</span><br></pre></td></tr></table></figure>
+<p>通过<code>docker ps</code>查看正在运行中容器，却找不到<code>npm</code>容器。再次通过<code>docker ps -a</code>查看发现，<code>npm</code>容器已经处于停止状态了。<br><strong>原因</strong><br>Docker容器后台运行,就必须有一个前台进程.<br>容器运行的命令如果不是那些一直挂起的命令（eg. 运行top，tail等），就是会自动退出<br>这个是 docker 的机制问题，比如我们的 web 容器，以 nginx 和 fpm 为例,<br>正常情况下，启动服务只需启动相应的 service 即可，例如：service nginx start &amp;&amp; service php5-fpm start，但是，这样做, nginx 和 fpm 均以后台进程模式运行，就会导致 docker 前台没有正在运行的应用，so，容器会立即自杀，因为他觉得没事可做了。</p>
+<p><strong>解决方案</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name npm -P -d node &#x2F;bin&#x2F;sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Docker运行Nginx</title>
     <url>/2019/10/09/docker/Docker%E8%BF%90%E8%A1%8CNginx/</url>
     <content><![CDATA[<p>如果我们有自己的服务器，就经常肯定会使用到Nginx，下面我们就用Docker来部署一个Nginx</p>
@@ -835,20 +849,6 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 打开项目文件</span><br><span class="line">cd &#x2F;dockerData&#x2F;nginx&#x2F;www</span><br><span class="line"># 使用vim 创建并编辑文件</span><br><span class="line">vim index.html</span><br><span class="line"># 此时我们会进入vim界面，按 i 插入，然后输入</span><br><span class="line">&lt;h1&gt;Hello Docker-Nginx&lt;&#x2F;h1&gt;</span><br><span class="line"># 输入完后，按 esc，然后输入 :wq</span><br></pre></td></tr></table></figure>
 <p>再次访问我们的域名就可以看到我们刚刚写的h1标签内容</p>
 ]]></content>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Docker问题解决</title>
-    <url>/2017/10/11/docker/Docker%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<p>常见docker问题解决</p>
-<a id="more"></a>
-<h2 id="Docker-容器一启动就退出"><a href="#Docker-容器一启动就退出" class="headerlink" title="Docker 容器一启动就退出"></a>Docker 容器一启动就退出</h2><p>根据镜像启动容器，执行命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name npm -d node</span><br></pre></td></tr></table></figure>
-<p>通过<code>docker ps</code>查看正在运行中容器，却找不到<code>npm</code>容器。再次通过<code>docker ps -a</code>查看发现，<code>npm</code>容器已经处于停止状态了。<br><strong>原因</strong><br>Docker容器后台运行,就必须有一个前台进程.<br>容器运行的命令如果不是那些一直挂起的命令（eg. 运行top，tail等），就是会自动退出<br>这个是 docker 的机制问题，比如我们的 web 容器，以 nginx 和 fpm 为例,<br>正常情况下，启动服务只需启动相应的 service 即可，例如：service nginx start &amp;&amp; service php5-fpm start，但是，这样做, nginx 和 fpm 均以后台进程模式运行，就会导致 docker 前台没有正在运行的应用，so，容器会立即自杀，因为他觉得没事可做了。</p>
-<p><strong>解决方案</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name npm -P -d node &#x2F;bin&#x2F;sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>docker</tag>
       </tags>
@@ -1444,6 +1444,31 @@
       </tags>
   </entry>
   <entry>
+    <title>Flutter异步编程</title>
+    <url>/2020/02/25/flutter/Flutter%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<p>首先<code>Dart</code>是一门单线程的语言，那么Dart对异步操作对支持，可以使我们在编写Dart程序时可以异步的来执行耗时操作。从而可以在等待一个操作完成的同时进行别的操作以下是一些常见的异步操作：</p>
+<ul>
+<li>通过网络获取数据。</li>
+<li>写入数据库。</li>
+<li>从文件读取数据。</li>
+</ul>
+<p>要在Dart中执行异步操作，可以使用Future类和async/await关键字。</p>
+<a id="more"></a>    
+
+<h2 id="Dart的事件循环-event-loop"><a href="#Dart的事件循环-event-loop" class="headerlink" title="Dart的事件循环(event loop)"></a>Dart的事件循环(event loop)</h2><p>在Dart中，实际上有两种队列：</p>
+<ol>
+<li>事件队列(event queue)，包含所有的外来事件：I/O、mouse events、drawing events、timers、isolate之间的信息传递。</li>
+<li>微任务队列(microtask queue)，表示一个短时间内就会完成的异步任务。它的优先级最高，高于event queue，只要队列中还有任务，就可以一直霸占着事件循环。microtask queue添加的任务主要是由Dart内部产生。</li>
+</ol>
+<blockquote>
+<p>因为<code>microtask queue</code>的优先级高于<code>event queue</code>，所以如果<code>microtask queue</code>有太多的微任务， 那么就可能会霸占住当前的<code>event loop</code>。从而对event queue中的触摸、绘制等外部事件造成阻塞卡顿。</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Flutter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Flutter - Future与FutureBuilder实用技巧</title>
     <url>/2020/02/24/flutter/Flutter%E5%BC%82%E6%AD%A5/</url>
     <content><![CDATA[<p>我们知道Dart语言的执行环境是”单线程”。也就是指一次只能完成一件任务。如果有多个任务，就必须排队，前面一个任务完成，再执行后面一个任务。</p>
@@ -1518,31 +1543,6 @@
 <ul>
 <li><a href="https://flutter-academy.com/async-in-flutter-futurebuilder/">https://flutter-academy.com/async-in-flutter-futurebuilder/</a></li>
 </ul>
-]]></content>
-      <tags>
-        <tag>Flutter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flutter异步编程</title>
-    <url>/2020/02/25/flutter/Flutter%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<p>首先<code>Dart</code>是一门单线程的语言，那么Dart对异步操作对支持，可以使我们在编写Dart程序时可以异步的来执行耗时操作。从而可以在等待一个操作完成的同时进行别的操作以下是一些常见的异步操作：</p>
-<ul>
-<li>通过网络获取数据。</li>
-<li>写入数据库。</li>
-<li>从文件读取数据。</li>
-</ul>
-<p>要在Dart中执行异步操作，可以使用Future类和async/await关键字。</p>
-<a id="more"></a>    
-
-<h2 id="Dart的事件循环-event-loop"><a href="#Dart的事件循环-event-loop" class="headerlink" title="Dart的事件循环(event loop)"></a>Dart的事件循环(event loop)</h2><p>在Dart中，实际上有两种队列：</p>
-<ol>
-<li>事件队列(event queue)，包含所有的外来事件：I/O、mouse events、drawing events、timers、isolate之间的信息传递。</li>
-<li>微任务队列(microtask queue)，表示一个短时间内就会完成的异步任务。它的优先级最高，高于event queue，只要队列中还有任务，就可以一直霸占着事件循环。microtask queue添加的任务主要是由Dart内部产生。</li>
-</ol>
-<blockquote>
-<p>因为<code>microtask queue</code>的优先级高于<code>event queue</code>，所以如果<code>microtask queue</code>有太多的微任务， 那么就可能会霸占住当前的<code>event loop</code>。从而对event queue中的触摸、绘制等外部事件造成阻塞卡顿。</p>
-</blockquote>
 ]]></content>
       <tags>
         <tag>Flutter</tag>
@@ -2400,341 +2400,6 @@ chown -R tarena:tarena fly.git
       </tags>
   </entry>
   <entry>
-    <title>markdown-数学公式</title>
-    <url>/2018/03/02/markdown/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
-    <content><![CDATA[<p>以后的一个阶段要进行数学方面的学习，所以整理博客的时候难免会用到数学公式，下面列一下</p>
-<a id="more"></a>
-
-<h2 id="行内与独行"><a href="#行内与独行" class="headerlink" title="行内与独行"></a>行内与独行</h2><p><strong>行内公式</strong>：将公式插入到本行内，符号：<code>$公式内容$</code></p>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$xyz$</span><br></pre></td></tr></table></figure>
-
-<p>效果：$xyz$</p>
-<p><strong>独行公式</strong>：将公式插入到新的一行内，并且居中，符号：<code>$$</code></p>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$xyz$$</span><br></pre></td></tr></table></figure>
-<p>效果：$$xyz$$</p>
-<h2 id="上标、下标与组合"><a href="#上标、下标与组合" class="headerlink" title="上标、下标与组合"></a>上标、下标与组合</h2><p><strong>上标符号</strong>，符号：<code>^</code>。<br>例如：<code>$x^4$</code><br>效果：$x^4$</p>
-<p><strong>下标符号</strong>，符号：<code>_</code>。<br>例如：<code>$x_1$</code><br>效果：$x_1$</p>
-<p><strong>组合符号</strong>，符号：<code>&#123;&#125;</code>。<br>例如：<code>$&#123;16&#125;_&#123;8&#125;O&#123;2+&#125;_&#123;2&#125;$</code><br>效果：${16}<em>{8}O{2+}</em>{2}$</p>
-<h2 id="汉字、字体与格式"><a href="#汉字、字体与格式" class="headerlink" title="汉字、字体与格式"></a>汉字、字体与格式</h2><p><strong>汉字形式</strong>，符号：<code>\mbox&#123;&#125;</code><br>例如：<code>$V_&#123;\mbox&#123;初始&#125;&#125;$</code><br>效果：$V_{\mbox{初始}}$</p>
-<p><strong>字体控制</strong>，符号：<code>\displaystyle</code><br>例如：<code>$\displaystyle \frac&#123;x+y&#125;&#123;y+z&#125;$</code><br>效果：$\displaystyle \frac{x+y}{y+z}$</p>
-<p><strong>下划线符号</strong>，符号：<code>\underline</code><br>例如：<code>$\underline&#123;x+y&#125;$</code><br>效果：$\underline{x+y}$</p>
-<p><strong>标签</strong>，符号<code>\tag&#123;数字&#125;</code><br>例如：<code>$\tag&#123;11&#125;$</code><br>效果：$\tag{11}$</p>
-<p><strong>上大括号</strong>，符号：<code>\overbrace&#123;算式&#125;</code><br>例如：<code>$\overbrace&#123;a+b+c+d&#125;^&#123;2.0&#125;$</code><br>效果：$\overbrace{a+b+c+d}^{2.0}$</p>
-<p><strong>下大括号</strong>，符号：<code>\underbrace&#123;算式&#125;</code><br>例如：<code>$a+\underbrace&#123;b+c&#125;_&#123;1.0&#125;+d$</code><br>效果：$a+\underbrace{b+c}_{1.0}+d$</p>
-<p><strong>上位符号</strong>，符号：<code>\stacrel&#123;上位符号&#125;&#123;基位符号&#125;</code><br>例如：<code>$\vec&#123;x&#125;\stackrel&#123;\mathrm&#123;def&#125;&#125;&#123;=&#125;&#123;x_1,\dots,x_n&#125;$</code><br>效果：$\vec{x}\stackrel{\mathrm{def}}{=}{x_1,\dots,x_n}$</p>
-<h2 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h2><p><strong>两个quad空格</strong>，符号：<code>\qquad</code><br>例如：<code>$x \qquad y$</code><br>效果：$x \qquad y$</p>
-<p><strong>quad空格</strong>，符号：<code>\quad</code><br>例如：<code>$x \quad y$</code><br>效果：$x \quad y$</p>
-<p><strong>大空格</strong>，符号<br>例如：<code>$x \  y$</code><br>效果：$x \  y$</p>
-<p><strong>中空格</strong>，符号:<br>例如：<code>$x : y$</code><br>效果：$x : y$</p>
-<p><strong>小空格</strong>，符号,<br>例如：<code>$x , y$</code><br>效果：$x , y$</p>
-<p><strong>没有空格</strong>，<br>例如：<code>$xy$</code><br>效果：$xy$</p>
-<p><strong>紧贴</strong>，符号!<br>例如：<code>$x ! y$</code><br>效果：$x ! y$</p>
-<h2 id="定界符与组合"><a href="#定界符与组合" class="headerlink" title="定界符与组合"></a>定界符与组合</h2><p><strong>括号</strong>，符号：<code>（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)</code><br>例如：<code>$（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)$</code><br>效果：$（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)$</p>
-<p><strong>中括号</strong>，符号：<code>[]</code><br>例如：<code>$[x+y]$</code><br>效果：${x+y}$</p>
-<p><strong>大括号</strong>，符号：<code>\&#123; \&#125;</code><br>例如：<code>$&#123;x+y&#125;$</code><br>效果：${x+y}$</p>
-<p><strong>自适应括号</strong>，符号：\left \right<br>例如：<code>$\left(x\right)$，$\left(x&#123;yz&#125;\right)$</code><br>效果：$\left(x\right)$，$\left(x{yz}\right)$</p>
-<p><strong>组合公式</strong>，符号：{上位公式 \choose 下位公式}例例如：<code>$&#123;n+1 \choose k&#125;=&#123;n \choose k&#125;+&#123;n \choose k-1&#125;$</code><br>效果：${n+1 \choose k}={n \choose k}+{n \choose k-1}$</p>
-<p><strong>组合公式</strong>，符号：<code>&#123;上位公式 \atop 下位公式&#125;</code><br>例如：<code>$\sum_&#123;k_0,k_1,\ldots&gt;0 \atop k_0+k_1+\cdots=n&#125;A_&#123;k_0&#125;A_&#123;k_1&#125;\cdots$</code><br>效果：</p>
-<h2 id="四则运算"><a href="#四则运算" class="headerlink" title="四则运算"></a>四则运算</h2><p><strong>加法运算</strong>，符号：<code>+</code><br>例如：<code>$x+y=z$</code><br>效果：$x+y=z$</p>
-<p><strong>减法运算</strong>，符号：<code>-</code><br>例如：<code>$x-y=z$</code><br>效果：$x-y=z$</p>
-<p><strong>加减运算</strong>，符号：<code>\pm</code><br>例如：<code>$x \pm y=z$</code><br>效果：$x \pm y=z$</p>
-<p><strong>减甲运算</strong>，符号：<code>\mp</code><br>例如：<code>$x \mp y=z$</code><br>效果：$x \mp y=z$</p>
-<p><strong>乘法运算</strong>，符号：<code>\times</code><br>例如：<code>$x \times y=z$</code><br>效果：$x \times y=z$</p>
-<p><strong>点乘运算</strong>，符号：<code>\cdot</code><br>例如：<code>$x \cdot y=z$</code><br>效果：$x \cdot y=z$</p>
-<p><strong>星乘运算</strong>，符号：<code>\ast</code><br>例如：<code>$x \ast y=z$</code><br>效果：$x \ast y=z$</p>
-<p><strong>除法运算</strong>，符号：<code>\div</code><br>例如：<code>$x \div y=z$</code><br>效果：$x \div y=z$</p>
-<p><strong>斜法运算</strong>，符号：<code>/</code><br>例如：<code>$x/y=z$</code><br>效果：$x/y=z$</p>
-<p><strong>分式表示</strong>，符号：<code>\frac&#123;分子&#125;&#123;分母&#125;</code><br>例如：<code>$\frac&#123;x+y&#125;&#123;y+z&#125;$</code><br>效果：$\frac{x+y}{y+z}$</p>
-<p><strong>分式表示</strong>，符号：<code>&#123;分子&#125; \voer &#123;分母&#125;</code><br>例如：<code>$&#123;x+y&#125; \over &#123;y+z&#125;$</code><br>效果：${x+y} \over {y+z}$</p>
-<p><strong>绝对值表示</strong>，符号：<code>||</code><br>例如：<code>$|x+y|$</code><br>效果：$|x+y|$</p>
-<h2 id="高级运算"><a href="#高级运算" class="headerlink" title="高级运算"></a>高级运算</h2><p><strong>平均数运算</strong>，符号：<code>\overline&#123;算式&#125;</code><br>例如：<code>$\overline&#123;xyz&#125;$</code><br>效果：$\overline{xyz}$</p>
-<p><strong>开二次方运算</strong>，符号：<code>\sqrt</code><br>例如：<code>$\sqrt x$</code><br>效果：$\sqrt x$</p>
-<p><strong>开方运算</strong>，符号：<code>\sqrt[开方数]&#123;被开方数&#125;</code><br>例如：<code>$\sqrt[3]&#123;x+y&#125;$</code><br>效果：$\sqrt[3]{x+y}$</p>
-<p><strong>对数运算</strong>，符号：<code>\log</code><br>例如：<code>$\log(x)$</code><br>效果：$\log(x)$</p>
-<p><strong>极限运算</strong>，符号：<code>\lim</code><br>例如：<code>$\lim^&#123;x \to \infty&#125;_&#123;y \to 0&#125;&#123;\frac&#123;x&#125;&#123;y&#125;&#125;$</code><br>效果：$\lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
-<p><strong>极限运算</strong>，符号：<code>\displaystyle \lim</code><br>例如：<code>$\displaystyle \lim^&#123;x \to \infty&#125;_&#123;y \to 0&#125;&#123;\frac&#123;x&#125;&#123;y&#125;&#125;$</code><br>效果：$\displaystyle \lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
-<p><strong>求和运算</strong>，符号：<code>\sum</code><br>例如：<code>$\sum^&#123;x \to \infty&#125;_&#123;y \to 0&#125;&#123;\frac&#123;x&#125;&#123;y&#125;&#125;$</code><br>效果：$\sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
-<p><strong>求和运算</strong>，符号：<code>\displaystyle \sum</code><br>例如：<code>$\displaystyle \sum^&#123;x \to \infty&#125;_&#123;y \to 0&#125;&#123;\frac&#123;x&#125;&#123;y&#125;&#125;$</code><br>效果：$\displaystyle \sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
-<p><strong>积分运算</strong>，符号：<code>\int</code><br>例如：<code>$\int^&#123;\infty&#125;_&#123;0&#125;&#123;xdx&#125;$</code><br>效果：$\int^{\infty}_{0}{xdx}$</p>
-<p><strong>积分运算</strong>，符号：<code>\displaystyle \int</code><br>例如：<code>$\displaystyle \int^&#123;\infty&#125;_&#123;0&#125;&#123;xdx&#125;$</code><br>效果：$\displaystyle \int^{\infty}_{0}{xdx}$</p>
-<p><strong>微分运算</strong>，符号：<code>\partial</code><br>例如：<code>$\frac&#123;\partial x&#125;&#123;\partial y&#125;$</code><br>效果：$\frac{\partial x}{\partial y}$</p>
-<p><strong>矩阵表示</strong>，符号：<code>\begin&#123;matrix&#125; \end&#123;matrix&#125;</code><br>例如：<code>$\left[ \begin&#123;matrix&#125; 1 &amp;2 &amp;\cdots &amp;4\5 &amp;6 &amp;\cdots &amp;8\\vdots &amp;\vdots &amp;\ddots &amp;\vdots\13 &amp;14 &amp;\cdots &amp;16\end&#123;matrix&#125; \right]$</code><br>效果：$\left[ \begin{matrix} 1 &amp;2 &amp;\cdots &amp;4\5 &amp;6 &amp;\cdots &amp;8\vdots &amp;\vdots &amp;\ddots &amp;\vdots\13 &amp;14 &amp;\cdots &amp;16\end{matrix} \right]$</p>
-<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><p>等于运算，符号：=，如：$x+y=z$<br>大于运算，符号：&gt;，如：$x+y&gt;z$<br>小于运算，符号：&lt;，如：$x+y&lt;z$<br>大于等于运算，符号：\geq，如：$x+y \geq z$<br>小于等于运算，符号：\leq，如：$x+y \leq z$<br>不等于运算，符号：\neq，如：$x+y \neq z$<br>不大于等于运算，符号：\ngeq，如：$x+y \ngeq z$<br>不大于等于运算，符号：\not\geq，如：$x+y \not\geq z$<br>不小于等于运算，符号：\nleq，如：$x+y \nleq z$<br>不小于等于运算，符号：\not\leq，如：$x+y \not\leq z$<br>约等于运算，符号：\approx，如：$x+y \approx z$<br>恒定等于运算，符号：\equiv，如：$x+y \equiv z$</p>
-<h2 id="集合运算"><a href="#集合运算" class="headerlink" title="集合运算"></a>集合运算</h2><p>属于运算，符号：\in，如：$x \in y$<br>不属于运算，符号：\notin，如：$x \notin y$<br>不属于运算，符号：\not\in，如：$x \not\in y$<br>子集运算，符号：\subset，如：$x \subset y$<br>子集运算，符号：\supset，如：$x \supset y$<br>真子集运算，符号：\subseteq，如：$x \subseteq y$<br>非真子集运算，符号：\subsetneq，如：$x \subsetneq y$<br>真子集运算，符号：\supseteq，如：$x \supseteq y$<br>非真子集运算，符号：\supsetneq，如：$x \supsetneq y$<br>非子集运算，符号：\not\subset，如：$x \not\subset y$<br>非子集运算，符号：\not\supset，如：$x \not\supset y$<br>并集运算，符号：\cup，如：$x \cup y$<br>交集运算，符号：\cap，如：$x \cap y$<br>差集运算，符号：\setminus，如：$x \setminus y$<br>同或运算，符号：\bigodot，如：$x \bigodot y$<br>同与运算，符号：\bigotimes，如：$x \bigotimes y$<br>实数集合，符号：\mathbb{R}，如：\mathbb{R}</p>
-<p>自然数集合，符号：\mathbb{Z}，如：\mathbb{Z}</p>
-<p>空集，符号：\emptyset，如：$\emptyset$</p>
-<h2 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h2><p>无穷，符号：\infty，如：$\infty$<br>虚数，符号：\imath，如：$\imath$<br>虚数，符号：\jmath，如：$\jmath$<br>数学符号，符号\hat{a}，如：$\hat{a}$<br>数学符号，符号\check{a}，如：$\check{a}$<br>数学符号，符号\breve{a}，如：$\breve{a}$<br>数学符号，符号\tilde{a}，如：$\tilde{a}$<br>数学符号，符号\bar{a}，如：$\bar{a}$<br>矢量符号，符号\vec{a}，如：$\vec{a}$<br>数学符号，符号\acute{a}，如：$\acute{a}$<br>数学符号，符号\grave{a}，如：$\grave{a}$<br>数学符号，符号\mathring{a}，如：$\mathring{a}$<br>一阶导数符号，符号\dot{a}，如：$\dot{a}$<br>二阶导数符号，符号\ddot{a}，如：$\ddot{a}$<br>上箭头，符号：\uparrow，如：$\uparrow$<br>上箭头，符号：\Uparrow，如：$\Uparrow$<br>下箭头，符号：\downarrow，如：$\downarrow$<br>下箭头，符号：\Downarrow，如：$\Downarrow$<br>左箭头，符号：\leftarrow，如：$\leftarrow$<br>左箭头，符号：\Leftarrow，如：$\Leftarrow$<br>右箭头，符号：\rightarrow，如：$\rightarrow$<br>右箭头，符号：\Rightarrow，如：$\Rightarrow$<br>底端对齐的省略号，符号：\ldots，如：$1,2,\ldots,n$<br>中线对齐的省略号，符号：\cdots，如：$x_1^2 + x_2^2 + \cdots + x_n^2$<br>竖直对齐的省略号，符号：\vdots，如：$\vdots$<br>斜对齐的省略号，符号：\ddots，如：$\ddots$</p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>markdown-基础语法</title>
-    <url>/2018/03/01/markdown/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”</p>
-<a id="more"></a>
-<h1 id="Markdown基础语法"><a href="#Markdown基础语法" class="headerlink" title="Markdown基础语法"></a>Markdown基础语法</h1><p><strong>Markdown是一种轻量级的「标记语言」</strong><br><a href="https://www.zybuluo.com/mdeditor">https://www.zybuluo.com/mdeditor</a></p>
-<h2 id="xx是一个在线编辑Markdown文档的编辑器"><a href="#xx是一个在线编辑Markdown文档的编辑器" class="headerlink" title="xx是一个在线编辑Markdown文档的编辑器"></a>xx是一个在线编辑Markdown文档的编辑器</h2><p><em>XX扩展了Markdown的功能（如表格、脚注、内嵌HTML等等），以使让Markdown转换成更多的格式，和更丰富的展示效果，这些功能原初的Markdown尚不具备。</em></p>
-<blockquote>
-<p>Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如<del>Pandoc</del>，Pandao；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p>
-</blockquote>
-<p>XX源于Pandao的JavaScript开源项目，开源地址<a href="https://github.com/pandao/editor.md" title="Editor.md">Editor.md</a>，并在MIT开源协议的许可范围内进行了优化，以适应广大用户群体的需求。向优秀的markdown开源编辑器原作者Pandao致敬。</p>
-<p><img src="https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png" alt="Pandao editor.md" title="Pandao editor.md"></p>
-<h2 id="XX的功能列表演示"><a href="#XX的功能列表演示" class="headerlink" title="XX的功能列表演示"></a>XX的功能列表演示</h2><h1 id="标题H1"><a href="#标题H1" class="headerlink" title="标题H1"></a>标题H1</h1><h2 id="标题H2"><a href="#标题H2" class="headerlink" title="标题H2"></a>标题H2</h2><h3 id="标题H3"><a href="#标题H3" class="headerlink" title="标题H3"></a>标题H3</h3><h4 id="标题H4"><a href="#标题H4" class="headerlink" title="标题H4"></a>标题H4</h4><h5 id="标题H5"><a href="#标题H5" class="headerlink" title="标题H5"></a>标题H5</h5><h6 id="标题H5-1"><a href="#标题H5-1" class="headerlink" title="标题H5"></a>标题H5</h6><h3 id="字符效果和横线等"><a href="#字符效果和横线等" class="headerlink" title="字符效果和横线等"></a>字符效果和横线等</h3><hr>
-<p><del>删除线</del> <s>删除线（开启识别HTML标签时）</s></p>
-<p><em>斜体字</em>      <em>斜体字</em></p>
-<p><strong>粗体</strong>  <strong>粗体</strong></p>
-<p><strong><em>粗斜体</em></strong> <strong><em>粗斜体</em></strong></p>
-<p>上标：X<sub>2</sub>，下标：O<sup>2</sup></p>
-<p><strong>缩写(同HTML的abbr标签)</strong></p>
-<blockquote>
-<p>即更长的单词或短语的缩写形式，前提是开启识别HTML标签时，已默认开启</p>
-</blockquote>
-<p>The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
-<h3 id="引用-Blockquotes"><a href="#引用-Blockquotes" class="headerlink" title="引用 Blockquotes"></a>引用 Blockquotes</h3><blockquote>
-<p>引用文本 Blockquotes</p>
-</blockquote>
-<p>引用的行内混合 Blockquotes</p>
-<blockquote>
-<p>引用：如果想要插入空白换行<code>即&lt;br /&gt;标签</code>，在插入处先键入两个以上的空格然后回车即可，<a href="https://www.xx.com/">普通链接</a>。</p>
-</blockquote>
-<h3 id="锚点与链接-Links"><a href="#锚点与链接-Links" class="headerlink" title="锚点与链接 Links"></a>锚点与链接 Links</h3><p><a href="https://www.xx.com/">普通链接</a><br><a href="https://www.xx.com/" title="普通链接带标题">普通链接带标题</a><br>直接链接：<a href="https://www.xx.com/">https://www.XX.com</a><br>[锚点链接][anchor-id]<br>[anchor-id]: <a href="https://www.xx.com/">https://www.XX.com/</a><br><a href="mailto:test.test@gmail.com">mailto:test.test@gmail.com</a><br>GFM a-tail link @pandao<br>邮箱地址自动链接 <a href="mailto:&#116;&#x65;&#115;&#116;&#46;&#x74;&#x65;&#x73;&#116;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#116;&#x65;&#115;&#116;&#46;&#x74;&#x65;&#x73;&#116;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a>  <a href="mailto:&#x77;&#x77;&#119;&#x40;&#118;&#x69;&#x70;&#46;&#113;&#113;&#x2e;&#x63;&#111;&#x6d;">&#x77;&#x77;&#119;&#x40;&#118;&#x69;&#x70;&#46;&#113;&#113;&#x2e;&#x63;&#111;&#x6d;</a></p>
-<blockquote>
-<p>@pandao</p>
-</blockquote>
-<h3 id="多语言代码高亮-Codes"><a href="#多语言代码高亮-Codes" class="headerlink" title="多语言代码高亮 Codes"></a>多语言代码高亮 Codes</h3><h4 id="行内代码-Inline-code"><a href="#行内代码-Inline-code" class="headerlink" title="行内代码 Inline code"></a>行内代码 Inline code</h4><p>执行命令：<code>npm install marked</code></p>
-<h4 id="缩进风格"><a href="#缩进风格" class="headerlink" title="缩进风格"></a>缩进风格</h4><p>即缩进四个空格，也做为实现类似 <code>&lt;pre&gt;</code> 预格式化文本 ( Preformatted Text ) 的功能。</p>
-<pre><code>&lt;?php
-    echo &quot;Hello world!&quot;;
-?&gt;</code></pre>
-<p>预格式化文本：</p>
-<pre><code>| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |</code></pre>
-<h4 id="JS代码"><a href="#JS代码" class="headerlink" title="JS代码"></a>JS代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="HTML-代码-HTML-codes"><a href="#HTML-代码-HTML-codes" class="headerlink" title="HTML 代码 HTML codes"></a>HTML 代码 HTML codes</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mate</span> <span class="attr">charest</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;Editor.md, Markdown, Editor&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">body</span>&#123;<span class="attribute">font-size</span>:<span class="number">14px</span>;<span class="attribute">color</span>:<span class="number">#444</span>;<span class="attribute">font-family</span>: <span class="string">&quot;Microsoft Yahei&quot;</span>, Tahoma, <span class="string">&quot;Hiragino Sans GB&quot;</span>, Arial;<span class="attribute">background</span>:<span class="number">#fff</span>;&#125;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">ul</span>&#123;<span class="attribute">list-style</span>: none;&#125;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">img</span>&#123;<span class="attribute">border</span>:none;<span class="attribute">vertical-align</span>: middle;&#125;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;text-xxl&quot;</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-green&quot;</span>&gt;</span>Plain text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="图片-Images"><a href="#图片-Images" class="headerlink" title="图片 Images"></a>图片 Images</h3><p>图片加链接 (Image + Link)：</p>
-<p><a href="https://www.xx.com/images/logos/markdown.png" title="markdown"><img src="https://www.xx.com/images/logos/markdown.png"></a></p>
-<blockquote>
-<p>Follow your heart.</p>
-</blockquote>
-<hr>
-<h3 id="列表-Lists"><a href="#列表-Lists" class="headerlink" title="列表 Lists"></a>列表 Lists</h3><h4 id="无序列表（减号）Unordered-Lists"><a href="#无序列表（减号）Unordered-Lists" class="headerlink" title="无序列表（减号）Unordered Lists (-)"></a>无序列表（减号）Unordered Lists (-)</h4><ul>
-<li>列表一</li>
-<li>列表二</li>
-<li>列表三</li>
-</ul>
-<h4 id="无序列表（星号）Unordered-Lists"><a href="#无序列表（星号）Unordered-Lists" class="headerlink" title="无序列表（星号）Unordered Lists (*)"></a>无序列表（星号）Unordered Lists (*)</h4><ul>
-<li>列表一</li>
-<li>列表二</li>
-<li>列表三</li>
-</ul>
-<h4 id="无序列表（加号和嵌套）Unordered-Lists"><a href="#无序列表（加号和嵌套）Unordered-Lists" class="headerlink" title="无序列表（加号和嵌套）Unordered Lists (+)"></a>无序列表（加号和嵌套）Unordered Lists (+)</h4><ul>
-<li>列表一</li>
-<li>列表二<ul>
-<li>列表二-1</li>
-<li>列表二-2</li>
-<li>列表二-3</li>
-</ul>
-</li>
-<li>列表三<ul>
-<li>列表一</li>
-<li>列表二</li>
-<li>列表三</li>
-</ul>
-</li>
-</ul>
-<h4 id="有序列表-Ordered-Lists"><a href="#有序列表-Ordered-Lists" class="headerlink" title="有序列表 Ordered Lists (-)"></a>有序列表 Ordered Lists (-)</h4><ol>
-<li>第一行</li>
-<li>第二行</li>
-<li>第三行</li>
-</ol>
-<h4 id="GFM-task-list"><a href="#GFM-task-list" class="headerlink" title="GFM task list"></a>GFM task list</h4><ul>
-<li><input checked="" disabled="" type="checkbox"> GFM task list 1</li>
-<li><input checked="" disabled="" type="checkbox"> GFM task list 2</li>
-<li><input disabled="" type="checkbox"> GFM task list 3<ul>
-<li><input disabled="" type="checkbox"> GFM task list 3-1</li>
-<li><input disabled="" type="checkbox"> GFM task list 3-2</li>
-<li><input disabled="" type="checkbox"> GFM task list 3-3</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> GFM task list 4<ul>
-<li><input disabled="" type="checkbox"> GFM task list 4-1</li>
-<li><input disabled="" type="checkbox"> GFM task list 4-2</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="绘制表格-Tables"><a href="#绘制表格-Tables" class="headerlink" title="绘制表格 Tables"></a>绘制表格 Tables</h3><table>
-<thead>
-<tr>
-<th>项目</th>
-<th align="right">价格</th>
-<th align="center">数量</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>计算机</td>
-<td align="right">$1600</td>
-<td align="center">5</td>
-</tr>
-<tr>
-<td>手机</td>
-<td align="right">$12</td>
-<td align="center">12</td>
-</tr>
-<tr>
-<td>管线</td>
-<td align="right">$1</td>
-<td align="center">234</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>Function name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>help()</code></td>
-<td>Display the help window.</td>
-</tr>
-<tr>
-<td><code>destroy()</code></td>
-<td><strong>Destroy your computer!</strong></td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">Left-Aligned</th>
-<th align="center">Center Aligned</th>
-<th align="right">Right Aligned</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">col 3 is</td>
-<td align="center">some wordy text</td>
-<td align="right">$1600</td>
-</tr>
-<tr>
-<td align="left">col 2 is</td>
-<td align="center">centered</td>
-<td align="right">$12</td>
-</tr>
-<tr>
-<td align="left">zebra stripes</td>
-<td align="center">are neat</td>
-<td align="right">$1</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Computer</td>
-<td align="right">$1600</td>
-</tr>
-<tr>
-<td>Phone</td>
-<td align="right">$12</td>
-</tr>
-<tr>
-<td>Pipe</td>
-<td align="right">$1</td>
-</tr>
-</tbody></table>
-<hr>
-<h4 id="特殊符号-HTML-Entities-Codes"><a href="#特殊符号-HTML-Entities-Codes" class="headerlink" title="特殊符号 HTML Entities Codes"></a>特殊符号 HTML Entities Codes</h4><p>&copy; &amp;  &uml; &trade; &iexcl; &pound;<br>&amp; &lt; &gt; &yen; &euro; &reg; &plusmn; &para; &sect; &brvbar; &macr; &laquo; &middot;</p>
-<p>X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;</p>
-<p>18&ordm;C  &quot;  &apos;</p>
-<p>[========]</p>
-<h3 id="Emoji表情-smiley"><a href="#Emoji表情-smiley" class="headerlink" title="Emoji表情 :smiley:"></a>Emoji表情 :smiley:</h3><blockquote>
-<p>Blockquotes :star:</p>
-</blockquote>
-<h4 id="GFM-task-lists-amp-Emoji-amp-fontAwesome-icon-emoji-amp-editormd-logo-emoji-editormd-logo-5x"><a href="#GFM-task-lists-amp-Emoji-amp-fontAwesome-icon-emoji-amp-editormd-logo-emoji-editormd-logo-5x" class="headerlink" title="GFM task lists &amp; Emoji &amp; fontAwesome icon emoji &amp; editormd logo emoji :editormd-logo-5x:"></a>GFM task lists &amp; Emoji &amp; fontAwesome icon emoji &amp; editormd logo emoji :editormd-logo-5x:</h4><ul>
-<li><input checked="" disabled="" type="checkbox"> :smiley: @mentions, :smiley: #refs, <a href="">links</a>, <strong>formatting</strong>, and <del>tags</del> supported :editormd-logo:;</li>
-<li><input checked="" disabled="" type="checkbox"> list syntax required (any unordered or ordered list supported) :editormd-logo-3x:;</li>
-<li><input checked="" disabled="" type="checkbox"> [ ] :smiley: this is a complete item :smiley:;</li>
-<li><input disabled="" type="checkbox"> []this is an incomplete item <a href="#">test link</a> :fa-star: @pandao;</li>
-<li><input disabled="" type="checkbox"> [ ]this is an incomplete item :fa-star: :fa-gear:;<ul>
-<li><input disabled="" type="checkbox"> :smiley: this is an incomplete item <a href="#">test link</a> :fa-star: :fa-gear:;</li>
-<li><input disabled="" type="checkbox"> :smiley: this is  :fa-star: :fa-gear: an incomplete item <a href="#">test link</a>;</li>
-</ul>
-</li>
-</ul>
-<h4 id="反斜杠-Escape"><a href="#反斜杠-Escape" class="headerlink" title="反斜杠 Escape"></a>反斜杠 Escape</h4><p>*literal asterisks*</p>
-<p>[========]</p>
-<h3 id="科学公式-TeX-KaTeX"><a href="#科学公式-TeX-KaTeX" class="headerlink" title="科学公式 TeX(KaTeX)"></a>科学公式 TeX(KaTeX)</h3><p>$$E=mc^2$$</p>
-<p>行内的公式$$E=mc^2$$行内的公式，行内的$$E=mc^2$$公式。</p>
-<p>$$x &gt; y$$</p>
-<p>$$(\sqrt{3x-1}+(1+x)^2)$$</p>
-<p>$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$</p>
-<p>多行公式：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\displaystyle</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n a\_k b\_k \right)^2</span><br><span class="line">\leq</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n a\_k^2 \right)</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n b\_k^2 \right)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\displaystyle</span><br><span class="line">    \frac&#123;1&#125;&#123;</span><br><span class="line">        \Bigl(\sqrt&#123;\phi \sqrt&#123;5&#125;&#125;-\phi\Bigr) e^&#123;</span><br><span class="line">        \frac25 \pi&#125;&#125; &#x3D; 1+\frac&#123;e^&#123;-2\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-4\pi&#125;&#125; &#123;</span><br><span class="line">        1+\frac&#123;e^&#123;-6\pi&#125;&#125;</span><br><span class="line">        &#123;1+\frac&#123;e^&#123;-8\pi&#125;&#125;</span><br><span class="line">         &#123;1+\cdots&#125; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">f(x) = <span class="tag">\<span class="name">int</span></span>_&#123;-<span class="tag">\<span class="name">infty</span></span>&#125;^<span class="tag">\<span class="name">infty</span></span></span><br><span class="line">    <span class="tag">\<span class="name">hat</span></span> f(<span class="tag">\<span class="name">xi</span></span>)<span class="tag">\<span class="name">,</span></span>e^&#123;2 <span class="tag">\<span class="name">pi</span></span> i <span class="tag">\<span class="name">xi</span></span> x&#125;</span><br><span class="line">    <span class="tag">\<span class="name">,</span></span>d<span class="tag">\<span class="name">xi</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="分页符-Page-break"><a href="#分页符-Page-break" class="headerlink" title="分页符 Page break"></a>分页符 Page break</h3><blockquote>
-<p>Print Test: Ctrl + P</p>
-</blockquote>
-<hr>
-<h3 id="绘制流程图-Flowchart"><a href="#绘制流程图-Flowchart" class="headerlink" title="绘制流程图 Flowchart"></a>绘制流程图 Flowchart</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">st&#x3D;&gt;start: 用户登陆</span><br><span class="line">op&#x3D;&gt;operation: 登陆操作</span><br><span class="line">cond&#x3D;&gt;condition: 登陆成功 Yes or No?</span><br><span class="line">e&#x3D;&gt;end: 进入后台</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="绘制序列图-Sequence-Diagram"><a href="#绘制序列图-Sequence-Diagram" class="headerlink" title="绘制序列图 Sequence Diagram"></a>绘制序列图 Sequence Diagram</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Andrew-&gt;China: Says Hello</span><br><span class="line">Note right of China: China thinks\nabout it</span><br><span class="line">China--&gt;Andrew: How are you?</span><br><span class="line">Andrew-&gt;&gt;China: I am good thanks!</span><br></pre></td></tr></table></figure>
-<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3>]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习-NLP</title>
     <url>/2019/04/15/ml/NLP/</url>
     <content><![CDATA[<p>自然语言是人类智慧的结晶，自然语言处理是人工智能中最为困难的问题之一，而对自然语言处理的研究也是充满魅力和挑战的。</p>
@@ -3553,6 +3218,384 @@ G --> H[维护模型]</pre>
       </tags>
   </entry>
   <entry>
+    <title>markdown-数学公式</title>
+    <url>/2018/03/02/markdown/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<p>以后的一个阶段要进行数学方面的学习，所以整理博客的时候难免会用到数学公式，下面列一下</p>
+<a id="more"></a>
+
+<h2 id="行内与独行"><a href="#行内与独行" class="headerlink" title="行内与独行"></a>行内与独行</h2><p><strong>行内公式</strong>：将公式插入到本行内，符号：<code>$公式内容$</code></p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$xyz$</span><br></pre></td></tr></table></figure>
+
+<p>效果：$xyz$</p>
+<p><strong>独行公式</strong>：将公式插入到新的一行内，并且居中，符号：<code>$$</code></p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$xyz$$</span><br></pre></td></tr></table></figure>
+<p>效果：$$xyz$$</p>
+<h2 id="上标、下标与组合"><a href="#上标、下标与组合" class="headerlink" title="上标、下标与组合"></a>上标、下标与组合</h2><p><strong>上标符号</strong>，符号：<code>^</code>。<br>例如：<code>$x^4$</code><br>效果：$x^4$</p>
+<p><strong>下标符号</strong>，符号：<code>_</code>。<br>例如：<code>$x_1$</code><br>效果：$x_1$</p>
+<p><strong>组合符号</strong>，符号：<code>&#123;&#125;</code>。<br>例如：<code>$&#123;16&#125;_&#123;8&#125;O&#123;2+&#125;_&#123;2&#125;$</code><br>效果：${16}<em>{8}O{2+}</em>{2}$</p>
+<h2 id="汉字、字体与格式"><a href="#汉字、字体与格式" class="headerlink" title="汉字、字体与格式"></a>汉字、字体与格式</h2><p><strong>汉字形式</strong>，符号：<code>\mbox&#123;&#125;</code><br>例如：<code>$V_&#123;\mbox&#123;初始&#125;&#125;$</code><br>效果：$V_{\mbox{初始}}$</p>
+<p><strong>字体控制</strong>，符号：<code>\displaystyle</code><br>例如：<code>$\displaystyle \frac&#123;x+y&#125;&#123;y+z&#125;$</code><br>效果：$\displaystyle \frac{x+y}{y+z}$</p>
+<p><strong>下划线符号</strong>，符号：<code>\underline</code><br>例如：<code>$\underline&#123;x+y&#125;$</code><br>效果：$\underline{x+y}$</p>
+<p><strong>标签</strong>，符号<code>\tag&#123;数字&#125;</code><br>例如：<code>$\tag&#123;11&#125;$</code><br>效果：$\tag{11}$</p>
+<p><strong>上大括号</strong>，符号：<code>\overbrace&#123;算式&#125;</code><br>例如：<code>$\overbrace&#123;a+b+c+d&#125;^&#123;2.0&#125;$</code><br>效果：$\overbrace{a+b+c+d}^{2.0}$</p>
+<p><strong>下大括号</strong>，符号：<code>\underbrace&#123;算式&#125;</code><br>例如：<code>$a+\underbrace&#123;b+c&#125;_&#123;1.0&#125;+d$</code><br>效果：$a+\underbrace{b+c}_{1.0}+d$</p>
+<p><strong>上位符号</strong>，符号：<code>\stacrel&#123;上位符号&#125;&#123;基位符号&#125;</code><br>例如：<code>$\vec&#123;x&#125;\stackrel&#123;\mathrm&#123;def&#125;&#125;&#123;=&#125;&#123;x_1,\dots,x_n&#125;$</code><br>效果：$\vec{x}\stackrel{\mathrm{def}}{=}{x_1,\dots,x_n}$</p>
+<h2 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h2><p><strong>两个quad空格</strong>，符号：<code>\qquad</code><br>例如：<code>$x \qquad y$</code><br>效果：$x \qquad y$</p>
+<p><strong>quad空格</strong>，符号：<code>\quad</code><br>例如：<code>$x \quad y$</code><br>效果：$x \quad y$</p>
+<p><strong>大空格</strong>，符号<br>例如：<code>$x \  y$</code><br>效果：$x \  y$</p>
+<p><strong>中空格</strong>，符号:<br>例如：<code>$x : y$</code><br>效果：$x : y$</p>
+<p><strong>小空格</strong>，符号,<br>例如：<code>$x , y$</code><br>效果：$x , y$</p>
+<p><strong>没有空格</strong>，<br>例如：<code>$xy$</code><br>效果：$xy$</p>
+<p><strong>紧贴</strong>，符号!<br>例如：<code>$x ! y$</code><br>效果：$x ! y$</p>
+<h2 id="定界符与组合"><a href="#定界符与组合" class="headerlink" title="定界符与组合"></a>定界符与组合</h2><p><strong>括号</strong>，符号：<code>（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)</code><br>例如：<code>$（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)$</code><br>效果：$（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)$</p>
+<p><strong>中括号</strong>，符号：<code>[]</code><br>例如：<code>$[x+y]$</code><br>效果：${x+y}$</p>
+<p><strong>大括号</strong>，符号：<code>\&#123; \&#125;</code><br>例如：<code>$&#123;x+y&#125;$</code><br>效果：${x+y}$</p>
+<p><strong>自适应括号</strong>，符号：\left \right<br>例如：<code>$\left(x\right)$，$\left(x&#123;yz&#125;\right)$</code><br>效果：$\left(x\right)$，$\left(x{yz}\right)$</p>
+<p><strong>组合公式</strong>，符号：{上位公式 \choose 下位公式}例例如：<code>$&#123;n+1 \choose k&#125;=&#123;n \choose k&#125;+&#123;n \choose k-1&#125;$</code><br>效果：${n+1 \choose k}={n \choose k}+{n \choose k-1}$</p>
+<p><strong>组合公式</strong>，符号：<code>&#123;上位公式 \atop 下位公式&#125;</code><br>例如：<code>$\sum_&#123;k_0,k_1,\ldots&gt;0 \atop k_0+k_1+\cdots=n&#125;A_&#123;k_0&#125;A_&#123;k_1&#125;\cdots$</code><br>效果：</p>
+<h2 id="四则运算"><a href="#四则运算" class="headerlink" title="四则运算"></a>四则运算</h2><p><strong>加法运算</strong>，符号：<code>+</code><br>例如：<code>$x+y=z$</code><br>效果：$x+y=z$</p>
+<p><strong>减法运算</strong>，符号：<code>-</code><br>例如：<code>$x-y=z$</code><br>效果：$x-y=z$</p>
+<p><strong>加减运算</strong>，符号：<code>\pm</code><br>例如：<code>$x \pm y=z$</code><br>效果：$x \pm y=z$</p>
+<p><strong>减甲运算</strong>，符号：<code>\mp</code><br>例如：<code>$x \mp y=z$</code><br>效果：$x \mp y=z$</p>
+<p><strong>乘法运算</strong>，符号：<code>\times</code><br>例如：<code>$x \times y=z$</code><br>效果：$x \times y=z$</p>
+<p><strong>点乘运算</strong>，符号：<code>\cdot</code><br>例如：<code>$x \cdot y=z$</code><br>效果：$x \cdot y=z$</p>
+<p><strong>星乘运算</strong>，符号：<code>\ast</code><br>例如：<code>$x \ast y=z$</code><br>效果：$x \ast y=z$</p>
+<p><strong>除法运算</strong>，符号：<code>\div</code><br>例如：<code>$x \div y=z$</code><br>效果：$x \div y=z$</p>
+<p><strong>斜法运算</strong>，符号：<code>/</code><br>例如：<code>$x/y=z$</code><br>效果：$x/y=z$</p>
+<p><strong>分式表示</strong>，符号：<code>\frac&#123;分子&#125;&#123;分母&#125;</code><br>例如：<code>$\frac&#123;x+y&#125;&#123;y+z&#125;$</code><br>效果：$\frac{x+y}{y+z}$</p>
+<p><strong>分式表示</strong>，符号：<code>&#123;分子&#125; \voer &#123;分母&#125;</code><br>例如：<code>$&#123;x+y&#125; \over &#123;y+z&#125;$</code><br>效果：${x+y} \over {y+z}$</p>
+<p><strong>绝对值表示</strong>，符号：<code>||</code><br>例如：<code>$|x+y|$</code><br>效果：$|x+y|$</p>
+<h2 id="高级运算"><a href="#高级运算" class="headerlink" title="高级运算"></a>高级运算</h2><p><strong>平均数运算</strong>，符号：<code>\overline&#123;算式&#125;</code><br>例如：<code>$\overline&#123;xyz&#125;$</code><br>效果：$\overline{xyz}$</p>
+<p><strong>开二次方运算</strong>，符号：<code>\sqrt</code><br>例如：<code>$\sqrt x$</code><br>效果：$\sqrt x$</p>
+<p><strong>开方运算</strong>，符号：<code>\sqrt[开方数]&#123;被开方数&#125;</code><br>例如：<code>$\sqrt[3]&#123;x+y&#125;$</code><br>效果：$\sqrt[3]{x+y}$</p>
+<p><strong>对数运算</strong>，符号：<code>\log</code><br>例如：<code>$\log(x)$</code><br>效果：$\log(x)$</p>
+<p><strong>极限运算</strong>，符号：<code>\lim</code><br>例如：<code>$\lim^&#123;x \to \infty&#125;_&#123;y \to 0&#125;&#123;\frac&#123;x&#125;&#123;y&#125;&#125;$</code><br>效果：$\lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
+<p><strong>极限运算</strong>，符号：<code>\displaystyle \lim</code><br>例如：<code>$\displaystyle \lim^&#123;x \to \infty&#125;_&#123;y \to 0&#125;&#123;\frac&#123;x&#125;&#123;y&#125;&#125;$</code><br>效果：$\displaystyle \lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
+<p><strong>求和运算</strong>，符号：<code>\sum</code><br>例如：<code>$\sum^&#123;x \to \infty&#125;_&#123;y \to 0&#125;&#123;\frac&#123;x&#125;&#123;y&#125;&#125;$</code><br>效果：$\sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
+<p><strong>求和运算</strong>，符号：<code>\displaystyle \sum</code><br>例如：<code>$\displaystyle \sum^&#123;x \to \infty&#125;_&#123;y \to 0&#125;&#123;\frac&#123;x&#125;&#123;y&#125;&#125;$</code><br>效果：$\displaystyle \sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
+<p><strong>积分运算</strong>，符号：<code>\int</code><br>例如：<code>$\int^&#123;\infty&#125;_&#123;0&#125;&#123;xdx&#125;$</code><br>效果：$\int^{\infty}_{0}{xdx}$</p>
+<p><strong>积分运算</strong>，符号：<code>\displaystyle \int</code><br>例如：<code>$\displaystyle \int^&#123;\infty&#125;_&#123;0&#125;&#123;xdx&#125;$</code><br>效果：$\displaystyle \int^{\infty}_{0}{xdx}$</p>
+<p><strong>微分运算</strong>，符号：<code>\partial</code><br>例如：<code>$\frac&#123;\partial x&#125;&#123;\partial y&#125;$</code><br>效果：$\frac{\partial x}{\partial y}$</p>
+<p><strong>矩阵表示</strong>，符号：<code>\begin&#123;matrix&#125; \end&#123;matrix&#125;</code><br>例如：<code>$\left[ \begin&#123;matrix&#125; 1 &amp;2 &amp;\cdots &amp;4\5 &amp;6 &amp;\cdots &amp;8\\vdots &amp;\vdots &amp;\ddots &amp;\vdots\13 &amp;14 &amp;\cdots &amp;16\end&#123;matrix&#125; \right]$</code><br>效果：$\left[ \begin{matrix} 1 &amp;2 &amp;\cdots &amp;4\5 &amp;6 &amp;\cdots &amp;8\vdots &amp;\vdots &amp;\ddots &amp;\vdots\13 &amp;14 &amp;\cdots &amp;16\end{matrix} \right]$</p>
+<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><p>等于运算，符号：=，如：$x+y=z$<br>大于运算，符号：&gt;，如：$x+y&gt;z$<br>小于运算，符号：&lt;，如：$x+y&lt;z$<br>大于等于运算，符号：\geq，如：$x+y \geq z$<br>小于等于运算，符号：\leq，如：$x+y \leq z$<br>不等于运算，符号：\neq，如：$x+y \neq z$<br>不大于等于运算，符号：\ngeq，如：$x+y \ngeq z$<br>不大于等于运算，符号：\not\geq，如：$x+y \not\geq z$<br>不小于等于运算，符号：\nleq，如：$x+y \nleq z$<br>不小于等于运算，符号：\not\leq，如：$x+y \not\leq z$<br>约等于运算，符号：\approx，如：$x+y \approx z$<br>恒定等于运算，符号：\equiv，如：$x+y \equiv z$</p>
+<h2 id="集合运算"><a href="#集合运算" class="headerlink" title="集合运算"></a>集合运算</h2><p>属于运算，符号：\in，如：$x \in y$<br>不属于运算，符号：\notin，如：$x \notin y$<br>不属于运算，符号：\not\in，如：$x \not\in y$<br>子集运算，符号：\subset，如：$x \subset y$<br>子集运算，符号：\supset，如：$x \supset y$<br>真子集运算，符号：\subseteq，如：$x \subseteq y$<br>非真子集运算，符号：\subsetneq，如：$x \subsetneq y$<br>真子集运算，符号：\supseteq，如：$x \supseteq y$<br>非真子集运算，符号：\supsetneq，如：$x \supsetneq y$<br>非子集运算，符号：\not\subset，如：$x \not\subset y$<br>非子集运算，符号：\not\supset，如：$x \not\supset y$<br>并集运算，符号：\cup，如：$x \cup y$<br>交集运算，符号：\cap，如：$x \cap y$<br>差集运算，符号：\setminus，如：$x \setminus y$<br>同或运算，符号：\bigodot，如：$x \bigodot y$<br>同与运算，符号：\bigotimes，如：$x \bigotimes y$<br>实数集合，符号：\mathbb{R}，如：\mathbb{R}</p>
+<p>自然数集合，符号：\mathbb{Z}，如：\mathbb{Z}</p>
+<p>空集，符号：\emptyset，如：$\emptyset$</p>
+<h2 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h2><p>无穷，符号：\infty，如：$\infty$<br>虚数，符号：\imath，如：$\imath$<br>虚数，符号：\jmath，如：$\jmath$<br>数学符号，符号\hat{a}，如：$\hat{a}$<br>数学符号，符号\check{a}，如：$\check{a}$<br>数学符号，符号\breve{a}，如：$\breve{a}$<br>数学符号，符号\tilde{a}，如：$\tilde{a}$<br>数学符号，符号\bar{a}，如：$\bar{a}$<br>矢量符号，符号\vec{a}，如：$\vec{a}$<br>数学符号，符号\acute{a}，如：$\acute{a}$<br>数学符号，符号\grave{a}，如：$\grave{a}$<br>数学符号，符号\mathring{a}，如：$\mathring{a}$<br>一阶导数符号，符号\dot{a}，如：$\dot{a}$<br>二阶导数符号，符号\ddot{a}，如：$\ddot{a}$<br>上箭头，符号：\uparrow，如：$\uparrow$<br>上箭头，符号：\Uparrow，如：$\Uparrow$<br>下箭头，符号：\downarrow，如：$\downarrow$<br>下箭头，符号：\Downarrow，如：$\Downarrow$<br>左箭头，符号：\leftarrow，如：$\leftarrow$<br>左箭头，符号：\Leftarrow，如：$\Leftarrow$<br>右箭头，符号：\rightarrow，如：$\rightarrow$<br>右箭头，符号：\Rightarrow，如：$\Rightarrow$<br>底端对齐的省略号，符号：\ldots，如：$1,2,\ldots,n$<br>中线对齐的省略号，符号：\cdots，如：$x_1^2 + x_2^2 + \cdots + x_n^2$<br>竖直对齐的省略号，符号：\vdots，如：$\vdots$<br>斜对齐的省略号，符号：\ddots，如：$\ddots$</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>markdown-基础语法</title>
+    <url>/2018/03/01/markdown/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”</p>
+<a id="more"></a>
+<h1 id="Markdown基础语法"><a href="#Markdown基础语法" class="headerlink" title="Markdown基础语法"></a>Markdown基础语法</h1><p><strong>Markdown是一种轻量级的「标记语言」</strong><br><a href="https://www.zybuluo.com/mdeditor">https://www.zybuluo.com/mdeditor</a></p>
+<h2 id="xx是一个在线编辑Markdown文档的编辑器"><a href="#xx是一个在线编辑Markdown文档的编辑器" class="headerlink" title="xx是一个在线编辑Markdown文档的编辑器"></a>xx是一个在线编辑Markdown文档的编辑器</h2><p><em>XX扩展了Markdown的功能（如表格、脚注、内嵌HTML等等），以使让Markdown转换成更多的格式，和更丰富的展示效果，这些功能原初的Markdown尚不具备。</em></p>
+<blockquote>
+<p>Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如<del>Pandoc</del>，Pandao；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p>
+</blockquote>
+<p>XX源于Pandao的JavaScript开源项目，开源地址<a href="https://github.com/pandao/editor.md" title="Editor.md">Editor.md</a>，并在MIT开源协议的许可范围内进行了优化，以适应广大用户群体的需求。向优秀的markdown开源编辑器原作者Pandao致敬。</p>
+<p><img src="https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png" alt="Pandao editor.md" title="Pandao editor.md"></p>
+<h2 id="XX的功能列表演示"><a href="#XX的功能列表演示" class="headerlink" title="XX的功能列表演示"></a>XX的功能列表演示</h2><h1 id="标题H1"><a href="#标题H1" class="headerlink" title="标题H1"></a>标题H1</h1><h2 id="标题H2"><a href="#标题H2" class="headerlink" title="标题H2"></a>标题H2</h2><h3 id="标题H3"><a href="#标题H3" class="headerlink" title="标题H3"></a>标题H3</h3><h4 id="标题H4"><a href="#标题H4" class="headerlink" title="标题H4"></a>标题H4</h4><h5 id="标题H5"><a href="#标题H5" class="headerlink" title="标题H5"></a>标题H5</h5><h6 id="标题H5-1"><a href="#标题H5-1" class="headerlink" title="标题H5"></a>标题H5</h6><h3 id="字符效果和横线等"><a href="#字符效果和横线等" class="headerlink" title="字符效果和横线等"></a>字符效果和横线等</h3><hr>
+<p><del>删除线</del> <s>删除线（开启识别HTML标签时）</s></p>
+<p><em>斜体字</em>      <em>斜体字</em></p>
+<p><strong>粗体</strong>  <strong>粗体</strong></p>
+<p><strong><em>粗斜体</em></strong> <strong><em>粗斜体</em></strong></p>
+<p>上标：X<sub>2</sub>，下标：O<sup>2</sup></p>
+<p><strong>缩写(同HTML的abbr标签)</strong></p>
+<blockquote>
+<p>即更长的单词或短语的缩写形式，前提是开启识别HTML标签时，已默认开启</p>
+</blockquote>
+<p>The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
+<h3 id="引用-Blockquotes"><a href="#引用-Blockquotes" class="headerlink" title="引用 Blockquotes"></a>引用 Blockquotes</h3><blockquote>
+<p>引用文本 Blockquotes</p>
+</blockquote>
+<p>引用的行内混合 Blockquotes</p>
+<blockquote>
+<p>引用：如果想要插入空白换行<code>即&lt;br /&gt;标签</code>，在插入处先键入两个以上的空格然后回车即可，<a href="https://www.xx.com/">普通链接</a>。</p>
+</blockquote>
+<h3 id="锚点与链接-Links"><a href="#锚点与链接-Links" class="headerlink" title="锚点与链接 Links"></a>锚点与链接 Links</h3><p><a href="https://www.xx.com/">普通链接</a><br><a href="https://www.xx.com/" title="普通链接带标题">普通链接带标题</a><br>直接链接：<a href="https://www.xx.com/">https://www.XX.com</a><br>[锚点链接][anchor-id]<br>[anchor-id]: <a href="https://www.xx.com/">https://www.XX.com/</a><br><a href="mailto:test.test@gmail.com">mailto:test.test@gmail.com</a><br>GFM a-tail link @pandao<br>邮箱地址自动链接 <a href="mailto:&#116;&#x65;&#115;&#x74;&#46;&#x74;&#101;&#115;&#116;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#116;&#x65;&#115;&#x74;&#46;&#x74;&#101;&#115;&#116;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a>  <a href="mailto:&#119;&#119;&#x77;&#x40;&#118;&#105;&#x70;&#46;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#119;&#119;&#x77;&#x40;&#118;&#105;&#x70;&#46;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#109;</a></p>
+<blockquote>
+<p>@pandao</p>
+</blockquote>
+<h3 id="多语言代码高亮-Codes"><a href="#多语言代码高亮-Codes" class="headerlink" title="多语言代码高亮 Codes"></a>多语言代码高亮 Codes</h3><h4 id="行内代码-Inline-code"><a href="#行内代码-Inline-code" class="headerlink" title="行内代码 Inline code"></a>行内代码 Inline code</h4><p>执行命令：<code>npm install marked</code></p>
+<h4 id="缩进风格"><a href="#缩进风格" class="headerlink" title="缩进风格"></a>缩进风格</h4><p>即缩进四个空格，也做为实现类似 <code>&lt;pre&gt;</code> 预格式化文本 ( Preformatted Text ) 的功能。</p>
+<pre><code>&lt;?php
+    echo &quot;Hello world!&quot;;
+?&gt;</code></pre>
+<p>预格式化文本：</p>
+<pre><code>| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |</code></pre>
+<h4 id="JS代码"><a href="#JS代码" class="headerlink" title="JS代码"></a>JS代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="HTML-代码-HTML-codes"><a href="#HTML-代码-HTML-codes" class="headerlink" title="HTML 代码 HTML codes"></a>HTML 代码 HTML codes</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mate</span> <span class="attr">charest</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;Editor.md, Markdown, Editor&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">body</span>&#123;<span class="attribute">font-size</span>:<span class="number">14px</span>;<span class="attribute">color</span>:<span class="number">#444</span>;<span class="attribute">font-family</span>: <span class="string">&quot;Microsoft Yahei&quot;</span>, Tahoma, <span class="string">&quot;Hiragino Sans GB&quot;</span>, Arial;<span class="attribute">background</span>:<span class="number">#fff</span>;&#125;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">ul</span>&#123;<span class="attribute">list-style</span>: none;&#125;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">img</span>&#123;<span class="attribute">border</span>:none;<span class="attribute">vertical-align</span>: middle;&#125;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;text-xxl&quot;</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-green&quot;</span>&gt;</span>Plain text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="图片-Images"><a href="#图片-Images" class="headerlink" title="图片 Images"></a>图片 Images</h3><p>图片加链接 (Image + Link)：</p>
+<p><a href="https://www.xx.com/images/logos/markdown.png" title="markdown"><img src="https://www.xx.com/images/logos/markdown.png"></a></p>
+<blockquote>
+<p>Follow your heart.</p>
+</blockquote>
+<hr>
+<h3 id="列表-Lists"><a href="#列表-Lists" class="headerlink" title="列表 Lists"></a>列表 Lists</h3><h4 id="无序列表（减号）Unordered-Lists"><a href="#无序列表（减号）Unordered-Lists" class="headerlink" title="无序列表（减号）Unordered Lists (-)"></a>无序列表（减号）Unordered Lists (-)</h4><ul>
+<li>列表一</li>
+<li>列表二</li>
+<li>列表三</li>
+</ul>
+<h4 id="无序列表（星号）Unordered-Lists"><a href="#无序列表（星号）Unordered-Lists" class="headerlink" title="无序列表（星号）Unordered Lists (*)"></a>无序列表（星号）Unordered Lists (*)</h4><ul>
+<li>列表一</li>
+<li>列表二</li>
+<li>列表三</li>
+</ul>
+<h4 id="无序列表（加号和嵌套）Unordered-Lists"><a href="#无序列表（加号和嵌套）Unordered-Lists" class="headerlink" title="无序列表（加号和嵌套）Unordered Lists (+)"></a>无序列表（加号和嵌套）Unordered Lists (+)</h4><ul>
+<li>列表一</li>
+<li>列表二<ul>
+<li>列表二-1</li>
+<li>列表二-2</li>
+<li>列表二-3</li>
+</ul>
+</li>
+<li>列表三<ul>
+<li>列表一</li>
+<li>列表二</li>
+<li>列表三</li>
+</ul>
+</li>
+</ul>
+<h4 id="有序列表-Ordered-Lists"><a href="#有序列表-Ordered-Lists" class="headerlink" title="有序列表 Ordered Lists (-)"></a>有序列表 Ordered Lists (-)</h4><ol>
+<li>第一行</li>
+<li>第二行</li>
+<li>第三行</li>
+</ol>
+<h4 id="GFM-task-list"><a href="#GFM-task-list" class="headerlink" title="GFM task list"></a>GFM task list</h4><ul>
+<li><input checked="" disabled="" type="checkbox"> GFM task list 1</li>
+<li><input checked="" disabled="" type="checkbox"> GFM task list 2</li>
+<li><input disabled="" type="checkbox"> GFM task list 3<ul>
+<li><input disabled="" type="checkbox"> GFM task list 3-1</li>
+<li><input disabled="" type="checkbox"> GFM task list 3-2</li>
+<li><input disabled="" type="checkbox"> GFM task list 3-3</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> GFM task list 4<ul>
+<li><input disabled="" type="checkbox"> GFM task list 4-1</li>
+<li><input disabled="" type="checkbox"> GFM task list 4-2</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="绘制表格-Tables"><a href="#绘制表格-Tables" class="headerlink" title="绘制表格 Tables"></a>绘制表格 Tables</h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th align="right">价格</th>
+<th align="center">数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>计算机</td>
+<td align="right">$1600</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td>手机</td>
+<td align="right">$12</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td>管线</td>
+<td align="right">$1</td>
+<td align="center">234</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>help()</code></td>
+<td>Display the help window.</td>
+</tr>
+<tr>
+<td><code>destroy()</code></td>
+<td><strong>Destroy your computer!</strong></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Left-Aligned</th>
+<th align="center">Center Aligned</th>
+<th align="right">Right Aligned</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">col 3 is</td>
+<td align="center">some wordy text</td>
+<td align="right">$1600</td>
+</tr>
+<tr>
+<td align="left">col 2 is</td>
+<td align="center">centered</td>
+<td align="right">$12</td>
+</tr>
+<tr>
+<td align="left">zebra stripes</td>
+<td align="center">are neat</td>
+<td align="right">$1</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Computer</td>
+<td align="right">$1600</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td align="right">$12</td>
+</tr>
+<tr>
+<td>Pipe</td>
+<td align="right">$1</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="特殊符号-HTML-Entities-Codes"><a href="#特殊符号-HTML-Entities-Codes" class="headerlink" title="特殊符号 HTML Entities Codes"></a>特殊符号 HTML Entities Codes</h4><p>&copy; &amp;  &uml; &trade; &iexcl; &pound;<br>&amp; &lt; &gt; &yen; &euro; &reg; &plusmn; &para; &sect; &brvbar; &macr; &laquo; &middot;</p>
+<p>X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;</p>
+<p>18&ordm;C  &quot;  &apos;</p>
+<p>[========]</p>
+<h3 id="Emoji表情-smiley"><a href="#Emoji表情-smiley" class="headerlink" title="Emoji表情 :smiley:"></a>Emoji表情 :smiley:</h3><blockquote>
+<p>Blockquotes :star:</p>
+</blockquote>
+<h4 id="GFM-task-lists-amp-Emoji-amp-fontAwesome-icon-emoji-amp-editormd-logo-emoji-editormd-logo-5x"><a href="#GFM-task-lists-amp-Emoji-amp-fontAwesome-icon-emoji-amp-editormd-logo-emoji-editormd-logo-5x" class="headerlink" title="GFM task lists &amp; Emoji &amp; fontAwesome icon emoji &amp; editormd logo emoji :editormd-logo-5x:"></a>GFM task lists &amp; Emoji &amp; fontAwesome icon emoji &amp; editormd logo emoji :editormd-logo-5x:</h4><ul>
+<li><input checked="" disabled="" type="checkbox"> :smiley: @mentions, :smiley: #refs, <a href="">links</a>, <strong>formatting</strong>, and <del>tags</del> supported :editormd-logo:;</li>
+<li><input checked="" disabled="" type="checkbox"> list syntax required (any unordered or ordered list supported) :editormd-logo-3x:;</li>
+<li><input checked="" disabled="" type="checkbox"> [ ] :smiley: this is a complete item :smiley:;</li>
+<li><input disabled="" type="checkbox"> []this is an incomplete item <a href="#">test link</a> :fa-star: @pandao;</li>
+<li><input disabled="" type="checkbox"> [ ]this is an incomplete item :fa-star: :fa-gear:;<ul>
+<li><input disabled="" type="checkbox"> :smiley: this is an incomplete item <a href="#">test link</a> :fa-star: :fa-gear:;</li>
+<li><input disabled="" type="checkbox"> :smiley: this is  :fa-star: :fa-gear: an incomplete item <a href="#">test link</a>;</li>
+</ul>
+</li>
+</ul>
+<h4 id="反斜杠-Escape"><a href="#反斜杠-Escape" class="headerlink" title="反斜杠 Escape"></a>反斜杠 Escape</h4><p>*literal asterisks*</p>
+<p>[========]</p>
+<h3 id="科学公式-TeX-KaTeX"><a href="#科学公式-TeX-KaTeX" class="headerlink" title="科学公式 TeX(KaTeX)"></a>科学公式 TeX(KaTeX)</h3><p>$$E=mc^2$$</p>
+<p>行内的公式$$E=mc^2$$行内的公式，行内的$$E=mc^2$$公式。</p>
+<p>$$x &gt; y$$</p>
+<p>$$(\sqrt{3x-1}+(1+x)^2)$$</p>
+<p>$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$</p>
+<p>多行公式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\displaystyle</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n a\_k b\_k \right)^2</span><br><span class="line">\leq</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n a\_k^2 \right)</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n b\_k^2 \right)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\displaystyle</span><br><span class="line">    \frac&#123;1&#125;&#123;</span><br><span class="line">        \Bigl(\sqrt&#123;\phi \sqrt&#123;5&#125;&#125;-\phi\Bigr) e^&#123;</span><br><span class="line">        \frac25 \pi&#125;&#125; &#x3D; 1+\frac&#123;e^&#123;-2\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-4\pi&#125;&#125; &#123;</span><br><span class="line">        1+\frac&#123;e^&#123;-6\pi&#125;&#125;</span><br><span class="line">        &#123;1+\frac&#123;e^&#123;-8\pi&#125;&#125;</span><br><span class="line">         &#123;1+\cdots&#125; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">f(x) = <span class="tag">\<span class="name">int</span></span>_&#123;-<span class="tag">\<span class="name">infty</span></span>&#125;^<span class="tag">\<span class="name">infty</span></span></span><br><span class="line">    <span class="tag">\<span class="name">hat</span></span> f(<span class="tag">\<span class="name">xi</span></span>)<span class="tag">\<span class="name">,</span></span>e^&#123;2 <span class="tag">\<span class="name">pi</span></span> i <span class="tag">\<span class="name">xi</span></span> x&#125;</span><br><span class="line">    <span class="tag">\<span class="name">,</span></span>d<span class="tag">\<span class="name">xi</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="分页符-Page-break"><a href="#分页符-Page-break" class="headerlink" title="分页符 Page break"></a>分页符 Page break</h3><blockquote>
+<p>Print Test: Ctrl + P</p>
+</blockquote>
+<hr>
+<h3 id="绘制流程图-Flowchart"><a href="#绘制流程图-Flowchart" class="headerlink" title="绘制流程图 Flowchart"></a>绘制流程图 Flowchart</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">st&#x3D;&gt;start: 用户登陆</span><br><span class="line">op&#x3D;&gt;operation: 登陆操作</span><br><span class="line">cond&#x3D;&gt;condition: 登陆成功 Yes or No?</span><br><span class="line">e&#x3D;&gt;end: 进入后台</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="绘制序列图-Sequence-Diagram"><a href="#绘制序列图-Sequence-Diagram" class="headerlink" title="绘制序列图 Sequence Diagram"></a>绘制序列图 Sequence Diagram</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Andrew-&gt;China: Says Hello</span><br><span class="line">Note right of China: China thinks\nabout it</span><br><span class="line">China--&gt;Andrew: How are you?</span><br><span class="line">Andrew-&gt;&gt;China: I am good thanks!</span><br></pre></td></tr></table></figure>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB-数据类型</title>
+    <url>/2019/08/12/mongodb/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<p>mongo中存储时间大多为 ISODate</p>
+<a id="more"></a>
+
+<p>时间数据类型</p>
+<p>mongo中存储时间大多为 ISODate</p>
+<p>存储当前时间方法</p>
+<ol>
+<li><p>new Date()  自动生成当前时间<br>e.g.<br>db.class2.insert({book:’Python入门’,date:new Date()})</p>
+</li>
+<li><p>ISODate()  自动生成当前时间<br>e.g.<br>db.class2.insert({book:’Python精通’,date:ISODate()})</p>
+</li>
+<li><p>Date()   将系统时间转换为字符串<br>e.g.<br>db.class2.insert({book:’Python疯狂’,date:Date()})</p>
+</li>
+</ol>
+<p>指定时间<br>   ISODate()<br>   功能 : 生成mongo标准时间类型数据<br>   参数 ： 如果不传参默认为当前时间<br>           传参表示指定时间<br>         “2018-01-01 12:12:12”<br>         “20180101 12:12:12”<br>         “20180101”<br>   e.g.<br>   db.class2.insert({book:’Python崩溃’,date:ISODate(“2018-07-01 11:15:56”)})</p>
+<p>时间戳</p>
+<p>valueOf()<br>获取某个时间的时间戳<br>  e.g.  获取当前标准时间时间戳<br>    db.class2.insert({book:’Python涅槃’,date:ISODate().valueOf()})</p>
+<p>Null 类型</p>
+<p>值   null </p>
+<ol>
+<li>如果某个域存在却没有值可以赋值为null<br>e.g.<br>db.class2.insert({book:’Python死去活来’,price:null})</li>
+<li>可以查找某个域不存在的情况<br>e.g. 如果date域不存在也能find到<br>db.class2.find({date:null})</li>
+</ol>
+<p>Object （内部文档）</p>
+<p>文档内部某个域的值还是一个文档数据则这个文档就是内部文档类型数据</p>
+<p>通常使用外部文档域名 . 引用内部文档域名的方式使用内部文档</p>
+<p>e.g.<br> db.class3.find({‘book.title’:’狂人日记’})</p>
+<p>e.g.<br> db.class3.update({‘book.title’:’围城’},{$set:{‘book.price’:48.8}})</p>
+<p>通过数组下标直接操作某一项</p>
+<p>e.g. 通过数组下标引用第一项进行查找<br>db.class1.find({‘score.0’:{$gt:90}},{_id:0})</p>
+<p>e.g.<br>db.class1.update({name:’小刚’},{$set:{‘score.1’:80}})</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>MongoDB</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MongoDB-数据库操作</title>
     <url>/2019/08/11/mongodb/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<p>在上一节中主要说的是数据库的介绍，安装以及基本的命令<br>这一节主要说数据库的操作。比如：创建数据库，展示所有数据库，数据库命名规则，数据库备份与恢复，数据库监测等</p>
@@ -3654,49 +3697,6 @@ G --> H[维护模型]</pre>
 <td align="left">写时间</td>
 </tr>
 </tbody></table>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>MongoDB</tag>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MongoDB-数据类型</title>
-    <url>/2019/08/12/mongodb/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<p>mongo中存储时间大多为 ISODate</p>
-<a id="more"></a>
-
-<p>时间数据类型</p>
-<p>mongo中存储时间大多为 ISODate</p>
-<p>存储当前时间方法</p>
-<ol>
-<li><p>new Date()  自动生成当前时间<br>e.g.<br>db.class2.insert({book:’Python入门’,date:new Date()})</p>
-</li>
-<li><p>ISODate()  自动生成当前时间<br>e.g.<br>db.class2.insert({book:’Python精通’,date:ISODate()})</p>
-</li>
-<li><p>Date()   将系统时间转换为字符串<br>e.g.<br>db.class2.insert({book:’Python疯狂’,date:Date()})</p>
-</li>
-</ol>
-<p>指定时间<br>   ISODate()<br>   功能 : 生成mongo标准时间类型数据<br>   参数 ： 如果不传参默认为当前时间<br>           传参表示指定时间<br>         “2018-01-01 12:12:12”<br>         “20180101 12:12:12”<br>         “20180101”<br>   e.g.<br>   db.class2.insert({book:’Python崩溃’,date:ISODate(“2018-07-01 11:15:56”)})</p>
-<p>时间戳</p>
-<p>valueOf()<br>获取某个时间的时间戳<br>  e.g.  获取当前标准时间时间戳<br>    db.class2.insert({book:’Python涅槃’,date:ISODate().valueOf()})</p>
-<p>Null 类型</p>
-<p>值   null </p>
-<ol>
-<li>如果某个域存在却没有值可以赋值为null<br>e.g.<br>db.class2.insert({book:’Python死去活来’,price:null})</li>
-<li>可以查找某个域不存在的情况<br>e.g. 如果date域不存在也能find到<br>db.class2.find({date:null})</li>
-</ol>
-<p>Object （内部文档）</p>
-<p>文档内部某个域的值还是一个文档数据则这个文档就是内部文档类型数据</p>
-<p>通常使用外部文档域名 . 引用内部文档域名的方式使用内部文档</p>
-<p>e.g.<br> db.class3.find({‘book.title’:’狂人日记’})</p>
-<p>e.g.<br> db.class3.update({‘book.title’:’围城’},{$set:{‘book.price’:48.8}})</p>
-<p>通过数组下标直接操作某一项</p>
-<p>e.g. 通过数组下标引用第一项进行查找<br>db.class1.find({‘score.0’:{$gt:90}},{_id:0})</p>
-<p>e.g.<br>db.class1.update({name:’小刚’},{$set:{‘score.1’:80}})</p>
 ]]></content>
       <categories>
         <category>教程</category>
@@ -5290,45 +5290,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>Redis简述</title>
-    <url>/2018/09/02/redis/%E7%AE%80%E8%BF%B0/</url>
-    <content><![CDATA[<p>Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库,非关系型数据库。</p>
-<a id="more"></a>
-
-
-<h1 id="Redis介绍"><a href="#Redis介绍" class="headerlink" title="Redis介绍"></a>Redis介绍</h1><h2 id="特点及优点"><a href="#特点及优点" class="headerlink" title="特点及优点"></a>特点及优点</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">开源的，使用C编写，基于内存且支持持久化</span><br><span class="line">高性能的Key-Value的NoSQL数据库</span><br><span class="line">支持数据类型丰富，字符串strings，散列hashes，列表lists，集合sets，有序集合sorted sets 等</span><br><span class="line">支持多种编程语言（C C++ Python Java PHP ... ）</span><br></pre></td></tr></table></figure>
-
-<h2 id="与其他数据库对比"><a href="#与其他数据库对比" class="headerlink" title="与其他数据库对比"></a>与其他数据库对比</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MySQL : 关系型数据库，表格，基于磁盘，慢</span><br><span class="line">MongoDB：键值对文档型数据库，值为JSON文档，基于磁盘，慢，存储数据类型单一</span><br><span class="line">Redis的诞生是为了解决什么问题？？</span><br><span class="line"># 解决硬盘IO带来的性能瓶颈</span><br></pre></td></tr></table></figure>
-
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用Redis来缓存一些经常被用到、或者需要耗费大量资源的内容，通过这些内容放到redis里面，程序可以快速读取这些内容</span><br><span class="line">一个网站，如果某个页面经常会被访问到，或者创建页面时消耗的资源比较多，比如需要多次访问数据库、生成时间比较长等，我们可以使用redis将这个页面缓存起来，减轻网站负担，降低网站的延迟，比如说网站首页等</span><br><span class="line">比如新浪微博</span><br><span class="line"># 新浪微博，基于TB级的内存数据库</span><br><span class="line"># 内容 ：存储在MySQL数据库</span><br><span class="line"># 关系 ：存储在redis数据库</span><br><span class="line"># 数字 ：粉丝数量，关注数量，存储在redis数据库</span><br><span class="line"># 消息队列</span><br></pre></td></tr></table></figure>
-
-<h2 id="数据库排名"><a href="#数据库排名" class="headerlink" title="数据库排名"></a>数据库排名</h2><p><img src="https://object.renchengqi.com/blog/m31ql.png"></p>
-<h2 id="redis版本"><a href="#redis版本" class="headerlink" title="redis版本"></a>redis版本</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">最新版本：5.0</span><br><span class="line">常用版本：2.4、2.6、2.8</span><br><span class="line">	3.0（里程碑）、3.2、3.4、4.0、5.0</span><br><span class="line">图形界面管理工具(写的一般)</span><br><span class="line">	RedisDesktopManager</span><br><span class="line">为了解决负载问题，所以发明了redis</span><br></pre></td></tr></table></figure>
-
-<h2 id="诞生历程"><a href="#诞生历程" class="headerlink" title="诞生历程"></a>诞生历程</h2><ol>
-<li><p>历史<br> LLOOGG.com 帮助别的网站统计用户信息，各个网站发送的浏览记录都会存储到存储队列，5-10000条记录，多余5条需要收费</p>
-</li>
-<li><p>原理<br> FIFO机制，先进先出，满了进一条就出一条，网站越多，队列越多，推入和弹出操作越多</p>
-</li>
-<li><p>技术及问题<br> 开始使用MySQL进行硬盘读写，速度很慢，导致无法实时显示，所以自己写了一个列表结构的内存数据库，程序性能不会受到硬盘IO的限制，加了持久化的功能</p>
-</li>
-<li><p>redis数据库戛然而生</p>
-</li>
-</ol>
-<h2 id="Redis附加功能"><a href="#Redis附加功能" class="headerlink" title="Redis附加功能"></a>Redis附加功能</h2><ol>
-<li>持久化<br> 将内存中数据保存到磁盘中，保证数据安全，方便进行数据备份和恢复</li>
-<li>发布与订阅功能<br> 将消息同时分发给多个客户端，用于构建广播系统</li>
-<li>过期键功能<br> 为键设置一个过期时间，让它在指定时间内自动删除<br> &lt;节省内存空间&gt;<br> <code>音乐播放器，日播放排名，过期自动删除</code></li>
-<li>事务功能<br> 原子的执行多个操作</li>
-<li>主从复制</li>
-<li>Sentinel哨兵</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Redis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mac-软件推荐</title>
     <url>/2019/07/14/recommend/mac-%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</url>
     <content><![CDATA[<p>Mac软件推荐（iOS开发+服务器运维+常用软件）（包含下载地址）</p>
@@ -5611,6 +5572,45 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>Redis简述</title>
+    <url>/2018/09/02/redis/%E7%AE%80%E8%BF%B0/</url>
+    <content><![CDATA[<p>Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库,非关系型数据库。</p>
+<a id="more"></a>
+
+
+<h1 id="Redis介绍"><a href="#Redis介绍" class="headerlink" title="Redis介绍"></a>Redis介绍</h1><h2 id="特点及优点"><a href="#特点及优点" class="headerlink" title="特点及优点"></a>特点及优点</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">开源的，使用C编写，基于内存且支持持久化</span><br><span class="line">高性能的Key-Value的NoSQL数据库</span><br><span class="line">支持数据类型丰富，字符串strings，散列hashes，列表lists，集合sets，有序集合sorted sets 等</span><br><span class="line">支持多种编程语言（C C++ Python Java PHP ... ）</span><br></pre></td></tr></table></figure>
+
+<h2 id="与其他数据库对比"><a href="#与其他数据库对比" class="headerlink" title="与其他数据库对比"></a>与其他数据库对比</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MySQL : 关系型数据库，表格，基于磁盘，慢</span><br><span class="line">MongoDB：键值对文档型数据库，值为JSON文档，基于磁盘，慢，存储数据类型单一</span><br><span class="line">Redis的诞生是为了解决什么问题？？</span><br><span class="line"># 解决硬盘IO带来的性能瓶颈</span><br></pre></td></tr></table></figure>
+
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用Redis来缓存一些经常被用到、或者需要耗费大量资源的内容，通过这些内容放到redis里面，程序可以快速读取这些内容</span><br><span class="line">一个网站，如果某个页面经常会被访问到，或者创建页面时消耗的资源比较多，比如需要多次访问数据库、生成时间比较长等，我们可以使用redis将这个页面缓存起来，减轻网站负担，降低网站的延迟，比如说网站首页等</span><br><span class="line">比如新浪微博</span><br><span class="line"># 新浪微博，基于TB级的内存数据库</span><br><span class="line"># 内容 ：存储在MySQL数据库</span><br><span class="line"># 关系 ：存储在redis数据库</span><br><span class="line"># 数字 ：粉丝数量，关注数量，存储在redis数据库</span><br><span class="line"># 消息队列</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库排名"><a href="#数据库排名" class="headerlink" title="数据库排名"></a>数据库排名</h2><p><img src="https://object.renchengqi.com/blog/m31ql.png"></p>
+<h2 id="redis版本"><a href="#redis版本" class="headerlink" title="redis版本"></a>redis版本</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">最新版本：5.0</span><br><span class="line">常用版本：2.4、2.6、2.8</span><br><span class="line">	3.0（里程碑）、3.2、3.4、4.0、5.0</span><br><span class="line">图形界面管理工具(写的一般)</span><br><span class="line">	RedisDesktopManager</span><br><span class="line">为了解决负载问题，所以发明了redis</span><br></pre></td></tr></table></figure>
+
+<h2 id="诞生历程"><a href="#诞生历程" class="headerlink" title="诞生历程"></a>诞生历程</h2><ol>
+<li><p>历史<br> LLOOGG.com 帮助别的网站统计用户信息，各个网站发送的浏览记录都会存储到存储队列，5-10000条记录，多余5条需要收费</p>
+</li>
+<li><p>原理<br> FIFO机制，先进先出，满了进一条就出一条，网站越多，队列越多，推入和弹出操作越多</p>
+</li>
+<li><p>技术及问题<br> 开始使用MySQL进行硬盘读写，速度很慢，导致无法实时显示，所以自己写了一个列表结构的内存数据库，程序性能不会受到硬盘IO的限制，加了持久化的功能</p>
+</li>
+<li><p>redis数据库戛然而生</p>
+</li>
+</ol>
+<h2 id="Redis附加功能"><a href="#Redis附加功能" class="headerlink" title="Redis附加功能"></a>Redis附加功能</h2><ol>
+<li>持久化<br> 将内存中数据保存到磁盘中，保证数据安全，方便进行数据备份和恢复</li>
+<li>发布与订阅功能<br> 将消息同时分发给多个客户端，用于构建广播系统</li>
+<li>过期键功能<br> 为键设置一个过期时间，让它在指定时间内自动删除<br> &lt;节省内存空间&gt;<br> <code>音乐播放器，日播放排名，过期自动删除</code></li>
+<li>事务功能<br> 原子的执行多个操作</li>
+<li>主从复制</li>
+<li>Sentinel哨兵</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>微信分享卡片点击跳转App</title>
     <url>/2019/09/27/search/%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB%E5%8D%A1%E7%89%87%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%ACApp/</url>
     <content><![CDATA[<p>微信内置浏览器已禁止使用外部url scheme跳转至其他app。<br>如何突破这一壁垒实现需求呢？</p>
@@ -5887,17 +5887,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>Type Encodings</title>
-    <url>/2018/04/06/ios/general/TypeEncodings/</url>
-    <content><![CDATA[<a id="more"></a>
-
-<p><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html">官方文档</a></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iOS-Socket/Tcp编程</title>
     <url>/2014/12/01/ios/general/Socket-Tcp/</url>
     <content><![CDATA[<p>很多同学一听到Socket TCP UDP 这几个字眼感觉特别害怕, 很怕在工作当中使用,因为他们有些底层了。下面是我在工作中使用Socket类库GCDAsyncSocket进行的一次应用。socket只适用于用户量偏小的app使用。如果数据量过大，请学习XMPP即时通讯协议。</p>
@@ -5931,6 +5920,17 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>Type Encodings</title>
+    <url>/2018/04/06/ios/general/TypeEncodings/</url>
+    <content><![CDATA[<a id="more"></a>
+
+<p><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html">官方文档</a></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>iOS - App架构</title>
     <url>/2019/04/08/ios/general/iOS-App%E6%9E%B6%E6%9E%84/</url>
     <content><![CDATA[<p>不想成为架构的程序员不是好程序员。这篇文章主要是对App架构的理解，并不是说如何成为架构师😑</p>
@@ -5961,6 +5961,29 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
 <p>优点：对Controller进行瘦身，将Controller的一些业务代码移植到了Presenter里面</p>
 <h2 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h2><p><img src="https://object.renchengqi.com/blog/al2uf.png"><br>一般搭配KVO实现双向绑定；</p>
 <h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><p>架构进行分层理解<br><img src="https://object.renchengqi.com/blog/8xdfb.png"></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS10的label文字显示不全问题</title>
+    <url>/2016/09/10/ios/general/iOS10%E7%9A%84label%E6%96%87%E5%AD%97%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>更新iOS10 beta后，陆续发现挺多App出现了Label/Button文字显示不全的情况。当时感觉可能是系统问题，很长一段时间，大家都没修复这个问题，也就没太在意。直到前天iOS10 GM推送了，问题依然存在，那么就得赶紧排查修复了。</p>
+<a id="more"></a>
+
+
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>更新iOS10 beta后，陆续发现挺多App出现了Label/Button文字显示不全的情况（如下图）。当时感觉可能是系统问题，很长一段时间，大家都没修复这个问题，也就没太在意。</p>
+<p>直到前天iOS10 GM(<a href="https://en.wikipedia.org/w/index.php?title=Golden_Master">Golden Master，黄金母带，基本上该版与正式版相差无几</a>)推送后，问题依然存在，那么就得赶紧排查修复了。<br><img src="https://object.renchengqi.com/blog/6iarm.png"><br><img src="https://object.renchengqi.com/blog/040dz.png"></p>
+<h2 id="分析和尝试"><a href="#分析和尝试" class="headerlink" title="分析和尝试"></a>分析和尝试</h2><p>宽度不够是在iOS上Label/Button出现显示不全的原因，但是为什么有的Label/Button上文字能正常显示，有的却iOS9正常显示，而iOS10不正常？</p>
+<h3 id="初步分析"><a href="#初步分析" class="headerlink" title="初步分析"></a>初步分析</h3><p>最早的时候我怀疑的是系统文字的宽度变了，后来看到QQ的右上角弹出显示工具的控件也出现了问题，因为觉得这种控件应该是使用计算文字宽度的方法来设置Label/Button的宽度的，再联想到之前iOS7后建议替换<code>sizeWithFont:</code>方法为<code>sizeWithAttribute:</code>，会不会老的计算宽度方法在iOS10中有问题了呢？带着这个疑问，赶紧下了一个Xcode8 GM版。</p>
+<h3 id="实践检验"><a href="#实践检验" class="headerlink" title="实践检验"></a>实践检验</h3><ol>
+<li>使用Xcode7创建一个工程，并拖一个UILabel，并填入文字<code>测试</code>，不改变其他属性选项，并给Label按约束提示的宽高来设置约束。<br> iOS中使用系统默认字体输入中文的话<code>UILabel的宽度 = 字号 * 字符数量</code>，所以很明显测试这两个字在默认字体和默认字号17的情况下宽度为34。于是点开storyboard中约束设置也可以看到，自动计算出来的宽度是34，高度是21。<br> <img src="https://object.renchengqi.com/blog/fxs3e.png"></li>
+<li>继续使用Xcode7在代码中使用两个文字size计算方法<br>使用文字size方法计算方法<code>sizeWithFont:</code> 和 <code>sizeWithAttribute:</code>执行后，可以看到在xcode7中宽度均为34。<br> <img src="https://object.renchengqi.com/blog/r1auq.png"></li>
+<li>转战Xcode8，打开Storyboard后，移除Label的宽度约束，提示实际为35。<br>看来文字确实是变宽了。<br> <img src="https://object.renchengqi.com/blog/k5rii.png"></li>
+<li>同样在xcode8中使用文字size计算方法<br>执行后发现，输出为35和34.646，说明老的计算方法<code>sizeWithFont:</code>并没有问题。<br> <img src="https://object.renchengqi.com/blog/mfgl2.png"></li>
+</ol>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>经过上面的测试，最终导致问题的根本原因应该是iOS10中的文字变宽了。间接原因是设置Label和Button的宽度不够。可能对于固定的文字宽度在storyboard中设置约束的时候勾上了根据文字内容自动计算的宽度，或者在使用代码创建的时候，直接根据文字数量x字号了。<br>其实对于这些固定的文字Label/Button，如果使用xib或storyboard进行AutoLayout布局时，可以考虑不设置宽度约束，因为UILabel和Button是有固有内容大小（Intrinsic Content Size）的，默认是会根据文字内容改变宽度显示。</p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -6008,29 +6031,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
 <li>勾选需要转换的framework或者工程<br> 比如：我司项目使用了一个swift库<a href="https://github.com/danielgindi/Charts">Charts</a>，使用pod引入最新支持2.3的版本后，xcode8会报错让执行迁移引导，实际上勾选并点击next后，会提示不需要转换。（此图是已经进行过迁移引导后的截图，所以下方会提示已经转换成2.3的语法了）<br> <img src="https://object.renchengqi.com/blog/iyvwi.png"></li>
 <li>目前还有pod useFramework导致其他库.h文件找不到问题，还在尝试解决</li>
 </ol>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS10的label文字显示不全问题</title>
-    <url>/2016/09/10/ios/general/iOS10%E7%9A%84label%E6%96%87%E5%AD%97%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>更新iOS10 beta后，陆续发现挺多App出现了Label/Button文字显示不全的情况。当时感觉可能是系统问题，很长一段时间，大家都没修复这个问题，也就没太在意。直到前天iOS10 GM推送了，问题依然存在，那么就得赶紧排查修复了。</p>
-<a id="more"></a>
-
-
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>更新iOS10 beta后，陆续发现挺多App出现了Label/Button文字显示不全的情况（如下图）。当时感觉可能是系统问题，很长一段时间，大家都没修复这个问题，也就没太在意。</p>
-<p>直到前天iOS10 GM(<a href="https://en.wikipedia.org/w/index.php?title=Golden_Master">Golden Master，黄金母带，基本上该版与正式版相差无几</a>)推送后，问题依然存在，那么就得赶紧排查修复了。<br><img src="https://object.renchengqi.com/blog/6iarm.png"><br><img src="https://object.renchengqi.com/blog/040dz.png"></p>
-<h2 id="分析和尝试"><a href="#分析和尝试" class="headerlink" title="分析和尝试"></a>分析和尝试</h2><p>宽度不够是在iOS上Label/Button出现显示不全的原因，但是为什么有的Label/Button上文字能正常显示，有的却iOS9正常显示，而iOS10不正常？</p>
-<h3 id="初步分析"><a href="#初步分析" class="headerlink" title="初步分析"></a>初步分析</h3><p>最早的时候我怀疑的是系统文字的宽度变了，后来看到QQ的右上角弹出显示工具的控件也出现了问题，因为觉得这种控件应该是使用计算文字宽度的方法来设置Label/Button的宽度的，再联想到之前iOS7后建议替换<code>sizeWithFont:</code>方法为<code>sizeWithAttribute:</code>，会不会老的计算宽度方法在iOS10中有问题了呢？带着这个疑问，赶紧下了一个Xcode8 GM版。</p>
-<h3 id="实践检验"><a href="#实践检验" class="headerlink" title="实践检验"></a>实践检验</h3><ol>
-<li>使用Xcode7创建一个工程，并拖一个UILabel，并填入文字<code>测试</code>，不改变其他属性选项，并给Label按约束提示的宽高来设置约束。<br> iOS中使用系统默认字体输入中文的话<code>UILabel的宽度 = 字号 * 字符数量</code>，所以很明显测试这两个字在默认字体和默认字号17的情况下宽度为34。于是点开storyboard中约束设置也可以看到，自动计算出来的宽度是34，高度是21。<br> <img src="https://object.renchengqi.com/blog/fxs3e.png"></li>
-<li>继续使用Xcode7在代码中使用两个文字size计算方法<br>使用文字size方法计算方法<code>sizeWithFont:</code> 和 <code>sizeWithAttribute:</code>执行后，可以看到在xcode7中宽度均为34。<br> <img src="https://object.renchengqi.com/blog/r1auq.png"></li>
-<li>转战Xcode8，打开Storyboard后，移除Label的宽度约束，提示实际为35。<br>看来文字确实是变宽了。<br> <img src="https://object.renchengqi.com/blog/k5rii.png"></li>
-<li>同样在xcode8中使用文字size计算方法<br>执行后发现，输出为35和34.646，说明老的计算方法<code>sizeWithFont:</code>并没有问题。<br> <img src="https://object.renchengqi.com/blog/mfgl2.png"></li>
-</ol>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>经过上面的测试，最终导致问题的根本原因应该是iOS10中的文字变宽了。间接原因是设置Label和Button的宽度不够。可能对于固定的文字宽度在storyboard中设置约束的时候勾上了根据文字内容自动计算的宽度，或者在使用代码创建的时候，直接根据文字数量x字号了。<br>其实对于这些固定的文字Label/Button，如果使用xib或storyboard进行AutoLayout布局时，可以考虑不设置宽度约束，因为UILabel和Button是有固有内容大小（Intrinsic Content Size）的，默认是会根据文字内容改变宽度显示。</p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -7100,19 +7100,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>获取文件后缀</title>
-    <url>/2020/02/12/ios/general/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/</url>
-    <content><![CDATA[<p>项目中有一个需求：<br>给定一个<code>NSData *</code>类型的数据，从中解析出文件类型。</p>
-<a id="more"></a>
-
-<h2 id="图片后缀判断"><a href="#图片后缀判断" class="headerlink" title="图片后缀判断"></a>图片后缀判断</h2><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NSInteger</span> ImageFormat <span class="built_in">NS_TYPED_EXTENSIBLE_ENUM</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatUndefined = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatJPEG      = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatPNG       = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatGIF       = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatTIFF      = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatWebP      = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatHEIC      = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatHEIF      = <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line">+ (ImageFormat)imageFormatForImageData:(<span class="keyword">nullable</span> <span class="built_in">NSData</span> *)data &#123;</span><br><span class="line">    <span class="keyword">if</span> (!data) &#123;</span><br><span class="line">        <span class="keyword">return</span> ImageFormatUndefined;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// File signatures table: http://www.garykessler.net/library/file_sigs.html</span></span><br><span class="line">    uint8_t c;</span><br><span class="line">    [data getBytes:&amp;c length:<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">switch</span> (c) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0xFF</span>:</span><br><span class="line">            <span class="keyword">return</span> ImageFormatJPEG;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x89</span>:</span><br><span class="line">            <span class="keyword">return</span> ImageFormatPNG;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x47</span>:</span><br><span class="line">            <span class="keyword">return</span> ImageFormatGIF;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x49</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x4D</span>:</span><br><span class="line">            <span class="keyword">return</span> ImageFormatTIFF;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x52</span>: &#123;</span><br><span class="line">            <span class="keyword">if</span> (data.length &gt;= <span class="number">12</span>) &#123;</span><br><span class="line">                <span class="comment">//RIFF....WEBP</span></span><br><span class="line">                <span class="built_in">NSString</span> *testString = [[<span class="built_in">NSString</span> alloc] initWithData:[data subdataWithRange:<span class="built_in">NSMakeRange</span>(<span class="number">0</span>, <span class="number">12</span>)] encoding:<span class="built_in">NSASCIIStringEncoding</span>];</span><br><span class="line">                <span class="keyword">if</span> ([testString hasPrefix:<span class="string">@&quot;RIFF&quot;</span>] &amp;&amp; [testString hasSuffix:<span class="string">@&quot;WEBP&quot;</span>]) &#123;</span><br><span class="line">                    <span class="keyword">return</span> ImageFormatWebP;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x00</span>: &#123;</span><br><span class="line">            <span class="keyword">if</span> (data.length &gt;= <span class="number">12</span>) &#123;</span><br><span class="line">                <span class="comment">//....ftypheic ....ftypheix ....ftyphevc ....ftyphevx</span></span><br><span class="line">                <span class="built_in">NSString</span> *testString = [[<span class="built_in">NSString</span> alloc] initWithData:[data subdataWithRange:<span class="built_in">NSMakeRange</span>(<span class="number">4</span>, <span class="number">8</span>)] encoding:<span class="built_in">NSASCIIStringEncoding</span>];</span><br><span class="line">                <span class="keyword">if</span> ([testString isEqualToString:<span class="string">@&quot;ftypheic&quot;</span>]</span><br><span class="line">                    || [testString isEqualToString:<span class="string">@&quot;ftypheix&quot;</span>]</span><br><span class="line">                    || [testString isEqualToString:<span class="string">@&quot;ftyphevc&quot;</span>]</span><br><span class="line">                    || [testString isEqualToString:<span class="string">@&quot;ftyphevx&quot;</span>]) &#123;</span><br><span class="line">                    <span class="keyword">return</span> ImageFormatHEIC;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//....ftypmif1 ....ftypmsf1</span></span><br><span class="line">                <span class="keyword">if</span> ([testString isEqualToString:<span class="string">@&quot;ftypmif1&quot;</span>] || [testString isEqualToString:<span class="string">@&quot;ftypmsf1&quot;</span>]) &#123;</span><br><span class="line">                    <span class="keyword">return</span> ImageFormatHEIF;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ImageFormatUndefined;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="文件后缀判断"><a href="#文件后缀判断" class="headerlink" title="文件后缀判断"></a>文件后缀判断</h2><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)getFileExtension &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *path = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@&quot;2019工资单 (1)&quot;</span> ofType:<span class="string">@&quot;docx&quot;</span>];</span><br><span class="line">    <span class="built_in">NSData</span> *data = [<span class="built_in">NSData</span> dataWithContentsOfFile:path];</span><br><span class="line">    <span class="built_in">NSString</span> *extension = [<span class="keyword">self</span> contentTypeForImageData:data];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%@&quot;</span>, extension);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSString</span> *)contentTypeForImageData:(<span class="built_in">NSData</span> *)data &#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">NSInteger</span> maxLength = <span class="number">28</span>;</span><br><span class="line">    Byte headBytes[maxLength];</span><br><span class="line">    [data getBytes:headBytes length:maxLength];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSString</span> *headStr = [<span class="keyword">self</span> hexStringFromByte:headBytes];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSDictionary</span> *dict = [<span class="keyword">self</span> dict];</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">NSString</span> *key <span class="keyword">in</span> dict) &#123;</span><br><span class="line">        <span class="keyword">if</span> ([headStr hasPrefix:[key uppercaseString]]) &#123;</span><br><span class="line">            <span class="keyword">return</span> dict[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">@&quot;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSString</span> *)hexStringFromByte:(Byte *)byta &#123;</span><br><span class="line">    <span class="comment">// 转16进制</span></span><br><span class="line">    <span class="built_in">NSString</span> *hexStr = <span class="string">@&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">28</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">NSString</span> *newHexStr = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@&quot;%x&quot;</span>,byta[i]&amp;<span class="number">0xff</span>];<span class="comment">///16进制数</span></span><br><span class="line">        <span class="keyword">if</span>([newHexStr length]==<span class="number">1</span>)</span><br><span class="line">            hexStr = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@&quot;%@0%@&quot;</span>,hexStr,newHexStr];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            hexStr = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@&quot;%@%@&quot;</span>,hexStr,newHexStr];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [hexStr uppercaseString];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSDictionary</span> *)dict &#123;</span><br><span class="line">    <span class="keyword">return</span> @&#123;</span><br><span class="line">        <span class="string">@&quot;FFD8FF&quot;</span> : <span class="string">@&quot;JPEG&quot;</span> ,</span><br><span class="line">        <span class="string">@&quot;89504E47&quot;</span> : <span class="string">@&quot;PNG&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;47494638&quot;</span> : <span class="string">@&quot;GIF&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;49492A00&quot;</span> : <span class="string">@&quot;TIFF&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;424D&quot;</span> : <span class="string">@&quot;BMP&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;41433130&quot;</span> : <span class="string">@&quot;DWG&quot;</span>, <span class="comment">// CAD</span></span><br><span class="line">        <span class="string">@&quot;38425053&quot;</span> : <span class="string">@&quot;PSD&quot;</span>, <span class="comment">// Adobe Photoshop</span></span><br><span class="line">        <span class="string">@&quot;7B5C727466&quot;</span> : <span class="string">@&quot;RTF&quot;</span>, <span class="comment">// Rich Text Format</span></span><br><span class="line">        <span class="string">@&quot;3C3F786D6C&quot;</span> : <span class="string">@&quot;XML&quot;</span>, <span class="comment">// XML</span></span><br><span class="line">        <span class="string">@&quot;68746D6C3E&quot;</span> : <span class="string">@&quot;HTML&quot;</span>, <span class="comment">// HTML</span></span><br><span class="line">        <span class="string">@&quot;48544D4C207B0D0A0942&quot;</span> : <span class="string">@&quot;CSS&quot;</span>, <span class="comment">// CSS</span></span><br><span class="line">        <span class="string">@&quot;696B2E71623D696B2E71&quot;</span> : <span class="string">@&quot;JS&quot;</span>, <span class="comment">// JS</span></span><br><span class="line">        <span class="string">@&quot;44656C69766572792D646174653A&quot;</span> : <span class="string">@&quot;EML&quot;</span>, <span class="comment">//Email [thorough only].</span></span><br><span class="line">        <span class="string">@&quot;CFAD12FEC5FD746F&quot;</span> : <span class="string">@&quot;DBX&quot;</span>, <span class="comment">// Outlook Express.</span></span><br><span class="line">        <span class="string">@&quot;2142444E&quot;</span> : <span class="string">@&quot;PST&quot;</span>, <span class="comment">// Outlook (pst).</span></span><br><span class="line">        <span class="string">@&quot;D0CF11E0&quot;</span> : <span class="string">@&quot;XLS_DOC&quot;</span>, <span class="comment">// MS Word/Excel</span></span><br><span class="line">        <span class="string">@&quot;504B0304&quot;</span> : <span class="string">@&quot;XLSX_DOCX&quot;</span>, <span class="comment">// MS Word/Excel</span></span><br><span class="line">        <span class="string">@&quot;255044462D&quot;</span> : <span class="string">@&quot;PDF&quot;</span>, <span class="comment">// PDF</span></span><br><span class="line">        <span class="string">@&quot;5374616E64617264204A&quot;</span> : <span class="string">@&quot;MDB&quot;</span>, <span class="comment">// MS Access.</span></span><br><span class="line">        <span class="string">@&quot;d0cf11e0a1b11ae10000&quot;</span> : <span class="string">@&quot;WPS&quot;</span>, <span class="comment">// WPS文字wps、表格et、演示dps都是一样的</span></span><br><span class="line">        <span class="string">@&quot;504B0304&quot;</span> : <span class="string">@&quot;ZIP&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;52617221&quot;</span> : <span class="string">@&quot;RAR&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;4D5A9000030000000400&quot;</span> : <span class="string">@&quot;EXE&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;57415645&quot;</span> : <span class="string">@&quot;WAV&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;41564920&quot;</span> : <span class="string">@&quot;AVI&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;000001BA&quot;</span> : <span class="string">@&quot;MPG&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;6D6F6F76&quot;</span> : <span class="string">@&quot;MOV&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;00000020667479706d70&quot;</span> : <span class="string">@&quot;MP4&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;49443303000000002176&quot;</span> : <span class="string">@&quot;MP3&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;464C5601050000000900&quot;</span> : <span class="string">@&quot;FLV&quot;</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>静态库制作及注意点</title>
     <url>/2018/10/21/ios/general/%E9%9D%99%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C%E5%8F%8A%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
     <content><![CDATA[<p>使用库无外乎就是两种情况：一种是将源码的实现细节隐藏，只给外部调用的接口集成特定的服务，如常见的百度/谷歌地图等等第三方库；另一种就是防止公司的核心代码泄露，将核心功能的源码打成库文件集成。</p>
@@ -7202,6 +7189,19 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
 <h2 id="framework静态库"><a href="#framework静态库" class="headerlink" title=".framework静态库"></a>.framework静态库</h2><p>可以采用cocoaPods的方式构建</p>
 <h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><p>如果静态库中使用到分类，那么直接使用静态库会有找不到该方法的运行时错误（selector not recognized），解决办法是：在使用静态库的工程中配置<code>other linker flags</code>的添加<code>-ObjC</code>。<br>如果一个静态库很复杂，需要暴露的.h比较多的话，就可以在静态库的内部创建一个.h文件（一般这个.h文件的名字和静态库的名字相同），然后把所有需要暴露出来的.h文件都集中放在这个.h文件中，而那些原本需要暴露的.h都不需要再暴露了，只需要把.h暴露出来就可以了。<br>如果我们在同一电脑行生成静态库并配置到其他项目中，此时在项目中打断点是可以进入静态库的实现文件中的，不过不用担心，在其他电脑是以汇编形式显示的。</p>
 ]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>获取文件后缀</title>
+    <url>/2020/02/12/ios/general/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/</url>
+    <content><![CDATA[<p>项目中有一个需求：<br>给定一个<code>NSData *</code>类型的数据，从中解析出文件类型。</p>
+<a id="more"></a>
+
+<h2 id="图片后缀判断"><a href="#图片后缀判断" class="headerlink" title="图片后缀判断"></a>图片后缀判断</h2><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NSInteger</span> ImageFormat <span class="built_in">NS_TYPED_EXTENSIBLE_ENUM</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatUndefined = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatJPEG      = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatPNG       = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatGIF       = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatTIFF      = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatWebP      = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatHEIC      = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> ImageFormat ImageFormatHEIF      = <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line">+ (ImageFormat)imageFormatForImageData:(<span class="keyword">nullable</span> <span class="built_in">NSData</span> *)data &#123;</span><br><span class="line">    <span class="keyword">if</span> (!data) &#123;</span><br><span class="line">        <span class="keyword">return</span> ImageFormatUndefined;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// File signatures table: http://www.garykessler.net/library/file_sigs.html</span></span><br><span class="line">    uint8_t c;</span><br><span class="line">    [data getBytes:&amp;c length:<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">switch</span> (c) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0xFF</span>:</span><br><span class="line">            <span class="keyword">return</span> ImageFormatJPEG;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x89</span>:</span><br><span class="line">            <span class="keyword">return</span> ImageFormatPNG;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x47</span>:</span><br><span class="line">            <span class="keyword">return</span> ImageFormatGIF;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x49</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x4D</span>:</span><br><span class="line">            <span class="keyword">return</span> ImageFormatTIFF;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x52</span>: &#123;</span><br><span class="line">            <span class="keyword">if</span> (data.length &gt;= <span class="number">12</span>) &#123;</span><br><span class="line">                <span class="comment">//RIFF....WEBP</span></span><br><span class="line">                <span class="built_in">NSString</span> *testString = [[<span class="built_in">NSString</span> alloc] initWithData:[data subdataWithRange:<span class="built_in">NSMakeRange</span>(<span class="number">0</span>, <span class="number">12</span>)] encoding:<span class="built_in">NSASCIIStringEncoding</span>];</span><br><span class="line">                <span class="keyword">if</span> ([testString hasPrefix:<span class="string">@&quot;RIFF&quot;</span>] &amp;&amp; [testString hasSuffix:<span class="string">@&quot;WEBP&quot;</span>]) &#123;</span><br><span class="line">                    <span class="keyword">return</span> ImageFormatWebP;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x00</span>: &#123;</span><br><span class="line">            <span class="keyword">if</span> (data.length &gt;= <span class="number">12</span>) &#123;</span><br><span class="line">                <span class="comment">//....ftypheic ....ftypheix ....ftyphevc ....ftyphevx</span></span><br><span class="line">                <span class="built_in">NSString</span> *testString = [[<span class="built_in">NSString</span> alloc] initWithData:[data subdataWithRange:<span class="built_in">NSMakeRange</span>(<span class="number">4</span>, <span class="number">8</span>)] encoding:<span class="built_in">NSASCIIStringEncoding</span>];</span><br><span class="line">                <span class="keyword">if</span> ([testString isEqualToString:<span class="string">@&quot;ftypheic&quot;</span>]</span><br><span class="line">                    || [testString isEqualToString:<span class="string">@&quot;ftypheix&quot;</span>]</span><br><span class="line">                    || [testString isEqualToString:<span class="string">@&quot;ftyphevc&quot;</span>]</span><br><span class="line">                    || [testString isEqualToString:<span class="string">@&quot;ftyphevx&quot;</span>]) &#123;</span><br><span class="line">                    <span class="keyword">return</span> ImageFormatHEIC;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//....ftypmif1 ....ftypmsf1</span></span><br><span class="line">                <span class="keyword">if</span> ([testString isEqualToString:<span class="string">@&quot;ftypmif1&quot;</span>] || [testString isEqualToString:<span class="string">@&quot;ftypmsf1&quot;</span>]) &#123;</span><br><span class="line">                    <span class="keyword">return</span> ImageFormatHEIF;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ImageFormatUndefined;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件后缀判断"><a href="#文件后缀判断" class="headerlink" title="文件后缀判断"></a>文件后缀判断</h2><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)getFileExtension &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *path = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@&quot;2019工资单 (1)&quot;</span> ofType:<span class="string">@&quot;docx&quot;</span>];</span><br><span class="line">    <span class="built_in">NSData</span> *data = [<span class="built_in">NSData</span> dataWithContentsOfFile:path];</span><br><span class="line">    <span class="built_in">NSString</span> *extension = [<span class="keyword">self</span> contentTypeForImageData:data];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%@&quot;</span>, extension);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSString</span> *)contentTypeForImageData:(<span class="built_in">NSData</span> *)data &#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">NSInteger</span> maxLength = <span class="number">28</span>;</span><br><span class="line">    Byte headBytes[maxLength];</span><br><span class="line">    [data getBytes:headBytes length:maxLength];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSString</span> *headStr = [<span class="keyword">self</span> hexStringFromByte:headBytes];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSDictionary</span> *dict = [<span class="keyword">self</span> dict];</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">NSString</span> *key <span class="keyword">in</span> dict) &#123;</span><br><span class="line">        <span class="keyword">if</span> ([headStr hasPrefix:[key uppercaseString]]) &#123;</span><br><span class="line">            <span class="keyword">return</span> dict[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">@&quot;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSString</span> *)hexStringFromByte:(Byte *)byta &#123;</span><br><span class="line">    <span class="comment">// 转16进制</span></span><br><span class="line">    <span class="built_in">NSString</span> *hexStr = <span class="string">@&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">28</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">NSString</span> *newHexStr = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@&quot;%x&quot;</span>,byta[i]&amp;<span class="number">0xff</span>];<span class="comment">///16进制数</span></span><br><span class="line">        <span class="keyword">if</span>([newHexStr length]==<span class="number">1</span>)</span><br><span class="line">            hexStr = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@&quot;%@0%@&quot;</span>,hexStr,newHexStr];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            hexStr = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@&quot;%@%@&quot;</span>,hexStr,newHexStr];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [hexStr uppercaseString];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSDictionary</span> *)dict &#123;</span><br><span class="line">    <span class="keyword">return</span> @&#123;</span><br><span class="line">        <span class="string">@&quot;FFD8FF&quot;</span> : <span class="string">@&quot;JPEG&quot;</span> ,</span><br><span class="line">        <span class="string">@&quot;89504E47&quot;</span> : <span class="string">@&quot;PNG&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;47494638&quot;</span> : <span class="string">@&quot;GIF&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;49492A00&quot;</span> : <span class="string">@&quot;TIFF&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;424D&quot;</span> : <span class="string">@&quot;BMP&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;41433130&quot;</span> : <span class="string">@&quot;DWG&quot;</span>, <span class="comment">// CAD</span></span><br><span class="line">        <span class="string">@&quot;38425053&quot;</span> : <span class="string">@&quot;PSD&quot;</span>, <span class="comment">// Adobe Photoshop</span></span><br><span class="line">        <span class="string">@&quot;7B5C727466&quot;</span> : <span class="string">@&quot;RTF&quot;</span>, <span class="comment">// Rich Text Format</span></span><br><span class="line">        <span class="string">@&quot;3C3F786D6C&quot;</span> : <span class="string">@&quot;XML&quot;</span>, <span class="comment">// XML</span></span><br><span class="line">        <span class="string">@&quot;68746D6C3E&quot;</span> : <span class="string">@&quot;HTML&quot;</span>, <span class="comment">// HTML</span></span><br><span class="line">        <span class="string">@&quot;48544D4C207B0D0A0942&quot;</span> : <span class="string">@&quot;CSS&quot;</span>, <span class="comment">// CSS</span></span><br><span class="line">        <span class="string">@&quot;696B2E71623D696B2E71&quot;</span> : <span class="string">@&quot;JS&quot;</span>, <span class="comment">// JS</span></span><br><span class="line">        <span class="string">@&quot;44656C69766572792D646174653A&quot;</span> : <span class="string">@&quot;EML&quot;</span>, <span class="comment">//Email [thorough only].</span></span><br><span class="line">        <span class="string">@&quot;CFAD12FEC5FD746F&quot;</span> : <span class="string">@&quot;DBX&quot;</span>, <span class="comment">// Outlook Express.</span></span><br><span class="line">        <span class="string">@&quot;2142444E&quot;</span> : <span class="string">@&quot;PST&quot;</span>, <span class="comment">// Outlook (pst).</span></span><br><span class="line">        <span class="string">@&quot;D0CF11E0&quot;</span> : <span class="string">@&quot;XLS_DOC&quot;</span>, <span class="comment">// MS Word/Excel</span></span><br><span class="line">        <span class="string">@&quot;504B0304&quot;</span> : <span class="string">@&quot;XLSX_DOCX&quot;</span>, <span class="comment">// MS Word/Excel</span></span><br><span class="line">        <span class="string">@&quot;255044462D&quot;</span> : <span class="string">@&quot;PDF&quot;</span>, <span class="comment">// PDF</span></span><br><span class="line">        <span class="string">@&quot;5374616E64617264204A&quot;</span> : <span class="string">@&quot;MDB&quot;</span>, <span class="comment">// MS Access.</span></span><br><span class="line">        <span class="string">@&quot;d0cf11e0a1b11ae10000&quot;</span> : <span class="string">@&quot;WPS&quot;</span>, <span class="comment">// WPS文字wps、表格et、演示dps都是一样的</span></span><br><span class="line">        <span class="string">@&quot;504B0304&quot;</span> : <span class="string">@&quot;ZIP&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;52617221&quot;</span> : <span class="string">@&quot;RAR&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;4D5A9000030000000400&quot;</span> : <span class="string">@&quot;EXE&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;57415645&quot;</span> : <span class="string">@&quot;WAV&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;41564920&quot;</span> : <span class="string">@&quot;AVI&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;000001BA&quot;</span> : <span class="string">@&quot;MPG&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;6D6F6F76&quot;</span> : <span class="string">@&quot;MOV&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;00000020667479706d70&quot;</span> : <span class="string">@&quot;MP4&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;49443303000000002176&quot;</span> : <span class="string">@&quot;MP3&quot;</span>,</span><br><span class="line">        <span class="string">@&quot;464C5601050000000900&quot;</span> : <span class="string">@&quot;FLV&quot;</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>iOS</tag>
       </tags>
@@ -7571,21 +7571,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>iOS-代理检测</title>
-    <url>/2019/09/26/ios/objc/iOS-%E4%BB%A3%E7%90%86%E6%A3%80%E6%B5%8B/</url>
-    <content><![CDATA[<p>当我们开发移动App时候，为了避免别人抓包，所以我们要有自己的检测机制</p>
-<a id="more"></a>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">/// 判断是否设置了代理</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)checkProxySetting &#123;</span><br><span class="line">    <span class="comment">// 获取当前系统代理配置</span></span><br><span class="line">    <span class="built_in">NSDictionary</span> *proxySettings = (__bridge <span class="built_in">NSDictionary</span> *)(<span class="built_in">CFNetworkCopySystemProxySettings</span>());</span><br><span class="line">    <span class="comment">// 获取代理的信息 - url一般都填baidu</span></span><br><span class="line">    <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@&quot;https://www.baidu.com&quot;</span>];</span><br><span class="line">    <span class="built_in">NSArray</span> *proxies = (__bridge <span class="built_in">NSArray</span> *)(<span class="built_in">CFNetworkCopyProxiesForURL</span>((__bridge <span class="built_in">CFURLRef</span>)(url), (__bridge <span class="built_in">CFDictionaryRef</span>)(proxySettings)));</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (proxies.count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">NSString</span> *proxyType = [proxies.firstObject objectForKey:(<span class="built_in">NSString</span> *)kCFProxyTypeKey];</span><br><span class="line">        <span class="keyword">if</span> (![proxyType isEqualToString:(__bridge <span class="built_in">NSString</span> *)kCFProxyTypeNone]) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; proxies.count; i++) &#123;</span><br><span class="line">                <span class="built_in">NSDictionary</span> *settings = proxies[i];</span><br><span class="line">                <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="built_in">NSLog</span>(<span class="string">@&quot;---------------代理配置---------------&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@&quot;host: %@&quot;</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyHostNameKey]);</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@&quot;port: %@&quot;</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyPortNumberKey]);</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@&quot;type: %@&quot;</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyTypeKey]);</span><br><span class="line">                <span class="keyword">if</span> (i == proxies.count - <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="built_in">NSLog</span>(<span class="string">@&quot;-------------------------------------&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">NSLog</span>(<span class="string">@&quot;---------------------------&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-        <tag>Objc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iOS-探索对象本质</title>
     <url>/2018/03/16/ios/objc/iOS-%E6%8E%A2%E7%B4%A2%E5%AF%B9%E8%B1%A1%E6%9C%AC%E8%B4%A8/</url>
     <content><![CDATA[<p>如果想探究OC对象的本质，所以我们需要了解OC这门语言；然后我们也要熟悉研究东西怎么切入</p>
@@ -7608,6 +7593,21 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
 <p>OC对象最小分配的空间是 16</p>
 </blockquote>
 ]]></content>
+      <tags>
+        <tag>iOS</tag>
+        <tag>Objc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS-代理检测</title>
+    <url>/2019/09/26/ios/objc/iOS-%E4%BB%A3%E7%90%86%E6%A3%80%E6%B5%8B/</url>
+    <content><![CDATA[<p>当我们开发移动App时候，为了避免别人抓包，所以我们要有自己的检测机制</p>
+<a id="more"></a>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">/// 判断是否设置了代理</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)checkProxySetting &#123;</span><br><span class="line">    <span class="comment">// 获取当前系统代理配置</span></span><br><span class="line">    <span class="built_in">NSDictionary</span> *proxySettings = (__bridge <span class="built_in">NSDictionary</span> *)(<span class="built_in">CFNetworkCopySystemProxySettings</span>());</span><br><span class="line">    <span class="comment">// 获取代理的信息 - url一般都填baidu</span></span><br><span class="line">    <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@&quot;https://www.baidu.com&quot;</span>];</span><br><span class="line">    <span class="built_in">NSArray</span> *proxies = (__bridge <span class="built_in">NSArray</span> *)(<span class="built_in">CFNetworkCopyProxiesForURL</span>((__bridge <span class="built_in">CFURLRef</span>)(url), (__bridge <span class="built_in">CFDictionaryRef</span>)(proxySettings)));</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (proxies.count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">NSString</span> *proxyType = [proxies.firstObject objectForKey:(<span class="built_in">NSString</span> *)kCFProxyTypeKey];</span><br><span class="line">        <span class="keyword">if</span> (![proxyType isEqualToString:(__bridge <span class="built_in">NSString</span> *)kCFProxyTypeNone]) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; proxies.count; i++) &#123;</span><br><span class="line">                <span class="built_in">NSDictionary</span> *settings = proxies[i];</span><br><span class="line">                <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="built_in">NSLog</span>(<span class="string">@&quot;---------------代理配置---------------&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@&quot;host: %@&quot;</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyHostNameKey]);</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@&quot;port: %@&quot;</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyPortNumberKey]);</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@&quot;type: %@&quot;</span>, [settings objectForKey:(<span class="built_in">NSString</span> *)kCFProxyTypeKey]);</span><br><span class="line">                <span class="keyword">if</span> (i == proxies.count - <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="built_in">NSLog</span>(<span class="string">@&quot;-------------------------------------&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">NSLog</span>(<span class="string">@&quot;---------------------------&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
       <tags>
         <tag>iOS</tag>
         <tag>Objc</tag>
@@ -7637,25 +7637,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
         <tag>iOS</tag>
         <tag>Objc</tag>
         <tag>Timer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>事故记录</title>
-    <url>/2017/01/04/ios/record/Code%E4%BA%8B%E6%95%85%E8%AE%B0%E5%BD%9501/</url>
-    <content><![CDATA[<p>2017-11-04 编码事故记录<br>CV战士的墙真的是挺硬，编码问题</p>
-<a id="more"></a>
-
-
-<p>今天上线发现<code>iPhone7 Plus</code>设备都用不了，一顿排查，发现字符编码出现了问题</p>
-<p><code>iPhone7 Plus</code>第二个<code>P</code>是古希腊字符<code>Ρ</code>,它的Unicode码是<code>\u03a1</code>，正常的<code>P</code>的Unicode码是<code>\u0050</code>。</p>
-<p>我们在校验字符的时候不会通过，最后导致程序起不来。GG</p>
-<p>以后上线测试需要给力哦！</p>
-]]></content>
-      <categories>
-        <category>记录</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -7793,6 +7774,25 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
 <blockquote>
 <p>如果后台的流程后置的话，一定要保障其自动化部署和迁移脚本能够顺利进行。</p>
 </blockquote>
+]]></content>
+      <categories>
+        <category>记录</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>事故记录</title>
+    <url>/2017/01/04/ios/record/Code%E4%BA%8B%E6%95%85%E8%AE%B0%E5%BD%9501/</url>
+    <content><![CDATA[<p>2017-11-04 编码事故记录<br>CV战士的墙真的是挺硬，编码问题</p>
+<a id="more"></a>
+
+
+<p>今天上线发现<code>iPhone7 Plus</code>设备都用不了，一顿排查，发现字符编码出现了问题</p>
+<p><code>iPhone7 Plus</code>第二个<code>P</code>是古希腊字符<code>Ρ</code>,它的Unicode码是<code>\u03a1</code>，正常的<code>P</code>的Unicode码是<code>\u0050</code>。</p>
+<p>我们在校验字符的时候不会通过，最后导致程序起不来。GG</p>
+<p>以后上线测试需要给力哦！</p>
 ]]></content>
       <categories>
         <category>记录</category>
