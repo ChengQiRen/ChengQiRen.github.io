@@ -6,7 +6,7 @@
   <link href="https://rencheng.cc/atom.xml" rel="self"/>
   
   <link href="https://rencheng.cc/"/>
-  <updated>2020-09-02T11:44:59.000Z</updated>
+  <updated>2020-09-14T06:58:55.000Z</updated>
   <id>https://rencheng.cc/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS-Xcode相关脚本</title>
+    <link href="https://rencheng.cc/2020/09/14/ios/general/iOS-Xcode%E7%9B%B8%E5%85%B3%E8%84%9A%E6%9C%AC/"/>
+    <id>https://rencheng.cc/2020/09/14/ios/general/iOS-Xcode%E7%9B%B8%E5%85%B3%E8%84%9A%E6%9C%AC/</id>
+    <published>2020-09-14T06:58:55.000Z</published>
+    <updated>2020-09-14T06:58:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Xcode-缓存清理"><a href="#Xcode-缓存清理" class="headerlink" title="Xcode 缓存清理"></a>Xcode 缓存清理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/Library/Developer/Xcode/Archives/</span><br><span class="line">rm -rf ~/Library/Developer/Xcode/DerivedData/ </span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Xcode-缓存清理&quot;&gt;&lt;a href=&quot;#Xcode-缓存清理&quot; class=&quot;headerlink&quot; title=&quot;Xcode 缓存清理&quot;&gt;&lt;/a&gt;Xcode 缓存清理&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>iOS中级面试题</title>
@@ -2105,14 +2125,12 @@
     <published>2018-08-06T12:10:15.000Z</published>
     <updated>2018-08-06T12:10:15.000Z</updated>
     
-    <content type="html"><![CDATA[<p>介绍一些好的网址供大家参考</p><a id="more"></a><h1 id="精选网站"><a href="#精选网站" class="headerlink" title="精选网站"></a>精选网站</h1><h2 id="Windows镜像下载地址"><a href="#Windows镜像下载地址" class="headerlink" title="Windows镜像下载地址"></a>Windows镜像下载地址</h2><p><a href="https://msdn.itellyou.cn/">MSDN我告诉你</a></p><h2 id="fastMonkey安装配置"><a href="#fastMonkey安装配置" class="headerlink" title="fastMonkey安装配置"></a>fastMonkey安装配置</h2><p><a href="https://testerhome.com/topics/9524">https://testerhome.com/topics/9524</a></p><h2 id="mac破解版软件市场"><a href="#mac破解版软件市场" class="headerlink" title="mac破解版软件市场"></a>mac破解版软件市场</h2><p><a href="http://xclient.info/?t=8bbf70cedb6cc547a5d1c8cfa878589cbdd51455">xclient</a></p><p><a href="http://www.52mac.com/">52mac</a><br><a href="https://www.waitsun.com/">waitsun</a></p><h2 id="图片压缩网址"><a href="#图片压缩网址" class="headerlink" title="图片压缩网址"></a>图片压缩网址</h2><p><a href="https://tinypng.com/">tinypng</a></p><h2 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h2><p><a href="https://www.desmos.com/calculator">desmos</a></p>]]></content>
+    <content type="html"><![CDATA[<p>介绍一些好的网址供大家参考</p><a id="more"></a><h2 id="镜像站"><a href="#镜像站" class="headerlink" title="镜像站"></a>镜像站</h2><table><thead><tr><th align="left">站点</th><th align="left">备注</th></tr></thead><tbody><tr><td align="left"><a href="https://msdn.itellyou.cn/">MSDN我告诉你</a></td><td align="left">Windows镜像站</td></tr><tr><td align="left"><a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站</a></td><td align="left">清华大学软件镜像站</td></tr><tr><td align="left"><a href="https://mirrors.ustc.edu.cn/">中科大</a></td><td align="left">中科大软件镜像站</td></tr><tr><td align="left"><a href="http://mirrors.neusoft.edu.cn/">东软镜像站</a></td><td align="left">自己大学的镜像站</td></tr></tbody></table><h2 id="mac破解版软件市场"><a href="#mac破解版软件市场" class="headerlink" title="mac破解版软件市场"></a>mac破解版软件市场</h2><table><thead><tr><th align="left">站点</th><th align="left">备注</th></tr></thead><tbody><tr><td align="left"><a href="https://www.macwk.com/soft">MacWk</a></td><td align="left">MacWk</td></tr><tr><td align="left"><a href="http://xclient.info/?t=8bbf70cedb6cc547a5d1c8cfa878589cbdd51455">xclient</a></td><td align="left">xclient</td></tr><tr><td align="left"><a href="http://www.52mac.com/">52mac</a></td><td align="left">52mac</td></tr></tbody></table><h2 id="fastMonkey安装配置"><a href="#fastMonkey安装配置" class="headerlink" title="fastMonkey安装配置"></a>fastMonkey安装配置</h2><p><a href="https://testerhome.com/topics/9524">https://testerhome.com/topics/9524</a></p><h2 id="图片压缩网址"><a href="#图片压缩网址" class="headerlink" title="图片压缩网址"></a>图片压缩网址</h2><p><a href="https://tinypng.com/">tinypng</a></p><h2 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h2><p><a href="https://www.desmos.com/calculator">desmos</a></p>]]></content>
     
     
     <summary type="html">&lt;p&gt;介绍一些好的网址供大家参考&lt;/p&gt;</summary>
     
     
-    
-    <category term="笔记" scheme="https://rencheng.cc/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
     <category term="推荐" scheme="https://rencheng.cc/tags/%E6%8E%A8%E8%8D%90/"/>
@@ -2135,27 +2153,6 @@
     
     
     <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OC-Block</title>
-    <link href="https://rencheng.cc/2018/06/02/ios/objc/OC-Block/"/>
-    <id>https://rencheng.cc/2018/06/02/ios/objc/OC-Block/</id>
-    <published>2018-06-02T06:45:19.000Z</published>
-    <updated>2018-06-02T06:45:19.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本篇文章是学习<a href="https://ke.qq.com/course/package/11609">MJ的底层原理课程</a>后所总结的文章，请看正版课程。</p><a id="more"></a><h2 id="Block是什么"><a href="#Block是什么" class="headerlink" title="Block是什么"></a>Block是什么</h2><p>Block本质上也是一个<code>OC对象</code>，它内部也有个<code>isa</code>指针<br>Block是封装了<code>函数调用</code>以及<code>函数调用环境</code>的OC对象</p><blockquote><p>总结：block是封装<code>函数</code>及其<code>上下文</code>的<code>OC对象</code></p></blockquote><h3 id="Block底层结构"><a href="#Block底层结构" class="headerlink" title="Block底层结构"></a>Block底层结构</h3><p><img src="https://object.renchengqi.com/blog/ekv3k.jpg"></p><h3 id="Block的变量捕获（capture）"><a href="#Block的变量捕获（capture）" class="headerlink" title="Block的变量捕获（capture）"></a>Block的变量捕获（capture）</h3><p><img src="https://object.renchengqi.com/blog/p4oaw.png"></p><h3 id="Block类型"><a href="#Block类型" class="headerlink" title="Block类型"></a>Block类型</h3><table><thead><tr><th align="left">类型</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>__NSGlobalBlock__</code></td><td align="left">没有访问auto变量</td></tr><tr><td align="left"><code>__NSStackBlock__</code></td><td align="left">访问了auto变量</td></tr><tr><td align="left"><code>__NSMallocBlock__</code></td><td align="left"><code>__NSStackBlock__</code>调用了copy</td></tr></tbody></table><h3 id="每种类型的Block调用Copy后的结果如下所示"><a href="#每种类型的Block调用Copy后的结果如下所示" class="headerlink" title="每种类型的Block调用Copy后的结果如下所示"></a>每种类型的Block调用Copy后的结果如下所示</h3><table><thead><tr><th align="left">Block类型</th><th align="left">副本源的配置存储域</th><th align="left">复制效果</th></tr></thead><tbody><tr><td align="left"><code>_NSConcreteStackBlock</code></td><td align="left">栈</td><td align="left">从栈拷贝到堆</td></tr><tr><td align="left"><code>_NSConcreteGlobalBlock</code></td><td align="left">程序的数据区域</td><td align="left">什么也不做</td></tr><tr><td align="left"><code>_NSConcreteMallocBlock</code></td><td align="left">堆</td><td align="left">引用计数增加</td></tr></tbody></table>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;本篇文章是学习&lt;a href=&quot;https://ke.qq.com/course/package/11609&quot;&gt;MJ的底层原理课程&lt;/a&gt;后所总结的文章，请看正版课程。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
-    
-    <category term="Objc" scheme="https://rencheng.cc/tags/Objc/"/>
     
   </entry>
   
