@@ -24,12 +24,12 @@
     var CONFIG = {"hostname":"rencheng.cc","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="底层面试概要   Runtime  RunLoop">
+  <meta name="description" content="底层面试概要   Runtime  RunLoop  多线程  内存管理  性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS底层面试题">
 <meta property="og:url" content="https://rencheng.cc/2020/08/28/ios/general/iOS%E5%BA%95%E5%B1%82%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="Cheng&#39;s Blog">
-<meta property="og:description" content="底层面试概要   Runtime  RunLoop">
+<meta property="og:description" content="底层面试概要   Runtime  RunLoop  多线程  内存管理  性能优化">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-28T01:55:40.000Z">
 <meta property="article:modified_time" content="2020-08-28T01:55:40.000Z">
@@ -213,7 +213,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Runtime"><span class="nav-number">1.</span> <span class="nav-text">Runtime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RunLoop"><span class="nav-number">2.</span> <span class="nav-text">RunLoop</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Runtime"><span class="nav-number">1.</span> <span class="nav-text">Runtime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RunLoop"><span class="nav-number">2.</span> <span class="nav-text">RunLoop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">多线程</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -229,7 +229,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">126</span>
+          <span class="site-state-item-count">127</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -325,7 +325,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.7k</span>
+      <span>3.3k</span>
     </span>
 </div>
 
@@ -338,8 +338,11 @@
     <div class="post-body" itemprop="articleBody">
         <p>底层面试概要</p>
 <ul>
-<li><input checked="" disabled="" type="checkbox"> Runtime</li>
-<li><input checked="" disabled="" type="checkbox"> RunLoop<a id="more"></a>
+<li><input disabled="" type="checkbox"> Runtime</li>
+<li><input checked="" disabled="" type="checkbox"> RunLoop</li>
+<li><input disabled="" type="checkbox"> 多线程</li>
+<li><input disabled="" type="checkbox"> 内存管理</li>
+<li><input disabled="" type="checkbox"> 性能优化<a id="more"></a>
 
 </li>
 </ul>
@@ -422,6 +425,35 @@
 <li>kCFRunLoopDefaultMode（NSDefaultRunLoopMode）：App的默认Mode，通常主线程是在这个Mode下运行</li>
 <li>UITrackingRunLoopMode：界面跟踪 Mode，用于 ScrollView 追踪触摸滑动，保证界面滑动时不受其他 Mode 影响</li>
 </ul>
+</li>
+</ol>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><ol>
+<li><p>你理解的多线程？</p>
+</li>
+<li><p>iOS的多线程方案有哪几种？你更倾向于哪一种？</p>
+</li>
+<li><p>你在项目中用过 GCD 吗？</p>
+</li>
+<li><p>GCD 的队列类型</p>
+</li>
+<li><p>说一下 OperationQueue 和 GCD 的区别，以及各自的优势</p>
+</li>
+<li><p>线程安全的处理手段有哪些？</p>
+</li>
+<li><p>OC你了解的锁有哪些？在你回答基础上进行二次提问；<br>追问一：自旋和互斥对比？<br>追问二：使用以上锁需要注意哪些？<br>追问三：用C/OC/C++，任选其一，实现自旋或互斥？口述即可！</p>
+</li>
+<li><p>以下代码是在主线程执行的，会不会产生死锁？</p>
+ <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></span><br><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    [<span class="keyword">self</span> test];</span><br><span class="line">&#125;</span><br><span class="line">- (<span class="keyword">void</span>)test &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;执行任务1&quot;</span>);</span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> queue = dispatch_get_main_queue();</span><br><span class="line">    <span class="built_in">dispatch_sync</span>(queue, ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@&quot;执行任务2&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;执行任务3&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p> 答：会产生死锁，因为<code>viewDidLoad</code>方法就是在主线程(主队列)中进行的，而<code>line-9</code>仍然想让代码块 <strong>立即</strong> 在主线程(主队列)中同步执行。</p>
+</li>
+<li><p>问下面代码的打印结果是什么？</p>
+ <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></span><br><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(queue, ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@&quot;1&quot;</span>);</span><br><span class="line">        [<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(test) withObject:<span class="literal">nil</span> afterDelay:<span class="number">.0</span>];</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@&quot;3&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">- (<span class="keyword">void</span>)test &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;2&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 答：打印结果是：1, 3。<br> 原因：<code>performSelector:withObject:afterDelay:</code>的本质是往Runloop中添加定时器，子线程默认没有启动<code>Runloop</code>。解决方法：在<code>line-8</code>后插入</p>
+ <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//[[NSRunLoop currentRunLoop] addPort:[NSPort new] forMode:NSDefaultRunLoopMode];</span></span><br><span class="line">[[<span class="built_in">NSRunLoop</span> currentRunLoop] runMode:<span class="built_in">NSDefaultRunLoopMode</span> beforeDate:[<span class="built_in">NSDate</span> distantFuture]];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>请问下面代码的打印结果是什么？</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>&lt;<span class="built_in">UITouch</span> *&gt; *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">    <span class="built_in">NSThread</span> *thread = [[<span class="built_in">NSThread</span> alloc] initWithBlock:^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@&quot;1&quot;</span>);</span><br><span class="line">    &#125;];</span><br><span class="line">    [thread start];</span><br><span class="line">    [<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(test) onThread:thread withObject:<span class="literal">nil</span> waitUntilDone:<span class="literal">YES</span>];</span><br><span class="line">&#125;</span><br><span class="line">- (<span class="keyword">void</span>)test &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;2&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>答：只会打印1。因为在调用test的时候，线程已经销毁了。会报错<code>target thread exited while waiting for the perform</code></p>
 </li>
 </ol>
 
@@ -547,14 +579,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">499k</span>
+    <span title="站点总字数">504k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7:34</span>
+    <span title="站点阅读时长">7:39</span>
   </span>
 </div>
 
