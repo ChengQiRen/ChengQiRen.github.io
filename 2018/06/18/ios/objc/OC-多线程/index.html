@@ -26,11 +26,12 @@
 
   <meta name="description" content="多线程，充分利用设备多核的技术。应用非常广泛">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OC-多线程">
+<meta property="og:title" content="iOS-多线程">
 <meta property="og:url" content="https://rencheng.cc/2018/06/18/ios/objc/OC-%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Cheng&#39;s Blog">
 <meta property="og:description" content="多线程，充分利用设备多核的技术。应用非常广泛">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://object.renchengqi.com/blog/opwkh.jpg">
 <meta property="og:image" content="http://object.renchengqi.com/blog/npkRzM.jpg">
 <meta property="og:image" content="http://object.renchengqi.com/blog/8kiyt.jpg">
 <meta property="og:image" content="http://object.renchengqi.com/blog/ctbpw.jpg">
@@ -40,7 +41,7 @@
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Objc">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://object.renchengqi.com/blog/npkRzM.jpg">
+<meta name="twitter:image" content="http://object.renchengqi.com/blog/opwkh.jpg">
 
 
 <link rel="canonical" href="https://rencheng.cc/2018/06/18/ios/objc/OC-%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
@@ -56,7 +57,7 @@
   };
 </script>
 
-  <title>OC-多线程 | Cheng's Blog</title>
+  <title>iOS-多线程 | Cheng's Blog</title>
   
 
 
@@ -308,7 +309,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          OC-多线程
+          iOS-多线程
         </h1>
 
         <div class="post-meta-container">
@@ -412,13 +413,7 @@
 <td align="left">异步(async)</td>
 <td align="left"><strong>有</strong>开启新线程</br><strong>并发</strong>执行任务</td>
 <td align="left"><strong>有</strong>开启新线程</br><strong>串行</strong>执行任务</td>
-<td align="left"><strong>没有</strong>开启新线程</br>**串</td>
-</tr>
-<tr>
-<td align="left">**执行任务</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left"><strong>没有</strong>开启新线程</br><strong>串行</strong>执行任务</td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -446,7 +441,7 @@
 <li><p>当多个线程访问同一块资源时，很容易引发数据错乱和数据安全问题</p>
 </li>
 </ul>
-<h3 id="经典示例：存钱取钱"><a href="#经典示例：存钱取钱" class="headerlink" title="经典示例：存钱取钱"></a>经典示例：存钱取钱</h3><p>![qpNAcq](<a target="_blank" rel="noopener" href="http://object.renchengqi.com/blog/qpNAcq">http://object.renchengqi.com/blog/qpNAcq</a> .jpg)<br>蓝色操作队列代表甲用户拿卡存钱，绿色代表乙用户拿卡取钱。假如他们操作的是同一个账户；黄色代表账户余额。</p>
+<h3 id="经典示例：存钱取钱"><a href="#经典示例：存钱取钱" class="headerlink" title="经典示例：存钱取钱"></a>经典示例：存钱取钱</h3><p><img src="http://object.renchengqi.com/blog/opwkh.jpg"><br>蓝色操作队列代表甲用户拿卡存钱，绿色代表乙用户拿卡取钱。假如他们操作的是同一个账户；黄色代表账户余额。</p>
 <h3 id="经典示例：卖票"><a href="#经典示例：卖票" class="headerlink" title="经典示例：卖票"></a>经典示例：卖票</h3><p><img src="http://object.renchengqi.com/blog/npkRzM.jpg" alt="npkRzM"></p>
 <h3 id="分析与解决"><a href="#分析与解决" class="headerlink" title="分析与解决"></a>分析与解决</h3><p><img src="http://object.renchengqi.com/blog/8kiyt.jpg"></p>
 <p><strong>解决方案</strong>：使用<code>线程同步</code>技术（同步，就是协同步调，按预定的先后次序进行）<br>常见的线程同步技术是：<code>加锁</code></p>
@@ -481,10 +476,18 @@
 </blockquote>
 <h3 id="pthread-mutex"><a href="#pthread-mutex" class="headerlink" title="pthread_mutex"></a>pthread_mutex</h3><p><code>pthread_mutex</code>叫做”互斥锁”，等待锁的线程会处于休眠状态</p>
 <p><strong>使用</strong></p>
+<p>导入头文件</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;pthread.h&gt;</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 静态初始化</span></span><br><span class="line">pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;</span><br><span class="line"><span class="comment">// 尝试加锁</span></span><br><span class="line">pthread_mutex_trylock(&amp;mutex);</span><br><span class="line"><span class="comment">// 加锁</span></span><br><span class="line">pthread_mutex_lock(&amp;mutex);</span><br><span class="line"><span class="comment">// 解锁</span></span><br><span class="line">pthread_mutex_unlock(&amp;mutex);</span><br><span class="line">pthread_mutex_destroy(&amp;mutex);</span><br></pre></td></tr></table></figure>
-<p>为pthread_mutex_t增加动态初始化</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化属性</span></span><br><span class="line">pthread_mutexattr_t attr;</span><br><span class="line">pthread_mutexattr_init(&amp;attr);</span><br><span class="line">pthread_mutexattr_settype(&amp;attr, PTHREAD_MUTEX_DEFAULT);</span><br><span class="line"><span class="comment">// 初始化锁，mutex是指针</span></span><br><span class="line">pthread_mutex_init(&amp;attr, mutex);</span><br><span class="line"><span class="comment">// 跟着锁一起销毁属性</span></span><br><span class="line">pthread_mutexattr_destroy(&amp;attr)</span><br></pre></td></tr></table></figure>
+<p>初始化方法1：静态初始化</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;</span><br></pre></td></tr></table></figure>
+<p>初始化方法2：动态初始化(自定义属性)</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化属性</span></span><br><span class="line">pthread_mutexattr_t attr;</span><br><span class="line">pthread_mutexattr_init(&amp;attr);</span><br><span class="line">pthread_mutexattr_settype(&amp;attr, PTHREAD_MUTEX_DEFAULT);</span><br><span class="line"><span class="comment">// 初始化锁，mutex是指针</span></span><br><span class="line">pthread_mutex_init(mutex, &amp;attr);</span><br><span class="line">pthread_mutexattr_destroy(&amp;attr)</span><br></pre></td></tr></table></figure>
+<p>初始化方法2：动态初始化(默认属性)</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pthread_mutex_init(mutex, <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+<p>加锁解锁操作</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 尝试加锁</span></span><br><span class="line">pthread_mutex_trylock(&amp;mutex);</span><br><span class="line"><span class="comment">// 加锁</span></span><br><span class="line">pthread_mutex_lock(&amp;mutex);</span><br><span class="line"><span class="comment">// 解锁</span></span><br><span class="line">pthread_mutex_unlock(&amp;mutex);</span><br></pre></td></tr></table></figure>
+<p>在恰当的时机，销毁锁</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pthread_mutex_destroy(&amp;mutex);</span><br></pre></td></tr></table></figure>
 
 <h3 id="dispatch-semaphore"><a href="#dispatch-semaphore" class="headerlink" title="dispatch_semaphore"></a>dispatch_semaphore</h3><p>信号量</p>
 <h3 id="dispatch-queue-DISPATCH-QUEUE-SERIAL"><a href="#dispatch-queue-DISPATCH-QUEUE-SERIAL" class="headerlink" title="dispatch_queue(DISPATCH_QUEUE_SERIAL)"></a>dispatch_queue(DISPATCH_QUEUE_SERIAL)</h3><p>串行队列</p>
