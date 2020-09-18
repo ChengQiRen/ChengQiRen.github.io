@@ -575,6 +575,14 @@
 
 <h3 id="dispatch-barrier-async"><a href="#dispatch-barrier-async" class="headerlink" title="dispatch_barrier_async"></a>dispatch_barrier_async</h3><p>这个函数传入的并发队列必须是自己通过dispatch_queue_cretate创建的<br>如果传入的是一个串行或是一个全局的并发队列，那这个函数便等同于dispatch_async函数的效果</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化队列</span></span><br><span class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_queue_create(<span class="string">&quot;com.myqueue&quot;</span>, DISPATCH_QUEUE_CONCURRENT);</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 读</span></span><br><span class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</span><br><span class="line">    </span><br><span class="line">&#125;);</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 写</span></span><br><span class="line">dispatch_barrier_async(queue, ^&#123;</span><br><span class="line">    </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/cheng-ren/Multithreading">Github工程代码</a></p>
+</blockquote>
+
     </div>
 
     
