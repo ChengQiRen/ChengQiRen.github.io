@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Cheng&#39;s Blog</title>
+  <title>RC&#39;s Blog</title>
   
-  <subtitle>Enjoy the journey of life</subtitle>
+  <subtitle>Cease to struggle and you cease to live</subtitle>
   <link href="https://rencheng.cc/atom.xml" rel="self"/>
   
   <link href="https://rencheng.cc/"/>
@@ -707,8 +707,6 @@
     
     
     
-    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
-    
     
     <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
@@ -728,8 +726,6 @@
     
     
     
-    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
-    
     
     <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
@@ -748,8 +744,6 @@
     <summary type="html">&lt;p&gt;Python 程序能用很多方式处理日期和时间，转换日期格式是一个常见的功能。&lt;br&gt;Python 提供了一个&lt;code&gt;time&lt;/code&gt;和&lt;code&gt;calendar&lt;/code&gt;模块可以用于格式化日期和时间。&lt;br&gt;时间间隔是以秒为单位的浮点小数。&lt;br&gt;每个时间戳都以自从1970年1月1日午夜（历元）经过了多长时间来表示。&lt;/p&gt;</summary>
     
     
-    
-    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
     <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
@@ -815,8 +809,6 @@
     
     
     
-    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
-    
     
     <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
@@ -857,8 +849,6 @@
     
     
     
-    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
-    
     
     <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
@@ -877,8 +867,6 @@
     <summary type="html">&lt;p&gt;即文本的高级匹配模式，提供搜索，替代等功能。其本质是一系列由特殊符号组成的字串，这个字串即正则表达式。&lt;br&gt;由普通字符和特殊符号组成字符串，通过描述字符的重复和位置等行为，达到匹配某一类字符串的目的&lt;/p&gt;</summary>
     
     
-    
-    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
     <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
@@ -904,9 +892,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -927,9 +915,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -950,9 +938,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -973,9 +961,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -996,9 +984,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1019,9 +1007,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1042,9 +1030,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1066,9 +1054,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1270,8 +1258,6 @@
     
     
     
-    <category term="笔记" scheme="https://rencheng.cc/categories/%E7%AC%94%E8%AE%B0/"/>
-    
     
     <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
@@ -1292,8 +1278,6 @@
     <summary type="html">&lt;p&gt;本片文章主要讲述网络的基本概念。&lt;br&gt;将多个节点通过特定的介质联系起来的一种关系。&lt;br&gt;以计算设备作为节点，通信线路作为介质的网络。&lt;/p&gt;</summary>
     
     
-    
-    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
     <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
@@ -1319,9 +1303,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MySQL" scheme="https://rencheng.cc/tags/MySQL/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1342,9 +1326,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MySQL" scheme="https://rencheng.cc/tags/MySQL/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
