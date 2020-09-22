@@ -233,7 +233,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">127</span>
+          <span class="site-state-item-count">128</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -329,7 +329,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.5k</span>
+      <span>4.4k</span>
     </span>
 </div>
 
@@ -459,20 +459,36 @@
 </li>
 </ol>
 <h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><ol>
-<li><p>使用CADisplayLink、NSTimer有什么注意点？<br> <code>要注意循环引用</code></p>
+<li><p>使用CADisplayLink、NSTimer有什么注意点？<br> <code>CADisplayLink</code>、<code>NSTimer</code>会对<code>target</code>产生强引用，如果<code>target</code>又对它们产生强引用，那么就会引发循环引用。解决方案：1：使用Block处理。2.使用代理对象<code>NSProxy</code></p>
 </li>
 <li><p>介绍下内存的几大区域</p>
+<ul>
+<li>代码段：编译之后的代码</li>
+<li>数据段<ul>
+<li>字符串常量：比如NSString *str = @”123”</li>
+<li>已初始化数据：已初始化的全局变量、静态变量等</li>
+<li>未初始化数据：未初始化的全局变量、静态变量等</li>
+</ul>
+</li>
+<li>栈：函数调用开销，比如局部变量。分配的内存空间地址越来越小</li>
+<li>堆：通过alloc、malloc、calloc等动态分配的空间，分配的内存空间地址越来越大</li>
+</ul>
 </li>
 <li><p>讲一下你对 iOS 内存管理的理解</p>
 </li>
-<li><p>ARC 都帮我们做了什么？<br>LLVM + Runtime</p>
+<li><p>ARC 都帮我们做了什么？<br> 答：LLVM+Runtime相互协作；ARC利用LLVM编译器，自动帮我们生成release，retain，autorelease代码。像弱引用会在运行时做操作。</p>
 </li>
-<li><p>weak指针的实现原理</p>
+<li><p>weak指针的实现原理<br> 答：将弱引用存到哈希表里面，对象将要销毁的时候，取出弱引用表，将指向当前对象的弱指针置为nil。</p>
 </li>
 <li><p>autorelease对象在什么时机会被调用release</p>
 </li>
 <li><p>方法里有局部对象， 出了方法后会立即释放吗</p>
 </li>
+</ol>
+<ol>
+<li>一下两段代码能发生什么事？有什么区别？ <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">dispatch_async</span>(queue, ^&#123;</span><br><span class="line">        <span class="keyword">self</span>.name = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@&quot;abcdefghijklmn&quot;</span>];</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">dispatch_async</span>(queue, ^&#123;</span><br><span class="line">        <span class="keyword">self</span>.name = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@&quot;abc&quot;</span>];</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ 答：上面一段执行，会出现坏内存的崩溃。下面一段代码name变量存储的是<code>Tagged Pointer</code>，涉及不到对象的内存管理，而上面一段代码因为多线程操作一个对象，有可能会造成对象的过度释放，导致崩溃。</li>
 </ol>
 
     </div>
@@ -597,14 +613,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">509k</span>
+    <span title="站点总字数">513k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7:43</span>
+    <span title="站点阅读时长">7:46</span>
   </span>
 </div>
 
