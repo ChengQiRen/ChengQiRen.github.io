@@ -372,7 +372,7 @@
 <p>使用<code>Tagged Pointer</code>之后，NSNumber指针里面存储的数据变成了：<code>Tag + Data</code>，也就是将数据直接存储在了指针中。当指针不够存储数据时，才会使用动态分配内存的方式来存储数据</p>
 <p><code>objc_msgSend</code>能识别<code>Tagged Pointer</code>，比如<code>NSNumber</code>的<code>intValue</code>方法，直接从指针提取数据，节省了以前的调用开销</p>
 <blockquote>
-<p>如何判断一个指针是否为Tagged Pointer？<br>iOS平台，最高有效位是1（第64bit）<br>Mac平台，最低有效位是1</p>
+<p>如何判断一个指针是否为Tagged Pointer？<br>iOS平台，最高有效位是1（第64bit）；WWDC2020：最低有效位是1<br>Mac平台，最低有效位是1</p>
 </blockquote>
 <h2 id="OC对象的内存管理"><a href="#OC对象的内存管理" class="headerlink" title="OC对象的内存管理"></a>OC对象的内存管理</h2><p>在iOS中，使用<code>引用计数</code>来管理OC对象的内存.</p>
 <ul>
