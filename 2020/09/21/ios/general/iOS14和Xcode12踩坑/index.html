@@ -403,7 +403,7 @@
 <p>可以尝试<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/storekit/skadnetwork/verifying_an_install_validation_postback">SKAdNetwork</a>解决，统计更准确。但是应对场景过于单一。</p>
 </blockquote>
 <h2 id="对象存储结构发生改变"><a href="#对象存储结构发生改变" class="headerlink" title="对象存储结构发生改变"></a>对象存储结构发生改变</h2><ul>
-<li>iOS14以前，类是有<code>MyClass</code>+<code>class_rw_t</code>(dirty memory) + <code>class_ro_t</code>（clean memery）两个数据结构存储信息<br><img src="http://object.renchengqi.com/blog/07w06.jpg"></li>
+<li>iOS14以前，类是有<code>MyClass</code>+<code>class_rw_t</code>(dirty memory) + <code>class_ro_t</code>（clean memery）三个数据结构存储信息<br><img src="http://object.renchengqi.com/blog/07w06.jpg"></li>
 <li>iOS14，类里面的脏内存得到了优化，<code>class_rw_t</code>拆解成<code>class_rw_t</code>+<code>class_rw_ext_t</code><br><img src="http://object.renchengqi.com/blog/ciwxj.jpg"></li>
 </ul>
 <blockquote>
