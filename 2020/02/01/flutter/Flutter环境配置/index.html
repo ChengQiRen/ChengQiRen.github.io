@@ -31,15 +31,15 @@
 <meta property="og:site_name" content="Cheng&#39;s Blog">
 <meta property="og:description" content="主要记录一下Mac上安装的步骤这里的步骤和官方的差不多，直接参考官网">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://object.renchengqi.com/blog/3ta0l.jpg-thumb100">
-<meta property="og:image" content="https://object.renchengqi.com/blog/sg06f.jpg-thumb100">
-<meta property="og:image" content="https://object.renchengqi.com/blog/imkyg.png">
+<meta property="og:image" content="https://cdn.renchengqi.com/blog/3ta0l.jpg-thumb100">
+<meta property="og:image" content="https://cdn.renchengqi.com/blog/sg06f.jpg-thumb100">
+<meta property="og:image" content="https://cdn.renchengqi.com/blog/imkyg.png">
 <meta property="article:published_time" content="2020-02-01T02:19:54.000Z">
 <meta property="article:modified_time" content="2020-02-01T02:19:54.000Z">
 <meta property="article:author" content="任成">
 <meta property="article:tag" content="Flutter">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://object.renchengqi.com/blog/3ta0l.jpg-thumb100">
+<meta name="twitter:image" content="https://cdn.renchengqi.com/blog/3ta0l.jpg-thumb100">
 
 
 <link rel="canonical" href="https://rencheng.cc/2020/02/01/flutter/Flutter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
@@ -365,17 +365,17 @@
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Flutter</span></span><br><span class="line"><span class="built_in">export</span> FLUTTER=~/Library/Flutter/bin $ <span class="built_in">export</span> PATH=<span class="variable">$FLUTTER</span>:<span class="variable">$PATH</span></span><br><span class="line"><span class="comment">#􏲒 重载配置文件</span></span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
 <li><p>检查Flutter环境</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor</span><br></pre></td></tr></table></figure>
-<p> 出现如下结果就完成了环境配置<br> <img src="https://object.renchengqi.com/blog/3ta0l.jpg-thumb100"><br> 如果出现错误，请把下面Android环境安装完成</p>
+<p> 出现如下结果就完成了环境配置<br> <img src="https://cdn.renchengqi.com/blog/3ta0l.jpg-thumb100"><br> 如果出现错误，请把下面Android环境安装完成</p>
 </li>
 </ol>
-<h2 id="配置安卓环境"><a href="#配置安卓环境" class="headerlink" title="配置安卓环境"></a>配置安卓环境</h2><h3 id="安装Android-Studio"><a href="#安装Android-Studio" class="headerlink" title="安装Android Studio"></a>安装Android Studio</h3><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio">下载安装</a><br><img src="https://object.renchengqi.com/blog/sg06f.jpg-thumb100"></p>
+<h2 id="配置安卓环境"><a href="#配置安卓环境" class="headerlink" title="配置安卓环境"></a>配置安卓环境</h2><h3 id="安装Android-Studio"><a href="#安装Android-Studio" class="headerlink" title="安装Android Studio"></a>安装Android Studio</h3><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio">下载安装</a><br><img src="https://cdn.renchengqi.com/blog/sg06f.jpg-thumb100"></p>
 <h3 id="配置SDK"><a href="#配置SDK" class="headerlink" title="配置SDK"></a>配置SDK</h3><p>网上搜索吧</p>
 <h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><code>Flutter</code><br>安装后重启</p>
 <h3 id="修改项目下的-build-gradle文件"><a href="#修改项目下的-build-gradle文件" class="headerlink" title="修改项目下的 build.gradle文件"></a>修改项目下的 build.gradle文件</h3><ul>
 <li>文件路径：项目 –&gt; Android –&gt;build.gradle 文件</li>
 <li>修改内容：找到buildscript 和allprojects 将里面的：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">google()</span><br><span class="line">jcenter()</span><br></pre></td></tr></table></figure>
 修改为阿里云镜像<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">maven &#123; url &#39;https:&#x2F;&#x2F;maven.aliyun.com&#x2F;repository&#x2F;google&#39; &#125;</span><br><span class="line">maven &#123; url &#39;https:&#x2F;&#x2F;maven.aliyun.com&#x2F;repository&#x2F;jcenter&#39; &#125;</span><br><span class="line">maven &#123; url &#39;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;groups&#x2F;public&#39; &#125;</span><br></pre></td></tr></table></figure>
-<img src="https://object.renchengqi.com/blog/imkyg.png"></li>
+<img src="https://cdn.renchengqi.com/blog/imkyg.png"></li>
 </ul>
 <h3 id="修改Flutter安装目录中的flutter-gradle文件"><a href="#修改Flutter安装目录中的flutter-gradle文件" class="headerlink" title="修改Flutter安装目录中的flutter.gradle文件"></a>修改Flutter安装目录中的flutter.gradle文件</h3><ul>
 <li>文件路径：flutter/packages/flutter_tools/gradle/flutter.gradle</li>
@@ -598,7 +598,7 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">521k</span>
+    <span title="站点总字数">520k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
