@@ -31,17 +31,17 @@
 <meta property="og:site_name" content="Cheng&#39;s Blog">
 <meta property="og:description" content="多线程，充分利用设备多核的技术。应用非常广泛">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://object.renchengqi.com/blog/opwkh.jpg">
-<meta property="og:image" content="http://object.renchengqi.com/blog/npkRzM.jpg">
-<meta property="og:image" content="http://object.renchengqi.com/blog/8kiyt.jpg">
-<meta property="og:image" content="http://object.renchengqi.com/blog/ctbpw.jpg">
+<meta property="og:image" content="https://object.renchengqi.com/blog/opwkh.jpg">
+<meta property="og:image" content="https://object.renchengqi.com/blog/npkRzM.jpg">
+<meta property="og:image" content="https://object.renchengqi.com/blog/8kiyt.jpg">
+<meta property="og:image" content="https://object.renchengqi.com/blog/ctbpw.jpg">
 <meta property="article:published_time" content="2018-06-18T08:19:02.000Z">
 <meta property="article:modified_time" content="2018-06-18T08:19:02.000Z">
 <meta property="article:author" content="任成">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Objc">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://object.renchengqi.com/blog/opwkh.jpg">
+<meta name="twitter:image" content="https://object.renchengqi.com/blog/opwkh.jpg">
 
 
 <link rel="canonical" href="https://rencheng.cc/2018/06/18/ios/objc/OC-%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
@@ -454,11 +454,11 @@
 <li><p>当多个线程访问同一块资源时，很容易引发数据错乱和数据安全问题</p>
 </li>
 </ul>
-<h3 id="经典示例：存钱取钱"><a href="#经典示例：存钱取钱" class="headerlink" title="经典示例：存钱取钱"></a>经典示例：存钱取钱</h3><p><img src="http://object.renchengqi.com/blog/opwkh.jpg"><br>蓝色操作队列代表甲用户拿卡存钱，绿色代表乙用户拿卡取钱。假如他们操作的是同一个账户；黄色代表账户余额。</p>
-<h3 id="经典示例：卖票"><a href="#经典示例：卖票" class="headerlink" title="经典示例：卖票"></a>经典示例：卖票</h3><p><img src="http://object.renchengqi.com/blog/npkRzM.jpg" alt="npkRzM"></p>
-<h3 id="分析与解决"><a href="#分析与解决" class="headerlink" title="分析与解决"></a>分析与解决</h3><p><img src="http://object.renchengqi.com/blog/8kiyt.jpg"></p>
+<h3 id="经典示例：存钱取钱"><a href="#经典示例：存钱取钱" class="headerlink" title="经典示例：存钱取钱"></a>经典示例：存钱取钱</h3><p><img src="https://object.renchengqi.com/blog/opwkh.jpg"><br>蓝色操作队列代表甲用户拿卡存钱，绿色代表乙用户拿卡取钱。假如他们操作的是同一个账户；黄色代表账户余额。</p>
+<h3 id="经典示例：卖票"><a href="#经典示例：卖票" class="headerlink" title="经典示例：卖票"></a>经典示例：卖票</h3><p><img src="https://object.renchengqi.com/blog/npkRzM.jpg" alt="npkRzM"></p>
+<h3 id="分析与解决"><a href="#分析与解决" class="headerlink" title="分析与解决"></a>分析与解决</h3><p><img src="https://object.renchengqi.com/blog/8kiyt.jpg"></p>
 <p><strong>解决方案</strong>：使用<code>线程同步</code>技术（同步，就是协同步调，按预定的先后次序进行）<br>常见的线程同步技术是：<code>加锁</code></p>
-<p><img src="http://object.renchengqi.com/blog/ctbpw.jpg"></p>
+<p><img src="https://object.renchengqi.com/blog/ctbpw.jpg"></p>
 <h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><p><strong>线程阻塞的方式</strong></p>
 <ul>
 <li>忙等：类似死循环（占用CPU资源）</li>
