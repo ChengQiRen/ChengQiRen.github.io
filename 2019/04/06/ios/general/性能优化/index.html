@@ -31,16 +31,16 @@
 <meta property="og:site_name" content="Cheng&#39;s Blog">
 <meta property="og:description" content="公司的项目已经上线运营有2年了，不管是启动速度，还是个别界面都有些卡顿">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://object.renchengqi.com/blog/ua7kk.png">
-<meta property="og:image" content="https://object.renchengqi.com/blog/g0xby.png">
-<meta property="og:image" content="https://object.renchengqi.com/blog/bdh1i.png">
-<meta property="og:image" content="https://object.renchengqi.com/blog/v1co6.jpg">
+<meta property="og:image" content="https://cdn.renchengqi.com/blog/ua7kk.png">
+<meta property="og:image" content="https://cdn.renchengqi.com/blog/g0xby.png">
+<meta property="og:image" content="https://cdn.renchengqi.com/blog/bdh1i.png">
+<meta property="og:image" content="https://cdn.renchengqi.com/blog/v1co6.jpg">
 <meta property="article:published_time" content="2019-04-06T11:17:54.000Z">
 <meta property="article:modified_time" content="2019-04-06T11:17:54.000Z">
 <meta property="article:author" content="任成">
 <meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://object.renchengqi.com/blog/ua7kk.png">
+<meta name="twitter:image" content="https://cdn.renchengqi.com/blog/ua7kk.png">
 
 
 <link rel="canonical" href="https://rencheng.cc/2019/04/06/ios/general/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
@@ -350,13 +350,13 @@
 
 <h2 id="CPU-和-GPU"><a href="#CPU-和-GPU" class="headerlink" title="CPU 和 GPU"></a>CPU 和 GPU</h2><p>在屏幕成像的过程中，CPU和GPU起着至关重要的作用<br><strong>CPU（Central Processing Unit，中央处理器）</strong><br>对象的创建和销毁、对象属性的调整、布局计算、文本的计算和排版、图片的格式转换和解码、图像的绘制（Core Graphics）</p>
 <p><strong>GPU（Graphics Processing Unit，图形处理器）</strong><br>纹理的渲染</p>
-<p><img src="https://object.renchengqi.com/blog/ua7kk.png"></p>
+<p><img src="https://cdn.renchengqi.com/blog/ua7kk.png"></p>
 <blockquote>
 <p>在iOS中是双缓冲机制，有前帧缓存、后帧缓存</p>
 </blockquote>
-<h2 id="屏幕成像原理"><a href="#屏幕成像原理" class="headerlink" title="屏幕成像原理"></a>屏幕成像原理</h2><p>每一帧渲染，都会先触发垂直同步，然后触发每一行的水平同步<br><img src="https://object.renchengqi.com/blog/g0xby.png"></p>
+<h2 id="屏幕成像原理"><a href="#屏幕成像原理" class="headerlink" title="屏幕成像原理"></a>屏幕成像原理</h2><p>每一帧渲染，都会先触发垂直同步，然后触发每一行的水平同步<br><img src="https://cdn.renchengqi.com/blog/g0xby.png"></p>
 <h2 id="卡顿"><a href="#卡顿" class="headerlink" title="卡顿"></a>卡顿</h2><p>“卡顿”主要是因为在主线程执行了比较耗时的操作</p>
-<h3 id="卡顿的原因"><a href="#卡顿的原因" class="headerlink" title="卡顿的原因"></a>卡顿的原因</h3><p><img src="https://object.renchengqi.com/blog/bdh1i.png"></p>
+<h3 id="卡顿的原因"><a href="#卡顿的原因" class="headerlink" title="卡顿的原因"></a>卡顿的原因</h3><p><img src="https://cdn.renchengqi.com/blog/bdh1i.png"></p>
 <h3 id="卡顿优化"><a href="#卡顿优化" class="headerlink" title="卡顿优化"></a>卡顿优化</h3><p>尽可能减少CPU、GPU资源消耗</p>
 <blockquote>
 <p>按照60FPS的刷帧率，每隔16ms就会有一次VSync信号</p>
@@ -435,7 +435,7 @@
 <h3 id="冷启动的三个阶段"><a href="#冷启动的三个阶段" class="headerlink" title="冷启动的三个阶段"></a>冷启动的三个阶段</h3><ul>
 <li>dyld</li>
 <li>runtime</li>
-<li>main<br><img src="https://object.renchengqi.com/blog/v1co6.jpg"></li>
+<li>main<br><img src="https://cdn.renchengqi.com/blog/v1co6.jpg"></li>
 </ul>
 <h4 id="dyld"><a href="#dyld" class="headerlink" title="dyld"></a>dyld</h4><p>dyld（dynamic link editor），Apple的动态链接器，可以用来装载Mach-O文件（可执行文件、动态库等）</p>
 <p>装载APP的可执行文件，同时会递归加载所有依赖的动态库，完成会通知Runtime进行下一步的处理</p>
