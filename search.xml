@@ -36,28 +36,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数据分析-概述</title>
-    <url>/2018/11/29/datascience/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<p>数据分析是指用适当的统计分析方法对收集来的大量数据进行分析，提取有用信息和形成结论而对数据加以详细研究和概括总结的过程。</p>
-<a id="more"></a>
-
-<p><strong>使用python做数据分析的常用库</strong></p>
-<ol>
-<li>numpy        基础数值算法</li>
-<li>scipy               科学计算</li>
-<li>matplotlib      数据可视化</li>
-<li>pandas           序列高级函数</li>
-</ol>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>数据分析</tag>
-        <tag>AI进阶</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>爬虫-BeautifulSoup</title>
     <url>/2018/08/08/crawler/BeautifulSoup/</url>
     <content><![CDATA[<p>一个灵活又方便的网页解析库，处理高效，支持多种解析器。<br>利用它就不用编写正则表达式也能方便的实现网页信息的抓取</p>
@@ -430,85 +408,6 @@
       </tags>
   </entry>
   <entry>
-    <title>爬虫-xpath解析工具</title>
-    <url>/2018/08/08/crawler/xpath%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<p>XPath即为XML路径语言（XML Path Language）;<br>在XML文档中查找信息的语言,同样适用于HTML文档的检索;<br>lxml库的使用</p>
-<a id="more"></a>
-
-
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>在XML文档中查找信息的语言,同样适用于HTML文档的检索</p>
-<h2 id="xpath辅助工具"><a href="#xpath辅助工具" class="headerlink" title="xpath辅助工具"></a>xpath辅助工具</h2><ol>
-<li><p>Chrome安装插件方式</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、打开浏览器 - 设置 - 更多工具 - 扩展程序 </span><br><span class="line">2、右上角 ：开发者模式</span><br><span class="line">3、从网上下载的插件 拖拽到 浏览器页面</span><br></pre></td></tr></table></figure></li>
-<li><p>网页解析相关插件</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、Chrome浏览器 ：XPath Helper</span><br><span class="line">2、Firefox浏览器：XPath Checker</span><br><span class="line">3、XPath表达式编辑工具 ：XML Quire</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>打开和关闭xpath辅助工具<br> 打开/关闭 ：</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ctrl + shift + x</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="xpath匹配规则"><a href="#xpath匹配规则" class="headerlink" title="xpath匹配规则"></a>xpath匹配规则</h2><p><a href="https://object.renchengqi.com/blog/bookStore.xml">演示文档</a></p>
-<h3 id="匹配演示"><a href="#匹配演示" class="headerlink" title="匹配演示"></a>匹配演示</h3><ol>
-<li><p>查找bookstore下所有节点</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;bookstore</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查找所有的book节点</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;book</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查找所有book节点下的title节点</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;book&#x2F;title</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查找//book/title节点中lang属性为 “en” 的节点</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;book&#x2F;title[@lang&#x3D;&quot;en&quot;]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>获取bookstore节点下的第2个book节点下的title节点的文本内容</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;bookstore&#x2F;book[2]&#x2F;title&#x2F;text()</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h3 id="选取节点"><a href="#选取节点" class="headerlink" title="选取节点"></a>选取节点</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;  ：从整个HTML文档中查找节点</span><br><span class="line">&#x2F;&#x2F;price   &#x2F;&#x2F;book&#x2F;&#x2F;price</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@   ：选取某个节点的属性</span><br><span class="line">    1、 &#x2F;&#x2F;title[@lang&#x3D;&quot;en&quot;]</span><br><span class="line">    2、 &#x2F;&#x2F;title&#x2F;@lang</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;  ：选取已经存在的条件之上追加条件</span><br><span class="line">     aList &#x3D; parseHtml.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;pl2&quot;]&#39;)</span><br><span class="line">        for element in aList:</span><br><span class="line">            nameList &#x3D; element.xpath(&#39;.&#x2F;a&#x2F;text()&#39;)</span><br><span class="line">            if len(nameList) &gt; 0:</span><br><span class="line">                name &#x3D; nameList[0]</span><br><span class="line">                name &#x3D; name.replace(&quot; &quot;, &quot;&quot;)</span><br><span class="line">                name &#x3D; name.replace(&quot;\n&quot;, &quot;&quot;)</span><br><span class="line">                name &#x3D; name.replace(&quot;\r&quot;, &quot;&quot;)</span><br><span class="line">                name &#x3D; name.replace(&quot;&#x2F;&quot;, &quot; &#x2F; &quot;)</span><br><span class="line">            else:</span><br><span class="line">                name &#x3D; &quot;&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="匹配多路径"><a href="#匹配多路径" class="headerlink" title="匹配多路径"></a>匹配多路径</h3><ol>
-<li>符号 ：xpath表达式 | xpath表达式</li>
-<li>获取所有book节点下的 title节点 和 price节点<pre><code>  //book/title  |  //book/price</code></pre>
-</li>
-</ol>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
-<li>contains() ：匹配一个属性值中包含某些字符串的节点</li>
-<li>text()：将节点提取出字符串</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;title[contains(@lang,&quot;ch&quot;)]&#x2F;text()</span><br></pre></td></tr></table></figure>
-
-<h2 id="lxml库及xpath使用"><a href="#lxml库及xpath使用" class="headerlink" title="lxml库及xpath使用"></a>lxml库及xpath使用</h2><p>HTML/XML解析库</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">cmd -&gt; python -m pip install lxml</span><br><span class="line">Anaconda Prompt -&gt; conda install lxml</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用流程-xpath返回的一定是1个列表"><a href="#使用流程-xpath返回的一定是1个列表" class="headerlink" title="使用流程(xpath返回的一定是1个列表)"></a>使用流程(xpath返回的一定是1个列表)</h3><ol>
-<li><p>导入模块</p>
- <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建解析对象 ：</p>
- <figure class="highlight py"><table><tr><td class="code"><pre><span class="line">parseHtml = etree.HTML(html)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调用xpath</p>
- <figure class="highlight py"><table><tr><td class="code"><pre><span class="line">rList = parseHtml.xpath(<span class="string">&#x27;xpath表达式&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line">html = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&lt;div class=&quot;wrapper&quot;&gt;</span></span><br><span class="line"><span class="string">	&lt;i class=&quot;iconfont icon-back&quot; id=&quot;back&quot;&gt;&lt;/i&gt;</span></span><br><span class="line"><span class="string">	&lt;a href=&quot;/&quot; id=&quot;channel&quot;&gt;新浪社会&lt;/a&gt;</span></span><br><span class="line"><span class="string">	&lt;ul id=&quot;nav&quot;&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://domestic.firefox.sina.com/&quot; title=&quot;国内&quot;&gt;国内&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://world.firefox.sina.com/&quot; title=&quot;国际&quot;&gt;国际&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://mil.firefox.sina.com/&quot; title=&quot;军事&quot;&gt;军事&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://photo.firefox.sina.com/&quot; title=&quot;图片&quot;&gt;图片&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://society.firefox.sina.com/&quot; title=&quot;社会&quot;&gt;社会&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://ent.firefox.sina.com/&quot; title=&quot;娱乐&quot;&gt;娱乐&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://tech.firefox.sina.com/&quot; title=&quot;科技&quot;&gt;科技&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://sports.firefox.sina.com/&quot; title=&quot;体育&quot;&gt;体育&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://finance.firefox.sina.com/&quot; title=&quot;财经&quot;&gt;财经&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://auto.firefox.sina.com/&quot; title=&quot;汽车&quot;&gt;汽车&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">	&lt;/ul&gt;</span></span><br><span class="line"><span class="string">	&lt;i class=&quot;iconfont icon-liebiao&quot; id=&quot;menu&quot;&gt;&lt;/i&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 创建解析对象</span></span><br><span class="line">parseHtml = etree.HTML(html)</span><br><span class="line"><span class="comment"># 调xpath工具,得到列表</span></span><br><span class="line">rList = parseHtml.xpath(<span class="string">&#x27;//li/a/@href&#x27;</span>)</span><br><span class="line"><span class="comment">#print(rList)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取 /</span></span><br><span class="line"><span class="comment">#r1=parseHtml.xpath(&#x27;//a[@id=&quot;channel&quot;]/@href&#x27;)</span></span><br><span class="line">r1=parseHtml.xpath\</span><br><span class="line">   (<span class="string">&#x27;//div[@class=&quot;wrapper&quot;]/a[@id=&quot;channel&quot;]/@href&#x27;</span>)</span><br><span class="line"><span class="comment">#print(r1)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取文本 ：新浪社会、国际、国内</span></span><br><span class="line">r2 = parseHtml.xpath(<span class="string">&#x27;//a/text()&#x27;</span>)</span><br><span class="line"><span class="comment">#print(r2)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取文本 ：国际、国内、军事 ...</span></span><br><span class="line">r3 = parseHtml.xpath(<span class="string">&#x27;//ul[@id=&quot;nav&quot;]//a&#x27;</span>)</span><br><span class="line"><span class="comment"># r3:[&#x27;&lt;element&gt;&#x27;,&#x27;&lt;element&gt;&#x27;]</span></span><br><span class="line"><span class="keyword">for</span> r <span class="keyword">in</span> r3:</span><br><span class="line">    <span class="comment"># text属性获取节点对象文本内容</span></span><br><span class="line">    print(r.text)</span><br></pre></td></tr></table></figure>
-
-<h2 id="练习-xpath匹配猫眼电影"><a href="#练习-xpath匹配猫眼电影" class="headerlink" title="练习: xpath匹配猫眼电影"></a>练习: xpath匹配猫眼电影</h2>  <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MaoyanSpider</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.headers = &#123;<span class="string">&quot;User-Agent&quot;</span>:<span class="string">&quot;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0)&quot;</span>&#125;</span><br><span class="line">        self.baseurl = <span class="string">&quot;http://maoyan.com/board/4?offset=&quot;</span></span><br><span class="line">        self.offset = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 使用私密代理</span></span><br><span class="line">        self.proxies = &#123;<span class="string">&quot;http&quot;</span>:<span class="string">&quot;http://309435365:szayclhp@116.255.162.107:16816&quot;</span>&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 获取页面</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPage</span>(<span class="params">self,url</span>):</span></span><br><span class="line">        res = requests.get(url,</span><br><span class="line">                           headers=self.headers)</span><br><span class="line">        res.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">        html = res.text</span><br><span class="line">        self.parsePage(html)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 解析页面</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parsePage</span>(<span class="params">self,html</span>):</span></span><br><span class="line">        <span class="comment"># 创建解析对象</span></span><br><span class="line">        parseHtml = etree.HTML(html)</span><br><span class="line">        <span class="comment"># 调用xpath</span></span><br><span class="line">        nameList = parseHtml.xpath(<span class="string">&#x27;//div[@class=&quot;movie-item-info&quot;]/p[1]/a/text()&#x27;</span>)</span><br><span class="line">        starList = parseHtml.xpath(<span class="string">&#x27;//div[@class=&quot;movie-item-info&quot;]/p[2]/text()&#x27;</span>)</span><br><span class="line">        timeList = parseHtml.xpath(<span class="string">&#x27;//div[@class=&quot;movie-item-info&quot;]/p[3]/text()&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> name,star,time <span class="keyword">in</span> zip(nameList,starList,timeList):</span><br><span class="line">            print(name.strip(),star.strip(),time.strip())</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># L1 = [1,2,3]</span></span><br><span class="line">        <span class="comment"># L2 = [&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;]</span></span><br><span class="line">        <span class="comment"># zip后 ： [(1,&#x27;A&#x27;),(2,&#x27;B&#x27;),(3,&#x27;C&#x27;)]</span></span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 保存数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">writePage</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 主函数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">workOn</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.getPage(<span class="string">&quot;http://maoyan.com/board/4?offset=0&quot;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    spider = MaoyanSpider()</span><br><span class="line">    spider.workOn()</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>爬虫-基础知识</title>
     <url>/2018/08/08/crawler/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
     <content><![CDATA[<p>网络爬虫（又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。</p>
@@ -621,6 +520,85 @@
       </tags>
   </entry>
   <entry>
+    <title>爬虫-xpath解析工具</title>
+    <url>/2018/08/08/crawler/xpath%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<p>XPath即为XML路径语言（XML Path Language）;<br>在XML文档中查找信息的语言,同样适用于HTML文档的检索;<br>lxml库的使用</p>
+<a id="more"></a>
+
+
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>在XML文档中查找信息的语言,同样适用于HTML文档的检索</p>
+<h2 id="xpath辅助工具"><a href="#xpath辅助工具" class="headerlink" title="xpath辅助工具"></a>xpath辅助工具</h2><ol>
+<li><p>Chrome安装插件方式</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、打开浏览器 - 设置 - 更多工具 - 扩展程序 </span><br><span class="line">2、右上角 ：开发者模式</span><br><span class="line">3、从网上下载的插件 拖拽到 浏览器页面</span><br></pre></td></tr></table></figure></li>
+<li><p>网页解析相关插件</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、Chrome浏览器 ：XPath Helper</span><br><span class="line">2、Firefox浏览器：XPath Checker</span><br><span class="line">3、XPath表达式编辑工具 ：XML Quire</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开和关闭xpath辅助工具<br> 打开/关闭 ：</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ctrl + shift + x</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="xpath匹配规则"><a href="#xpath匹配规则" class="headerlink" title="xpath匹配规则"></a>xpath匹配规则</h2><p><a href="https://object.renchengqi.com/blog/bookStore.xml">演示文档</a></p>
+<h3 id="匹配演示"><a href="#匹配演示" class="headerlink" title="匹配演示"></a>匹配演示</h3><ol>
+<li><p>查找bookstore下所有节点</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;bookstore</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找所有的book节点</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;book</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找所有book节点下的title节点</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;book&#x2F;title</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找//book/title节点中lang属性为 “en” 的节点</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;book&#x2F;title[@lang&#x3D;&quot;en&quot;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取bookstore节点下的第2个book节点下的title节点的文本内容</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;bookstore&#x2F;book[2]&#x2F;title&#x2F;text()</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="选取节点"><a href="#选取节点" class="headerlink" title="选取节点"></a>选取节点</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;  ：从整个HTML文档中查找节点</span><br><span class="line">&#x2F;&#x2F;price   &#x2F;&#x2F;book&#x2F;&#x2F;price</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@   ：选取某个节点的属性</span><br><span class="line">    1、 &#x2F;&#x2F;title[@lang&#x3D;&quot;en&quot;]</span><br><span class="line">    2、 &#x2F;&#x2F;title&#x2F;@lang</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;  ：选取已经存在的条件之上追加条件</span><br><span class="line">     aList &#x3D; parseHtml.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;pl2&quot;]&#39;)</span><br><span class="line">        for element in aList:</span><br><span class="line">            nameList &#x3D; element.xpath(&#39;.&#x2F;a&#x2F;text()&#39;)</span><br><span class="line">            if len(nameList) &gt; 0:</span><br><span class="line">                name &#x3D; nameList[0]</span><br><span class="line">                name &#x3D; name.replace(&quot; &quot;, &quot;&quot;)</span><br><span class="line">                name &#x3D; name.replace(&quot;\n&quot;, &quot;&quot;)</span><br><span class="line">                name &#x3D; name.replace(&quot;\r&quot;, &quot;&quot;)</span><br><span class="line">                name &#x3D; name.replace(&quot;&#x2F;&quot;, &quot; &#x2F; &quot;)</span><br><span class="line">            else:</span><br><span class="line">                name &#x3D; &quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="匹配多路径"><a href="#匹配多路径" class="headerlink" title="匹配多路径"></a>匹配多路径</h3><ol>
+<li>符号 ：xpath表达式 | xpath表达式</li>
+<li>获取所有book节点下的 title节点 和 price节点<pre><code>  //book/title  |  //book/price</code></pre>
+</li>
+</ol>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
+<li>contains() ：匹配一个属性值中包含某些字符串的节点</li>
+<li>text()：将节点提取出字符串</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;title[contains(@lang,&quot;ch&quot;)]&#x2F;text()</span><br></pre></td></tr></table></figure>
+
+<h2 id="lxml库及xpath使用"><a href="#lxml库及xpath使用" class="headerlink" title="lxml库及xpath使用"></a>lxml库及xpath使用</h2><p>HTML/XML解析库</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">cmd -&gt; python -m pip install lxml</span><br><span class="line">Anaconda Prompt -&gt; conda install lxml</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用流程-xpath返回的一定是1个列表"><a href="#使用流程-xpath返回的一定是1个列表" class="headerlink" title="使用流程(xpath返回的一定是1个列表)"></a>使用流程(xpath返回的一定是1个列表)</h3><ol>
+<li><p>导入模块</p>
+ <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建解析对象 ：</p>
+ <figure class="highlight py"><table><tr><td class="code"><pre><span class="line">parseHtml = etree.HTML(html)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调用xpath</p>
+ <figure class="highlight py"><table><tr><td class="code"><pre><span class="line">rList = parseHtml.xpath(<span class="string">&#x27;xpath表达式&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line">html = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&lt;div class=&quot;wrapper&quot;&gt;</span></span><br><span class="line"><span class="string">	&lt;i class=&quot;iconfont icon-back&quot; id=&quot;back&quot;&gt;&lt;/i&gt;</span></span><br><span class="line"><span class="string">	&lt;a href=&quot;/&quot; id=&quot;channel&quot;&gt;新浪社会&lt;/a&gt;</span></span><br><span class="line"><span class="string">	&lt;ul id=&quot;nav&quot;&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://domestic.firefox.sina.com/&quot; title=&quot;国内&quot;&gt;国内&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://world.firefox.sina.com/&quot; title=&quot;国际&quot;&gt;国际&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://mil.firefox.sina.com/&quot; title=&quot;军事&quot;&gt;军事&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://photo.firefox.sina.com/&quot; title=&quot;图片&quot;&gt;图片&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://society.firefox.sina.com/&quot; title=&quot;社会&quot;&gt;社会&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://ent.firefox.sina.com/&quot; title=&quot;娱乐&quot;&gt;娱乐&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://tech.firefox.sina.com/&quot; title=&quot;科技&quot;&gt;科技&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://sports.firefox.sina.com/&quot; title=&quot;体育&quot;&gt;体育&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://finance.firefox.sina.com/&quot; title=&quot;财经&quot;&gt;财经&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">		&lt;li&gt;&lt;a href=&quot;http://auto.firefox.sina.com/&quot; title=&quot;汽车&quot;&gt;汽车&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">	&lt;/ul&gt;</span></span><br><span class="line"><span class="string">	&lt;i class=&quot;iconfont icon-liebiao&quot; id=&quot;menu&quot;&gt;&lt;/i&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 创建解析对象</span></span><br><span class="line">parseHtml = etree.HTML(html)</span><br><span class="line"><span class="comment"># 调xpath工具,得到列表</span></span><br><span class="line">rList = parseHtml.xpath(<span class="string">&#x27;//li/a/@href&#x27;</span>)</span><br><span class="line"><span class="comment">#print(rList)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取 /</span></span><br><span class="line"><span class="comment">#r1=parseHtml.xpath(&#x27;//a[@id=&quot;channel&quot;]/@href&#x27;)</span></span><br><span class="line">r1=parseHtml.xpath\</span><br><span class="line">   (<span class="string">&#x27;//div[@class=&quot;wrapper&quot;]/a[@id=&quot;channel&quot;]/@href&#x27;</span>)</span><br><span class="line"><span class="comment">#print(r1)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取文本 ：新浪社会、国际、国内</span></span><br><span class="line">r2 = parseHtml.xpath(<span class="string">&#x27;//a/text()&#x27;</span>)</span><br><span class="line"><span class="comment">#print(r2)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取文本 ：国际、国内、军事 ...</span></span><br><span class="line">r3 = parseHtml.xpath(<span class="string">&#x27;//ul[@id=&quot;nav&quot;]//a&#x27;</span>)</span><br><span class="line"><span class="comment"># r3:[&#x27;&lt;element&gt;&#x27;,&#x27;&lt;element&gt;&#x27;]</span></span><br><span class="line"><span class="keyword">for</span> r <span class="keyword">in</span> r3:</span><br><span class="line">    <span class="comment"># text属性获取节点对象文本内容</span></span><br><span class="line">    print(r.text)</span><br></pre></td></tr></table></figure>
+
+<h2 id="练习-xpath匹配猫眼电影"><a href="#练习-xpath匹配猫眼电影" class="headerlink" title="练习: xpath匹配猫眼电影"></a>练习: xpath匹配猫眼电影</h2>  <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MaoyanSpider</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.headers = &#123;<span class="string">&quot;User-Agent&quot;</span>:<span class="string">&quot;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0)&quot;</span>&#125;</span><br><span class="line">        self.baseurl = <span class="string">&quot;http://maoyan.com/board/4?offset=&quot;</span></span><br><span class="line">        self.offset = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 使用私密代理</span></span><br><span class="line">        self.proxies = &#123;<span class="string">&quot;http&quot;</span>:<span class="string">&quot;http://309435365:szayclhp@116.255.162.107:16816&quot;</span>&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 获取页面</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPage</span>(<span class="params">self,url</span>):</span></span><br><span class="line">        res = requests.get(url,</span><br><span class="line">                           headers=self.headers)</span><br><span class="line">        res.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">        html = res.text</span><br><span class="line">        self.parsePage(html)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 解析页面</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parsePage</span>(<span class="params">self,html</span>):</span></span><br><span class="line">        <span class="comment"># 创建解析对象</span></span><br><span class="line">        parseHtml = etree.HTML(html)</span><br><span class="line">        <span class="comment"># 调用xpath</span></span><br><span class="line">        nameList = parseHtml.xpath(<span class="string">&#x27;//div[@class=&quot;movie-item-info&quot;]/p[1]/a/text()&#x27;</span>)</span><br><span class="line">        starList = parseHtml.xpath(<span class="string">&#x27;//div[@class=&quot;movie-item-info&quot;]/p[2]/text()&#x27;</span>)</span><br><span class="line">        timeList = parseHtml.xpath(<span class="string">&#x27;//div[@class=&quot;movie-item-info&quot;]/p[3]/text()&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> name,star,time <span class="keyword">in</span> zip(nameList,starList,timeList):</span><br><span class="line">            print(name.strip(),star.strip(),time.strip())</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># L1 = [1,2,3]</span></span><br><span class="line">        <span class="comment"># L2 = [&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;]</span></span><br><span class="line">        <span class="comment"># zip后 ： [(1,&#x27;A&#x27;),(2,&#x27;B&#x27;),(3,&#x27;C&#x27;)]</span></span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 保存数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">writePage</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 主函数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">workOn</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.getPage(<span class="string">&quot;http://maoyan.com/board/4?offset=0&quot;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    spider = MaoyanSpider()</span><br><span class="line">    spider.workOn()</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>爬虫-工具集</title>
     <url>/2018/08/26/crawler/%E5%B7%A5%E5%85%B7%E9%9B%86/</url>
     <content><![CDATA[<p>实现爬虫的敏捷开发</p>
@@ -668,17 +646,6 @@
       <tags>
         <tag>爬虫</tag>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫常见问题汇总</title>
-    <url>/2018/08/18/crawler/%E7%88%AC%E8%99%AB%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
-    <content><![CDATA[<p>汇总一下，爬虫常见的问题（坑）；</p>
-<a id="more"></a>
-
-<h2 id="requests请求中文乱码"><a href="#requests请求中文乱码" class="headerlink" title="requests请求中文乱码"></a>requests请求中文乱码</h2><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">req = requests.get(<span class="string">&quot;http://news.sina.com.cn/&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> req.encoding == <span class="string">&#x27;ISO-8859-1&#x27;</span>:</span><br><span class="line">    encodings = requests.utils.get_encodings_from_content(req.text)</span><br><span class="line">    <span class="keyword">if</span> encodings:</span><br><span class="line">        encoding = encodings[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        encoding = req.apparent_encoding</span><br><span class="line">    encode_content = req.content.decode(encoding, <span class="string">&#x27;replace&#x27;</span>) <span class="comment">#如果设置为replace，则会用?取代非法字符；</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -795,6 +762,39 @@
       </tags>
   </entry>
   <entry>
+    <title>爬虫常见问题汇总</title>
+    <url>/2018/08/18/crawler/%E7%88%AC%E8%99%AB%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<p>汇总一下，爬虫常见的问题（坑）；</p>
+<a id="more"></a>
+
+<h2 id="requests请求中文乱码"><a href="#requests请求中文乱码" class="headerlink" title="requests请求中文乱码"></a>requests请求中文乱码</h2><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">req = requests.get(<span class="string">&quot;http://news.sina.com.cn/&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> req.encoding == <span class="string">&#x27;ISO-8859-1&#x27;</span>:</span><br><span class="line">    encodings = requests.utils.get_encodings_from_content(req.text)</span><br><span class="line">    <span class="keyword">if</span> encodings:</span><br><span class="line">        encoding = encodings[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        encoding = req.apparent_encoding</span><br><span class="line">    encode_content = req.content.decode(encoding, <span class="string">&#x27;replace&#x27;</span>) <span class="comment">#如果设置为replace，则会用?取代非法字符；</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析-概述</title>
+    <url>/2018/11/29/datascience/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<p>数据分析是指用适当的统计分析方法对收集来的大量数据进行分析，提取有用信息和形成结论而对数据加以详细研究和概括总结的过程。</p>
+<a id="more"></a>
+
+<p><strong>使用python做数据分析的常用库</strong></p>
+<ol>
+<li>numpy        基础数值算法</li>
+<li>scipy               科学计算</li>
+<li>matplotlib      数据可视化</li>
+<li>pandas           序列高级函数</li>
+</ol>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>数据分析</tag>
+        <tag>AI进阶</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Docker运行Nginx</title>
     <url>/2019/10/09/docker/Docker%E8%BF%90%E8%A1%8CNginx/</url>
     <content><![CDATA[<p>如果我们有自己的服务器，就经常肯定会使用到Nginx，下面我们就用Docker来部署一个Nginx</p>
@@ -857,6 +857,225 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name npm -P -d node &#x2F;bin&#x2F;sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git</title>
+    <url>/2016/08/25/git/Git/</url>
+    <content><![CDATA[<p>git是一个开源的分布式版本控制系统，可用于高效的管理大小项目。</p>
+<a id="more"></a>
+
+<p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/">优秀教程</a></p>
+<h2 id="代码管理工具作用"><a href="#代码管理工具作用" class="headerlink" title="代码管理工具作用"></a>代码管理工具作用</h2><ul>
+<li>防止代码丢失，做备份</li>
+<li>代码版本的管理，可以进行多个节点的备份，在多个版本之间跳跃</li>
+<li>可以方便的将代码在多人之间进行共享传输</li>
+<li>多人开发时有各种模式可以方便代码管理</li>
+</ul>
+<h2 id="什么是git"><a href="#什么是git" class="headerlink" title="什么是git"></a>什么是git</h2><p>git是一个开源的分布式版本控制系统，可用于高效的管理大小项目。</p>
+<h2 id="分布式和集中式"><a href="#分布式和集中式" class="headerlink" title="分布式和集中式"></a>分布式和集中式</h2><p>分布式： 每个节点都保存完成的代码，没有明确的中央服务器，节点之间项目推送下载代码完成代码共享</p>
+<p>集中式： 代码集中管理，每次完成的代码上传到中央管理器，然后再统一从中央管理器下载代码使用</p>
+<h2 id="git特点"><a href="#git特点" class="headerlink" title="git特点"></a>git特点</h2><ul>
+<li>git可以管理各种文件，特别是代码项目，多在*nix系统中使用</li>
+<li>是分布式管理，不同于集中式，这是git和svn的核心区别</li>
+<li>git可以更好的支持分支，方便多人协同工作</li>
+<li>git分布式代码更安全，有全球唯一的commit版本号</li>
+<li>git是开源的系统</li>
+<li>使用git可以脱网工作，且数据传输速度较快</li>
+</ul>
+<h2 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h2><p>linux:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+<p>windows</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msysgit.github.io</span><br></pre></td></tr></table></figure>
+
+<h2 id="git-配置命令"><a href="#git-配置命令" class="headerlink" title="git 配置命令"></a>git 配置命令</h2><h3 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h3><h4 id="配置级别"><a href="#配置级别" class="headerlink" title="配置级别"></a>配置级别</h4><ol>
+<li><p>系统中所有的用户都可使用该配置</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config  --system   </span><br></pre></td></tr></table></figure>
+<p> 配置文件： /etc/gitconfig</p>
+</li>
+<li><p>当前用户可使用该配置</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config  --global</span><br></pre></td></tr></table></figure>
+<p> 配置文件： ~/.gitconfig</p>
+</li>
+<li><p>当前项目可使用该配置</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config</span><br></pre></td></tr></table></figure>
+<p> 配置文件： project/.git/config</p>
+</li>
+</ol>
+<h4 id="配置内容"><a href="#配置内容" class="headerlink" title="配置内容"></a>配置内容</h4><ol>
+<li><p>配置用户名<br> 配置用户名为rencheng：</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo git config --system user.name rencheng</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置用户邮箱<br> 配置邮箱</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email rencheng11@icloud.cn</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置编译器</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config core.editor sublime</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看配置信息</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="git基本命令"><a href="#git基本命令" class="headerlink" title="git基本命令"></a>git基本命令</h2><h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在某个目录下初始化仓库后会自动产生.git目录。该目录下工作的所有文档即可以使用git进行管理</li>
+</ul>
+<h3 id="查看分支状态"><a href="#查看分支状态" class="headerlink" title="查看分支状态"></a>查看分支状态</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>默认工作分支为master，可通过创建新的分支切换</li>
+</ul>
+<h3 id="文件提交"><a href="#文件提交" class="headerlink" title="文件提交"></a>文件提交</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git  add   [file]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将文件提交到暂存区</li>
+<li>提交内容可以是一个文件，多个文件用个空格分开</li>
+<li>如果是 * 表示所有文件，也可以是目录</li>
+</ul>
+<h3 id="删除暂存区某个文件提交记录"><a href="#删除暂存区某个文件提交记录" class="headerlink" title="删除暂存区某个文件提交记录"></a>删除暂存区某个文件提交记录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git rm --cached Readme.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件同步到本地仓库"><a href="#文件同步到本地仓库" class="headerlink" title="文件同步到本地仓库"></a>文件同步到本地仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;some message&quot;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同步时需要附加一些同步信息 在-m后添加</li>
+<li>所有对工作区的修改如果想同步到本地仓库，都需要    add—&gt;commit</li>
+</ul>
+<h3 id="查看commit日志"><a href="#查看commit日志" class="headerlink" title="查看commit日志"></a>查看commit日志</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git log  --pretty&#x3D;oneline</span><br></pre></td></tr></table></figure>
+
+<h3 id="一些工作区命令"><a href="#一些工作区命令" class="headerlink" title="一些工作区命令"></a>一些工作区命令</h3><h4 id="查看本地文件和工作区差异"><a href="#查看本地文件和工作区差异" class="headerlink" title="查看本地文件和工作区差异"></a>查看本地文件和工作区差异</h4><pre><code>git  diff   file</code></pre>
+<h4 id="从本地仓库恢复文件"><a href="#从本地仓库恢复文件" class="headerlink" title="从本地仓库恢复文件"></a>从本地仓库恢复文件</h4><pre><code>git checkout file</code></pre>
+<h4 id="丢弃工作区修改"><a href="#丢弃工作区修改" class="headerlink" title="丢弃工作区修改"></a>丢弃工作区修改</h4><pre><code>git checkout -- file</code></pre>
+<h3 id="本地仓库文件的移动和删除"><a href="#本地仓库文件的移动和删除" class="headerlink" title="本地仓库文件的移动和删除"></a>本地仓库文件的移动和删除</h3><pre><code> 移动文件
+ git  mv   file  dir 
+
+ 删除文件
+ git  rm   file
+
+ * 用法和mv rm命令相同。操作后直接commit即可工  作区和本地仓库同步</code></pre>
+<h3 id="版本控制命令"><a href="#版本控制命令" class="headerlink" title="版本控制命令"></a>版本控制命令</h3><h4 id="回到之前版本"><a href="#回到之前版本" class="headerlink" title="回到之前版本"></a>回到之前版本</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+<ul>
+<li>HEAD后的<code>^</code>数量决定了回到上几个版本</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard  commit_id</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用commit前7位即可，回到指定的版本</li>
+</ul>
+<h4 id="去往更新的版本"><a href="#去往更新的版本" class="headerlink" title="去往更新的版本"></a>去往更新的版本</h4><ol>
+<li><p>查看所有历史版本号</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure></li>
+<li><p>使用git reset 去往指定版本</p>
+<ul>
+<li>git reflog 会有所有的操作记录，最新的操作时钟在   最上边</li>
+</ul>
+</li>
+</ol>
+<h3 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h3><p>即在当前工作位置添加快照，保存工作状态，一般用于版本的迭代。</p>
+<h4 id="创建新的标签"><a href="#创建新的标签" class="headerlink" title="创建新的标签"></a>创建新的标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git tag  v1.0</span><br></pre></td></tr></table></figure>
+<ul>
+<li>默认在最新的commit_id处打标签</li>
+</ul>
+<h4 id="添加标签信息"><a href="#添加标签信息" class="headerlink" title="添加标签信息"></a>添加标签信息</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git tag v1.0  -m  &quot;message&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="指定某个commit-id打标签"><a href="#指定某个commit-id打标签" class="headerlink" title="指定某个commit_id打标签"></a>指定某个commit_id打标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git tag  v0.9  [commit_id]</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看标签"><a href="#查看标签" class="headerlink" title="查看标签"></a>查看标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git tag    #列出当前标签</span><br><span class="line">git show v1.0  #显示标签具体信息</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除标签"><a href="#删除标签" class="headerlink" title="删除标签"></a>删除标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git tag -d v1.0</span><br></pre></td></tr></table></figure>
+
+<h4 id="去往某个标签版本"><a href="#去往某个标签版本" class="headerlink" title="去往某个标签版本"></a>去往某个标签版本</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard  v0.9</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="临时工作区操作"><a href="#临时工作区操作" class="headerlink" title="临时工作区操作"></a>临时工作区操作</h3><h4 id="创建保存临时工作区"><a href="#创建保存临时工作区" class="headerlink" title="创建保存临时工作区"></a>创建保存临时工作区</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git  stash</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看保存的工作区"><a href="#查看保存的工作区" class="headerlink" title="查看保存的工作区"></a>查看保存的工作区</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git  stash  list</span><br></pre></td></tr></table></figure>
+
+<h4 id="应用哪个工作区"><a href="#应用哪个工作区" class="headerlink" title="应用哪个工作区"></a>应用哪个工作区</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git stash apply stash@&#123;1&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="应用上一个工作区并且删除"><a href="#应用上一个工作区并且删除" class="headerlink" title="应用上一个工作区并且删除"></a>应用上一个工作区并且删除</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除工作区"><a href="#删除工作区" class="headerlink" title="删除工作区"></a>删除工作区</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git stash drop stash@&#123;0&#125;   #删除某一个</span><br><span class="line">git stash clear            #删除所有</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h3><h4 id="什么是分支？"><a href="#什么是分支？" class="headerlink" title="什么是分支？"></a>什么是分支？</h4><p>分支即每个人获取原有代码，在此基础上创建自己的工作环境，单独开发，不会影响其他分支的操作。开发完成后再统一合并到主线分支中。</p>
+<p>分支的好处：安全，不影响其他人工作，自己控制进度</p>
+<h4 id="查看当前分支"><a href="#查看当前分支" class="headerlink" title="查看当前分支"></a>查看当前分支</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git  branch</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line"></span><br><span class="line">* 前面有 * 号的分支表示当前正在工作的分支</span><br><span class="line"></span><br><span class="line">#### 创建分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>git branch  [branch_name]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 切换工作分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>git checkout [branch]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 创建并切换到新的分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>git checkout -b [branch_name]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 分支合并</span><br><span class="line"></span><br><span class="line">将某个分支合并到当前分支</span><br></pre></td></tr></table></figure>
+<p>git merge [branch]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 合并过程中如果没有冲突则直接合并后当前分支即为   干净的状态</span><br><span class="line">* 如果产生冲突则需要人为选择然后在进行add    commit等操作</span><br><span class="line">* 在创建分支前尽量保证当前分支是干净点，以减少冲突的发生</span><br><span class="line"></span><br><span class="line">#### 删除分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>git branch -d [branch_name]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 强制删除没有合并的分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>git branch -D [branch_name] </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">### 远程仓库</span><br><span class="line">远程主机上的仓库。实际上git是分布式的，每一台主机的git结构都相似，只是把其他主机的git仓库叫做远程而已。</span><br><span class="line"></span><br><span class="line">#### 创建共享仓库</span><br><span class="line"></span><br><span class="line">1. 创建文件夹</span><br></pre></td></tr></table></figure>
+<pre><code>mkdir gitrepo
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    </span><br><span class="line">2. 设置文件夹属主</span><br></pre></td></tr></table></figure>
+chown tarena:tarena gitrepo
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    </span><br><span class="line">3. 将该文件夹设置为可共享的git仓库</span><br></pre></td></tr></table></figure>
+cd gitrepo
+git init  --bare  fly.git
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    </span><br><span class="line">4. 设置本地仓库属主</span><br></pre></td></tr></table></figure>
+chown -R tarena:tarena fly.git
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 添加远程仓库</span><br><span class="line"></span><br></pre></td></tr></table></figure></code></pre>
+<p>git remote add origin https://<strong><strong>/</strong></strong>.git</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 默认使用SSH作为传输手段</span><br><span class="line">* 必须在本地的某个git仓库下执行才能使本地仓库和远程   仓库关联</span><br><span class="line"></span><br><span class="line">#### 删除远程主机</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>git remote  rm  [origin]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 将本地分支推送到远程</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>git push -u origin master</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">* 在第一次向远程仓库推送时需要加 -u选项，以后就不   需要了</span><br><span class="line"></span><br><span class="line">#### 从远程仓库获取项目</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>git clone https://<strong><strong>/</strong></strong>.git</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 从远程仓库拉取分支或代码</span><br><span class="line">直接拉取远程分支和当前工作分支合并</span><br></pre></td></tr></table></figure>
+<p>git pull origin dev_Tom </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">拉取远程分支到本地，不合并</span><br></pre></td></tr></table></figure>
+<p>git pull origin dev_Tom : dev_Tom<br>                远程分支名 本地分支名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 代码退出和拉取</span><br><span class="line">将本地代码推送到连接的远程仓库</span><br></pre></td></tr></table></figure>
+<p>git  push </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;&#96;</span><br><span class="line">git push  --force  origin (当本地版本比远程版本旧                            是用本地旧版本覆盖远程                            新版本)</span><br></pre></td></tr></table></figure>
+
+<p>从远程仓库更新代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git  pull</span><br><span class="line">git  fetch  （如果有新的分支拉取到本地不会和本地              分支合并）</span><br></pre></td></tr></table></figure>
+
+<h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p>github是一个开源项目社区网站。拥有全球最多的开源项目。开发者可以注册这个网站建立自己的github仓库。然后就可以在本地通过git像操作远程仓库一样操作github仓库。</p>
+<p>git是github唯一指定的代码管理工具</p>
+<p>网址：<a href="https://github.com/">https://github.com/</a></p>
+<h4 id="添加ssh秘钥"><a href="#添加ssh秘钥" class="headerlink" title="添加ssh秘钥"></a>添加ssh秘钥</h4><ol>
+<li><p>在本地主机生成ssh密钥对<br>   ssh-keygen</p>
+<ul>
+<li>默认密钥对存放在 <code>~/.ssh/</code> 下</li>
+<li>生成过程会提示设置密码，如果直接回车则表示不设置密码</li>
+</ul>
+</li>
+<li><p>进入 <code>~/.ssh</code> 目录 复制 <code>id_rsa.pub</code> 公钥内容</p>
+</li>
+<li><p>登录github账号  </p>
+<ol>
+<li>右上角头像下拉菜单</li>
+<li>settings</li>
+<li>左侧 SSH and GPG keys</li>
+<li>new ssh key</li>
+<li>填写title，将复制内容加入key文本框</li>
+<li>点击add…</li>
+</ol>
+</li>
+</ol>
+<h4 id="创建新的github仓库"><a href="#创建新的github仓库" class="headerlink" title="创建新的github仓库"></a>创建新的github仓库</h4><ol>
+<li>右上角 + 下拉菜单</li>
+<li>new repository</li>
+<li>填写参考名和基本描述，根据情况选择是否添加readme等内容，选择共有还是私有</li>
+<li>点击创建</li>
+</ol>
+<h4 id="操作github仓库"><a href="#操作github仓库" class="headerlink" title="操作github仓库"></a>操作github仓库</h4><ol>
+<li>git remote 连接远程github仓库 如果需要输入密码输   入github密码即可</li>
+<li>使用git push等操作远程仓库的方法操作即可</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -965,50 +1184,6 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fonts:</span><br><span class="line">	- family: devio</span><br><span class="line">	  fonts:</span><br><span class="line">	    - asset: fonts&#x2F;devio.ttf</span><br></pre></td></tr></table></figure>
 <p>接下来就可以使用了：</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">child: <span class="keyword">new</span> Icon(<span class="keyword">new</span> IconData(<span class="number">0xf5566</span>,fontFamily: <span class="string">&quot;devio&quot;</span>),size: <span class="number">100.0</span>,color: Colors.blueAccent,)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Flutter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flutter - 从入门到放弃</title>
-    <url>/2020/01/20/flutter/Flutter%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<p>列出一些Flutter项目的案例，在你考虑学习之前，先看看里面博主对Flutter的理解；<br>😌。。。，还不是最终的解决方案，但它是目前最优的解决方案；当然也要结合各团队的情况</p>
-<a id="more"></a>
-
-<h2 id="尝试Flutter的理由"><a href="#尝试Flutter的理由" class="headerlink" title="尝试Flutter的理由"></a>尝试Flutter的理由</h2><ul>
-<li><strong>Dart 语言</strong><br>Flutter 是基于 Dart 设计的，Dart 语言从一开始就被设计为构建客户端应用程序的绝佳工具，并针对 UI 开发工作做了调整和优化。<br>Dart 有着干净且极为强大的语法，加之易于维护的特性，促进了强大的应用程序架构和设计。它与其他流行语言（例如 C#、Java 和 TypeScript）相似，这意味着有相关经验的开发人员很容易快速上手并开始使用 Dart。</li>
-</ul>
-<ol start="2">
-<li><strong>开发人员的广泛采用</strong><br>在短短的一年时间里，Flutter 在 GitHub 和 StackOverflow 上都取得了比 React Native（之前最流行的框架）更高的流行度。对你的应用程序来说，这意味着有更多的资源可供学习，可以找到更多熟练的开发人员来开发你的应用。此外，Flutter 技术本身的迭代速度更快。</li>
-<li><strong>它特别快</strong><br>Flutter 应用程序可编译为原生二进制文件，这些文件依赖于 C/C++ 内置的图形和渲染引擎，因此可生成非常快速且性能出众的应用程序。Flutter 应用程序能够在大多数设备上实现稳定的 60fps 输出，并在支持高刷新率的设备上实现令人难以置信的 120fps 帧率。<br>许多开发人员已经注意到，Flutter 的性能表现与其他跨平台框架相比有了极大的提升，这也是移动应用开发人员迅速而广泛地采用这一技术的驱动力。确实，在性能表现和流畅的渲染方面，真正的原生构建应用是很难被击败的，但在跨平台框架领域，Flutter 在这些指标的竞争中具有明显的优势。</li>
-<li><strong>它相对易学</strong><br>除了性能表现之外，Flutter 之所以获得如此广泛的使用率，另一大因素就是它提供的出色文档和可供参考的大批高质量示例。对于有兴趣学习新的框架、工具包或语言的开发人员来说，这一切都让 Flutter 与众不同。对于经验丰富的程序员而言这一点尤其重要，因为他们更有可能发现语言或工具包本身的设计问题。<br>Flutter 因其清晰的文档资料以及由新手和专家组成的支持社区而倍受赞誉，社区成员经常渴望分享他们的经验，并提供设计出色、开发模式出众的可靠实践示例，为他人带去福音。一般来说，易学易用，面向大众的技术往往没有那么重的精英主义氛围，所以对新人也更加友好。</li>
-<li><strong>它的设计精良</strong><br>Flutter 是基于出色的语言 Dart 和快速的高性能渲染引擎 Skia 从头开始设计出来的。这样的路线诞生了一个高水平的框架，能鼓励不同技能水平的开发人员基于良好的设计模式和最佳实践来构建应用，而不会因为标准冲突或糟糕的语言实践导致内部技术债。拥有多年经验，能熟练跨各种设备构建应用程序的开发人员开始上手 Flutter 几分钟时间，就能意识到 Flutter 带来的明显优势，新手也不太容易陷入困境，因为互联网上有很多很棒的示例可以用来学习最佳实践。</li>
-</ol>
-<h2 id="学习项目"><a href="#学习项目" class="headerlink" title="学习项目"></a>学习项目</h2><p><a href="https://github.com/flutter/flutter/tree/master/examples">官方示例</a><br><a href="https://github.com/flutter/samples">官方示例</a></p>
-<p><a href="https://github.com/nisrulz/flutter-examples">基础教程</a></p>
-<blockquote>
-<p>项目都是独立的，可单独运行</p>
-</blockquote>
-<p><a href="https://github.com/iampawan/FlutterExampleApps">收集Flutter实例的App</a></p>
-<h2 id="快速开发"><a href="#快速开发" class="headerlink" title="快速开发"></a>快速开发</h2><p><a href="https://app.quicktype.io/">jsontomodel</a></p>
-<h2 id="Flutter-的技术栈"><a href="#Flutter-的技术栈" class="headerlink" title="Flutter 的技术栈"></a>Flutter 的技术栈</h2><p><img src="https://cdn.renchengqi.com/blog/hve50.png"></p>
-<h2 id="Flutter-优势"><a href="#Flutter-优势" class="headerlink" title="Flutter 优势"></a>Flutter 优势</h2><ul>
-<li>跨平台，性能强大</li>
-<li>热重载功能</li>
-<li>免费，开源</li>
-<li>高度可定制</li>
-</ul>
-<h2 id="Flutter-缺点"><a href="#Flutter-缺点" class="headerlink" title="Flutter 缺点"></a>Flutter 缺点</h2><ul>
-<li>双端熟悉</li>
-<li>Dart编程；声明式语法上会发生嵌套地狱</li>
-<li>包体积增大</li>
-</ul>
-<h2 id="Flutter-感受"><a href="#Flutter-感受" class="headerlink" title="Flutter 感受"></a>Flutter 感受</h2><p>作为iOS开发工程师，在学习Flutter过程中，要对Android系统开发也要有些了解，要不然处处是坑；如果想开发一个项目，至少需要iOS和Android两个高级工程师来做，因为Flutter毕竟是跨平台UI的解决方案，它不是原生，在处理底层事件和高性能需求的时候离不开原生，需要制定通讯协议和解决方案；</p>
-<h2 id="对Flutter未来的看法"><a href="#对Flutter未来的看法" class="headerlink" title="对Flutter未来的看法"></a>对Flutter未来的看法</h2><p>个人觉得全量开发的可能性非常非常小，苹果也不允许的，而且目前很多公司的产品改造成Flutter的成本太大，ROI不高，不过flutter确实越来越完善了，如果swiftUI没发力，原生开发肯定会被严重蚕食</p>
-<blockquote>
-<p>你愿意在下一个项目中尝试 Flutter 吗？</p>
-</blockquote>
 ]]></content>
       <tags>
         <tag>Flutter</tag>
@@ -1450,6 +1625,50 @@
       </tags>
   </entry>
   <entry>
+    <title>Flutter - 从入门到放弃</title>
+    <url>/2020/01/20/flutter/Flutter%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<p>列出一些Flutter项目的案例，在你考虑学习之前，先看看里面博主对Flutter的理解；<br>😌。。。，还不是最终的解决方案，但它是目前最优的解决方案；当然也要结合各团队的情况</p>
+<a id="more"></a>
+
+<h2 id="尝试Flutter的理由"><a href="#尝试Flutter的理由" class="headerlink" title="尝试Flutter的理由"></a>尝试Flutter的理由</h2><ul>
+<li><strong>Dart 语言</strong><br>Flutter 是基于 Dart 设计的，Dart 语言从一开始就被设计为构建客户端应用程序的绝佳工具，并针对 UI 开发工作做了调整和优化。<br>Dart 有着干净且极为强大的语法，加之易于维护的特性，促进了强大的应用程序架构和设计。它与其他流行语言（例如 C#、Java 和 TypeScript）相似，这意味着有相关经验的开发人员很容易快速上手并开始使用 Dart。</li>
+</ul>
+<ol start="2">
+<li><strong>开发人员的广泛采用</strong><br>在短短的一年时间里，Flutter 在 GitHub 和 StackOverflow 上都取得了比 React Native（之前最流行的框架）更高的流行度。对你的应用程序来说，这意味着有更多的资源可供学习，可以找到更多熟练的开发人员来开发你的应用。此外，Flutter 技术本身的迭代速度更快。</li>
+<li><strong>它特别快</strong><br>Flutter 应用程序可编译为原生二进制文件，这些文件依赖于 C/C++ 内置的图形和渲染引擎，因此可生成非常快速且性能出众的应用程序。Flutter 应用程序能够在大多数设备上实现稳定的 60fps 输出，并在支持高刷新率的设备上实现令人难以置信的 120fps 帧率。<br>许多开发人员已经注意到，Flutter 的性能表现与其他跨平台框架相比有了极大的提升，这也是移动应用开发人员迅速而广泛地采用这一技术的驱动力。确实，在性能表现和流畅的渲染方面，真正的原生构建应用是很难被击败的，但在跨平台框架领域，Flutter 在这些指标的竞争中具有明显的优势。</li>
+<li><strong>它相对易学</strong><br>除了性能表现之外，Flutter 之所以获得如此广泛的使用率，另一大因素就是它提供的出色文档和可供参考的大批高质量示例。对于有兴趣学习新的框架、工具包或语言的开发人员来说，这一切都让 Flutter 与众不同。对于经验丰富的程序员而言这一点尤其重要，因为他们更有可能发现语言或工具包本身的设计问题。<br>Flutter 因其清晰的文档资料以及由新手和专家组成的支持社区而倍受赞誉，社区成员经常渴望分享他们的经验，并提供设计出色、开发模式出众的可靠实践示例，为他人带去福音。一般来说，易学易用，面向大众的技术往往没有那么重的精英主义氛围，所以对新人也更加友好。</li>
+<li><strong>它的设计精良</strong><br>Flutter 是基于出色的语言 Dart 和快速的高性能渲染引擎 Skia 从头开始设计出来的。这样的路线诞生了一个高水平的框架，能鼓励不同技能水平的开发人员基于良好的设计模式和最佳实践来构建应用，而不会因为标准冲突或糟糕的语言实践导致内部技术债。拥有多年经验，能熟练跨各种设备构建应用程序的开发人员开始上手 Flutter 几分钟时间，就能意识到 Flutter 带来的明显优势，新手也不太容易陷入困境，因为互联网上有很多很棒的示例可以用来学习最佳实践。</li>
+</ol>
+<h2 id="学习项目"><a href="#学习项目" class="headerlink" title="学习项目"></a>学习项目</h2><p><a href="https://github.com/flutter/flutter/tree/master/examples">官方示例</a><br><a href="https://github.com/flutter/samples">官方示例</a></p>
+<p><a href="https://github.com/nisrulz/flutter-examples">基础教程</a></p>
+<blockquote>
+<p>项目都是独立的，可单独运行</p>
+</blockquote>
+<p><a href="https://github.com/iampawan/FlutterExampleApps">收集Flutter实例的App</a></p>
+<h2 id="快速开发"><a href="#快速开发" class="headerlink" title="快速开发"></a>快速开发</h2><p><a href="https://app.quicktype.io/">jsontomodel</a></p>
+<h2 id="Flutter-的技术栈"><a href="#Flutter-的技术栈" class="headerlink" title="Flutter 的技术栈"></a>Flutter 的技术栈</h2><p><img src="https://cdn.renchengqi.com/blog/hve50.png"></p>
+<h2 id="Flutter-优势"><a href="#Flutter-优势" class="headerlink" title="Flutter 优势"></a>Flutter 优势</h2><ul>
+<li>跨平台，性能强大</li>
+<li>热重载功能</li>
+<li>免费，开源</li>
+<li>高度可定制</li>
+</ul>
+<h2 id="Flutter-缺点"><a href="#Flutter-缺点" class="headerlink" title="Flutter 缺点"></a>Flutter 缺点</h2><ul>
+<li>双端熟悉</li>
+<li>Dart编程；声明式语法上会发生嵌套地狱</li>
+<li>包体积增大</li>
+</ul>
+<h2 id="Flutter-感受"><a href="#Flutter-感受" class="headerlink" title="Flutter 感受"></a>Flutter 感受</h2><p>作为iOS开发工程师，在学习Flutter过程中，要对Android系统开发也要有些了解，要不然处处是坑；如果想开发一个项目，至少需要iOS和Android两个高级工程师来做，因为Flutter毕竟是跨平台UI的解决方案，它不是原生，在处理底层事件和高性能需求的时候离不开原生，需要制定通讯协议和解决方案；</p>
+<h2 id="对Flutter未来的看法"><a href="#对Flutter未来的看法" class="headerlink" title="对Flutter未来的看法"></a>对Flutter未来的看法</h2><p>个人觉得全量开发的可能性非常非常小，苹果也不允许的，而且目前很多公司的产品改造成Flutter的成本太大，ROI不高，不过flutter确实越来越完善了，如果swiftUI没发力，原生开发肯定会被严重蚕食</p>
+<blockquote>
+<p>你愿意在下一个项目中尝试 Flutter 吗？</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Flutter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Flutter - Future与FutureBuilder实用技巧</title>
     <url>/2020/02/24/flutter/Flutter%E5%BC%82%E6%AD%A5/</url>
     <content><![CDATA[<p>我们知道Dart语言的执行环境是”单线程”。也就是指一次只能完成一件任务。如果有多个任务，就必须排队，前面一个任务完成，再执行后面一个任务。</p>
@@ -1785,225 +2004,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git</title>
-    <url>/2016/08/25/git/Git/</url>
-    <content><![CDATA[<p>git是一个开源的分布式版本控制系统，可用于高效的管理大小项目。</p>
-<a id="more"></a>
-
-<p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/">优秀教程</a></p>
-<h2 id="代码管理工具作用"><a href="#代码管理工具作用" class="headerlink" title="代码管理工具作用"></a>代码管理工具作用</h2><ul>
-<li>防止代码丢失，做备份</li>
-<li>代码版本的管理，可以进行多个节点的备份，在多个版本之间跳跃</li>
-<li>可以方便的将代码在多人之间进行共享传输</li>
-<li>多人开发时有各种模式可以方便代码管理</li>
-</ul>
-<h2 id="什么是git"><a href="#什么是git" class="headerlink" title="什么是git"></a>什么是git</h2><p>git是一个开源的分布式版本控制系统，可用于高效的管理大小项目。</p>
-<h2 id="分布式和集中式"><a href="#分布式和集中式" class="headerlink" title="分布式和集中式"></a>分布式和集中式</h2><p>分布式： 每个节点都保存完成的代码，没有明确的中央服务器，节点之间项目推送下载代码完成代码共享</p>
-<p>集中式： 代码集中管理，每次完成的代码上传到中央管理器，然后再统一从中央管理器下载代码使用</p>
-<h2 id="git特点"><a href="#git特点" class="headerlink" title="git特点"></a>git特点</h2><ul>
-<li>git可以管理各种文件，特别是代码项目，多在*nix系统中使用</li>
-<li>是分布式管理，不同于集中式，这是git和svn的核心区别</li>
-<li>git可以更好的支持分支，方便多人协同工作</li>
-<li>git分布式代码更安全，有全球唯一的commit版本号</li>
-<li>git是开源的系统</li>
-<li>使用git可以脱网工作，且数据传输速度较快</li>
-</ul>
-<h2 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h2><p>linux:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
-<p>windows</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msysgit.github.io</span><br></pre></td></tr></table></figure>
-
-<h2 id="git-配置命令"><a href="#git-配置命令" class="headerlink" title="git 配置命令"></a>git 配置命令</h2><h3 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h3><h4 id="配置级别"><a href="#配置级别" class="headerlink" title="配置级别"></a>配置级别</h4><ol>
-<li><p>系统中所有的用户都可使用该配置</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config  --system   </span><br></pre></td></tr></table></figure>
-<p> 配置文件： /etc/gitconfig</p>
-</li>
-<li><p>当前用户可使用该配置</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config  --global</span><br></pre></td></tr></table></figure>
-<p> 配置文件： ~/.gitconfig</p>
-</li>
-<li><p>当前项目可使用该配置</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config</span><br></pre></td></tr></table></figure>
-<p> 配置文件： project/.git/config</p>
-</li>
-</ol>
-<h4 id="配置内容"><a href="#配置内容" class="headerlink" title="配置内容"></a>配置内容</h4><ol>
-<li><p>配置用户名<br> 配置用户名为rencheng：</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo git config --system user.name rencheng</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置用户邮箱<br> 配置邮箱</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email rencheng11@icloud.cn</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置编译器</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config core.editor sublime</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看配置信息</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="git基本命令"><a href="#git基本命令" class="headerlink" title="git基本命令"></a>git基本命令</h2><h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在某个目录下初始化仓库后会自动产生.git目录。该目录下工作的所有文档即可以使用git进行管理</li>
-</ul>
-<h3 id="查看分支状态"><a href="#查看分支状态" class="headerlink" title="查看分支状态"></a>查看分支状态</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>默认工作分支为master，可通过创建新的分支切换</li>
-</ul>
-<h3 id="文件提交"><a href="#文件提交" class="headerlink" title="文件提交"></a>文件提交</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git  add   [file]</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>将文件提交到暂存区</li>
-<li>提交内容可以是一个文件，多个文件用个空格分开</li>
-<li>如果是 * 表示所有文件，也可以是目录</li>
-</ul>
-<h3 id="删除暂存区某个文件提交记录"><a href="#删除暂存区某个文件提交记录" class="headerlink" title="删除暂存区某个文件提交记录"></a>删除暂存区某个文件提交记录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git rm --cached Readme.txt</span><br></pre></td></tr></table></figure>
-
-<h3 id="文件同步到本地仓库"><a href="#文件同步到本地仓库" class="headerlink" title="文件同步到本地仓库"></a>文件同步到本地仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;some message&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>同步时需要附加一些同步信息 在-m后添加</li>
-<li>所有对工作区的修改如果想同步到本地仓库，都需要    add—&gt;commit</li>
-</ul>
-<h3 id="查看commit日志"><a href="#查看commit日志" class="headerlink" title="查看commit日志"></a>查看commit日志</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git log  --pretty&#x3D;oneline</span><br></pre></td></tr></table></figure>
-
-<h3 id="一些工作区命令"><a href="#一些工作区命令" class="headerlink" title="一些工作区命令"></a>一些工作区命令</h3><h4 id="查看本地文件和工作区差异"><a href="#查看本地文件和工作区差异" class="headerlink" title="查看本地文件和工作区差异"></a>查看本地文件和工作区差异</h4><pre><code>git  diff   file</code></pre>
-<h4 id="从本地仓库恢复文件"><a href="#从本地仓库恢复文件" class="headerlink" title="从本地仓库恢复文件"></a>从本地仓库恢复文件</h4><pre><code>git checkout file</code></pre>
-<h4 id="丢弃工作区修改"><a href="#丢弃工作区修改" class="headerlink" title="丢弃工作区修改"></a>丢弃工作区修改</h4><pre><code>git checkout -- file</code></pre>
-<h3 id="本地仓库文件的移动和删除"><a href="#本地仓库文件的移动和删除" class="headerlink" title="本地仓库文件的移动和删除"></a>本地仓库文件的移动和删除</h3><pre><code> 移动文件
- git  mv   file  dir 
-
- 删除文件
- git  rm   file
-
- * 用法和mv rm命令相同。操作后直接commit即可工  作区和本地仓库同步</code></pre>
-<h3 id="版本控制命令"><a href="#版本控制命令" class="headerlink" title="版本控制命令"></a>版本控制命令</h3><h4 id="回到之前版本"><a href="#回到之前版本" class="headerlink" title="回到之前版本"></a>回到之前版本</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
-<ul>
-<li>HEAD后的<code>^</code>数量决定了回到上几个版本</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard  commit_id</span><br></pre></td></tr></table></figure>
-<ul>
-<li>使用commit前7位即可，回到指定的版本</li>
-</ul>
-<h4 id="去往更新的版本"><a href="#去往更新的版本" class="headerlink" title="去往更新的版本"></a>去往更新的版本</h4><ol>
-<li><p>查看所有历史版本号</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure></li>
-<li><p>使用git reset 去往指定版本</p>
-<ul>
-<li>git reflog 会有所有的操作记录，最新的操作时钟在   最上边</li>
-</ul>
-</li>
-</ol>
-<h3 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h3><p>即在当前工作位置添加快照，保存工作状态，一般用于版本的迭代。</p>
-<h4 id="创建新的标签"><a href="#创建新的标签" class="headerlink" title="创建新的标签"></a>创建新的标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git tag  v1.0</span><br></pre></td></tr></table></figure>
-<ul>
-<li>默认在最新的commit_id处打标签</li>
-</ul>
-<h4 id="添加标签信息"><a href="#添加标签信息" class="headerlink" title="添加标签信息"></a>添加标签信息</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git tag v1.0  -m  &quot;message&quot;</span><br></pre></td></tr></table></figure>
-
-<h4 id="指定某个commit-id打标签"><a href="#指定某个commit-id打标签" class="headerlink" title="指定某个commit_id打标签"></a>指定某个commit_id打标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git tag  v0.9  [commit_id]</span><br></pre></td></tr></table></figure>
-
-<h4 id="查看标签"><a href="#查看标签" class="headerlink" title="查看标签"></a>查看标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git tag    #列出当前标签</span><br><span class="line">git show v1.0  #显示标签具体信息</span><br></pre></td></tr></table></figure>
-
-<h4 id="删除标签"><a href="#删除标签" class="headerlink" title="删除标签"></a>删除标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git tag -d v1.0</span><br></pre></td></tr></table></figure>
-
-<h4 id="去往某个标签版本"><a href="#去往某个标签版本" class="headerlink" title="去往某个标签版本"></a>去往某个标签版本</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard  v0.9</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="临时工作区操作"><a href="#临时工作区操作" class="headerlink" title="临时工作区操作"></a>临时工作区操作</h3><h4 id="创建保存临时工作区"><a href="#创建保存临时工作区" class="headerlink" title="创建保存临时工作区"></a>创建保存临时工作区</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git  stash</span><br></pre></td></tr></table></figure>
-
-<h4 id="查看保存的工作区"><a href="#查看保存的工作区" class="headerlink" title="查看保存的工作区"></a>查看保存的工作区</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git  stash  list</span><br></pre></td></tr></table></figure>
-
-<h4 id="应用哪个工作区"><a href="#应用哪个工作区" class="headerlink" title="应用哪个工作区"></a>应用哪个工作区</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git stash apply stash@&#123;1&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="应用上一个工作区并且删除"><a href="#应用上一个工作区并且删除" class="headerlink" title="应用上一个工作区并且删除"></a>应用上一个工作区并且删除</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
-
-<h4 id="删除工作区"><a href="#删除工作区" class="headerlink" title="删除工作区"></a>删除工作区</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git stash drop stash@&#123;0&#125;   #删除某一个</span><br><span class="line">git stash clear            #删除所有</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h3><h4 id="什么是分支？"><a href="#什么是分支？" class="headerlink" title="什么是分支？"></a>什么是分支？</h4><p>分支即每个人获取原有代码，在此基础上创建自己的工作环境，单独开发，不会影响其他分支的操作。开发完成后再统一合并到主线分支中。</p>
-<p>分支的好处：安全，不影响其他人工作，自己控制进度</p>
-<h4 id="查看当前分支"><a href="#查看当前分支" class="headerlink" title="查看当前分支"></a>查看当前分支</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git  branch</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line"></span><br><span class="line">* 前面有 * 号的分支表示当前正在工作的分支</span><br><span class="line"></span><br><span class="line">#### 创建分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>git branch  [branch_name]</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 切换工作分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>git checkout [branch]</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 创建并切换到新的分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>git checkout -b [branch_name]</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 分支合并</span><br><span class="line"></span><br><span class="line">将某个分支合并到当前分支</span><br></pre></td></tr></table></figure>
-<p>git merge [branch]</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 合并过程中如果没有冲突则直接合并后当前分支即为   干净的状态</span><br><span class="line">* 如果产生冲突则需要人为选择然后在进行add    commit等操作</span><br><span class="line">* 在创建分支前尽量保证当前分支是干净点，以减少冲突的发生</span><br><span class="line"></span><br><span class="line">#### 删除分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>git branch -d [branch_name]</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 强制删除没有合并的分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>git branch -D [branch_name] </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">### 远程仓库</span><br><span class="line">远程主机上的仓库。实际上git是分布式的，每一台主机的git结构都相似，只是把其他主机的git仓库叫做远程而已。</span><br><span class="line"></span><br><span class="line">#### 创建共享仓库</span><br><span class="line"></span><br><span class="line">1. 创建文件夹</span><br></pre></td></tr></table></figure>
-<pre><code>mkdir gitrepo
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    </span><br><span class="line">2. 设置文件夹属主</span><br></pre></td></tr></table></figure>
-chown tarena:tarena gitrepo
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    </span><br><span class="line">3. 将该文件夹设置为可共享的git仓库</span><br></pre></td></tr></table></figure>
-cd gitrepo
-git init  --bare  fly.git
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    </span><br><span class="line">4. 设置本地仓库属主</span><br></pre></td></tr></table></figure>
-chown -R tarena:tarena fly.git
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 添加远程仓库</span><br><span class="line"></span><br></pre></td></tr></table></figure></code></pre>
-<p>git remote add origin https://<strong><strong>/</strong></strong>.git</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 默认使用SSH作为传输手段</span><br><span class="line">* 必须在本地的某个git仓库下执行才能使本地仓库和远程   仓库关联</span><br><span class="line"></span><br><span class="line">#### 删除远程主机</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>git remote  rm  [origin]</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 将本地分支推送到远程</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>git push -u origin master</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">* 在第一次向远程仓库推送时需要加 -u选项，以后就不   需要了</span><br><span class="line"></span><br><span class="line">#### 从远程仓库获取项目</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>git clone https://<strong><strong>/</strong></strong>.git</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 从远程仓库拉取分支或代码</span><br><span class="line">直接拉取远程分支和当前工作分支合并</span><br></pre></td></tr></table></figure>
-<p>git pull origin dev_Tom </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">拉取远程分支到本地，不合并</span><br></pre></td></tr></table></figure>
-<p>git pull origin dev_Tom : dev_Tom<br>                远程分支名 本地分支名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 代码退出和拉取</span><br><span class="line">将本地代码推送到连接的远程仓库</span><br></pre></td></tr></table></figure>
-<p>git  push </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;&#96;</span><br><span class="line">git push  --force  origin (当本地版本比远程版本旧                            是用本地旧版本覆盖远程                            新版本)</span><br></pre></td></tr></table></figure>
-
-<p>从远程仓库更新代码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git  pull</span><br><span class="line">git  fetch  （如果有新的分支拉取到本地不会和本地              分支合并）</span><br></pre></td></tr></table></figure>
-
-<h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p>github是一个开源项目社区网站。拥有全球最多的开源项目。开发者可以注册这个网站建立自己的github仓库。然后就可以在本地通过git像操作远程仓库一样操作github仓库。</p>
-<p>git是github唯一指定的代码管理工具</p>
-<p>网址：<a href="https://github.com/">https://github.com/</a></p>
-<h4 id="添加ssh秘钥"><a href="#添加ssh秘钥" class="headerlink" title="添加ssh秘钥"></a>添加ssh秘钥</h4><ol>
-<li><p>在本地主机生成ssh密钥对<br>   ssh-keygen</p>
-<ul>
-<li>默认密钥对存放在 <code>~/.ssh/</code> 下</li>
-<li>生成过程会提示设置密码，如果直接回车则表示不设置密码</li>
-</ul>
-</li>
-<li><p>进入 <code>~/.ssh</code> 目录 复制 <code>id_rsa.pub</code> 公钥内容</p>
-</li>
-<li><p>登录github账号  </p>
-<ol>
-<li>右上角头像下拉菜单</li>
-<li>settings</li>
-<li>左侧 SSH and GPG keys</li>
-<li>new ssh key</li>
-<li>填写title，将复制内容加入key文本框</li>
-<li>点击add…</li>
-</ol>
-</li>
-</ol>
-<h4 id="创建新的github仓库"><a href="#创建新的github仓库" class="headerlink" title="创建新的github仓库"></a>创建新的github仓库</h4><ol>
-<li>右上角 + 下拉菜单</li>
-<li>new repository</li>
-<li>填写参考名和基本描述，根据情况选择是否添加readme等内容，选择共有还是私有</li>
-<li>点击创建</li>
-</ol>
-<h4 id="操作github仓库"><a href="#操作github仓库" class="headerlink" title="操作github仓库"></a>操作github仓库</h4><ol>
-<li>git remote 连接远程github仓库 如果需要输入密码输   入github密码即可</li>
-<li>使用git push等操作远程仓库的方法操作即可</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo教程</title>
     <url>/2014/10/06/hexo/Hexo%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>欢迎来到<a href="https://hexo.io/">Hexo</a>！这是你的第一篇文章。有关详细信息，请查看<a href="https://hexo.io/docs/">文档</a>。如果您在使用Hexo时遇到任何问题，可以在<a href="https://hexo.io/docs/troubleshooting.html">故障排除</a>中找到答案，或者您可以在<a href="https://github.com/">GitHub</a>上找到我。</p>
@@ -2330,88 +2330,6 @@ chown -R tarena:tarena fly.git
       </tags>
   </entry>
   <entry>
-    <title>敏捷开发</title>
-    <url>/2020/08/05/manager/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<p>关于软件开发模式的记录</p>
-<a id="more"></a>
-
-<h2 id="传统软件开发模式"><a href="#传统软件开发模式" class="headerlink" title="传统软件开发模式"></a>传统软件开发模式</h2><ol>
-<li>需要经历问题评估、计划解决方案、设计系统架构、开发代码、测试、部署和使用系统、维护解决方案等过程。</li>
-<li>如瀑布流模式: 它是以文档为驱动，在整个开发过程中，开发人员根据需求文档进行开发，一切以文档为依据。<br> <img src="https://cdn.renchengqi.com/blog/xvod4.jpg"></li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
-<li>由于开发模型是线性的，用户只有等到整个过程的末期才能见到开发成果，从而增加了开发的风险；</li>
-<li>早期的错误可能要等到开发后期的测试阶段才能发现，进而带来严重的后果。</li>
-<li>各个软件生命周期衔接花费时间较长，团队人员交流成本大。</li>
-<li>在需求不明并且在项目进行过程中可能变化的情况下基本是不可行的。</li>
-</ol>
-<blockquote>
-<p><a href="https://blog.csdn.net/xi_gua_gua/article/details/53107283">软件开发的11种模式</a></p>
-</blockquote>
-<h2 id="敏捷开发-Agile-Development"><a href="#敏捷开发-Agile-Development" class="headerlink" title="敏捷开发(Agile Development)"></a>敏捷开发(Agile Development)</h2><h3 id="什么是敏捷开发"><a href="#什么是敏捷开发" class="headerlink" title="什么是敏捷开发"></a>什么是敏捷开发</h3><ol>
-<li>敏捷开发(Agile Development)是一种以人为核心、迭代、循序渐进的开发方式。</li>
-<li>在敏捷开发中，软件项目的构建被切分成多个子项目，各个子项目的成果都经过测试，具备集成和可运行的特征。</li>
-<li>它并不是一门技术，而是一种开发方式，是一种软件开发的流程。</li>
-<li>作用指导我们用规定的环节去一步一步完成项目的开发。因为它采用的是迭代式开发，所以这种开发方式的主要驱动核心是人。</li>
-</ol>
-<h3 id="敏捷开发适用于"><a href="#敏捷开发适用于" class="headerlink" title="敏捷开发适用于"></a>敏捷开发适用于</h3><ul>
-<li>客户不知道自己要啥的情况，这样的客户占绝大多数。因为客户不知道要啥，所以你需要不断帮客户弄明白他到底想要啥。换句话说，你需要和客户沟通，合作，倾听反馈，持续改进；</li>
-<li>竞争激烈的市场，这样的情况下，赶在竞争对手前交付一个不完美但至少能用的产品非常重要；</li>
-<li>快速变化的市场，你在埋头造一辆汽车的时候，客户已经想开飞机满天飞了，这就需要你能一步步的把汽车改成飞机，还能按时交付；</li>
-<li>适用于在一个地方办公的小团队，一般 10 个人以内。这样能使敏捷中主要的沟通方式「Face to Face」是可行的。</li>
-</ul>
-<h3 id="敏捷开发流程"><a href="#敏捷开发流程" class="headerlink" title="敏捷开发流程"></a>敏捷开发流程</h3><p><img src="https://cdn.renchengqi.com/blog/umlyp.jpg"></p>
-<h3 id="敏捷开发实现方式"><a href="#敏捷开发实现方式" class="headerlink" title="敏捷开发实现方式"></a>敏捷开发实现方式</h3><ul>
-<li>Scrum</li>
-<li>XP</li>
-</ul>
-<h4 id="Scrum"><a href="#Scrum" class="headerlink" title="Scrum"></a>Scrum</h4><p><img src="https://cdn.renchengqi.com/blog/6m04u.jpg"></p>
-<p><strong>项目角色</strong></p>
-<ul>
-<li>产品负责人（Product Owner）：主要负责确定产品的功能和达到要求的标准，指定软件的发布日期和交付的内容，同时有权力接受或拒绝开发团队的工作成果。</li>
-<li>流程管理员（Scrum Master）：主要负责整个Scrum流程在项目中的顺利实施和进行，以及清除挡在客户和开发工作之间的沟通障碍，使得客户可以直接驱动开发。</li>
-<li>开发团队（Scrum Team）：主要负责软件产品在Scrum规定流程下进行开发工作，人数控制在5~10人左右，每个成员可能负责不同的技术方面，但要求每成员必须要有很强的自我管理能力，同时具有一定的表达能力；成员可以采用任何工作方式，只要能达到Sprint的目标。</li>
-</ul>
-<h4 id="XP（Extreme-Programming）"><a href="#XP（Extreme-Programming）" class="headerlink" title="XP（Extreme Programming）"></a>XP（Extreme Programming）</h4><p><strong>什么是XP</strong></p>
-<ul>
-<li>极限编程（eXtreme Programming），是一种全新的、轻量级的、灵巧的软件开发方法，是一种软件工程方法学。它强调程序设计团队与业务专家之间的紧密协作、面对面的沟通（比书面的文档更有效）、频繁交付新的软件版本、紧凑而自我组织型的团队、能够很好的适应需求变化的代码编写和团队组织方法，更注重软件开发中人的作用。</li>
-<li>XP的核心是沟通（Communication）、简单（Simplicity）、反馈（Feedback）、勇气（Courage）四大价值观，它们是XP的基础，也是XP的灵魂。</li>
-</ul>
-<p><a href="https://blog.csdn.net/happylee6688/article/details/21551065">敏捷开发之XP</a></p>
-<h4 id="敏捷开发中XP与SCRUM的区别"><a href="#敏捷开发中XP与SCRUM的区别" class="headerlink" title="敏捷开发中XP与SCRUM的区别"></a>敏捷开发中XP与SCRUM的区别</h4><ol>
-<li><p>迭代长度的不同</p>
-<ul>
-<li>XP的一个Sprint的迭代长度大致为1<del>2周, 而Scrum的迭代长度一般为 2</del> 4周.</li>
-</ul>
-</li>
-<li><p>在迭代中, 是否允许修改需求</p>
-<ul>
-<li><p>XP在一个迭代中，如果一个User Story(一个用户需求)还没有实现， 则可以考虑用另外的需求将其替换，替换的原则是需求实现的时间量是相等的。</p>
-</li>
-<li><p>而Scrum是不允许这样做的，一旦迭代开工会完毕, 任何需求都不允许添加进来，并有Scrum Master严格把关，不允许开发团队受到干扰</p>
-</li>
-<li><p>在迭代中，User Story是否严格按照优先级别来实现</p>
-</li>
-<li><p>XP是务必要遵守优先级别的。 但Scrum在这点做得很灵活， 可以不按照优先级别来做</p>
-<blockquote>
-<p>Scrum这样处理的理由是：如果优先问题的解决者，由于其它事情耽搁，不能认领任务，那么整个进度就耽误了。 另外一个原因是，如果按优先级排序的User Story #6和#10，虽然#6优先级高，但是如果#6的实现要依赖于#10，则不得不优先做#10.</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>软件的实施过程中，是否采用严格的工程方法，保证进度或者质量</p>
-<ul>
-<li>Scrum没有对软件的整个实施过程开出个工程实践的处方，要求开发者自觉保证。</li>
-<li>但XP对整个流程方法定义非常严格，规定需要采用TDD, 自动测试， 结对编程，简单设计，重构等约束团队的行为。</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>团队管理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>markdown-基础语法</title>
     <url>/2018/03/01/markdown/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”</p>
@@ -2441,7 +2359,7 @@ chown -R tarena:tarena fly.git
 <blockquote>
 <p>引用：如果想要插入空白换行<code>即&lt;br /&gt;标签</code>，在插入处先键入两个以上的空格然后回车即可，<a href="https://www.xx.com/">普通链接</a>。</p>
 </blockquote>
-<h3 id="锚点与链接-Links"><a href="#锚点与链接-Links" class="headerlink" title="锚点与链接 Links"></a>锚点与链接 Links</h3><p><a href="https://www.xx.com/">普通链接</a><br><a href="https://www.xx.com/" title="普通链接带标题">普通链接带标题</a><br>直接链接：<a href="https://www.xx.com/">https://www.XX.com</a><br>[锚点链接][anchor-id]<br>[anchor-id]: <a href="https://www.xx.com/">https://www.XX.com/</a><br><a href="mailto:test.test@gmail.com">mailto:test.test@gmail.com</a><br>GFM a-tail link @pandao<br>邮箱地址自动链接 <a href="mailto:&#x74;&#x65;&#115;&#116;&#46;&#116;&#x65;&#115;&#116;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x74;&#x65;&#115;&#116;&#46;&#116;&#x65;&#115;&#116;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a>  <a href="mailto:&#119;&#x77;&#119;&#x40;&#118;&#x69;&#x70;&#x2e;&#113;&#x71;&#46;&#99;&#x6f;&#109;">&#119;&#x77;&#119;&#x40;&#118;&#x69;&#x70;&#x2e;&#113;&#x71;&#46;&#99;&#x6f;&#109;</a></p>
+<h3 id="锚点与链接-Links"><a href="#锚点与链接-Links" class="headerlink" title="锚点与链接 Links"></a>锚点与链接 Links</h3><p><a href="https://www.xx.com/">普通链接</a><br><a href="https://www.xx.com/" title="普通链接带标题">普通链接带标题</a><br>直接链接：<a href="https://www.xx.com/">https://www.XX.com</a><br>[锚点链接][anchor-id]<br>[anchor-id]: <a href="https://www.xx.com/">https://www.XX.com/</a><br><a href="mailto:test.test@gmail.com">mailto:test.test@gmail.com</a><br>GFM a-tail link @pandao<br>邮箱地址自动链接 <a href="mailto:&#x74;&#x65;&#x73;&#x74;&#x2e;&#116;&#x65;&#x73;&#116;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#x74;&#x65;&#x73;&#x74;&#x2e;&#116;&#x65;&#x73;&#116;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a>  <a href="mailto:&#119;&#119;&#119;&#64;&#118;&#x69;&#112;&#46;&#113;&#113;&#x2e;&#x63;&#111;&#109;">&#119;&#119;&#119;&#64;&#118;&#x69;&#112;&#46;&#113;&#113;&#x2e;&#x63;&#111;&#109;</a></p>
 <blockquote>
 <p>@pandao</p>
 </blockquote>
@@ -2744,6 +2662,88 @@ chown -R tarena:tarena fly.git
       </categories>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>敏捷开发</title>
+    <url>/2020/08/05/manager/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<p>关于软件开发模式的记录</p>
+<a id="more"></a>
+
+<h2 id="传统软件开发模式"><a href="#传统软件开发模式" class="headerlink" title="传统软件开发模式"></a>传统软件开发模式</h2><ol>
+<li>需要经历问题评估、计划解决方案、设计系统架构、开发代码、测试、部署和使用系统、维护解决方案等过程。</li>
+<li>如瀑布流模式: 它是以文档为驱动，在整个开发过程中，开发人员根据需求文档进行开发，一切以文档为依据。<br> <img src="https://cdn.renchengqi.com/blog/xvod4.jpg"></li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>由于开发模型是线性的，用户只有等到整个过程的末期才能见到开发成果，从而增加了开发的风险；</li>
+<li>早期的错误可能要等到开发后期的测试阶段才能发现，进而带来严重的后果。</li>
+<li>各个软件生命周期衔接花费时间较长，团队人员交流成本大。</li>
+<li>在需求不明并且在项目进行过程中可能变化的情况下基本是不可行的。</li>
+</ol>
+<blockquote>
+<p><a href="https://blog.csdn.net/xi_gua_gua/article/details/53107283">软件开发的11种模式</a></p>
+</blockquote>
+<h2 id="敏捷开发-Agile-Development"><a href="#敏捷开发-Agile-Development" class="headerlink" title="敏捷开发(Agile Development)"></a>敏捷开发(Agile Development)</h2><h3 id="什么是敏捷开发"><a href="#什么是敏捷开发" class="headerlink" title="什么是敏捷开发"></a>什么是敏捷开发</h3><ol>
+<li>敏捷开发(Agile Development)是一种以人为核心、迭代、循序渐进的开发方式。</li>
+<li>在敏捷开发中，软件项目的构建被切分成多个子项目，各个子项目的成果都经过测试，具备集成和可运行的特征。</li>
+<li>它并不是一门技术，而是一种开发方式，是一种软件开发的流程。</li>
+<li>作用指导我们用规定的环节去一步一步完成项目的开发。因为它采用的是迭代式开发，所以这种开发方式的主要驱动核心是人。</li>
+</ol>
+<h3 id="敏捷开发适用于"><a href="#敏捷开发适用于" class="headerlink" title="敏捷开发适用于"></a>敏捷开发适用于</h3><ul>
+<li>客户不知道自己要啥的情况，这样的客户占绝大多数。因为客户不知道要啥，所以你需要不断帮客户弄明白他到底想要啥。换句话说，你需要和客户沟通，合作，倾听反馈，持续改进；</li>
+<li>竞争激烈的市场，这样的情况下，赶在竞争对手前交付一个不完美但至少能用的产品非常重要；</li>
+<li>快速变化的市场，你在埋头造一辆汽车的时候，客户已经想开飞机满天飞了，这就需要你能一步步的把汽车改成飞机，还能按时交付；</li>
+<li>适用于在一个地方办公的小团队，一般 10 个人以内。这样能使敏捷中主要的沟通方式「Face to Face」是可行的。</li>
+</ul>
+<h3 id="敏捷开发流程"><a href="#敏捷开发流程" class="headerlink" title="敏捷开发流程"></a>敏捷开发流程</h3><p><img src="https://cdn.renchengqi.com/blog/umlyp.jpg"></p>
+<h3 id="敏捷开发实现方式"><a href="#敏捷开发实现方式" class="headerlink" title="敏捷开发实现方式"></a>敏捷开发实现方式</h3><ul>
+<li>Scrum</li>
+<li>XP</li>
+</ul>
+<h4 id="Scrum"><a href="#Scrum" class="headerlink" title="Scrum"></a>Scrum</h4><p><img src="https://cdn.renchengqi.com/blog/6m04u.jpg"></p>
+<p><strong>项目角色</strong></p>
+<ul>
+<li>产品负责人（Product Owner）：主要负责确定产品的功能和达到要求的标准，指定软件的发布日期和交付的内容，同时有权力接受或拒绝开发团队的工作成果。</li>
+<li>流程管理员（Scrum Master）：主要负责整个Scrum流程在项目中的顺利实施和进行，以及清除挡在客户和开发工作之间的沟通障碍，使得客户可以直接驱动开发。</li>
+<li>开发团队（Scrum Team）：主要负责软件产品在Scrum规定流程下进行开发工作，人数控制在5~10人左右，每个成员可能负责不同的技术方面，但要求每成员必须要有很强的自我管理能力，同时具有一定的表达能力；成员可以采用任何工作方式，只要能达到Sprint的目标。</li>
+</ul>
+<h4 id="XP（Extreme-Programming）"><a href="#XP（Extreme-Programming）" class="headerlink" title="XP（Extreme Programming）"></a>XP（Extreme Programming）</h4><p><strong>什么是XP</strong></p>
+<ul>
+<li>极限编程（eXtreme Programming），是一种全新的、轻量级的、灵巧的软件开发方法，是一种软件工程方法学。它强调程序设计团队与业务专家之间的紧密协作、面对面的沟通（比书面的文档更有效）、频繁交付新的软件版本、紧凑而自我组织型的团队、能够很好的适应需求变化的代码编写和团队组织方法，更注重软件开发中人的作用。</li>
+<li>XP的核心是沟通（Communication）、简单（Simplicity）、反馈（Feedback）、勇气（Courage）四大价值观，它们是XP的基础，也是XP的灵魂。</li>
+</ul>
+<p><a href="https://blog.csdn.net/happylee6688/article/details/21551065">敏捷开发之XP</a></p>
+<h4 id="敏捷开发中XP与SCRUM的区别"><a href="#敏捷开发中XP与SCRUM的区别" class="headerlink" title="敏捷开发中XP与SCRUM的区别"></a>敏捷开发中XP与SCRUM的区别</h4><ol>
+<li><p>迭代长度的不同</p>
+<ul>
+<li>XP的一个Sprint的迭代长度大致为1<del>2周, 而Scrum的迭代长度一般为 2</del> 4周.</li>
+</ul>
+</li>
+<li><p>在迭代中, 是否允许修改需求</p>
+<ul>
+<li><p>XP在一个迭代中，如果一个User Story(一个用户需求)还没有实现， 则可以考虑用另外的需求将其替换，替换的原则是需求实现的时间量是相等的。</p>
+</li>
+<li><p>而Scrum是不允许这样做的，一旦迭代开工会完毕, 任何需求都不允许添加进来，并有Scrum Master严格把关，不允许开发团队受到干扰</p>
+</li>
+<li><p>在迭代中，User Story是否严格按照优先级别来实现</p>
+</li>
+<li><p>XP是务必要遵守优先级别的。 但Scrum在这点做得很灵活， 可以不按照优先级别来做</p>
+<blockquote>
+<p>Scrum这样处理的理由是：如果优先问题的解决者，由于其它事情耽搁，不能认领任务，那么整个进度就耽误了。 另外一个原因是，如果按优先级排序的User Story #6和#10，虽然#6优先级高，但是如果#6的实现要依赖于#10，则不得不优先做#10.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>软件的实施过程中，是否采用严格的工程方法，保证进度或者质量</p>
+<ul>
+<li>Scrum没有对软件的整个实施过程开出个工程实践的处方，要求开发者自觉保证。</li>
+<li>但XP对整个流程方法定义非常严格，规定需要采用TDD, 自动测试， 结对编程，简单设计，重构等约束团队的行为。</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>团队管理</tag>
       </tags>
   </entry>
   <entry>
@@ -6118,72 +6118,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>OC-Runtime</title>
-    <url>/2018/05/31/ios/objc/OC-Runtime/</url>
-    <content><![CDATA[<p>Objective-C是一门动态性比较强的编程语言，跟C、C++等语言有着很大的不同<br>Objective-C的动态性是由Runtime API来支撑的<br>Runtime API提供的接口基本都是C语言的，源码由C\C++\汇编语言编写</p>
-<p>libobjc源码<br><a href="https://opensource.apple.com/tarballs/">下载地址</a><br><a href="https://opensource.apple.com/source">代码地址</a></p>
-<p><a href="http://www.gnustep.org/resources/downloads.php">GNUstep</a>是GNU计划的项目之一，它将Cocoa的OC库重新开源实现了一遍。虽然GNUstep不是苹果官方源码，但还是具有一定的参考价值。</p>
-<a id="more"></a>
-
-<h2 id="关联对象"><a href="#关联对象" class="headerlink" title="关联对象"></a>关联对象</h2><p>默认情况下，因为分类底层结构的限制，不能添加成员变量到分类中。但可以通过关联对象来间接实现。</p>
-<h3 id="方法定义"><a href="#方法定义" class="headerlink" title="方法定义"></a>方法定义</h3><p><strong>添加关联对象(Set)</strong></p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_setAssociatedObject(<span class="keyword">id</span> object, <span class="keyword">const</span> <span class="keyword">void</span> * key, <span class="keyword">id</span> value, objc_AssociationPolicy policy)</span><br></pre></td></tr></table></figure>
-
-<p><strong>获得关联对象(Get)</strong></p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">id</span> objc_getAssociatedObject(<span class="keyword">id</span> object, <span class="keyword">const</span> <span class="keyword">void</span> * key)</span><br></pre></td></tr></table></figure>
-
-<p><strong>移除所有的关联对象(Remove)</strong></p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_removeAssociatedObjects(<span class="keyword">id</span> object)</span><br></pre></td></tr></table></figure>
-
-<p><strong>objc_AssociationPolicy</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">objc_AssociationPolicy</th>
-<th align="left">对应的修饰符</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">OBJC_ASSOCIATION_ASSIGN</td>
-<td align="left">assign</td>
-</tr>
-<tr>
-<td align="left">OBJC_ASSOCIATION_RETAIN_NONATOMIC</td>
-<td align="left">strong, nonatomic</td>
-</tr>
-<tr>
-<td align="left">OBJC_ASSOCIATION_COPY_NONATOMIC</td>
-<td align="left">copy, nonatomic</td>
-</tr>
-<tr>
-<td align="left">OBJC_ASSOCIATION_RETAIN</td>
-<td align="left">strong, atomic</td>
-</tr>
-<tr>
-<td align="left">OBJC_ASSOCIATION_COPY</td>
-<td align="left">copy, atomic</td>
-</tr>
-</tbody></table>
-<p><strong>key的常见用法</strong></p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用全局变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">char</span> MyKey;</span><br><span class="line">objc_setAssociatedObject(obj, &amp;MyKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC)</span><br><span class="line">objc_getAssociatedObject(obj, &amp;MyKey)</span><br></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用getter方法的@selecor作为key - 最优</span></span><br><span class="line">objc_setAssociatedObject(obj, <span class="keyword">@selector</span>(<span class="keyword">getter</span>), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC)</span><br><span class="line">objc_getAssociatedObject(obj, <span class="keyword">@selector</span>(<span class="keyword">getter</span>)) <span class="comment">// @selector(getter) == _cmd</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用属性名作为key</span></span><br><span class="line">objc_setAssociatedObject(obj, <span class="string">@&quot;property&quot;</span>, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">objc_getAssociatedObject(obj, <span class="string">@&quot;property&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><strong>为UITextView增加限制的属性</strong></p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// UITextView+limit.h</span></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">UITextView</span> (<span class="title">limit</span>)</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">assign</span>) <span class="built_in">NSUInteger</span> maxLength;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// UITextView+limit.m</span></span><br><span class="line">- (<span class="keyword">void</span>)setMaxLength:(<span class="built_in">NSUInteger</span>)maxLength &#123;</span><br><span class="line">    objc_setAssociatedObject(<span class="keyword">self</span>, <span class="keyword">@selector</span>(maxLength), @(maxLength), OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSUInteger</span>)maxLength &#123;</span><br><span class="line">    <span class="keyword">return</span> [objc_getAssociatedObject(<span class="keyword">self</span>, <span class="keyword">@selector</span>(maxLength)) unsignedIntegerValue];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="方法交换"><a href="#方法交换" class="headerlink" title="方法交换"></a>方法交换</h2><p>Hook方法</p>
-]]></content>
-      <categories>
-        <category>iOS底层原理</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-        <tag>Objc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OC-内存管理</title>
     <url>/2018/06/25/ios/objc/OC-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<a id="more"></a>
@@ -6304,6 +6238,72 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">&lt;<span class="built_in">NSCoping</span>&gt;</span><br></pre></td></tr></table></figure>
 <p><strong>实现协议方法</strong></p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)copyWithZone:(<span class="built_in">NSZone</span> *)zone &#123;</span><br><span class="line">    Person *person = [[Person alloc] init];</span><br><span class="line">    person.age = <span class="keyword">self</span>.age;</span><br><span class="line">    person.name = <span class="keyword">self</span>.name;</span><br><span class="line">    <span class="keyword">return</span> person;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>iOS底层原理</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+        <tag>Objc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OC-Runtime</title>
+    <url>/2018/05/31/ios/objc/OC-Runtime/</url>
+    <content><![CDATA[<p>Objective-C是一门动态性比较强的编程语言，跟C、C++等语言有着很大的不同<br>Objective-C的动态性是由Runtime API来支撑的<br>Runtime API提供的接口基本都是C语言的，源码由C\C++\汇编语言编写</p>
+<p>libobjc源码<br><a href="https://opensource.apple.com/tarballs/">下载地址</a><br><a href="https://opensource.apple.com/source">代码地址</a></p>
+<p><a href="http://www.gnustep.org/resources/downloads.php">GNUstep</a>是GNU计划的项目之一，它将Cocoa的OC库重新开源实现了一遍。虽然GNUstep不是苹果官方源码，但还是具有一定的参考价值。</p>
+<a id="more"></a>
+
+<h2 id="关联对象"><a href="#关联对象" class="headerlink" title="关联对象"></a>关联对象</h2><p>默认情况下，因为分类底层结构的限制，不能添加成员变量到分类中。但可以通过关联对象来间接实现。</p>
+<h3 id="方法定义"><a href="#方法定义" class="headerlink" title="方法定义"></a>方法定义</h3><p><strong>添加关联对象(Set)</strong></p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_setAssociatedObject(<span class="keyword">id</span> object, <span class="keyword">const</span> <span class="keyword">void</span> * key, <span class="keyword">id</span> value, objc_AssociationPolicy policy)</span><br></pre></td></tr></table></figure>
+
+<p><strong>获得关联对象(Get)</strong></p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">id</span> objc_getAssociatedObject(<span class="keyword">id</span> object, <span class="keyword">const</span> <span class="keyword">void</span> * key)</span><br></pre></td></tr></table></figure>
+
+<p><strong>移除所有的关联对象(Remove)</strong></p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_removeAssociatedObjects(<span class="keyword">id</span> object)</span><br></pre></td></tr></table></figure>
+
+<p><strong>objc_AssociationPolicy</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">objc_AssociationPolicy</th>
+<th align="left">对应的修饰符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">OBJC_ASSOCIATION_ASSIGN</td>
+<td align="left">assign</td>
+</tr>
+<tr>
+<td align="left">OBJC_ASSOCIATION_RETAIN_NONATOMIC</td>
+<td align="left">strong, nonatomic</td>
+</tr>
+<tr>
+<td align="left">OBJC_ASSOCIATION_COPY_NONATOMIC</td>
+<td align="left">copy, nonatomic</td>
+</tr>
+<tr>
+<td align="left">OBJC_ASSOCIATION_RETAIN</td>
+<td align="left">strong, atomic</td>
+</tr>
+<tr>
+<td align="left">OBJC_ASSOCIATION_COPY</td>
+<td align="left">copy, atomic</td>
+</tr>
+</tbody></table>
+<p><strong>key的常见用法</strong></p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用全局变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">char</span> MyKey;</span><br><span class="line">objc_setAssociatedObject(obj, &amp;MyKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC)</span><br><span class="line">objc_getAssociatedObject(obj, &amp;MyKey)</span><br></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用getter方法的@selecor作为key - 最优</span></span><br><span class="line">objc_setAssociatedObject(obj, <span class="keyword">@selector</span>(<span class="keyword">getter</span>), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC)</span><br><span class="line">objc_getAssociatedObject(obj, <span class="keyword">@selector</span>(<span class="keyword">getter</span>)) <span class="comment">// @selector(getter) == _cmd</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用属性名作为key</span></span><br><span class="line">objc_setAssociatedObject(obj, <span class="string">@&quot;property&quot;</span>, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">objc_getAssociatedObject(obj, <span class="string">@&quot;property&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><strong>为UITextView增加限制的属性</strong></p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// UITextView+limit.h</span></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">UITextView</span> (<span class="title">limit</span>)</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">assign</span>) <span class="built_in">NSUInteger</span> maxLength;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// UITextView+limit.m</span></span><br><span class="line">- (<span class="keyword">void</span>)setMaxLength:(<span class="built_in">NSUInteger</span>)maxLength &#123;</span><br><span class="line">    objc_setAssociatedObject(<span class="keyword">self</span>, <span class="keyword">@selector</span>(maxLength), @(maxLength), OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSUInteger</span>)maxLength &#123;</span><br><span class="line">    <span class="keyword">return</span> [objc_getAssociatedObject(<span class="keyword">self</span>, <span class="keyword">@selector</span>(maxLength)) unsignedIntegerValue];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法交换"><a href="#方法交换" class="headerlink" title="方法交换"></a>方法交换</h2><p>Hook方法</p>
+]]></content>
       <categories>
         <category>iOS底层原理</category>
       </categories>
@@ -6686,51 +6686,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>iOS-支持Dark Mode</title>
-    <url>/2019/07/30/ios/general/DarkMode/</url>
-    <content><![CDATA[<p><img src="https://cdn.renchengqi.com/blog/flxpq.png-thumb100"></p>
-<p>经过多年的等待和期待，iOS13 终于支持本机<code>Dark Mode</code>！ 用户可以选择启用系统范围的深色外观，所有正式应用程序都将支持该外观。</p>
-<a id="more"></a>
-
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>在应用中启用<code>Dark Mode</code>支持就像使用新的iOS13 SDK一样容易！ 使用最新的SDK时，iOS将自动更新系统控件，例如开关，表格视图和按钮。如我们所见，Apple还使开发人员可以轻松地添加<code>Dark Mode</code>支持。<br>但是，iOS不会自动切换图像或文本颜色，因此您可能会在<code>Dark Mode</code>下注意到很多与应用有关的问题。<br>尽管使用新的iOS13 SDK进行构建会自动更新系统控件，但Apple强烈建议所有开发人员检查并更新其应用程序，以确保在启用<code>Dark Mode</code>时所有文本和图像都能正确显示。<br>幸运的是，由于苹果在过去几年中对资产目录进行了许多改进，因此大多数iOS应用程序应该能够采用<code>Dark Mode</code>，而无需进行重大代码更改。</p>
-<h2 id="适配颜色"><a href="#适配颜色" class="headerlink" title="适配颜色"></a>适配颜色</h2><h3 id="System-Color"><a href="#System-Color" class="headerlink" title="System Color"></a>System Color</h3><p>iOS13现在在<code>UIColor</code>中包括新的系统颜色，例如<code>label</code>颜色。 通过使用iOS13中可用的新系统颜色，您的应用程序可以自动支持<code>Dark Mode</code>和高对比度模式。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">label.color = <span class="built_in">UIColor</span>.secondaryLabel</span><br></pre></td></tr></table></figure>
-
-<h3 id="Custom-Colors"><a href="#Custom-Colors" class="headerlink" title="Custom Colors"></a>Custom Colors</h3><p>尽管强烈建议您使用系统颜色来自动适应界面更改并确保各个应用程序之间的一致性，但是您可能希望在自定义颜色上支持深色模式。<br>使用iOS11的新资产目录颜色，可以通过添加自定义颜色的深色版本来轻松支持深色模式。<br>要添加资产目录颜色的深色版本，只需在目录中选择颜色，然后在“属性”检查器中将<code>Appearances</code>切换为<code>Any</code>，<code>Dark</code>。 然后，添加颜色的深色外观版本。<br><img src="https://cdn.renchengqi.com/blog/1130i.png-thumb100"><br>就是这样-启用深色模式时，iOS会自动切换到资产目录颜色的深色版本，而您无需进行其他工作！</p>
-<blockquote>
-<p>如果工程未使用资产目录颜色？<br>资产目录颜色使支持<code>Dark Mode</code>更加容易！ 请参阅<a href="https://twitter.com/twannl">Antoine van der Lee</a>撰写的<a href="https://www.avanderlee.com/xcode/dark-mode-on-ios-preparations-using-asset-catalog-colors/">博客文章</a>，详细了解如何使用资产目录颜色，如果您不希望切换，请参阅下面的以编程方式<a href="https://schiavo.me/2019/implementing-dark-mode/#detecting-dark-mode-programmatically">检测Dark Mode</a>。</p>
-</blockquote>
-<h2 id="适配图片"><a href="#适配图片" class="headerlink" title="适配图片"></a>适配图片</h2><p>虽然大多数图像在<code>Dark Mode</code>下看起来都不错，尤其是当您使用模板图像时，如果您将其放置在工作中以自动切换颜色（请参见上文的“适应颜色”），该图像会自动更改色调，但您可能希望<code>Dark Mode</code>下看某些图像具有不同的颜色。<br><img src="https://cdn.renchengqi.com/blog/1x26o.png-thumb100"><br>与资产目录颜色一样，启用<code>Dark Mode</code>时自动切换资产目录中的图像很简单。 要添加任何图像的深色版本，只需在目录中选择该图像，然后在“属性”检查器中将<code>Appearances</code>切换为<code>Any</code>，<code>Dark</code>。 然后，只需添加图像的深色外观版本。</p>
-<h2 id="代码检测Dark-Mode"><a href="#代码检测Dark-Mode" class="headerlink" title="代码检测Dark Mode"></a>代码检测Dark Mode</h2><p>在某些情况下，您需要以代码来检测外观变化并相应地更改用户界面。</p>
-<blockquote>
-<p>⚠️警告：响应外观更改时，请确保尽快更新您的界面。 不要执行与外观更改无关的任务，因为这可能会导致延迟，尤其是当用户从Control Center切换外观时。</p>
-</blockquote>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">override func traitCollectionDidChange(_ previousTraitCollection: <span class="built_in">UITraitCollection</span>?) &#123;</span><br><span class="line">    <span class="keyword">super</span>.traitCollectionDidChange(previousTraitCollection)</span><br><span class="line"></span><br><span class="line">    let userInterfaceStyle = traitCollection.userInterfaceStyle <span class="comment">// Either .unspecified, .light, or .dark</span></span><br><span class="line">    <span class="comment">// Update your user interface based on the appearance</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>通过在视图控制器上重写traitCollectionDidChange，检测外观变化很简单，只需访问视图控制器的<code>traitCollection.userInterfaceStyle</code>。<br>但是要记住，我们也要针对其他情况更改（例如设备旋转）调用<code>traitCollectionDidChange</code>。 您可以使用此新方法检查当前外观是否不同：</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">override func traitCollectionDidChange(_ previousTraitCollection: <span class="built_in">UITraitCollection</span>?) &#123;</span><br><span class="line">    <span class="keyword">super</span>.traitCollectionDidChange(previousTraitCollection)</span><br><span class="line"></span><br><span class="line">    let hasUserInterfaceStyleChanged = previousTraitCollection.hasDifferentColorAppearance(comparedTo: traitCollection) <span class="comment">// Bool</span></span><br><span class="line">    <span class="comment">// Update your user interface based on the appearance</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果要从任何地方访问当前特征集，也可以使用<code>UITraitCollection.current</code>。</p>
-<h2 id="重写-User-Interface-Style"><a href="#重写-User-Interface-Style" class="headerlink" title="重写 User Interface Style"></a>重写 User Interface Style</h2><h3 id="全局控制"><a href="#全局控制" class="headerlink" title="全局控制"></a>全局控制</h3><p>系统会自动在与iOS13或更高版本的SDK链接的任何应用中选择采用浅色和深色外观。 如果您需要更多时间来处理应用程序的<code>Dark Mode</code>支持，或者希望将应用保持单一样式，则可以通过在应用的<code>Info.plist</code>文件中添加<code>UIUserInterfaceStyle</code>键（值为<code>Light</code>或<code>Dark</code>）来控制。 设置此键会导致系统忽略用户的偏好，并始终将特定外观应用于您的应用。</p>
-<blockquote>
-<p>⚠️Note️注意：强烈建议支持深色模式。 在改进应用程序的<code>Dark Mode</code>支持时，请使用UIUserInterfaceStyle键暂时停用。</p>
-</blockquote>
-<h3 id="特定页面"><a href="#特定页面" class="headerlink" title="特定页面"></a>特定页面</h3><p>在iOS13中，您现在可以在特定视图或视图控制器上重写<code>User Interface Style</code>。例如，您可能只希望某个视图控制器处于<code>Dark Mode</code>，而应用程序的其余部分处于<code>Light</code>模式。<br>要覆盖用户界面样式，只需在顶视图或视图控制器中覆盖此变量，它将向下传播到子视图：</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Inside a UIViewController</span></span><br><span class="line">override func viewDidLoad() &#123;</span><br><span class="line">    <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Always adopt a dark interface style.    </span></span><br><span class="line">    overrideUserInterfaceStyle = .dark</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="打印切换信息"><a href="#打印切换信息" class="headerlink" title="打印切换信息"></a>打印切换信息</h2><p>Edit Scheme -&gt; Run -&gt; Arguments -&gt; Arguments Passed On Launch<br>加入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-UITraitCollectionChangeLoggingEnabled YES</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在文章中，我们探讨了如何使您的应用在iOS13的<code>Dark Mode</code>中看起来更漂亮，以及如何调整图像，颜色和自定义用户界面元素以匹配新样式。<br>我迫不及待想看到肯定会在秋天出现的所有出色的<code>Dark Mode</code>应用程序！<br>本文所有信息全部摘自<a href="https://developer.apple.com/videos/play/wwdc2019/214/">WWDC</a></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iOS-App瘦身</title>
     <url>/2020/09/14/ios/general/App%E7%98%A6%E8%BA%AB/</url>
     <content><![CDATA[<p>关于App瘦身的实践<br><strong>构成</strong></p>
@@ -6781,6 +6736,51 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>iOS-支持Dark Mode</title>
+    <url>/2019/07/30/ios/general/DarkMode/</url>
+    <content><![CDATA[<p><img src="https://cdn.renchengqi.com/blog/flxpq.png-thumb100"></p>
+<p>经过多年的等待和期待，iOS13 终于支持本机<code>Dark Mode</code>！ 用户可以选择启用系统范围的深色外观，所有正式应用程序都将支持该外观。</p>
+<a id="more"></a>
+
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>在应用中启用<code>Dark Mode</code>支持就像使用新的iOS13 SDK一样容易！ 使用最新的SDK时，iOS将自动更新系统控件，例如开关，表格视图和按钮。如我们所见，Apple还使开发人员可以轻松地添加<code>Dark Mode</code>支持。<br>但是，iOS不会自动切换图像或文本颜色，因此您可能会在<code>Dark Mode</code>下注意到很多与应用有关的问题。<br>尽管使用新的iOS13 SDK进行构建会自动更新系统控件，但Apple强烈建议所有开发人员检查并更新其应用程序，以确保在启用<code>Dark Mode</code>时所有文本和图像都能正确显示。<br>幸运的是，由于苹果在过去几年中对资产目录进行了许多改进，因此大多数iOS应用程序应该能够采用<code>Dark Mode</code>，而无需进行重大代码更改。</p>
+<h2 id="适配颜色"><a href="#适配颜色" class="headerlink" title="适配颜色"></a>适配颜色</h2><h3 id="System-Color"><a href="#System-Color" class="headerlink" title="System Color"></a>System Color</h3><p>iOS13现在在<code>UIColor</code>中包括新的系统颜色，例如<code>label</code>颜色。 通过使用iOS13中可用的新系统颜色，您的应用程序可以自动支持<code>Dark Mode</code>和高对比度模式。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">label.color = <span class="built_in">UIColor</span>.secondaryLabel</span><br></pre></td></tr></table></figure>
+
+<h3 id="Custom-Colors"><a href="#Custom-Colors" class="headerlink" title="Custom Colors"></a>Custom Colors</h3><p>尽管强烈建议您使用系统颜色来自动适应界面更改并确保各个应用程序之间的一致性，但是您可能希望在自定义颜色上支持深色模式。<br>使用iOS11的新资产目录颜色，可以通过添加自定义颜色的深色版本来轻松支持深色模式。<br>要添加资产目录颜色的深色版本，只需在目录中选择颜色，然后在“属性”检查器中将<code>Appearances</code>切换为<code>Any</code>，<code>Dark</code>。 然后，添加颜色的深色外观版本。<br><img src="https://cdn.renchengqi.com/blog/1130i.png-thumb100"><br>就是这样-启用深色模式时，iOS会自动切换到资产目录颜色的深色版本，而您无需进行其他工作！</p>
+<blockquote>
+<p>如果工程未使用资产目录颜色？<br>资产目录颜色使支持<code>Dark Mode</code>更加容易！ 请参阅<a href="https://twitter.com/twannl">Antoine van der Lee</a>撰写的<a href="https://www.avanderlee.com/xcode/dark-mode-on-ios-preparations-using-asset-catalog-colors/">博客文章</a>，详细了解如何使用资产目录颜色，如果您不希望切换，请参阅下面的以编程方式<a href="https://schiavo.me/2019/implementing-dark-mode/#detecting-dark-mode-programmatically">检测Dark Mode</a>。</p>
+</blockquote>
+<h2 id="适配图片"><a href="#适配图片" class="headerlink" title="适配图片"></a>适配图片</h2><p>虽然大多数图像在<code>Dark Mode</code>下看起来都不错，尤其是当您使用模板图像时，如果您将其放置在工作中以自动切换颜色（请参见上文的“适应颜色”），该图像会自动更改色调，但您可能希望<code>Dark Mode</code>下看某些图像具有不同的颜色。<br><img src="https://cdn.renchengqi.com/blog/1x26o.png-thumb100"><br>与资产目录颜色一样，启用<code>Dark Mode</code>时自动切换资产目录中的图像很简单。 要添加任何图像的深色版本，只需在目录中选择该图像，然后在“属性”检查器中将<code>Appearances</code>切换为<code>Any</code>，<code>Dark</code>。 然后，只需添加图像的深色外观版本。</p>
+<h2 id="代码检测Dark-Mode"><a href="#代码检测Dark-Mode" class="headerlink" title="代码检测Dark Mode"></a>代码检测Dark Mode</h2><p>在某些情况下，您需要以代码来检测外观变化并相应地更改用户界面。</p>
+<blockquote>
+<p>⚠️警告：响应外观更改时，请确保尽快更新您的界面。 不要执行与外观更改无关的任务，因为这可能会导致延迟，尤其是当用户从Control Center切换外观时。</p>
+</blockquote>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">override func traitCollectionDidChange(_ previousTraitCollection: <span class="built_in">UITraitCollection</span>?) &#123;</span><br><span class="line">    <span class="keyword">super</span>.traitCollectionDidChange(previousTraitCollection)</span><br><span class="line"></span><br><span class="line">    let userInterfaceStyle = traitCollection.userInterfaceStyle <span class="comment">// Either .unspecified, .light, or .dark</span></span><br><span class="line">    <span class="comment">// Update your user interface based on the appearance</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过在视图控制器上重写traitCollectionDidChange，检测外观变化很简单，只需访问视图控制器的<code>traitCollection.userInterfaceStyle</code>。<br>但是要记住，我们也要针对其他情况更改（例如设备旋转）调用<code>traitCollectionDidChange</code>。 您可以使用此新方法检查当前外观是否不同：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">override func traitCollectionDidChange(_ previousTraitCollection: <span class="built_in">UITraitCollection</span>?) &#123;</span><br><span class="line">    <span class="keyword">super</span>.traitCollectionDidChange(previousTraitCollection)</span><br><span class="line"></span><br><span class="line">    let hasUserInterfaceStyleChanged = previousTraitCollection.hasDifferentColorAppearance(comparedTo: traitCollection) <span class="comment">// Bool</span></span><br><span class="line">    <span class="comment">// Update your user interface based on the appearance</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果要从任何地方访问当前特征集，也可以使用<code>UITraitCollection.current</code>。</p>
+<h2 id="重写-User-Interface-Style"><a href="#重写-User-Interface-Style" class="headerlink" title="重写 User Interface Style"></a>重写 User Interface Style</h2><h3 id="全局控制"><a href="#全局控制" class="headerlink" title="全局控制"></a>全局控制</h3><p>系统会自动在与iOS13或更高版本的SDK链接的任何应用中选择采用浅色和深色外观。 如果您需要更多时间来处理应用程序的<code>Dark Mode</code>支持，或者希望将应用保持单一样式，则可以通过在应用的<code>Info.plist</code>文件中添加<code>UIUserInterfaceStyle</code>键（值为<code>Light</code>或<code>Dark</code>）来控制。 设置此键会导致系统忽略用户的偏好，并始终将特定外观应用于您的应用。</p>
+<blockquote>
+<p>⚠️Note️注意：强烈建议支持深色模式。 在改进应用程序的<code>Dark Mode</code>支持时，请使用UIUserInterfaceStyle键暂时停用。</p>
+</blockquote>
+<h3 id="特定页面"><a href="#特定页面" class="headerlink" title="特定页面"></a>特定页面</h3><p>在iOS13中，您现在可以在特定视图或视图控制器上重写<code>User Interface Style</code>。例如，您可能只希望某个视图控制器处于<code>Dark Mode</code>，而应用程序的其余部分处于<code>Light</code>模式。<br>要覆盖用户界面样式，只需在顶视图或视图控制器中覆盖此变量，它将向下传播到子视图：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Inside a UIViewController</span></span><br><span class="line">override func viewDidLoad() &#123;</span><br><span class="line">    <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Always adopt a dark interface style.    </span></span><br><span class="line">    overrideUserInterfaceStyle = .dark</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="打印切换信息"><a href="#打印切换信息" class="headerlink" title="打印切换信息"></a>打印切换信息</h2><p>Edit Scheme -&gt; Run -&gt; Arguments -&gt; Arguments Passed On Launch<br>加入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-UITraitCollectionChangeLoggingEnabled YES</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在文章中，我们探讨了如何使您的应用在iOS13的<code>Dark Mode</code>中看起来更漂亮，以及如何调整图像，颜色和自定义用户界面元素以匹配新样式。<br>我迫不及待想看到肯定会在秋天出现的所有出色的<code>Dark Mode</code>应用程序！<br>本文所有信息全部摘自<a href="https://developer.apple.com/videos/play/wwdc2019/214/">WWDC</a></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>iOS-Socket/Tcp编程</title>
     <url>/2014/12/01/ios/general/Socket-Tcp/</url>
     <content><![CDATA[<p>很多同学一听到Socket TCP UDP 这几个字眼感觉特别害怕, 很怕在工作当中使用,因为他们有些底层了。下面是我在工作中使用Socket类库GCDAsyncSocket进行的一次应用。socket只适用于用户量偏小的app使用。如果数据量过大，请学习XMPP即时通讯协议。</p>
@@ -6825,6 +6825,18 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>iOS-Xcode相关脚本</title>
+    <url>/2017/09/14/ios/general/iOS-Xcode%E7%9B%B8%E5%85%B3%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<p>作用于Xcode的脚本<br>持续补入</p>
+<a id="more"></a>
+
+<h2 id="Xcode-缓存清理"><a href="#Xcode-缓存清理" class="headerlink" title="Xcode 缓存清理"></a>Xcode 缓存清理</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -rf ~/Library/Developer/Xcode/Archives/</span><br><span class="line">rm -rf ~/Library/Developer/Xcode/DerivedData/ </span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>iOS - App架构</title>
     <url>/2019/04/08/ios/general/iOS-App%E6%9E%B6%E6%9E%84/</url>
     <content><![CDATA[<p>不想成为架构的程序员不是好程序员。这篇文章主要是对App架构的理解，并不是说如何成为架构师😑</p>
@@ -6855,18 +6867,6 @@ where gongji&gt;200 and country=&quot;蜀国&quot;;</code></pre>
 <p>优点：对Controller进行瘦身，将Controller的一些业务代码移植到了Presenter里面</p>
 <h2 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h2><p><img src="https://cdn.renchengqi.com/blog/al2uf.png"><br>一般搭配KVO实现双向绑定；</p>
 <h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><p>架构进行分层理解<br><img src="https://cdn.renchengqi.com/blog/8xdfb.png"></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS-Xcode相关脚本</title>
-    <url>/2017/09/14/ios/general/iOS-Xcode%E7%9B%B8%E5%85%B3%E8%84%9A%E6%9C%AC/</url>
-    <content><![CDATA[<p>作用于Xcode的脚本<br>持续补入</p>
-<a id="more"></a>
-
-<h2 id="Xcode-缓存清理"><a href="#Xcode-缓存清理" class="headerlink" title="Xcode 缓存清理"></a>Xcode 缓存清理</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -rf ~/Library/Developer/Xcode/Archives/</span><br><span class="line">rm -rf ~/Library/Developer/Xcode/DerivedData/ </span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -7736,6 +7736,27 @@ I --> K[钉钉通知]</pre>
       </tags>
   </entry>
   <entry>
+    <title>iOS崩溃日志符号化</title>
+    <url>/2014/11/06/ios/general/%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97%E7%AC%A6%E5%8F%B7%E5%8C%96/</url>
+    <content><![CDATA[<p>当提交appStore审核程序的过程中，如果程序发生崩溃，程序审核官会给开发者反馈一个crash文件。当我们打开crash文件的时候，里面的错误原因都是内存地址。所以下面我要说的就是怎么把crash文件的内存地址转化成对应我们编码的错误位置，这种转化方式就是符号化</p>
+<a id="more"></a>
+
+<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><ol>
+<li>在Mac桌面上面创建一个文件夹”crash”,</li>
+<li>打开Xcode-&gt;window-&gt;organizer找到崩溃的那个版本的archive文件,右键show in finder</li>
+<li>右键archive显示包内容,把所有文件夹及其文件拷贝一份放到桌面的”crash”文件</li>
+<li>终端输入命令，找到symbolicatecrash工具 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ find /Applications/Xcode.app -name symbolicatecrash -<span class="built_in">type</span> f</span><br></pre></td></tr></table></figure></li>
+<li>把symbolicatecrash复制到”crash”文件夹下“dSYMs”文件夹下</li>
+<li>终端切换路径到”crash”文件夹下“dSYMs”文件夹下</li>
+<li>配置环境变量 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> DEVELOPER_DIR=/Applications/XCode.app/Contents/Developer</span><br></pre></td></tr></table></figure></li>
+<li>符号化转化 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./symbolicatecrash ./temp..wkkackjh.crash ./LocationChat.app.dSYM &gt; symbol.crash</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>iOS-屏幕尺寸</title>
     <url>/2019/07/14/ios/general/%E5%B1%8F%E5%B9%95%E5%B0%BA%E5%AF%B8/</url>
     <content><![CDATA[<p>在苹果推出iPhoneX后，可以说苹果的机型有很多了，显示屏的大小和形状也变得各式各样，在这里对屏幕尺寸做一下记录，方便以后查看</p>
@@ -7818,27 +7839,6 @@ I --> K[钉钉通知]</pre>
 </tr>
 </tbody></table>
 <p><a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/#Device%20Screen%20Sizes%20and%20Orientations">https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/#Device%20Screen%20Sizes%20and%20Orientations</a></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS崩溃日志符号化</title>
-    <url>/2014/11/06/ios/general/%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97%E7%AC%A6%E5%8F%B7%E5%8C%96/</url>
-    <content><![CDATA[<p>当提交appStore审核程序的过程中，如果程序发生崩溃，程序审核官会给开发者反馈一个crash文件。当我们打开crash文件的时候，里面的错误原因都是内存地址。所以下面我要说的就是怎么把crash文件的内存地址转化成对应我们编码的错误位置，这种转化方式就是符号化</p>
-<a id="more"></a>
-
-<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><ol>
-<li>在Mac桌面上面创建一个文件夹”crash”,</li>
-<li>打开Xcode-&gt;window-&gt;organizer找到崩溃的那个版本的archive文件,右键show in finder</li>
-<li>右键archive显示包内容,把所有文件夹及其文件拷贝一份放到桌面的”crash”文件</li>
-<li>终端输入命令，找到symbolicatecrash工具 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ find /Applications/Xcode.app -name symbolicatecrash -<span class="built_in">type</span> f</span><br></pre></td></tr></table></figure></li>
-<li>把symbolicatecrash复制到”crash”文件夹下“dSYMs”文件夹下</li>
-<li>终端切换路径到”crash”文件夹下“dSYMs”文件夹下</li>
-<li>配置环境变量 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> DEVELOPER_DIR=/Applications/XCode.app/Contents/Developer</span><br></pre></td></tr></table></figure></li>
-<li>符号化转化 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./symbolicatecrash ./temp..wkkackjh.crash ./LocationChat.app.dSYM &gt; symbol.crash</span><br></pre></td></tr></table></figure></li>
-</ol>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -8162,6 +8162,33 @@ I --> K[钉钉通知]</pre>
       </tags>
   </entry>
   <entry>
+    <title>统计Xcode工程代码行数</title>
+    <url>/2016/12/01/ios/general/%E7%BB%9F%E8%AE%A1Xcode%E5%B7%A5%E7%A8%8B%E4%BB%A3%E7%A0%81%E8%A1%8C%E6%95%B0/</url>
+    <content><![CDATA[<p>写着写着突然想看一下自己写了多少行代码。</p>
+<a id="more"></a>
+
+<h2 id="Shell-命令"><a href="#Shell-命令" class="headerlink" title="Shell 命令"></a>Shell 命令</h2><p><strong>切换到指定工程目录,执行如下代码</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find . <span class="string">&quot;(&quot;</span> -name <span class="string">&quot;*.m&quot;</span> -or -name <span class="string">&quot;*.mm&quot;</span> -or -name <span class="string">&quot;*.cpp&quot;</span> -or -name <span class="string">&quot;*.h&quot;</span> -or -name <span class="string">&quot;*.rss&quot;</span> <span class="string">&quot;)&quot;</span> -<span class="built_in">print</span> | xargs wc -l</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其中，<code>-name &quot;*.m&quot;</code> 就表示扩展名为<code>.m</code>的文件。同时要统计<code>java</code>文件和<code>xml</code>文件的命令分别是：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find . <span class="string">&quot;(&quot;</span> -name <span class="string">&quot;*.java&quot;</span> <span class="string">&quot;)&quot;</span> -<span class="built_in">print</span> | xargs wc -l</span><br><span class="line">find . <span class="string">&quot;(&quot;</span> -name <span class="string">&quot;*.xml&quot;</span> <span class="string">&quot;)&quot;</span> -<span class="built_in">print</span> | xargs wc -l</span><br></pre></td></tr></table></figure>
+
+<h2 id="cloc"><a href="#cloc" class="headerlink" title="cloc"></a>cloc</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install cloc</span><br></pre></td></tr></table></figure>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p><strong>统计当前文件夹代码行数(请先cd 到目标目录)：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cloc ./</span><br></pre></td></tr></table></figure>
+<p><strong>排除当前目录若干个文件夹</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cloc ./ --exclude-dir=Pods,MCTest</span><br></pre></td></tr></table></figure>
+<p><strong>查看帮助文档</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cloc --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">Language                     files          blank        comment           code</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">Objective C                   1083          25500          13123         136158</span><br><span class="line">JSON                           814              5              0          49898</span><br><span class="line">XML                            403              0              1          47877</span><br><span class="line">C/C++ Header                  1123          10460          14104          21373</span><br><span class="line">C                               16           1289            628           6448</span><br><span class="line">Objective C++                    2             53             19            285</span><br><span class="line">JavaScript                       1              6              0             85</span><br><span class="line">Markdown                         3             16              0             65</span><br><span class="line">CSS                              1              0              0             44</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">SUM:                          3446          37329          27875         262233</span><br><span class="line">-------------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>iOS-组件化（CocoaPods）</title>
     <url>/2019/07/14/ios/general/%E7%BB%84%E4%BB%B6%E5%8C%96%EF%BC%88CocoaPods%EF%BC%89/</url>
     <content><![CDATA[<p>随着移动互联网的不断发展，很多程序代码量和业务越来越多，现有架构已经不适合公司业务的发展速度了，很多都面临着重构的问题。<br>在公司项目开发中，如果项目比较小，普通的单工程+MVC架构就可以满足大多数需求了。但是像淘宝、蘑菇街、微信这样的大型项目，原有的单工程架构就不足以满足架构需求了。</p>
@@ -8269,33 +8296,6 @@ I --> K[钉钉通知]</pre>
       <tags>
         <tag>iOS</tag>
         <tag>组件化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计Xcode工程代码行数</title>
-    <url>/2016/12/01/ios/general/%E7%BB%9F%E8%AE%A1Xcode%E5%B7%A5%E7%A8%8B%E4%BB%A3%E7%A0%81%E8%A1%8C%E6%95%B0/</url>
-    <content><![CDATA[<p>写着写着突然想看一下自己写了多少行代码。</p>
-<a id="more"></a>
-
-<h2 id="Shell-命令"><a href="#Shell-命令" class="headerlink" title="Shell 命令"></a>Shell 命令</h2><p><strong>切换到指定工程目录,执行如下代码</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find . <span class="string">&quot;(&quot;</span> -name <span class="string">&quot;*.m&quot;</span> -or -name <span class="string">&quot;*.mm&quot;</span> -or -name <span class="string">&quot;*.cpp&quot;</span> -or -name <span class="string">&quot;*.h&quot;</span> -or -name <span class="string">&quot;*.rss&quot;</span> <span class="string">&quot;)&quot;</span> -<span class="built_in">print</span> | xargs wc -l</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>其中，<code>-name &quot;*.m&quot;</code> 就表示扩展名为<code>.m</code>的文件。同时要统计<code>java</code>文件和<code>xml</code>文件的命令分别是：</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find . <span class="string">&quot;(&quot;</span> -name <span class="string">&quot;*.java&quot;</span> <span class="string">&quot;)&quot;</span> -<span class="built_in">print</span> | xargs wc -l</span><br><span class="line">find . <span class="string">&quot;(&quot;</span> -name <span class="string">&quot;*.xml&quot;</span> <span class="string">&quot;)&quot;</span> -<span class="built_in">print</span> | xargs wc -l</span><br></pre></td></tr></table></figure>
-
-<h2 id="cloc"><a href="#cloc" class="headerlink" title="cloc"></a>cloc</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install cloc</span><br></pre></td></tr></table></figure>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p><strong>统计当前文件夹代码行数(请先cd 到目标目录)：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cloc ./</span><br></pre></td></tr></table></figure>
-<p><strong>排除当前目录若干个文件夹</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cloc ./ --exclude-dir=Pods,MCTest</span><br></pre></td></tr></table></figure>
-<p><strong>查看帮助文档</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cloc --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">Language                     files          blank        comment           code</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">Objective C                   1083          25500          13123         136158</span><br><span class="line">JSON                           814              5              0          49898</span><br><span class="line">XML                            403              0              1          47877</span><br><span class="line">C/C++ Header                  1123          10460          14104          21373</span><br><span class="line">C                               16           1289            628           6448</span><br><span class="line">Objective C++                    2             53             19            285</span><br><span class="line">JavaScript                       1              6              0             85</span><br><span class="line">Markdown                         3             16              0             65</span><br><span class="line">CSS                              1              0              0             44</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">SUM:                          3446          37329          27875         262233</span><br><span class="line">-------------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -8615,6 +8615,61 @@ I --> K[钉钉通知]</pre>
       </tags>
   </entry>
   <entry>
+    <title>创建MacOS的U盘安装器</title>
+    <url>/2020/01/04/tools/macos/%E5%88%9B%E5%BB%BAMacOS%E7%9A%84U%E7%9B%98%E5%AE%89%E8%A3%85%E5%99%A8/</url>
+    <content><![CDATA[<p>MacOS的OTA更新和恢复做的非常完善了，但是有洁癖的我，总想彻底的重装<br>如果想把MacOS恢复到指定版本，那么就一定需要安装U盘启动器。因为OTA只支持恢复最新版本的系统和恢复出厂的系统。</p>
+<a id="more"></a>
+
+<h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><p><strong><a href="https://support.apple.com/zh-cn/HT201475">macOS Catalina</a>、<a href="https://support.apple.com/zh-cn/HT210190">macOS Mojave</a> 或 <a href="https://support.apple.com/zh-cn/HT208969">macOS High Sierra</a></strong><br>这些 macOS 版本的安装器都会以名为<code>Install macOS Catalina</code>、<code>Install macOS Mojave</code>或<code>Install macOS High Sierra</code>的 <code>App</code> 的形式直接下载到您的“应用程序”文件夹。如果安装器在下载后打开，请退出而不要继续安装。</p>
+<blockquote>
+<p>要获取正确的安装器，请从运行<code>macOS Sierra 10.12.5</code>或更高版本或者<code>El Capitan 10.11.6</code>的 Mac 中进行下载。</p>
+</blockquote>
+<p><strong><a href="https://support.apple.com/zh-cn/HT206886">OS X El Capitan</a></strong><br><code>El Capitan</code> 会以磁盘映像形式下载。在与<code>El Capitan</code>兼容的 Mac 上，打开磁盘映像，并运行其中名为<code>InstallMacOSX.pkg</code>的安装器。随即会在您的“应用程序”文件夹中安装一个名为<code>Install OS X El Capitan</code>的<code> App</code>。您将通过这个 App（而不是磁盘映像或 .pkg 安装器）创建可引导安装器。</p>
+<blockquote>
+<p>如果需要恢复<code>macOS Sierra</code>(10.12)版本，需要先恢复到<code>OS X El Capitan</code>(10.11)，然后在AppStore中找到<code>macOS Sierra</code>(10.12)的镜像进行升级。</p>
+</blockquote>
+<h2 id="制作启动盘"><a href="#制作启动盘" class="headerlink" title="制作启动盘"></a>制作启动盘</h2><ol>
+<li><p>连接要用于可引导安装器的 USB 闪存驱动器或其他宗卷。确保这个驱动器或宗卷至少有 12GB 可用储存空间，并<a href="https://support.apple.com/zh-cn/HT208496">已格式化为 Mac OS 扩展格式</a>。</p>
+</li>
+<li><p>打开<code>应用程序</code>文件夹内<code>实用工具</code>文件夹中的<code>终端</code>。</p>
+</li>
+<li><p>在<code>终端</code>中键入或粘贴以下命令之一。这些命令假设安装器仍位于您的<code>“应用程序</code>文件夹中，并且 <code>MyVolume</code> 是 <code>USB 闪存驱动器</code>或您正在使用的其他<code>宗卷的名称</code>。如果不是这个名称，请将命令中的 <code>MyVolume</code> 相应地替换为您的<code>宗卷名称</code>。</p>
+<p> <strong>Catalina：</strong></p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;Applications&#x2F;Install\ macOS\ Catalina.app&#x2F;Contents&#x2F;Resources&#x2F;createinstallmedia --volume &#x2F;Volumes&#x2F;MyVolume</span><br></pre></td></tr></table></figure>
+
+<p> <strong>Mojave：</strong></p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;Applications&#x2F;Install\ macOS\ Mojave.app&#x2F;Contents&#x2F;Resources&#x2F;createinstallmedia --volume &#x2F;Volumes&#x2F;MyVolume</span><br></pre></td></tr></table></figure>
+
+<p> <strong>High Sierra：</strong></p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;Applications&#x2F;Install\ macOS\ High\ Sierra.app&#x2F;Contents&#x2F;Resources&#x2F;createinstallmedia --volume &#x2F;Volumes&#x2F;MyVolume</span><br></pre></td></tr></table></figure>
+
+<p> <strong>El Capitan：</strong></p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;Applications&#x2F;Install\ OS\ X\ El\ Capitan.app&#x2F;Contents&#x2F;Resources&#x2F;createinstallmedia --volume &#x2F;Volumes&#x2F;MyVolume --applicationpath &#x2F;Applications&#x2F;Install\ OS\ X\ El\ Capitan.app</span><br></pre></td></tr></table></figure></li>
+<li><p>键入相应的命令后，请按下 <code>Return</code> 键。</p>
+</li>
+<li><p>出现提示时，请键入您的管理员密码，然后再次按下 <code>Return</code> 键。在您键入密码时，<code>终端</code>不会显示任何字符。</p>
+</li>
+<li><p>出现提示时，请键入<code>Y</code>以确认您要抹掉宗卷，然后按下 <code>Return</code> 键。创建可引导安装器过程中，<code>终端</code>将显示进度。 </p>
+</li>
+<li><p>当<code>终端</code>提示操作已完成时，宗卷的名称将与您下载的安装器名称相同，例如<code>Install macOS Catalina</code>。您现在可以退出<code>终端</code>并弹出宗卷。<br> <img src="https://cdn.renchengqi.com/blog/qbecy.png-thumb100"></p>
+</li>
+</ol>
+<blockquote>
+<p>如果您的 Mac 运行的是 <code>macOS Sierra</code> 或<code>更低版本</code>，请使用 <code>--applicationpath </code>参数，具体方法与在适用于 El Capitan 的命令中使用这个参数的方法类似。</p>
+</blockquote>
+<h2 id="使用可引导安装器"><a href="#使用可引导安装器" class="headerlink" title="使用可引导安装器"></a>使用可引导安装器</h2><ol>
+<li>将<code>U盘</code>插入兼容的 Mac。</li>
+<li>开机按住<code>option</code>键</li>
+<li>选择<code>U盘</code>，进入等待</li>
+<li>选择<code>磁盘工具``抹掉</code>硬盘，完成后退出该工具</li>
+<li>进入<code>重新安装MacOS</code>, 一路Next</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>iTerm2的配置</title>
     <url>/2016/08/16/tools/macos/Iterm2%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p><code>iTerm2</code>是一款完全免费的，专为<code>Mac OS</code>用户打造的命令行应用。直接在<a href="http://iterm2.com/">官网</a>上下载并安装即可。</p>
@@ -8667,61 +8722,6 @@ I --> K[钉钉通知]</pre>
 </ol>
 <h2 id="更换背景图"><a href="#更换背景图" class="headerlink" title="更换背景图"></a>更换背景图</h2><p>点击下载<a href="https://cdn.renchengqi.com/blog/98yay.jpg-thumb100">背景图片</a><br><img src="https://cdn.renchengqi.com/blog/t6eau.jpg-thumb100"></p>
 <h2 id="去除前缀"><a href="#去除前缀" class="headerlink" title="去除前缀"></a>去除前缀</h2><p>路径前缀的XX@XX太长。<br>在<code>~/.oh-my-zsh/themes</code>路径下找到<code>agnoster.zsh-theme</code>文件，可使用文本工具打开，将里面的<code>build_prompt</code>下的<code>prompt_context</code>字段在前面加<code>#</code>注释掉即可。</p>
-]]></content>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>创建MacOS的U盘安装器</title>
-    <url>/2020/01/04/tools/macos/%E5%88%9B%E5%BB%BAMacOS%E7%9A%84U%E7%9B%98%E5%AE%89%E8%A3%85%E5%99%A8/</url>
-    <content><![CDATA[<p>MacOS的OTA更新和恢复做的非常完善了，但是有洁癖的我，总想彻底的重装<br>如果想把MacOS恢复到指定版本，那么就一定需要安装U盘启动器。因为OTA只支持恢复最新版本的系统和恢复出厂的系统。</p>
-<a id="more"></a>
-
-<h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><p><strong><a href="https://support.apple.com/zh-cn/HT201475">macOS Catalina</a>、<a href="https://support.apple.com/zh-cn/HT210190">macOS Mojave</a> 或 <a href="https://support.apple.com/zh-cn/HT208969">macOS High Sierra</a></strong><br>这些 macOS 版本的安装器都会以名为<code>Install macOS Catalina</code>、<code>Install macOS Mojave</code>或<code>Install macOS High Sierra</code>的 <code>App</code> 的形式直接下载到您的“应用程序”文件夹。如果安装器在下载后打开，请退出而不要继续安装。</p>
-<blockquote>
-<p>要获取正确的安装器，请从运行<code>macOS Sierra 10.12.5</code>或更高版本或者<code>El Capitan 10.11.6</code>的 Mac 中进行下载。</p>
-</blockquote>
-<p><strong><a href="https://support.apple.com/zh-cn/HT206886">OS X El Capitan</a></strong><br><code>El Capitan</code> 会以磁盘映像形式下载。在与<code>El Capitan</code>兼容的 Mac 上，打开磁盘映像，并运行其中名为<code>InstallMacOSX.pkg</code>的安装器。随即会在您的“应用程序”文件夹中安装一个名为<code>Install OS X El Capitan</code>的<code> App</code>。您将通过这个 App（而不是磁盘映像或 .pkg 安装器）创建可引导安装器。</p>
-<blockquote>
-<p>如果需要恢复<code>macOS Sierra</code>(10.12)版本，需要先恢复到<code>OS X El Capitan</code>(10.11)，然后在AppStore中找到<code>macOS Sierra</code>(10.12)的镜像进行升级。</p>
-</blockquote>
-<h2 id="制作启动盘"><a href="#制作启动盘" class="headerlink" title="制作启动盘"></a>制作启动盘</h2><ol>
-<li><p>连接要用于可引导安装器的 USB 闪存驱动器或其他宗卷。确保这个驱动器或宗卷至少有 12GB 可用储存空间，并<a href="https://support.apple.com/zh-cn/HT208496">已格式化为 Mac OS 扩展格式</a>。</p>
-</li>
-<li><p>打开<code>应用程序</code>文件夹内<code>实用工具</code>文件夹中的<code>终端</code>。</p>
-</li>
-<li><p>在<code>终端</code>中键入或粘贴以下命令之一。这些命令假设安装器仍位于您的<code>“应用程序</code>文件夹中，并且 <code>MyVolume</code> 是 <code>USB 闪存驱动器</code>或您正在使用的其他<code>宗卷的名称</code>。如果不是这个名称，请将命令中的 <code>MyVolume</code> 相应地替换为您的<code>宗卷名称</code>。</p>
-<p> <strong>Catalina：</strong></p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;Applications&#x2F;Install\ macOS\ Catalina.app&#x2F;Contents&#x2F;Resources&#x2F;createinstallmedia --volume &#x2F;Volumes&#x2F;MyVolume</span><br></pre></td></tr></table></figure>
-
-<p> <strong>Mojave：</strong></p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;Applications&#x2F;Install\ macOS\ Mojave.app&#x2F;Contents&#x2F;Resources&#x2F;createinstallmedia --volume &#x2F;Volumes&#x2F;MyVolume</span><br></pre></td></tr></table></figure>
-
-<p> <strong>High Sierra：</strong></p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;Applications&#x2F;Install\ macOS\ High\ Sierra.app&#x2F;Contents&#x2F;Resources&#x2F;createinstallmedia --volume &#x2F;Volumes&#x2F;MyVolume</span><br></pre></td></tr></table></figure>
-
-<p> <strong>El Capitan：</strong></p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;Applications&#x2F;Install\ OS\ X\ El\ Capitan.app&#x2F;Contents&#x2F;Resources&#x2F;createinstallmedia --volume &#x2F;Volumes&#x2F;MyVolume --applicationpath &#x2F;Applications&#x2F;Install\ OS\ X\ El\ Capitan.app</span><br></pre></td></tr></table></figure></li>
-<li><p>键入相应的命令后，请按下 <code>Return</code> 键。</p>
-</li>
-<li><p>出现提示时，请键入您的管理员密码，然后再次按下 <code>Return</code> 键。在您键入密码时，<code>终端</code>不会显示任何字符。</p>
-</li>
-<li><p>出现提示时，请键入<code>Y</code>以确认您要抹掉宗卷，然后按下 <code>Return</code> 键。创建可引导安装器过程中，<code>终端</code>将显示进度。 </p>
-</li>
-<li><p>当<code>终端</code>提示操作已完成时，宗卷的名称将与您下载的安装器名称相同，例如<code>Install macOS Catalina</code>。您现在可以退出<code>终端</code>并弹出宗卷。<br> <img src="https://cdn.renchengqi.com/blog/qbecy.png-thumb100"></p>
-</li>
-</ol>
-<blockquote>
-<p>如果您的 Mac 运行的是 <code>macOS Sierra</code> 或<code>更低版本</code>，请使用 <code>--applicationpath </code>参数，具体方法与在适用于 El Capitan 的命令中使用这个参数的方法类似。</p>
-</blockquote>
-<h2 id="使用可引导安装器"><a href="#使用可引导安装器" class="headerlink" title="使用可引导安装器"></a>使用可引导安装器</h2><ol>
-<li>将<code>U盘</code>插入兼容的 Mac。</li>
-<li>开机按住<code>option</code>键</li>
-<li>选择<code>U盘</code>，进入等待</li>
-<li>选择<code>磁盘工具``抹掉</code>硬盘，完成后退出该工具</li>
-<li>进入<code>重新安装MacOS</code>, 一路Next</li>
-</ol>
 ]]></content>
       <tags>
         <tag>工具</tag>
