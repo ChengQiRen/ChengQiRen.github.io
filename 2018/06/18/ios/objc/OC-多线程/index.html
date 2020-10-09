@@ -28,7 +28,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS-多线程">
 <meta property="og:url" content="https://cheng-ren.github.io/2018/06/18/ios/objc/OC-%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
-<meta property="og:site_name" content="Cheng&#39;s Blog">
+<meta property="og:site_name" content="任成のCODE_HOME">
 <meta property="og:description" content="多线程，充分利用设备多核的技术。应用非常广泛">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.renchengqi.com/blog/opwkh.jpg">
@@ -57,7 +57,7 @@
   };
 </script>
 
-  <title>iOS-多线程 | Cheng's Blog</title>
+  <title>iOS-多线程 | 任成のCODE_HOME</title>
   
 
 
@@ -100,7 +100,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Cheng's Blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="任成のCODE_HOME" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -121,7 +121,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Cheng's Blog</h1>
+      <h1 class="site-title">任成のCODE_HOME</h1>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -239,7 +239,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">131</span>
+          <span class="site-state-item-count">132</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -306,7 +306,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cheng's Blog">
+      <meta itemprop="name" content="任成のCODE_HOME">
     </span>
 
     
@@ -511,7 +511,7 @@
 </blockquote>
 <h3 id="NSLock"><a href="#NSLock" class="headerlink" title="NSLock"></a>NSLock</h3><p><code>NSLock</code>是对<code>mutex</code>普通锁的封装</p>
 <p><strong>使用</strong></p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSLock</span> *lock = [<span class="built_in">NSLock</span> new];</span><br><span class="line">[lock lock]</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="comment">// 读写操作</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">[lock unlock]</span><br></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSLock</span> *lock = [<span class="built_in">NSLock</span> new];</span><br><span class="line">[lock lock];</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="comment">// 读写操作</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">[lock unlock];</span><br></pre></td></tr></table></figure>
 <h3 id="NSRecursiveLock"><a href="#NSRecursiveLock" class="headerlink" title="NSRecursiveLock"></a>NSRecursiveLock</h3><p><code>NSRecursiveLock</code>是对<code>mutex</code>递归锁的封装<br><strong>使用</strong></p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSRecursiveLock</span> *lock = [<span class="built_in">NSRecursiveLock</span> new];</span><br><span class="line">[lock lock]</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="comment">// 读写操作</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">[lock unlock]</span><br></pre></td></tr></table></figure>
 

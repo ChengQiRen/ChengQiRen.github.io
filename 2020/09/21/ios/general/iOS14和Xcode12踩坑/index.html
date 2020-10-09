@@ -28,18 +28,18 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS14和Xcode12踩坑">
 <meta property="og:url" content="https://cheng-ren.github.io/2020/09/21/ios/general/iOS14%E5%92%8CXcode12%E8%B8%A9%E5%9D%91/index.html">
-<meta property="og:site_name" content="Cheng&#39;s Blog">
+<meta property="og:site_name" content="任成のCODE_HOME">
 <meta property="og:description" content="今年整体适配强度不大。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.renchengqi.com/blog/y3ady.jpg">
-<meta property="og:image" content="https://cdn.renchengqi.com/blog/07w06.jpg">
-<meta property="og:image" content="https://cdn.renchengqi.com/blog/ciwxj.jpg">
+<meta property="og:image" content="https://object.renchengqi.com/blog/y3ady.jpg">
+<meta property="og:image" content="https://object.renchengqi.com/blog/07w06.jpg">
+<meta property="og:image" content="https://object.renchengqi.com/blog/ciwxj.jpg">
 <meta property="article:published_time" content="2020-09-21T09:34:45.000Z">
 <meta property="article:modified_time" content="2020-09-21T09:34:45.000Z">
 <meta property="article:author" content="任成">
 <meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.renchengqi.com/blog/y3ady.jpg">
+<meta name="twitter:image" content="https://object.renchengqi.com/blog/y3ady.jpg">
 
 
 <link rel="canonical" href="https://cheng-ren.github.io/2020/09/21/ios/general/iOS14%E5%92%8CXcode12%E8%B8%A9%E5%9D%91/">
@@ -55,7 +55,7 @@
   };
 </script>
 
-  <title>iOS14和Xcode12踩坑 | Cheng's Blog</title>
+  <title>iOS14和Xcode12踩坑 | 任成のCODE_HOME</title>
   
 
 
@@ -98,7 +98,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Cheng's Blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="任成のCODE_HOME" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -119,7 +119,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Cheng's Blog</h1>
+      <h1 class="site-title">任成のCODE_HOME</h1>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -237,7 +237,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">131</span>
+          <span class="site-state-item-count">132</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -304,7 +304,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cheng's Blog">
+      <meta itemprop="name" content="任成のCODE_HOME">
     </span>
 
     
@@ -344,7 +344,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>今年整体适配强度不大。<br><img src="https://cdn.renchengqi.com/blog/y3ady.jpg"></p>
+        <p>今年整体适配强度不大。<br><img src="https://object.renchengqi.com/blog/y3ady.jpg"></p>
 <a id="more"></a>
 
 <h2 id="模拟器报错"><a href="#模拟器报错" class="headerlink" title="模拟器报错"></a>模拟器报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">building for iOS Simulator, but linking in object file built for iOS, xxxx for architecture arm64</span><br></pre></td></tr></table></figure>
@@ -403,8 +403,8 @@
 <p>可以尝试<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/storekit/skadnetwork/verifying_an_install_validation_postback">SKAdNetwork</a>解决，统计更准确。但是应对场景过于单一。</p>
 </blockquote>
 <h2 id="对象存储结构发生改变"><a href="#对象存储结构发生改变" class="headerlink" title="对象存储结构发生改变"></a>对象存储结构发生改变</h2><ul>
-<li>iOS14以前，类是有<code>MyClass</code>+<code>class_rw_t</code>(dirty memory) + <code>class_ro_t</code>（clean memery）三个数据结构存储信息<br><img src="https://cdn.renchengqi.com/blog/07w06.jpg"></li>
-<li>iOS14，类里面的脏内存得到了优化，<code>class_rw_t</code>拆解成<code>class_rw_t</code>+<code>class_rw_ext_t</code><br><img src="https://cdn.renchengqi.com/blog/ciwxj.jpg"></li>
+<li>iOS14以前，类是有<code>MyClass</code>+<code>class_rw_t</code>(dirty memory) + <code>class_ro_t</code>（clean memery）三个数据结构存储信息<br><img src="https://object.renchengqi.com/blog/07w06.jpg"></li>
+<li>iOS14，类里面的脏内存得到了优化，<code>class_rw_t</code>拆解成<code>class_rw_t</code>+<code>class_rw_ext_t</code><br><img src="https://object.renchengqi.com/blog/ciwxj.jpg"></li>
 </ul>
 <blockquote>
 <p>官方解释：通过统计发现，开发中大多数的类是没有通过Runtime机制为其添加属性，方法等信息的。所以就没必要为每个类都开辟这个一段空间，造成不必要的浪费。。</p>
@@ -415,7 +415,7 @@
 <h2 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h2><h3 id="PHPicker"><a href="#PHPicker" class="headerlink" title="PHPicker"></a>PHPicker</h3><p>在iOS14中，Apple优化了照片的隐私权限，可以让用户选择为该App共享哪些图片，而不是以前的允许访问（所有）图片。</p>
 <p><strong>影响</strong></p>
 <ul>
-<li>废弃<code>AssetLinrary</code>， 请使用<code>PhotoKit</code></li>
+<li>废弃<code>AssetLibrary</code>， 请使用<code>PhotoKit</code></li>
 <li>废弃<code>UIImagePickerController</code>，请使用<code>PHPickerViewController</code></li>
 </ul>
 <p><strong>特性</strong></p>
@@ -538,6 +538,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2020/10/09/ios/general/%E6%B7%B1%E7%A9%B6iOS%E5%90%AF%E5%8A%A8%E5%9B%BE%E9%97%AE%E9%A2%98/" rel="next" title="深究iOS启动图问题">
+                  深究iOS启动图问题 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
