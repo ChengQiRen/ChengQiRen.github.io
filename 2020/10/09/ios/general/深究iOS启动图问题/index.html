@@ -216,7 +216,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.1.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">解决思路</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -328,7 +328,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>44</span>
+      <span>357</span>
     </span>
 </div>
 
@@ -347,7 +347,23 @@
 </ul>
 <a id="more"></a>
 
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li>应用更新后，启动图没有更新</li>
+<li>启动图渲染失败</li>
+<li>实现动态更换启动图的需求</li>
+</ul>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p>首先怀疑是配置方式、编译缓存等导致的问题。针对这些猜测做了以下测试：</p>
+<ul>
+<li>不同系统、不同机型测试，均有复现，排除该问题只发生在特定机型或系统上；</li>
+<li>清空编译缓存，仍旧复现，故排除编译缓存问题；</li>
+<li>给imageView添加背景色，启动时正常显示imageView的背景色，但图片内容未显示，故排除了布局问题；</li>
+<li>将图片从Assets中迁移至工程根目录下，出现空白启动图概率降低，但仍会偶现；</li>
+<li>修改图片名，前几次正常，之后依旧偶现；</li>
+<li>卸载应用重新安装，大概率恢复正常，仍复现；</li>
+<li>将LaunchScreen.storyboard文件复制到新建的空工程中，仍复现；</li>
+</ul>
+<p><strong>结论：系统缓存问题</strong></p>
+<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3>
     </div>
 
     
@@ -469,14 +485,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">520k</span>
+    <span title="站点总字数">522k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7:53</span>
+    <span title="站点阅读时长">7:54</span>
   </span>
 </div>
 
