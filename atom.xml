@@ -3,11 +3,11 @@
   <title>任成の博客</title>
   
   
-  <link href="https://cheng-ren.github.io/atom.xml" rel="self"/>
+  <link href="https://rencheng.cc/atom.xml" rel="self"/>
   
-  <link href="https://cheng-ren.github.io/"/>
+  <link href="https://rencheng.cc/"/>
   <updated>2020-10-09T08:55:48.000Z</updated>
-  <id>https://cheng-ren.github.io/</id>
+  <id>https://rencheng.cc/</id>
   
   <author>
     <name>任成</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>深究iOS启动图问题</title>
-    <link href="https://cheng-ren.github.io/2020/10/09/ios/general/%E6%B7%B1%E7%A9%B6iOS%E5%90%AF%E5%8A%A8%E5%9B%BE%E9%97%AE%E9%A2%98/"/>
-    <id>https://cheng-ren.github.io/2020/10/09/ios/general/%E6%B7%B1%E7%A9%B6iOS%E5%90%AF%E5%8A%A8%E5%9B%BE%E9%97%AE%E9%A2%98/</id>
+    <link href="https://rencheng.cc/2020/10/09/ios/general/%E6%B7%B1%E7%A9%B6iOS%E5%90%AF%E5%8A%A8%E5%9B%BE%E9%97%AE%E9%A2%98/"/>
+    <id>https://rencheng.cc/2020/10/09/ios/general/%E6%B7%B1%E7%A9%B6iOS%E5%90%AF%E5%8A%A8%E5%9B%BE%E9%97%AE%E9%A2%98/</id>
     <published>2020-10-09T08:55:48.000Z</published>
     <updated>2020-10-09T08:55:48.000Z</updated>
     
@@ -36,16 +36,16 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
-    <category term="Objc" scheme="https://cheng-ren.github.io/tags/Objc/"/>
+    <category term="Objc" scheme="https://rencheng.cc/tags/Objc/"/>
     
   </entry>
   
   <entry>
     <title>iOS14和Xcode12踩坑</title>
-    <link href="https://cheng-ren.github.io/2020/09/21/ios/general/iOS14%E5%92%8CXcode12%E8%B8%A9%E5%9D%91/"/>
-    <id>https://cheng-ren.github.io/2020/09/21/ios/general/iOS14%E5%92%8CXcode12%E8%B8%A9%E5%9D%91/</id>
+    <link href="https://rencheng.cc/2020/09/21/ios/general/iOS14%E5%92%8CXcode12%E8%B8%A9%E5%9D%91/"/>
+    <id>https://rencheng.cc/2020/09/21/ios/general/iOS14%E5%92%8CXcode12%E8%B8%A9%E5%9D%91/</id>
     <published>2020-09-21T09:34:45.000Z</published>
     <updated>2020-09-21T09:34:45.000Z</updated>
     
@@ -57,14 +57,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>iOS-App瘦身</title>
-    <link href="https://cheng-ren.github.io/2020/09/14/ios/general/App%E7%98%A6%E8%BA%AB/"/>
-    <id>https://cheng-ren.github.io/2020/09/14/ios/general/App%E7%98%A6%E8%BA%AB/</id>
+    <link href="https://rencheng.cc/2020/09/14/ios/general/App%E7%98%A6%E8%BA%AB/"/>
+    <id>https://rencheng.cc/2020/09/14/ios/general/App%E7%98%A6%E8%BA%AB/</id>
     <published>2020-09-14T09:13:50.000Z</published>
     <updated>2020-09-14T09:13:50.000Z</updated>
     
@@ -79,14 +79,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>敏捷开发</title>
-    <link href="https://cheng-ren.github.io/2020/08/05/manager/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/"/>
-    <id>https://cheng-ren.github.io/2020/08/05/manager/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/</id>
+    <link href="https://rencheng.cc/2020/08/05/manager/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/"/>
+    <id>https://rencheng.cc/2020/08/05/manager/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/</id>
     <published>2020-08-04T16:59:07.000Z</published>
     <updated>2020-08-04T16:59:07.000Z</updated>
     
@@ -98,14 +98,14 @@
     
     
     
-    <category term="团队管理" scheme="https://cheng-ren.github.io/tags/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/"/>
+    <category term="团队管理" scheme="https://rencheng.cc/tags/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>iOS-灰度发布</title>
-    <link href="https://cheng-ren.github.io/2020/05/22/ios/general/iOS-%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83/"/>
-    <id>https://cheng-ren.github.io/2020/05/22/ios/general/iOS-%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83/</id>
+    <link href="https://rencheng.cc/2020/05/22/ios/general/iOS-%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83/"/>
+    <id>https://rencheng.cc/2020/05/22/ios/general/iOS-%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83/</id>
     <published>2020-05-22T07:53:30.000Z</published>
     <updated>2020-05-22T07:53:30.000Z</updated>
     
@@ -117,14 +117,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>iOS高级面试题</title>
-    <link href="https://cheng-ren.github.io/2020/04/30/ios/general/iOS%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>https://cheng-ren.github.io/2020/04/30/ios/general/iOS%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <link href="https://rencheng.cc/2020/04/30/ios/general/iOS%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>https://rencheng.cc/2020/04/30/ios/general/iOS%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
     <published>2020-04-30T04:31:32.000Z</published>
     <updated>2020-04-30T04:31:32.000Z</updated>
     
@@ -136,14 +136,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>斐波那契数列</title>
-    <link href="https://cheng-ren.github.io/2020/04/11/algo/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/"/>
-    <id>https://cheng-ren.github.io/2020/04/11/algo/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</id>
+    <link href="https://rencheng.cc/2020/04/11/algo/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/"/>
+    <id>https://rencheng.cc/2020/04/11/algo/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</id>
     <published>2020-04-11T06:29:15.000Z</published>
     <updated>2020-04-11T06:29:15.000Z</updated>
     
@@ -155,18 +155,18 @@
     
     
     
-    <category term="数据结构和算法" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/"/>
+    <category term="数据结构和算法" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/"/>
     
-    <category term="Swift" scheme="https://cheng-ren.github.io/tags/Swift/"/>
+    <category term="Swift" scheme="https://rencheng.cc/tags/Swift/"/>
     
-    <category term="LeetCode" scheme="https://cheng-ren.github.io/tags/LeetCode/"/>
+    <category term="LeetCode" scheme="https://rencheng.cc/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>Flutter - iOS通信开发</title>
-    <link href="https://cheng-ren.github.io/2020/03/04/flutter/Flutter%E4%B8%8EiOS%E9%80%9A%E4%BF%A1/"/>
-    <id>https://cheng-ren.github.io/2020/03/04/flutter/Flutter%E4%B8%8EiOS%E9%80%9A%E4%BF%A1/</id>
+    <link href="https://rencheng.cc/2020/03/04/flutter/Flutter%E4%B8%8EiOS%E9%80%9A%E4%BF%A1/"/>
+    <id>https://rencheng.cc/2020/03/04/flutter/Flutter%E4%B8%8EiOS%E9%80%9A%E4%BF%A1/</id>
     <published>2020-03-04T03:12:11.000Z</published>
     <updated>2020-03-04T03:12:11.000Z</updated>
     
@@ -178,16 +178,16 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>Flutter - iOS集成开发</title>
-    <link href="https://cheng-ren.github.io/2020/03/02/flutter/Flutter%E4%B8%8EiOS%E9%9B%86%E6%88%90/"/>
-    <id>https://cheng-ren.github.io/2020/03/02/flutter/Flutter%E4%B8%8EiOS%E9%9B%86%E6%88%90/</id>
+    <link href="https://rencheng.cc/2020/03/02/flutter/Flutter%E4%B8%8EiOS%E9%9B%86%E6%88%90/"/>
+    <id>https://rencheng.cc/2020/03/02/flutter/Flutter%E4%B8%8EiOS%E9%9B%86%E6%88%90/</id>
     <published>2020-03-02T01:48:40.000Z</published>
     <updated>2020-03-02T01:48:40.000Z</updated>
     
@@ -199,16 +199,16 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>Flutter - 列表实现</title>
-    <link href="https://cheng-ren.github.io/2020/02/27/flutter/Flutter%E5%88%97%E8%A1%A8/"/>
-    <id>https://cheng-ren.github.io/2020/02/27/flutter/Flutter%E5%88%97%E8%A1%A8/</id>
+    <link href="https://rencheng.cc/2020/02/27/flutter/Flutter%E5%88%97%E8%A1%A8/"/>
+    <id>https://rencheng.cc/2020/02/27/flutter/Flutter%E5%88%97%E8%A1%A8/</id>
     <published>2020-02-27T08:33:47.000Z</published>
     <updated>2020-02-27T08:33:47.000Z</updated>
     
@@ -220,14 +220,14 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter异步编程</title>
-    <link href="https://cheng-ren.github.io/2020/02/25/flutter/Flutter%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/"/>
-    <id>https://cheng-ren.github.io/2020/02/25/flutter/Flutter%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</id>
+    <link href="https://rencheng.cc/2020/02/25/flutter/Flutter%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/"/>
+    <id>https://rencheng.cc/2020/02/25/flutter/Flutter%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</id>
     <published>2020-02-25T12:46:16.000Z</published>
     <updated>2020-02-25T12:46:16.000Z</updated>
     
@@ -245,14 +245,14 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter - Future与FutureBuilder实用技巧</title>
-    <link href="https://cheng-ren.github.io/2020/02/24/flutter/Flutter%E5%BC%82%E6%AD%A5/"/>
-    <id>https://cheng-ren.github.io/2020/02/24/flutter/Flutter%E5%BC%82%E6%AD%A5/</id>
+    <link href="https://rencheng.cc/2020/02/24/flutter/Flutter%E5%BC%82%E6%AD%A5/"/>
+    <id>https://rencheng.cc/2020/02/24/flutter/Flutter%E5%BC%82%E6%AD%A5/</id>
     <published>2020-02-24T12:46:16.000Z</published>
     <updated>2020-02-24T12:46:16.000Z</updated>
     
@@ -265,14 +265,14 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter - Http库</title>
-    <link href="https://cheng-ren.github.io/2020/02/20/flutter/Flutter%E8%AF%B7%E6%B1%82%E5%BA%93Http/"/>
-    <id>https://cheng-ren.github.io/2020/02/20/flutter/Flutter%E8%AF%B7%E6%B1%82%E5%BA%93Http/</id>
+    <link href="https://rencheng.cc/2020/02/20/flutter/Flutter%E8%AF%B7%E6%B1%82%E5%BA%93Http/"/>
+    <id>https://rencheng.cc/2020/02/20/flutter/Flutter%E8%AF%B7%E6%B1%82%E5%BA%93Http/</id>
     <published>2020-02-20T12:23:12.000Z</published>
     <updated>2020-02-20T12:23:12.000Z</updated>
     
@@ -284,14 +284,14 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>提审被拒解决方案</title>
-    <link href="https://cheng-ren.github.io/2020/02/14/ios/general/%E6%8F%90%E5%AE%A1%E8%A2%AB%E6%8B%92%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>https://cheng-ren.github.io/2020/02/14/ios/general/%E6%8F%90%E5%AE%A1%E8%A2%AB%E6%8B%92%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+    <link href="https://rencheng.cc/2020/02/14/ios/general/%E6%8F%90%E5%AE%A1%E8%A2%AB%E6%8B%92%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>https://rencheng.cc/2020/02/14/ios/general/%E6%8F%90%E5%AE%A1%E8%A2%AB%E6%8B%92%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
     <published>2020-02-14T04:03:49.000Z</published>
     <updated>2020-02-14T04:03:49.000Z</updated>
     
@@ -303,14 +303,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>获取文件后缀</title>
-    <link href="https://cheng-ren.github.io/2020/02/12/ios/general/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/"/>
-    <id>https://cheng-ren.github.io/2020/02/12/ios/general/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/</id>
+    <link href="https://rencheng.cc/2020/02/12/ios/general/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/"/>
+    <id>https://rencheng.cc/2020/02/12/ios/general/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/</id>
     <published>2020-02-12T11:18:49.000Z</published>
     <updated>2020-02-12T11:18:49.000Z</updated>
     
@@ -322,14 +322,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>Flutter - 动画Animation开发指南</title>
-    <link href="https://cheng-ren.github.io/2020/02/11/flutter/Flutter%E5%8A%A8%E7%94%BB/"/>
-    <id>https://cheng-ren.github.io/2020/02/11/flutter/Flutter%E5%8A%A8%E7%94%BB/</id>
+    <link href="https://rencheng.cc/2020/02/11/flutter/Flutter%E5%8A%A8%E7%94%BB/"/>
+    <id>https://rencheng.cc/2020/02/11/flutter/Flutter%E5%8A%A8%E7%94%BB/</id>
     <published>2020-02-11T06:59:02.000Z</published>
     <updated>2020-02-11T06:59:02.000Z</updated>
     
@@ -341,14 +341,14 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter - 图片控件开发详解</title>
-    <link href="https://cheng-ren.github.io/2020/02/10/flutter/Flutter%E5%9B%BE%E7%89%87/"/>
-    <id>https://cheng-ren.github.io/2020/02/10/flutter/Flutter%E5%9B%BE%E7%89%87/</id>
+    <link href="https://rencheng.cc/2020/02/10/flutter/Flutter%E5%9B%BE%E7%89%87/"/>
+    <id>https://rencheng.cc/2020/02/10/flutter/Flutter%E5%9B%BE%E7%89%87/</id>
     <published>2020-02-10T03:36:36.000Z</published>
     <updated>2020-02-10T03:36:36.000Z</updated>
     
@@ -360,14 +360,14 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter - 常用组件</title>
-    <link href="https://cheng-ren.github.io/2020/02/05/flutter/Flutter%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6/"/>
-    <id>https://cheng-ren.github.io/2020/02/05/flutter/Flutter%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6/</id>
+    <link href="https://rencheng.cc/2020/02/05/flutter/Flutter%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6/"/>
+    <id>https://rencheng.cc/2020/02/05/flutter/Flutter%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6/</id>
     <published>2020-02-05T06:12:08.000Z</published>
     <updated>2020-02-05T06:12:08.000Z</updated>
     
@@ -379,14 +379,14 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter - 环境配置</title>
-    <link href="https://cheng-ren.github.io/2020/02/01/flutter/Flutter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    <id>https://cheng-ren.github.io/2020/02/01/flutter/Flutter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
+    <link href="https://rencheng.cc/2020/02/01/flutter/Flutter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>https://rencheng.cc/2020/02/01/flutter/Flutter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
     <published>2020-02-01T02:19:54.000Z</published>
     <updated>2020-02-01T02:19:54.000Z</updated>
     
@@ -398,14 +398,14 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter - 从入门到放弃</title>
-    <link href="https://cheng-ren.github.io/2020/01/20/flutter/Flutter%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/"/>
-    <id>https://cheng-ren.github.io/2020/01/20/flutter/Flutter%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/</id>
+    <link href="https://rencheng.cc/2020/01/20/flutter/Flutter%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/"/>
+    <id>https://rencheng.cc/2020/01/20/flutter/Flutter%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/</id>
     <published>2020-01-20T03:22:27.000Z</published>
     <updated>2020-01-20T03:22:27.000Z</updated>
     
@@ -417,14 +417,14 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter - 架构</title>
-    <link href="https://cheng-ren.github.io/2020/01/16/flutter/Flutter%E6%9E%B6%E6%9E%84/"/>
-    <id>https://cheng-ren.github.io/2020/01/16/flutter/Flutter%E6%9E%B6%E6%9E%84/</id>
+    <link href="https://rencheng.cc/2020/01/16/flutter/Flutter%E6%9E%B6%E6%9E%84/"/>
+    <id>https://rencheng.cc/2020/01/16/flutter/Flutter%E6%9E%B6%E6%9E%84/</id>
     <published>2020-01-16T06:20:09.000Z</published>
     <updated>2020-01-16T06:20:09.000Z</updated>
     
@@ -436,14 +436,14 @@
     
     
     
-    <category term="Flutter" scheme="https://cheng-ren.github.io/tags/Flutter/"/>
+    <category term="Flutter" scheme="https://rencheng.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>神策SDK调研</title>
-    <link href="https://cheng-ren.github.io/2020/01/13/search/%E7%A5%9E%E7%AD%96SDK%E8%B0%83%E7%A0%94/"/>
-    <id>https://cheng-ren.github.io/2020/01/13/search/%E7%A5%9E%E7%AD%96SDK%E8%B0%83%E7%A0%94/</id>
+    <link href="https://rencheng.cc/2020/01/13/search/%E7%A5%9E%E7%AD%96SDK%E8%B0%83%E7%A0%94/"/>
+    <id>https://rencheng.cc/2020/01/13/search/%E7%A5%9E%E7%AD%96SDK%E8%B0%83%E7%A0%94/</id>
     <published>2020-01-13T12:19:34.000Z</published>
     <updated>2020-01-13T12:19:34.000Z</updated>
     
@@ -458,14 +458,14 @@
     
     
     
-    <category term="技术调研" scheme="https://cheng-ren.github.io/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
+    <category term="技术调研" scheme="https://rencheng.cc/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
     
   </entry>
   
   <entry>
     <title>创建MacOS的U盘安装器</title>
-    <link href="https://cheng-ren.github.io/2020/01/04/tools/macos/%E5%88%9B%E5%BB%BAMacOS%E7%9A%84U%E7%9B%98%E5%AE%89%E8%A3%85%E5%99%A8/"/>
-    <id>https://cheng-ren.github.io/2020/01/04/tools/macos/%E5%88%9B%E5%BB%BAMacOS%E7%9A%84U%E7%9B%98%E5%AE%89%E8%A3%85%E5%99%A8/</id>
+    <link href="https://rencheng.cc/2020/01/04/tools/macos/%E5%88%9B%E5%BB%BAMacOS%E7%9A%84U%E7%9B%98%E5%AE%89%E8%A3%85%E5%99%A8/"/>
+    <id>https://rencheng.cc/2020/01/04/tools/macos/%E5%88%9B%E5%BB%BAMacOS%E7%9A%84U%E7%9B%98%E5%AE%89%E8%A3%85%E5%99%A8/</id>
     <published>2020-01-04T02:22:08.000Z</published>
     <updated>2020-01-04T02:22:08.000Z</updated>
     
@@ -477,14 +477,14 @@
     
     
     
-    <category term="工具" scheme="https://cheng-ren.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://rencheng.cc/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>2019年终总结</title>
-    <link href="https://cheng-ren.github.io/2019/12/31/summary/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    <id>https://cheng-ren.github.io/2019/12/31/summary/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</id>
+    <link href="https://rencheng.cc/2019/12/31/summary/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    <id>https://rencheng.cc/2019/12/31/summary/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</id>
     <published>2019-12-31T14:58:49.000Z</published>
     <updated>2019-12-31T14:58:49.000Z</updated>
     
@@ -496,14 +496,14 @@
     
     
     
-    <category term="年度总结" scheme="https://cheng-ren.github.io/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    <category term="年度总结" scheme="https://rencheng.cc/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>vue快速上手</title>
-    <link href="https://cheng-ren.github.io/2019/12/23/web/vue%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/"/>
-    <id>https://cheng-ren.github.io/2019/12/23/web/vue%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</id>
+    <link href="https://rencheng.cc/2019/12/23/web/vue%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/"/>
+    <id>https://rencheng.cc/2019/12/23/web/vue%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</id>
     <published>2019-12-23T12:56:23.000Z</published>
     <updated>2019-12-23T12:56:23.000Z</updated>
     
@@ -515,16 +515,16 @@
     
     
     
-    <category term="web" scheme="https://cheng-ren.github.io/tags/web/"/>
+    <category term="web" scheme="https://rencheng.cc/tags/web/"/>
     
-    <category term="vue" scheme="https://cheng-ren.github.io/tags/vue/"/>
+    <category term="vue" scheme="https://rencheng.cc/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>Pandas</title>
-    <link href="https://cheng-ren.github.io/2019/11/25/datascience/pandas/"/>
-    <id>https://cheng-ren.github.io/2019/11/25/datascience/pandas/</id>
+    <link href="https://rencheng.cc/2019/11/25/datascience/pandas/"/>
+    <id>https://rencheng.cc/2019/11/25/datascience/pandas/</id>
     <published>2019-11-25T11:38:45.000Z</published>
     <updated>2019-11-25T11:38:45.000Z</updated>
     
@@ -535,21 +535,21 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据分析" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>深度学习</title>
-    <link href="https://cheng-ren.github.io/2019/11/14/ml/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://cheng-ren.github.io/2019/11/14/ml/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</id>
+    <link href="https://rencheng.cc/2019/11/14/ml/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://rencheng.cc/2019/11/14/ml/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</id>
     <published>2019-11-14T02:52:21.000Z</published>
     <updated>2019-11-14T02:52:21.000Z</updated>
     
@@ -561,20 +561,20 @@
     
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="深度学习" scheme="https://cheng-ren.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://rencheng.cc/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="TensorFlow" scheme="https://cheng-ren.github.io/tags/TensorFlow/"/>
+    <category term="TensorFlow" scheme="https://rencheng.cc/tags/TensorFlow/"/>
     
   </entry>
   
   <entry>
     <title>Django教程</title>
-    <link href="https://cheng-ren.github.io/2019/11/11/django/Django%E6%95%99%E7%A8%8B/"/>
-    <id>https://cheng-ren.github.io/2019/11/11/django/Django%E6%95%99%E7%A8%8B/</id>
+    <link href="https://rencheng.cc/2019/11/11/django/Django%E6%95%99%E7%A8%8B/"/>
+    <id>https://rencheng.cc/2019/11/11/django/Django%E6%95%99%E7%A8%8B/</id>
     <published>2019-11-11T12:47:15.000Z</published>
     <updated>2019-11-11T12:47:15.000Z</updated>
     
@@ -586,14 +586,14 @@
     
     
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Linux搭建Hexo</title>
-    <link href="https://cheng-ren.github.io/2019/10/12/hexo/Linux%E6%90%AD%E5%BB%BAHexo/"/>
-    <id>https://cheng-ren.github.io/2019/10/12/hexo/Linux%E6%90%AD%E5%BB%BAHexo/</id>
+    <link href="https://rencheng.cc/2019/10/12/hexo/Linux%E6%90%AD%E5%BB%BAHexo/"/>
+    <id>https://rencheng.cc/2019/10/12/hexo/Linux%E6%90%AD%E5%BB%BAHexo/</id>
     <published>2019-10-12T02:26:02.000Z</published>
     <updated>2019-10-12T02:26:02.000Z</updated>
     
@@ -605,16 +605,16 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="hexo" scheme="https://cheng-ren.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>Docker运行Nginx</title>
-    <link href="https://cheng-ren.github.io/2019/10/09/docker/Docker%E8%BF%90%E8%A1%8CNginx/"/>
-    <id>https://cheng-ren.github.io/2019/10/09/docker/Docker%E8%BF%90%E8%A1%8CNginx/</id>
+    <link href="https://rencheng.cc/2019/10/09/docker/Docker%E8%BF%90%E8%A1%8CNginx/"/>
+    <id>https://rencheng.cc/2019/10/09/docker/Docker%E8%BF%90%E8%A1%8CNginx/</id>
     <published>2019-10-09T07:18:54.000Z</published>
     <updated>2019-10-09T07:18:54.000Z</updated>
     
@@ -626,14 +626,14 @@
     
     
     
-    <category term="docker" scheme="https://cheng-ren.github.io/tags/docker/"/>
+    <category term="docker" scheme="https://rencheng.cc/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>iOS-图片压缩</title>
-    <link href="https://cheng-ren.github.io/2019/10/01/ios/general/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E6%8A%80%E6%9C%AF/"/>
-    <id>https://cheng-ren.github.io/2019/10/01/ios/general/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E6%8A%80%E6%9C%AF/</id>
+    <link href="https://rencheng.cc/2019/10/01/ios/general/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E6%8A%80%E6%9C%AF/"/>
+    <id>https://rencheng.cc/2019/10/01/ios/general/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E6%8A%80%E6%9C%AF/</id>
     <published>2019-10-01T08:38:25.000Z</published>
     <updated>2019-10-01T08:38:25.000Z</updated>
     
@@ -645,14 +645,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>微信分享卡片点击跳转App</title>
-    <link href="https://cheng-ren.github.io/2019/09/27/search/%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB%E5%8D%A1%E7%89%87%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%ACApp/"/>
-    <id>https://cheng-ren.github.io/2019/09/27/search/%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB%E5%8D%A1%E7%89%87%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%ACApp/</id>
+    <link href="https://rencheng.cc/2019/09/27/search/%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB%E5%8D%A1%E7%89%87%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%ACApp/"/>
+    <id>https://rencheng.cc/2019/09/27/search/%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB%E5%8D%A1%E7%89%87%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%ACApp/</id>
     <published>2019-09-27T05:38:50.000Z</published>
     <updated>2019-09-27T05:38:50.000Z</updated>
     
@@ -664,14 +664,14 @@
     
     
     
-    <category term="技术调研" scheme="https://cheng-ren.github.io/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
+    <category term="技术调研" scheme="https://rencheng.cc/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
     
   </entry>
   
   <entry>
     <title>Python-监测iOS发布更新</title>
-    <link href="https://cheng-ren.github.io/2019/09/26/python/%E7%9B%91%E6%B5%8BiOS%E5%8F%91%E5%B8%83%E6%9B%B4%E6%96%B0/"/>
-    <id>https://cheng-ren.github.io/2019/09/26/python/%E7%9B%91%E6%B5%8BiOS%E5%8F%91%E5%B8%83%E6%9B%B4%E6%96%B0/</id>
+    <link href="https://rencheng.cc/2019/09/26/python/%E7%9B%91%E6%B5%8BiOS%E5%8F%91%E5%B8%83%E6%9B%B4%E6%96%B0/"/>
+    <id>https://rencheng.cc/2019/09/26/python/%E7%9B%91%E6%B5%8BiOS%E5%8F%91%E5%B8%83%E6%9B%B4%E6%96%B0/</id>
     <published>2019-09-26T05:14:02.000Z</published>
     <updated>2019-09-26T05:14:02.000Z</updated>
     
@@ -683,18 +683,18 @@
     
     
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
-    <category term="脚本" scheme="https://cheng-ren.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
+    <category term="脚本" scheme="https://rencheng.cc/tags/%E8%84%9A%E6%9C%AC/"/>
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>iOS-事故记录</title>
-    <link href="https://cheng-ren.github.io/2019/09/26/ios/record/%E4%B8%8A%E7%BA%BF%E4%BA%8B%E6%95%85%E8%AE%B0%E5%BD%9501/"/>
-    <id>https://cheng-ren.github.io/2019/09/26/ios/record/%E4%B8%8A%E7%BA%BF%E4%BA%8B%E6%95%85%E8%AE%B0%E5%BD%9501/</id>
+    <link href="https://rencheng.cc/2019/09/26/ios/record/%E4%B8%8A%E7%BA%BF%E4%BA%8B%E6%95%85%E8%AE%B0%E5%BD%9501/"/>
+    <id>https://rencheng.cc/2019/09/26/ios/record/%E4%B8%8A%E7%BA%BF%E4%BA%8B%E6%95%85%E8%AE%B0%E5%BD%9501/</id>
     <published>2019-09-26T02:41:07.000Z</published>
     <updated>2019-09-26T02:41:07.000Z</updated>
     
@@ -705,17 +705,17 @@
     
     
     
-    <category term="事故记录" scheme="https://cheng-ren.github.io/categories/%E4%BA%8B%E6%95%85%E8%AE%B0%E5%BD%95/"/>
+    <category term="事故记录" scheme="https://rencheng.cc/categories/%E4%BA%8B%E6%95%85%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>iOS-代理检测</title>
-    <link href="https://cheng-ren.github.io/2019/09/26/ios/objc/iOS-%E4%BB%A3%E7%90%86%E6%A3%80%E6%B5%8B/"/>
-    <id>https://cheng-ren.github.io/2019/09/26/ios/objc/iOS-%E4%BB%A3%E7%90%86%E6%A3%80%E6%B5%8B/</id>
+    <link href="https://rencheng.cc/2019/09/26/ios/objc/iOS-%E4%BB%A3%E7%90%86%E6%A3%80%E6%B5%8B/"/>
+    <id>https://rencheng.cc/2019/09/26/ios/objc/iOS-%E4%BB%A3%E7%90%86%E6%A3%80%E6%B5%8B/</id>
     <published>2019-09-25T16:18:52.000Z</published>
     <updated>2019-09-25T16:18:52.000Z</updated>
     
@@ -726,19 +726,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
-    <category term="Objc" scheme="https://cheng-ren.github.io/tags/Objc/"/>
+    <category term="Objc" scheme="https://rencheng.cc/tags/Objc/"/>
     
   </entry>
   
   <entry>
     <title>Python-脚本后台执行</title>
-    <link href="https://cheng-ren.github.io/2019/09/20/python/%E8%84%9A%E6%9C%AC%E5%90%8E%E5%8F%B0%E6%89%A7%E8%A1%8C/"/>
-    <id>https://cheng-ren.github.io/2019/09/20/python/%E8%84%9A%E6%9C%AC%E5%90%8E%E5%8F%B0%E6%89%A7%E8%A1%8C/</id>
+    <link href="https://rencheng.cc/2019/09/20/python/%E8%84%9A%E6%9C%AC%E5%90%8E%E5%8F%B0%E6%89%A7%E8%A1%8C/"/>
+    <id>https://rencheng.cc/2019/09/20/python/%E8%84%9A%E6%9C%AC%E5%90%8E%E5%8F%B0%E6%89%A7%E8%A1%8C/</id>
     <published>2019-09-20T02:02:40.000Z</published>
     <updated>2019-09-20T02:02:40.000Z</updated>
     
@@ -750,14 +750,14 @@
     
     
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python-logging</title>
-    <link href="https://cheng-ren.github.io/2019/09/18/python/logging/"/>
-    <id>https://cheng-ren.github.io/2019/09/18/python/logging/</id>
+    <link href="https://rencheng.cc/2019/09/18/python/logging/"/>
+    <id>https://rencheng.cc/2019/09/18/python/logging/</id>
     <published>2019-09-18T08:56:33.000Z</published>
     <updated>2019-09-18T08:56:33.000Z</updated>
     
@@ -769,14 +769,14 @@
     
     
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python-日期时间</title>
-    <link href="https://cheng-ren.github.io/2019/09/18/python/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4/"/>
-    <id>https://cheng-ren.github.io/2019/09/18/python/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4/</id>
+    <link href="https://rencheng.cc/2019/09/18/python/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4/"/>
+    <id>https://rencheng.cc/2019/09/18/python/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4/</id>
     <published>2019-09-18T02:31:00.000Z</published>
     <updated>2019-09-18T02:31:00.000Z</updated>
     
@@ -788,14 +788,14 @@
     
     
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>iOS-三方库</title>
-    <link href="https://cheng-ren.github.io/2019/09/14/ios/general/%E5%B8%B8%E7%94%A8%E4%B8%89%E6%96%B9%E5%BA%93/"/>
-    <id>https://cheng-ren.github.io/2019/09/14/ios/general/%E5%B8%B8%E7%94%A8%E4%B8%89%E6%96%B9%E5%BA%93/</id>
+    <link href="https://rencheng.cc/2019/09/14/ios/general/%E5%B8%B8%E7%94%A8%E4%B8%89%E6%96%B9%E5%BA%93/"/>
+    <id>https://rencheng.cc/2019/09/14/ios/general/%E5%B8%B8%E7%94%A8%E4%B8%89%E6%96%B9%E5%BA%93/</id>
     <published>2019-09-14T08:27:51.000Z</published>
     <updated>2019-09-14T08:27:51.000Z</updated>
     
@@ -807,18 +807,18 @@
     
     
     
-    <category term="Swift" scheme="https://cheng-ren.github.io/tags/Swift/"/>
+    <category term="Swift" scheme="https://rencheng.cc/tags/Swift/"/>
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
-    <category term="Objc" scheme="https://cheng-ren.github.io/tags/Objc/"/>
+    <category term="Objc" scheme="https://rencheng.cc/tags/Objc/"/>
     
   </entry>
   
   <entry>
     <title>iOS中级面试题</title>
-    <link href="https://cheng-ren.github.io/2019/09/02/ios/general/iOS%E4%B8%AD%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>https://cheng-ren.github.io/2019/09/02/ios/general/iOS%E4%B8%AD%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <link href="https://rencheng.cc/2019/09/02/ios/general/iOS%E4%B8%AD%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>https://rencheng.cc/2019/09/02/ios/general/iOS%E4%B8%AD%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
     <published>2019-09-02T11:44:59.000Z</published>
     <updated>2019-09-02T11:44:59.000Z</updated>
     
@@ -833,14 +833,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>Python-csv模块</title>
-    <link href="https://cheng-ren.github.io/2019/08/31/python/csv%E6%A8%A1%E5%9D%97/"/>
-    <id>https://cheng-ren.github.io/2019/08/31/python/csv%E6%A8%A1%E5%9D%97/</id>
+    <link href="https://rencheng.cc/2019/08/31/python/csv%E6%A8%A1%E5%9D%97/"/>
+    <id>https://rencheng.cc/2019/08/31/python/csv%E6%A8%A1%E5%9D%97/</id>
     <published>2019-08-31T13:37:18.000Z</published>
     <updated>2019-08-31T13:37:18.000Z</updated>
     
@@ -852,16 +852,16 @@
     
     
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
-    <category term="持久化" scheme="https://cheng-ren.github.io/tags/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    <category term="持久化" scheme="https://rencheng.cc/tags/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>iOS底层面试题</title>
-    <link href="https://cheng-ren.github.io/2019/08/28/ios/general/iOS%E5%BA%95%E5%B1%82%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>https://cheng-ren.github.io/2019/08/28/ios/general/iOS%E5%BA%95%E5%B1%82%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <link href="https://rencheng.cc/2019/08/28/ios/general/iOS%E5%BA%95%E5%B1%82%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>https://rencheng.cc/2019/08/28/ios/general/iOS%E5%BA%95%E5%B1%82%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
     <published>2019-08-28T01:55:40.000Z</published>
     <updated>2019-08-28T01:55:40.000Z</updated>
     
@@ -879,14 +879,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>window-软件推荐</title>
-    <link href="https://cheng-ren.github.io/2019/08/26/recommend/window-%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
-    <id>https://cheng-ren.github.io/2019/08/26/recommend/window-%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</id>
+    <link href="https://rencheng.cc/2019/08/26/recommend/window-%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    <id>https://rencheng.cc/2019/08/26/recommend/window-%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</id>
     <published>2019-08-26T02:36:55.000Z</published>
     <updated>2019-08-26T02:36:55.000Z</updated>
     
@@ -898,14 +898,14 @@
     
     
     
-    <category term="推荐" scheme="https://cheng-ren.github.io/tags/%E6%8E%A8%E8%8D%90/"/>
+    <category term="推荐" scheme="https://rencheng.cc/tags/%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   
   <entry>
     <title>Python-tqdm</title>
-    <link href="https://cheng-ren.github.io/2019/08/22/python/tqdm/"/>
-    <id>https://cheng-ren.github.io/2019/08/22/python/tqdm/</id>
+    <link href="https://rencheng.cc/2019/08/22/python/tqdm/"/>
+    <id>https://rencheng.cc/2019/08/22/python/tqdm/</id>
     <published>2019-08-22T06:56:33.000Z</published>
     <updated>2019-08-22T06:56:33.000Z</updated>
     
@@ -917,14 +917,14 @@
     
     
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python-正则（regex）</title>
-    <link href="https://cheng-ren.github.io/2019/08/12/python/%E6%AD%A3%E5%88%99/"/>
-    <id>https://cheng-ren.github.io/2019/08/12/python/%E6%AD%A3%E5%88%99/</id>
+    <link href="https://rencheng.cc/2019/08/12/python/%E6%AD%A3%E5%88%99/"/>
+    <id>https://rencheng.cc/2019/08/12/python/%E6%AD%A3%E5%88%99/</id>
     <published>2019-08-12T01:53:18.000Z</published>
     <updated>2019-08-12T01:53:18.000Z</updated>
     
@@ -936,16 +936,16 @@
     
     
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
-    <category term="正则" scheme="https://cheng-ren.github.io/tags/%E6%AD%A3%E5%88%99/"/>
+    <category term="正则" scheme="https://rencheng.cc/tags/%E6%AD%A3%E5%88%99/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB-聚合操作</title>
-    <link href="https://cheng-ren.github.io/2019/08/12/mongodb/%E8%81%9A%E5%90%88%E6%93%8D%E4%BD%9C/"/>
-    <id>https://cheng-ren.github.io/2019/08/12/mongodb/%E8%81%9A%E5%90%88%E6%93%8D%E4%BD%9C/</id>
+    <link href="https://rencheng.cc/2019/08/12/mongodb/%E8%81%9A%E5%90%88%E6%93%8D%E4%BD%9C/"/>
+    <id>https://rencheng.cc/2019/08/12/mongodb/%E8%81%9A%E5%90%88%E6%93%8D%E4%BD%9C/</id>
     <published>2019-08-12T01:50:32.000Z</published>
     <updated>2019-08-12T01:50:32.000Z</updated>
     
@@ -956,19 +956,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://cheng-ren.github.io/tags/MongoDB/"/>
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
-    <category term="数据库" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB-索引</title>
-    <link href="https://cheng-ren.github.io/2019/08/12/mongodb/%E7%B4%A2%E5%BC%95/"/>
-    <id>https://cheng-ren.github.io/2019/08/12/mongodb/%E7%B4%A2%E5%BC%95/</id>
+    <link href="https://rencheng.cc/2019/08/12/mongodb/%E7%B4%A2%E5%BC%95/"/>
+    <id>https://rencheng.cc/2019/08/12/mongodb/%E7%B4%A2%E5%BC%95/</id>
     <published>2019-08-12T01:49:40.000Z</published>
     <updated>2019-08-12T01:49:40.000Z</updated>
     
@@ -979,19 +979,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://cheng-ren.github.io/tags/MongoDB/"/>
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
-    <category term="数据库" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB-数据类型</title>
-    <link href="https://cheng-ren.github.io/2019/08/12/mongodb/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
-    <id>https://cheng-ren.github.io/2019/08/12/mongodb/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
+    <link href="https://rencheng.cc/2019/08/12/mongodb/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://rencheng.cc/2019/08/12/mongodb/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
     <published>2019-08-12T01:49:15.000Z</published>
     <updated>2019-08-12T01:49:15.000Z</updated>
     
@@ -1002,19 +1002,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://cheng-ren.github.io/tags/MongoDB/"/>
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
-    <category term="数据库" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB-查找操作</title>
-    <link href="https://cheng-ren.github.io/2019/08/11/mongodb/%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C/"/>
-    <id>https://cheng-ren.github.io/2019/08/11/mongodb/%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C/</id>
+    <link href="https://rencheng.cc/2019/08/11/mongodb/%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C/"/>
+    <id>https://rencheng.cc/2019/08/11/mongodb/%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C/</id>
     <published>2019-08-11T03:50:14.000Z</published>
     <updated>2019-08-11T03:50:14.000Z</updated>
     
@@ -1025,19 +1025,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://cheng-ren.github.io/tags/MongoDB/"/>
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
-    <category term="数据库" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB-文档操作</title>
-    <link href="https://cheng-ren.github.io/2019/08/11/mongodb/%E6%96%87%E6%A1%A3%E6%93%8D%E4%BD%9C/"/>
-    <id>https://cheng-ren.github.io/2019/08/11/mongodb/%E6%96%87%E6%A1%A3%E6%93%8D%E4%BD%9C/</id>
+    <link href="https://rencheng.cc/2019/08/11/mongodb/%E6%96%87%E6%A1%A3%E6%93%8D%E4%BD%9C/"/>
+    <id>https://rencheng.cc/2019/08/11/mongodb/%E6%96%87%E6%A1%A3%E6%93%8D%E4%BD%9C/</id>
     <published>2019-08-11T02:55:52.000Z</published>
     <updated>2019-08-11T02:55:52.000Z</updated>
     
@@ -1048,19 +1048,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://cheng-ren.github.io/tags/MongoDB/"/>
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
-    <category term="数据库" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB-集合操作</title>
-    <link href="https://cheng-ren.github.io/2019/08/11/mongodb/%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/"/>
-    <id>https://cheng-ren.github.io/2019/08/11/mongodb/%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/</id>
+    <link href="https://rencheng.cc/2019/08/11/mongodb/%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/"/>
+    <id>https://rencheng.cc/2019/08/11/mongodb/%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/</id>
     <published>2019-08-11T02:47:26.000Z</published>
     <updated>2019-08-11T02:47:26.000Z</updated>
     
@@ -1071,19 +1071,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://cheng-ren.github.io/tags/MongoDB/"/>
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
-    <category term="数据库" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB-数据库操作</title>
-    <link href="https://cheng-ren.github.io/2019/08/11/mongodb/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/"/>
-    <id>https://cheng-ren.github.io/2019/08/11/mongodb/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</id>
+    <link href="https://rencheng.cc/2019/08/11/mongodb/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/"/>
+    <id>https://rencheng.cc/2019/08/11/mongodb/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</id>
     <published>2019-08-11T02:43:47.000Z</published>
     <updated>2019-08-11T02:43:47.000Z</updated>
     
@@ -1094,19 +1094,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://cheng-ren.github.io/tags/MongoDB/"/>
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
-    <category term="数据库" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB-概述</title>
-    <link href="https://cheng-ren.github.io/2019/08/11/mongodb/%E6%A6%82%E8%BF%B0/"/>
-    <id>https://cheng-ren.github.io/2019/08/11/mongodb/%E6%A6%82%E8%BF%B0/</id>
+    <link href="https://rencheng.cc/2019/08/11/mongodb/%E6%A6%82%E8%BF%B0/"/>
+    <id>https://rencheng.cc/2019/08/11/mongodb/%E6%A6%82%E8%BF%B0/</id>
     <published>2019-08-11T02:03:50.000Z</published>
     <updated>2019-08-11T02:03:50.000Z</updated>
     
@@ -1118,19 +1118,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://cheng-ren.github.io/tags/MongoDB/"/>
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
-    <category term="数据库" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>iOS-支持Dark Mode</title>
-    <link href="https://cheng-ren.github.io/2019/07/30/ios/general/DarkMode/"/>
-    <id>https://cheng-ren.github.io/2019/07/30/ios/general/DarkMode/</id>
+    <link href="https://rencheng.cc/2019/07/30/ios/general/DarkMode/"/>
+    <id>https://rencheng.cc/2019/07/30/ios/general/DarkMode/</id>
     <published>2019-07-30T05:52:01.000Z</published>
     <updated>2019-07-30T05:52:01.000Z</updated>
     
@@ -1142,17 +1142,17 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>iOS13和Xcode11踩坑</title>
-    <link href="https://cheng-ren.github.io/2019/07/24/ios/general/iOS13%E5%92%8CXcode11%E8%B8%A9%E5%9D%91/"/>
-    <id>https://cheng-ren.github.io/2019/07/24/ios/general/iOS13%E5%92%8CXcode11%E8%B8%A9%E5%9D%91/</id>
+    <link href="https://rencheng.cc/2019/07/24/ios/general/iOS13%E5%92%8CXcode11%E8%B8%A9%E5%9D%91/"/>
+    <id>https://rencheng.cc/2019/07/24/ios/general/iOS13%E5%92%8CXcode11%E8%B8%A9%E5%9D%91/</id>
     <published>2019-07-24T06:41:04.000Z</published>
     <updated>2019-07-24T06:41:04.000Z</updated>
     
@@ -1166,14 +1166,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>Swift</title>
-    <link href="https://cheng-ren.github.io/2019/07/20/ios/swift/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
-    <id>https://cheng-ren.github.io/2019/07/20/ios/swift/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</id>
+    <link href="https://rencheng.cc/2019/07/20/ios/swift/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+    <id>https://rencheng.cc/2019/07/20/ios/swift/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</id>
     <published>2019-07-20T02:51:47.000Z</published>
     <updated>2019-07-20T02:51:47.000Z</updated>
     
@@ -1185,16 +1185,16 @@
     
     
     
-    <category term="Swift" scheme="https://cheng-ren.github.io/tags/Swift/"/>
+    <category term="Swift" scheme="https://rencheng.cc/tags/Swift/"/>
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>iOS-组件化（CocoaPods）</title>
-    <link href="https://cheng-ren.github.io/2019/07/14/ios/general/%E7%BB%84%E4%BB%B6%E5%8C%96%EF%BC%88CocoaPods%EF%BC%89/"/>
-    <id>https://cheng-ren.github.io/2019/07/14/ios/general/%E7%BB%84%E4%BB%B6%E5%8C%96%EF%BC%88CocoaPods%EF%BC%89/</id>
+    <link href="https://rencheng.cc/2019/07/14/ios/general/%E7%BB%84%E4%BB%B6%E5%8C%96%EF%BC%88CocoaPods%EF%BC%89/"/>
+    <id>https://rencheng.cc/2019/07/14/ios/general/%E7%BB%84%E4%BB%B6%E5%8C%96%EF%BC%88CocoaPods%EF%BC%89/</id>
     <published>2019-07-14T04:45:02.000Z</published>
     <updated>2019-07-14T04:45:02.000Z</updated>
     
@@ -1205,19 +1205,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
-    <category term="组件化" scheme="https://cheng-ren.github.io/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
+    <category term="组件化" scheme="https://rencheng.cc/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>mac-软件推荐</title>
-    <link href="https://cheng-ren.github.io/2019/07/14/recommend/mac-%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
-    <id>https://cheng-ren.github.io/2019/07/14/recommend/mac-%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</id>
+    <link href="https://rencheng.cc/2019/07/14/recommend/mac-%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    <id>https://rencheng.cc/2019/07/14/recommend/mac-%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</id>
     <published>2019-07-14T04:31:14.000Z</published>
     <updated>2019-07-14T04:31:14.000Z</updated>
     
@@ -1229,14 +1229,14 @@
     
     
     
-    <category term="推荐" scheme="https://cheng-ren.github.io/tags/%E6%8E%A8%E8%8D%90/"/>
+    <category term="推荐" scheme="https://rencheng.cc/tags/%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   
   <entry>
     <title>iOS-屏幕尺寸</title>
-    <link href="https://cheng-ren.github.io/2019/07/14/ios/general/%E5%B1%8F%E5%B9%95%E5%B0%BA%E5%AF%B8/"/>
-    <id>https://cheng-ren.github.io/2019/07/14/ios/general/%E5%B1%8F%E5%B9%95%E5%B0%BA%E5%AF%B8/</id>
+    <link href="https://rencheng.cc/2019/07/14/ios/general/%E5%B1%8F%E5%B9%95%E5%B0%BA%E5%AF%B8/"/>
+    <id>https://rencheng.cc/2019/07/14/ios/general/%E5%B1%8F%E5%B9%95%E5%B0%BA%E5%AF%B8/</id>
     <published>2019-07-14T03:51:33.000Z</published>
     <updated>2019-07-14T03:51:33.000Z</updated>
     
@@ -1248,14 +1248,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>hexo-增加时序图</title>
-    <link href="https://cheng-ren.github.io/2019/07/14/hexo/%E5%A2%9E%E5%8A%A0%E6%97%B6%E5%BA%8F%E5%9B%BE/"/>
-    <id>https://cheng-ren.github.io/2019/07/14/hexo/%E5%A2%9E%E5%8A%A0%E6%97%B6%E5%BA%8F%E5%9B%BE/</id>
+    <link href="https://rencheng.cc/2019/07/14/hexo/%E5%A2%9E%E5%8A%A0%E6%97%B6%E5%BA%8F%E5%9B%BE/"/>
+    <id>https://rencheng.cc/2019/07/14/hexo/%E5%A2%9E%E5%8A%A0%E6%97%B6%E5%BA%8F%E5%9B%BE/</id>
     <published>2019-07-14T03:08:49.000Z</published>
     <updated>2019-07-14T03:08:49.000Z</updated>
     
@@ -1267,16 +1267,16 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="hexo" scheme="https://cheng-ren.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>iOS-高精度定时器</title>
-    <link href="https://cheng-ren.github.io/2019/07/14/ios/objc/iOS-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%AE%9A%E6%97%B6%E5%99%A8/"/>
-    <id>https://cheng-ren.github.io/2019/07/14/ios/objc/iOS-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%AE%9A%E6%97%B6%E5%99%A8/</id>
+    <link href="https://rencheng.cc/2019/07/14/ios/objc/iOS-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%AE%9A%E6%97%B6%E5%99%A8/"/>
+    <id>https://rencheng.cc/2019/07/14/ios/objc/iOS-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%AE%9A%E6%97%B6%E5%99%A8/</id>
     <published>2019-07-14T02:59:35.000Z</published>
     <updated>2019-07-14T02:59:35.000Z</updated>
     
@@ -1288,16 +1288,16 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
-    <category term="Objc" scheme="https://cheng-ren.github.io/tags/Objc/"/>
+    <category term="Objc" scheme="https://rencheng.cc/tags/Objc/"/>
     
   </entry>
   
   <entry>
     <title>Python-网络编程（一）</title>
-    <link href="https://cheng-ren.github.io/2019/07/14/python/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/"/>
-    <id>https://cheng-ren.github.io/2019/07/14/python/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/</id>
+    <link href="https://rencheng.cc/2019/07/14/python/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/"/>
+    <id>https://rencheng.cc/2019/07/14/python/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/</id>
     <published>2019-07-14T02:28:42.000Z</published>
     <updated>2019-07-14T02:28:42.000Z</updated>
     
@@ -1309,16 +1309,16 @@
     
     
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
-    <category term="网络编程" scheme="https://cheng-ren.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <category term="网络编程" scheme="https://rencheng.cc/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>网络编程基础篇</title>
-    <link href="https://cheng-ren.github.io/2019/07/14/python/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B01/"/>
-    <id>https://cheng-ren.github.io/2019/07/14/python/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B01/</id>
+    <link href="https://rencheng.cc/2019/07/14/python/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B01/"/>
+    <id>https://rencheng.cc/2019/07/14/python/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B01/</id>
     <published>2019-07-14T02:06:54.000Z</published>
     <updated>2019-07-14T02:06:54.000Z</updated>
     
@@ -1330,16 +1330,16 @@
     
     
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
-    <category term="网络编程" scheme="https://cheng-ren.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <category term="网络编程" scheme="https://rencheng.cc/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Mysql-教程01</title>
-    <link href="https://cheng-ren.github.io/2019/07/02/mysql/%E6%95%99%E7%A8%8B01/"/>
-    <id>https://cheng-ren.github.io/2019/07/02/mysql/%E6%95%99%E7%A8%8B01/</id>
+    <link href="https://rencheng.cc/2019/07/02/mysql/%E6%95%99%E7%A8%8B01/"/>
+    <id>https://rencheng.cc/2019/07/02/mysql/%E6%95%99%E7%A8%8B01/</id>
     <published>2019-07-02T12:02:43.000Z</published>
     <updated>2019-07-02T12:02:43.000Z</updated>
     
@@ -1350,19 +1350,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-    <category term="MySQL" scheme="https://cheng-ren.github.io/tags/MySQL/"/>
+    <category term="MySQL" scheme="https://rencheng.cc/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Mysql-教程02</title>
-    <link href="https://cheng-ren.github.io/2019/07/02/mysql/%E6%95%99%E7%A8%8B02/"/>
-    <id>https://cheng-ren.github.io/2019/07/02/mysql/%E6%95%99%E7%A8%8B02/</id>
+    <link href="https://rencheng.cc/2019/07/02/mysql/%E6%95%99%E7%A8%8B02/"/>
+    <id>https://rencheng.cc/2019/07/02/mysql/%E6%95%99%E7%A8%8B02/</id>
     <published>2019-07-02T12:02:43.000Z</published>
     <updated>2019-07-02T12:02:43.000Z</updated>
     
@@ -1373,19 +1373,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-    <category term="MySQL" scheme="https://cheng-ren.github.io/tags/MySQL/"/>
+    <category term="MySQL" scheme="https://rencheng.cc/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-数学基础</title>
-    <link href="https://cheng-ren.github.io/2019/06/02/ml/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    <id>https://cheng-ren.github.io/2019/06/02/ml/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</id>
+    <link href="https://rencheng.cc/2019/06/02/ml/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    <id>https://rencheng.cc/2019/06/02/ml/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</id>
     <published>2019-06-02T09:55:15.000Z</published>
     <updated>2019-06-02T09:55:15.000Z</updated>
     
@@ -1396,19 +1396,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-人脸识别</title>
-    <link href="https://cheng-ren.github.io/2019/05/17/ml/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
-    <id>https://cheng-ren.github.io/2019/05/17/ml/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/</id>
+    <link href="https://rencheng.cc/2019/05/17/ml/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    <id>https://rencheng.cc/2019/05/17/ml/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/</id>
     <published>2019-05-17T08:37:09.000Z</published>
     <updated>2019-05-17T08:37:09.000Z</updated>
     
@@ -1419,23 +1419,23 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="图像识别" scheme="https://cheng-ren.github.io/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"/>
+    <category term="图像识别" scheme="https://rencheng.cc/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"/>
     
-    <category term="人脸识别" scheme="https://cheng-ren.github.io/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    <category term="人脸识别" scheme="https://rencheng.cc/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-图像识别</title>
-    <link href="https://cheng-ren.github.io/2019/05/01/ml/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"/>
-    <id>https://cheng-ren.github.io/2019/05/01/ml/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</id>
+    <link href="https://rencheng.cc/2019/05/01/ml/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"/>
+    <id>https://rencheng.cc/2019/05/01/ml/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</id>
     <published>2019-05-01T08:35:28.000Z</published>
     <updated>2019-05-01T08:35:28.000Z</updated>
     
@@ -1446,21 +1446,21 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="图像识别" scheme="https://cheng-ren.github.io/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"/>
+    <category term="图像识别" scheme="https://rencheng.cc/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-语音识别</title>
-    <link href="https://cheng-ren.github.io/2019/04/20/ml/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/"/>
-    <id>https://cheng-ren.github.io/2019/04/20/ml/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/</id>
+    <link href="https://rencheng.cc/2019/04/20/ml/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/"/>
+    <id>https://rencheng.cc/2019/04/20/ml/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/</id>
     <published>2019-04-20T08:35:00.000Z</published>
     <updated>2019-04-20T08:35:00.000Z</updated>
     
@@ -1471,21 +1471,21 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="语音识别" scheme="https://cheng-ren.github.io/tags/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/"/>
+    <category term="语音识别" scheme="https://rencheng.cc/tags/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-NLP</title>
-    <link href="https://cheng-ren.github.io/2019/04/15/ml/NLP/"/>
-    <id>https://cheng-ren.github.io/2019/04/15/ml/NLP/</id>
+    <link href="https://rencheng.cc/2019/04/15/ml/NLP/"/>
+    <id>https://rencheng.cc/2019/04/15/ml/NLP/</id>
     <published>2019-04-15T08:34:11.000Z</published>
     <updated>2019-04-15T08:34:11.000Z</updated>
     
@@ -1496,21 +1496,21 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="NLP" scheme="https://cheng-ren.github.io/tags/NLP/"/>
+    <category term="NLP" scheme="https://rencheng.cc/tags/NLP/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-推荐系统</title>
-    <link href="https://cheng-ren.github.io/2019/04/11/ml/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://cheng-ren.github.io/2019/04/11/ml/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</id>
+    <link href="https://rencheng.cc/2019/04/11/ml/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://rencheng.cc/2019/04/11/ml/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</id>
     <published>2019-04-11T08:33:13.000Z</published>
     <updated>2019-04-11T08:33:13.000Z</updated>
     
@@ -1521,21 +1521,21 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="推荐系统" scheme="https://cheng-ren.github.io/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    <category term="推荐系统" scheme="https://rencheng.cc/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>iOS - App架构</title>
-    <link href="https://cheng-ren.github.io/2019/04/08/ios/general/iOS-App%E6%9E%B6%E6%9E%84/"/>
-    <id>https://cheng-ren.github.io/2019/04/08/ios/general/iOS-App%E6%9E%B6%E6%9E%84/</id>
+    <link href="https://rencheng.cc/2019/04/08/ios/general/iOS-App%E6%9E%B6%E6%9E%84/"/>
+    <id>https://rencheng.cc/2019/04/08/ios/general/iOS-App%E6%9E%B6%E6%9E%84/</id>
     <published>2019-04-08T12:55:27.000Z</published>
     <updated>2019-04-08T12:55:27.000Z</updated>
     
@@ -1547,14 +1547,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>性能优化</title>
-    <link href="https://cheng-ren.github.io/2019/04/06/ios/general/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    <id>https://cheng-ren.github.io/2019/04/06/ios/general/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</id>
+    <link href="https://rencheng.cc/2019/04/06/ios/general/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    <id>https://rencheng.cc/2019/04/06/ios/general/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</id>
     <published>2019-04-06T11:17:54.000Z</published>
     <updated>2019-04-06T11:17:54.000Z</updated>
     
@@ -1566,14 +1566,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-聚类问题</title>
-    <link href="https://cheng-ren.github.io/2019/03/01/ml/%E8%81%9A%E7%B1%BB/"/>
-    <id>https://cheng-ren.github.io/2019/03/01/ml/%E8%81%9A%E7%B1%BB/</id>
+    <link href="https://rencheng.cc/2019/03/01/ml/%E8%81%9A%E7%B1%BB/"/>
+    <id>https://rencheng.cc/2019/03/01/ml/%E8%81%9A%E7%B1%BB/</id>
     <published>2019-03-01T07:50:41.000Z</published>
     <updated>2019-03-01T07:50:41.000Z</updated>
     
@@ -1584,19 +1584,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-分类问题</title>
-    <link href="https://cheng-ren.github.io/2019/02/22/ml/%E5%88%86%E7%B1%BB/"/>
-    <id>https://cheng-ren.github.io/2019/02/22/ml/%E5%88%86%E7%B1%BB/</id>
+    <link href="https://rencheng.cc/2019/02/22/ml/%E5%88%86%E7%B1%BB/"/>
+    <id>https://rencheng.cc/2019/02/22/ml/%E5%88%86%E7%B1%BB/</id>
     <published>2019-02-22T07:13:28.000Z</published>
     <updated>2019-02-22T07:13:28.000Z</updated>
     
@@ -1607,19 +1607,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-回归问题</title>
-    <link href="https://cheng-ren.github.io/2019/02/20/ml/%E5%9B%9E%E5%BD%92/"/>
-    <id>https://cheng-ren.github.io/2019/02/20/ml/%E5%9B%9E%E5%BD%92/</id>
+    <link href="https://rencheng.cc/2019/02/20/ml/%E5%9B%9E%E5%BD%92/"/>
+    <id>https://rencheng.cc/2019/02/20/ml/%E5%9B%9E%E5%BD%92/</id>
     <published>2019-02-20T06:51:41.000Z</published>
     <updated>2019-02-20T06:51:41.000Z</updated>
     
@@ -1630,19 +1630,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-梯度下降算法</title>
-    <link href="https://cheng-ren.github.io/2019/02/12/ml/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/"/>
-    <id>https://cheng-ren.github.io/2019/02/12/ml/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/</id>
+    <link href="https://rencheng.cc/2019/02/12/ml/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/"/>
+    <id>https://rencheng.cc/2019/02/12/ml/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/</id>
     <published>2019-02-12T02:10:21.000Z</published>
     <updated>2019-02-12T02:10:21.000Z</updated>
     
@@ -1653,19 +1653,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-数据预处理</title>
-    <link href="https://cheng-ren.github.io/2019/02/11/ml/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/"/>
-    <id>https://cheng-ren.github.io/2019/02/11/ml/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/</id>
+    <link href="https://rencheng.cc/2019/02/11/ml/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/"/>
+    <id>https://rencheng.cc/2019/02/11/ml/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/</id>
     <published>2019-02-11T12:50:35.000Z</published>
     <updated>2019-02-11T12:50:35.000Z</updated>
     
@@ -1676,19 +1676,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-学习路线</title>
-    <link href="https://cheng-ren.github.io/2019/02/10/ml/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
-    <id>https://cheng-ren.github.io/2019/02/10/ml/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</id>
+    <link href="https://rencheng.cc/2019/02/10/ml/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
+    <id>https://rencheng.cc/2019/02/10/ml/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</id>
     <published>2019-02-10T06:38:59.000Z</published>
     <updated>2019-02-10T06:38:59.000Z</updated>
     
@@ -1699,19 +1699,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>机器学习-概述</title>
-    <link href="https://cheng-ren.github.io/2019/02/09/ml/%E6%A6%82%E8%BF%B0/"/>
-    <id>https://cheng-ren.github.io/2019/02/09/ml/%E6%A6%82%E8%BF%B0/</id>
+    <link href="https://rencheng.cc/2019/02/09/ml/%E6%A6%82%E8%BF%B0/"/>
+    <id>https://rencheng.cc/2019/02/09/ml/%E6%A6%82%E8%BF%B0/</id>
     <published>2019-02-09T06:21:13.000Z</published>
     <updated>2019-02-09T06:21:13.000Z</updated>
     
@@ -1722,19 +1722,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="机器学习" scheme="https://cheng-ren.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://rencheng.cc/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>2018年终总结</title>
-    <link href="https://cheng-ren.github.io/2019/01/20/summary/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    <id>https://cheng-ren.github.io/2019/01/20/summary/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</id>
+    <link href="https://rencheng.cc/2019/01/20/summary/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    <id>https://rencheng.cc/2019/01/20/summary/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</id>
     <published>2019-01-20T02:13:31.000Z</published>
     <updated>2019-01-20T02:13:31.000Z</updated>
     
@@ -1746,14 +1746,14 @@
     
     
     
-    <category term="年度总结" scheme="https://cheng-ren.github.io/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    <category term="年度总结" scheme="https://rencheng.cc/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>Matplotlib</title>
-    <link href="https://cheng-ren.github.io/2018/12/03/datascience/Matplotlib/"/>
-    <id>https://cheng-ren.github.io/2018/12/03/datascience/Matplotlib/</id>
+    <link href="https://rencheng.cc/2018/12/03/datascience/Matplotlib/"/>
+    <id>https://rencheng.cc/2018/12/03/datascience/Matplotlib/</id>
     <published>2018-12-03T13:58:11.000Z</published>
     <updated>2018-12-03T13:58:11.000Z</updated>
     
@@ -1764,21 +1764,21 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据分析" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Numpy</title>
-    <link href="https://cheng-ren.github.io/2018/11/30/datascience/Numpy/"/>
-    <id>https://cheng-ren.github.io/2018/11/30/datascience/Numpy/</id>
+    <link href="https://rencheng.cc/2018/11/30/datascience/Numpy/"/>
+    <id>https://rencheng.cc/2018/11/30/datascience/Numpy/</id>
     <published>2018-11-30T13:58:11.000Z</published>
     <updated>2018-11-30T13:58:11.000Z</updated>
     
@@ -1789,21 +1789,21 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据分析" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="Python" scheme="https://cheng-ren.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://rencheng.cc/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>数据分析-概述</title>
-    <link href="https://cheng-ren.github.io/2018/11/29/datascience/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%A6%82%E8%BF%B0/"/>
-    <id>https://cheng-ren.github.io/2018/11/29/datascience/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%A6%82%E8%BF%B0/</id>
+    <link href="https://rencheng.cc/2018/11/29/datascience/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%A6%82%E8%BF%B0/"/>
+    <id>https://rencheng.cc/2018/11/29/datascience/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%A6%82%E8%BF%B0/</id>
     <published>2018-11-29T05:27:04.000Z</published>
     <updated>2018-11-29T05:27:04.000Z</updated>
     
@@ -1814,19 +1814,19 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据分析" scheme="https://cheng-ren.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="AI进阶" scheme="https://cheng-ren.github.io/tags/AI%E8%BF%9B%E9%98%B6/"/>
+    <category term="AI进阶" scheme="https://rencheng.cc/tags/AI%E8%BF%9B%E9%98%B6/"/>
     
   </entry>
   
   <entry>
     <title>App分析</title>
-    <link href="https://cheng-ren.github.io/2018/11/18/ios/general/App%E5%88%86%E6%9E%90/"/>
-    <id>https://cheng-ren.github.io/2018/11/18/ios/general/App%E5%88%86%E6%9E%90/</id>
+    <link href="https://rencheng.cc/2018/11/18/ios/general/App%E5%88%86%E6%9E%90/"/>
+    <id>https://rencheng.cc/2018/11/18/ios/general/App%E5%88%86%E6%9E%90/</id>
     <published>2018-11-18T02:35:15.000Z</published>
     <updated>2018-11-18T02:35:15.000Z</updated>
     
@@ -1838,14 +1838,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>静态库制作及注意点</title>
-    <link href="https://cheng-ren.github.io/2018/10/21/ios/general/%E9%9D%99%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C%E5%8F%8A%E6%B3%A8%E6%84%8F%E7%82%B9/"/>
-    <id>https://cheng-ren.github.io/2018/10/21/ios/general/%E9%9D%99%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C%E5%8F%8A%E6%B3%A8%E6%84%8F%E7%82%B9/</id>
+    <link href="https://rencheng.cc/2018/10/21/ios/general/%E9%9D%99%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C%E5%8F%8A%E6%B3%A8%E6%84%8F%E7%82%B9/"/>
+    <id>https://rencheng.cc/2018/10/21/ios/general/%E9%9D%99%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C%E5%8F%8A%E6%B3%A8%E6%84%8F%E7%82%B9/</id>
     <published>2018-10-21T12:54:30.000Z</published>
     <updated>2018-10-21T12:54:30.000Z</updated>
     
@@ -1857,14 +1857,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>苹果开发者续费指南</title>
-    <link href="https://cheng-ren.github.io/2018/10/21/ios/general/%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%8F%91%E8%80%85%E7%BB%AD%E8%B4%B9%E6%8C%87%E5%8D%97/"/>
-    <id>https://cheng-ren.github.io/2018/10/21/ios/general/%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%8F%91%E8%80%85%E7%BB%AD%E8%B4%B9%E6%8C%87%E5%8D%97/</id>
+    <link href="https://rencheng.cc/2018/10/21/ios/general/%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%8F%91%E8%80%85%E7%BB%AD%E8%B4%B9%E6%8C%87%E5%8D%97/"/>
+    <id>https://rencheng.cc/2018/10/21/ios/general/%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%8F%91%E8%80%85%E7%BB%AD%E8%B4%B9%E6%8C%87%E5%8D%97/</id>
     <published>2018-10-21T08:34:11.000Z</published>
     <updated>2018-10-21T08:34:11.000Z</updated>
     
@@ -1885,14 +1885,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>通过Xcode和LLDB进行高级调试</title>
-    <link href="https://cheng-ren.github.io/2018/09/24/ios/general/%E9%80%9A%E8%BF%87Xcode%E5%92%8CLLDB%E8%BF%9B%E8%A1%8C%E9%AB%98%E7%BA%A7%E8%B0%83%E8%AF%95/"/>
-    <id>https://cheng-ren.github.io/2018/09/24/ios/general/%E9%80%9A%E8%BF%87Xcode%E5%92%8CLLDB%E8%BF%9B%E8%A1%8C%E9%AB%98%E7%BA%A7%E8%B0%83%E8%AF%95/</id>
+    <link href="https://rencheng.cc/2018/09/24/ios/general/%E9%80%9A%E8%BF%87Xcode%E5%92%8CLLDB%E8%BF%9B%E8%A1%8C%E9%AB%98%E7%BA%A7%E8%B0%83%E8%AF%95/"/>
+    <id>https://rencheng.cc/2018/09/24/ios/general/%E9%80%9A%E8%BF%87Xcode%E5%92%8CLLDB%E8%BF%9B%E8%A1%8C%E9%AB%98%E7%BA%A7%E8%B0%83%E8%AF%95/</id>
     <published>2018-09-24T05:28:32.000Z</published>
     <updated>2018-09-24T05:28:32.000Z</updated>
     
@@ -1904,14 +1904,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>iOS-持续集成</title>
-    <link href="https://cheng-ren.github.io/2018/09/08/ios/general/iOS%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
-    <id>https://cheng-ren.github.io/2018/09/08/ios/general/iOS%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</id>
+    <link href="https://rencheng.cc/2018/09/08/ios/general/iOS%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+    <id>https://rencheng.cc/2018/09/08/ios/general/iOS%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</id>
     <published>2018-09-08T11:38:52.000Z</published>
     <updated>2018-09-08T11:38:52.000Z</updated>
     
@@ -1923,14 +1923,14 @@
     
     
     
-    <category term="iOS" scheme="https://cheng-ren.github.io/tags/iOS/"/>
+    <category term="iOS" scheme="https://rencheng.cc/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>Redis简述</title>
-    <link href="https://cheng-ren.github.io/2018/09/02/redis/%E7%AE%80%E8%BF%B0/"/>
-    <id>https://cheng-ren.github.io/2018/09/02/redis/%E7%AE%80%E8%BF%B0/</id>
+    <link href="https://rencheng.cc/2018/09/02/redis/%E7%AE%80%E8%BF%B0/"/>
+    <id>https://rencheng.cc/2018/09/02/redis/%E7%AE%80%E8%BF%B0/</id>
     <published>2018-09-02T08:22:49.000Z</published>
     <updated>2018-09-02T08:22:49.000Z</updated>
     
@@ -1942,14 +1942,14 @@
     
     
     
-    <category term="Redis" scheme="https://cheng-ren.github.io/tags/Redis/"/>
+    <category term="Redis" scheme="https://rencheng.cc/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>Redis For Python</title>
-    <link href="https://cheng-ren.github.io/2018/09/02/redis/inPython/"/>
-    <id>https://cheng-ren.github.io/2018/09/02/redis/inPython/</id>
+    <link href="https://rencheng.cc/2018/09/02/redis/inPython/"/>
+    <id>https://rencheng.cc/2018/09/02/redis/inPython/</id>
     <published>2018-09-02T08:22:49.000Z</published>
     <updated>2018-09-02T08:22:49.000Z</updated>
     
@@ -1961,14 +1961,14 @@
     
     
     
-    <category term="Redis" scheme="https://cheng-ren.github.io/tags/Redis/"/>
+    <category term="Redis" scheme="https://rencheng.cc/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>爬虫-Scrapy框架</title>
-    <link href="https://cheng-ren.github.io/2018/08/30/crawler/Scrapy%E6%A1%86%E6%9E%B6/"/>
-    <id>https://cheng-ren.github.io/2018/08/30/crawler/Scrapy%E6%A1%86%E6%9E%B6/</id>
+    <link href="https://rencheng.cc/2018/08/30/crawler/Scrapy%E6%A1%86%E6%9E%B6/"/>
+    <id>https://rencheng.cc/2018/08/30/crawler/Scrapy%E6%A1%86%E6%9E%B6/</id>
     <published>2018-08-30T12:27:50.000Z</published>
     <updated>2018-08-30T12:27:50.000Z</updated>
     
@@ -1979,17 +1979,17 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="爬虫" scheme="https://cheng-ren.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://rencheng.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>爬虫-Selenium</title>
-    <link href="https://cheng-ren.github.io/2018/08/27/crawler/Selenium/"/>
-    <id>https://cheng-ren.github.io/2018/08/27/crawler/Selenium/</id>
+    <link href="https://rencheng.cc/2018/08/27/crawler/Selenium/"/>
+    <id>https://rencheng.cc/2018/08/27/crawler/Selenium/</id>
     <published>2018-08-27T03:54:40.000Z</published>
     <updated>2018-08-27T03:54:40.000Z</updated>
     
@@ -2000,17 +2000,17 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="爬虫" scheme="https://cheng-ren.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://rencheng.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>爬虫-工具集</title>
-    <link href="https://cheng-ren.github.io/2018/08/26/crawler/%E5%B7%A5%E5%85%B7%E9%9B%86/"/>
-    <id>https://cheng-ren.github.io/2018/08/26/crawler/%E5%B7%A5%E5%85%B7%E9%9B%86/</id>
+    <link href="https://rencheng.cc/2018/08/26/crawler/%E5%B7%A5%E5%85%B7%E9%9B%86/"/>
+    <id>https://rencheng.cc/2018/08/26/crawler/%E5%B7%A5%E5%85%B7%E9%9B%86/</id>
     <published>2018-08-26T02:37:18.000Z</published>
     <updated>2018-08-26T02:37:18.000Z</updated>
     
@@ -2022,16 +2022,16 @@
     
     
     
-    <category term="爬虫" scheme="https://cheng-ren.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://rencheng.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
-    <category term="工具" scheme="https://cheng-ren.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://rencheng.cc/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>爬虫常见问题汇总</title>
-    <link href="https://cheng-ren.github.io/2018/08/18/crawler/%E7%88%AC%E8%99%AB%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
-    <id>https://cheng-ren.github.io/2018/08/18/crawler/%E7%88%AC%E8%99%AB%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</id>
+    <link href="https://rencheng.cc/2018/08/18/crawler/%E7%88%AC%E8%99%AB%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+    <id>https://rencheng.cc/2018/08/18/crawler/%E7%88%AC%E8%99%AB%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</id>
     <published>2018-08-18T11:27:33.000Z</published>
     <updated>2018-08-18T11:27:33.000Z</updated>
     
@@ -2043,14 +2043,14 @@
     
     
     
-    <category term="爬虫" scheme="https://cheng-ren.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://rencheng.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>爬虫-BeautifulSoup</title>
-    <link href="https://cheng-ren.github.io/2018/08/08/crawler/BeautifulSoup/"/>
-    <id>https://cheng-ren.github.io/2018/08/08/crawler/BeautifulSoup/</id>
+    <link href="https://rencheng.cc/2018/08/08/crawler/BeautifulSoup/"/>
+    <id>https://rencheng.cc/2018/08/08/crawler/BeautifulSoup/</id>
     <published>2018-08-08T12:54:55.000Z</published>
     <updated>2018-08-08T12:54:55.000Z</updated>
     
@@ -2061,17 +2061,17 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="爬虫" scheme="https://cheng-ren.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://rencheng.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>爬虫-xpath解析工具</title>
-    <link href="https://cheng-ren.github.io/2018/08/08/crawler/xpath%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/"/>
-    <id>https://cheng-ren.github.io/2018/08/08/crawler/xpath%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/</id>
+    <link href="https://rencheng.cc/2018/08/08/crawler/xpath%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/"/>
+    <id>https://rencheng.cc/2018/08/08/crawler/xpath%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/</id>
     <published>2018-08-08T12:14:55.000Z</published>
     <updated>2018-08-08T12:14:55.000Z</updated>
     
@@ -2082,17 +2082,17 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="爬虫" scheme="https://cheng-ren.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://rencheng.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>爬虫-urllib</title>
-    <link href="https://cheng-ren.github.io/2018/08/08/crawler/urllib/"/>
-    <id>https://cheng-ren.github.io/2018/08/08/crawler/urllib/</id>
+    <link href="https://rencheng.cc/2018/08/08/crawler/urllib/"/>
+    <id>https://rencheng.cc/2018/08/08/crawler/urllib/</id>
     <published>2018-08-08T11:58:14.000Z</published>
     <updated>2018-08-08T11:58:14.000Z</updated>
     
@@ -2103,17 +2103,17 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="爬虫" scheme="https://cheng-ren.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://rencheng.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>爬虫-requests模块</title>
-    <link href="https://cheng-ren.github.io/2018/08/08/crawler/requests/"/>
-    <id>https://cheng-ren.github.io/2018/08/08/crawler/requests/</id>
+    <link href="https://rencheng.cc/2018/08/08/crawler/requests/"/>
+    <id>https://rencheng.cc/2018/08/08/crawler/requests/</id>
     <published>2018-08-08T11:27:33.000Z</published>
     <updated>2018-08-08T11:27:33.000Z</updated>
     
@@ -2124,17 +2124,17 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="爬虫" scheme="https://cheng-ren.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://rencheng.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>爬虫-数据持久化</title>
-    <link href="https://cheng-ren.github.io/2018/08/08/crawler/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
-    <id>https://cheng-ren.github.io/2018/08/08/crawler/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/</id>
+    <link href="https://rencheng.cc/2018/08/08/crawler/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    <id>https://rencheng.cc/2018/08/08/crawler/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/</id>
     <published>2018-08-08T07:52:43.000Z</published>
     <updated>2018-08-08T07:52:43.000Z</updated>
     
@@ -2145,10 +2145,10 @@
     
     
     
-    <category term="教程" scheme="https://cheng-ren.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="爬虫" scheme="https://cheng-ren.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://rencheng.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   

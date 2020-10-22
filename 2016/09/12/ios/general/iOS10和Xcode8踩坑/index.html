@@ -22,13 +22,13 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"cheng-ren.github.io","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"algolia":{"appID":"PGRKT2OB56","apiKey":"a09164ad6a55478071a74f01a8c22fce","indexName":"RENCHENG","hits":{"per_page":10}}};
+    var CONFIG = {"hostname":"rencheng.cc","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"algolia":{"appID":"PGRKT2OB56","apiKey":"a09164ad6a55478071a74f01a8c22fce","indexName":"RENCHENG","hits":{"per_page":10}}};
   </script>
 
   <meta name="description" content="iOS10和Xcode8的GM版放出后，iOS10适配工作就非常重要了。Xcode8下完打开项目后就陆续碰到了一些坑，本文对此这些坑做一些记录。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS10和Xcode8踩坑">
-<meta property="og:url" content="https://cheng-ren.github.io/2016/09/12/ios/general/iOS10%E5%92%8CXcode8%E8%B8%A9%E5%9D%91/index.html">
+<meta property="og:url" content="https://rencheng.cc/2016/09/12/ios/general/iOS10%E5%92%8CXcode8%E8%B8%A9%E5%9D%91/index.html">
 <meta property="og:site_name" content="任成の博客">
 <meta property="og:description" content="iOS10和Xcode8的GM版放出后，iOS10适配工作就非常重要了。Xcode8下完打开项目后就陆续碰到了一些坑，本文对此这些坑做一些记录。">
 <meta property="og:locale" content="zh_CN">
@@ -67,7 +67,7 @@
 <meta name="twitter:image" content="https://cdn.renchengqi.com/blog/v9ou8.png">
 
 
-<link rel="canonical" href="https://cheng-ren.github.io/2016/09/12/ios/general/iOS10%E5%92%8CXcode8%E8%B8%A9%E5%9D%91/">
+<link rel="canonical" href="https://rencheng.cc/2016/09/12/ios/general/iOS10%E5%92%8CXcode8%E8%B8%A9%E5%9D%91/">
 
 
 <script data-pjax class="page-configurations">
@@ -317,7 +317,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://cheng-ren.github.io/2016/09/12/ios/general/iOS10%E5%92%8CXcode8%E8%B8%A9%E5%9D%91/">
+    <link itemprop="mainEntityOfPage" href="https://rencheng.cc/2016/09/12/ios/general/iOS10%E5%92%8CXcode8%E8%B8%A9%E5%9D%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.JPG">
@@ -378,7 +378,7 @@
 
 <h2 id="注释失效了"><a href="#注释失效了" class="headerlink" title="注释失效了"></a>注释失效了</h2><p>终端来一发<code>sudo /usr/libexec/xpccachectl</code>然后重启</p>
 <h3 id="新增的文档注释"><a href="#新增的文档注释" class="headerlink" title="新增的文档注释"></a>新增的文档注释</h3><p>Xcode8里加入了喵神的文档注释，但是貌似功能没有之前插件的强，新的文档注释使用快捷键<code>Option + Command + /</code><br><img src="https://cdn.renchengqi.com/blog/bil07.png"><br><img src="https://cdn.renchengqi.com/blog/zljhg.png"><br>不过这个文档注释并不能像喵神的插件一样随意使用，如下图的时候就报提示没找到需要进行文档注释的东西😂<br><img src="https://cdn.renchengqi.com/blog/wnfbm.png"></p>
-<h2 id="label显示不全"><a href="#label显示不全" class="headerlink" title="label显示不全"></a>label显示不全</h2><p>详见上一篇<a target="_blank" rel="noopener" href="https://rencheng.cc/2016/09/10/iOS10%E7%9A%84label%E6%96%87%E5%AD%97%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E9%97%AE%E9%A2%98/">iOS10的label文字显示不全问题</a></p>
+<h2 id="label显示不全"><a href="#label显示不全" class="headerlink" title="label显示不全"></a>label显示不全</h2><p>详见上一篇<a href="https://rencheng.cc/2016/09/10/iOS10%E7%9A%84label%E6%96%87%E5%AD%97%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E9%97%AE%E9%A2%98/">iOS10的label文字显示不全问题</a></p>
 <h2 id="权限授权"><a href="#权限授权" class="headerlink" title="权限授权"></a>权限授权</h2><p>在排查上个label显示不全问题的时候，发现调相机崩了，调相册崩了，调定位又崩了，但是xcode7打的包在iOS10手机安装使用却是正常，什么👻</p>
 <p>这次Xcode8对调用各种隐私权限做了控制，在调试的时候，需要在info.plist里声明你的权限和对应的提示文案，比如相册权限<br><img src="https://cdn.renchengqi.com/blog/xngko.png"><br><img src="https://cdn.renchengqi.com/blog/x0rit.png"></p>
 <h3 id="其他权限"><a href="#其他权限" class="headerlink" title="其他权限"></a>其他权限</h3><p>可以在info.plist值看到所有Private - 开头的都是<br><img src="https://cdn.renchengqi.com/blog/69frc.png"><br><img src="https://cdn.renchengqi.com/blog/hq5dk.png"></p>
