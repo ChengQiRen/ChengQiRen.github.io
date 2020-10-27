@@ -225,7 +225,7 @@
   </entry>
   
   <entry>
-    <title>Flutter异步编程</title>
+    <title>Flutter - 异步编程</title>
     <link href="https://rencheng.cc/2020/02/25/flutter/Flutter%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/"/>
     <id>https://rencheng.cc/2020/02/25/flutter/Flutter%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</id>
     <published>2020-02-25T12:46:16.000Z</published>
@@ -605,9 +605,9 @@
     
     
     
-    <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
-    
     <category term="教程" scheme="https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
     
   </entry>
   
@@ -1267,9 +1267,9 @@
     
     
     
-    <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
-    
     <category term="教程" scheme="https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
     
   </entry>
   
