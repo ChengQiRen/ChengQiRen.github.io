@@ -219,7 +219,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.1.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">解决思路</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.1.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">解决思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%90%AF%E5%8A%A8%E5%9B%BE"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成启动图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E5%90%AF%E5%8A%A8%E5%9B%BE"><span class="nav-number">1.2.2.</span> <span class="nav-text">替换启动图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">流程</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -331,7 +331,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>357</span>
+      <span>1.8k</span>
     </span>
 </div>
 
@@ -366,7 +366,51 @@
 <li>将LaunchScreen.storyboard文件复制到新建的空工程中，仍复现；</li>
 </ul>
 <p><strong>结论：系统缓存问题</strong></p>
-<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3>
+<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><p>完全抛弃系统缓存的启动图，由自己生成的启动图替换。</p>
+<blockquote>
+<p>用户安装应用后，系统会自动生成启动图并缓存至沙盒目录，接着用户启动应用时，我们通过代码将沙盒目录下缓存的启动图文件全部替换为我们通过代码生成的启动图。</p>
+</blockquote>
+<h4 id="生成启动图"><a href="#生成启动图" class="headerlink" title="生成启动图"></a>生成启动图</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *launchScreenName = [[[<span class="built_in">NSBundle</span> mainBundle] infoDictionary] objectForKey:<span class="string">@&quot;UILaunchStoryboardName&quot;</span>];</span><br><span class="line"><span class="built_in">UIStoryboard</span> *storyboard = [<span class="built_in">UIStoryboard</span> storyboardWithName:launchScreenName bundle:<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">UIViewController</span> *vc = storyboard.instantiateInitialViewController;</span><br><span class="line"><span class="built_in">UIGraphicsBeginImageContextWithOptions</span>([<span class="built_in">UIScreen</span> mainScreen].bounds.size, <span class="literal">NO</span>, [<span class="built_in">UIScreen</span> mainScreen].scale);</span><br><span class="line">[vc.view.layer renderInContext:<span class="built_in">UIGraphicsGetCurrentContext</span>()];</span><br><span class="line"><span class="built_in">UIImage</span> *image = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br></pre></td></tr></table></figure>
+<h4 id="替换启动图"><a href="#替换启动图" class="headerlink" title="替换启动图"></a>替换启动图</h4><p>通过测试，该方法不会报权限问题</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)moveItemAtPath:(<span class="built_in">NSString</span> *)srcPath </span><br><span class="line">                toPath:(<span class="built_in">NSString</span> *)dstPath </span><br><span class="line">                 error:(<span class="built_in">NSError</span> **)error API_AVAILABLE(macos(<span class="number">10.5</span>), ios(<span class="number">2.0</span>), watchos(<span class="number">2.0</span>), tvos(<span class="number">9.0</span>));</span><br></pre></td></tr></table></figure>
+
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><pre class="mermaid">graph TD
+A(应用启动)-->B[监听被Kill通知]
+B-->C[应用Kill回调]
+C-->D[获取当前App版本号]
+D-->E{指定目录下</br>以版本号命名的</br>启动图是否存在}
+E--YES-->F[读取该文件]
+E--NO-->G[清空该目录文件]
+subgraph 此步骤耗时
+    G-->H[生成自定义启动图]
+    H-->I[以版本号为名写入指定目录]
+end
+I-->J[计算默认启动图MD5]
+F-->J
+J-->K{遍历系统</br>缓存启动图</br>目录}
+K--遍历中-->L{iPhone </br>Or iPad}
+L--iPad-->M{对比图片</br>宽高是否</br>相同}
+M--YES-->X{对比图片</br>md5值是否</br>相同}
+X-->N[替换系统缓存启动图]
+K--遍历完成-->S(应用杀死)
+N--继续遍历-->K
+L--iPhone-->X
+X--NO-->K</pre>
+
+<blockquote>
+<p>缓存路径：<br>iOS13.0 及以上：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Library&#x2F;SplashBoard&#x2F;Snapshots&#x2F;$&#123;PRODUCT_BUNDLE_IDENTIFIER&#125; - &#123;DEFAULT GROUP&#125;；</span><br></pre></td></tr></table></figure>
+<p>iOS13.0 以下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Library&#x2F;Caches&#x2F;Snapshots&#x2F;$&#123;PRODUCT_BUNDLE_IDENTIFIER&#125;；</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>图片格式：<br>iOS10.0 及以上：KTX；<br>iOS10.0 以下：PNG。</p>
+</blockquote>
+<blockquote>
+<p>系统缓存图目录读写权限：<br>iOS10.0 及以上：有权限；<br>iOS10.0 以下：无权限。</p>
+</blockquote>
+
     </div>
 
     
@@ -488,14 +532,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">522k</span>
+    <span title="站点总字数">523k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7:54</span>
+    <span title="站点阅读时长">7:56</span>
   </span>
 </div>
 
