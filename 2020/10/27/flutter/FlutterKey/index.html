@@ -25,12 +25,12 @@
     var CONFIG = {"hostname":"rencheng.cc","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Key抽象类 LocalKey抽象类  diff算法的核心所在 Element和Widget比较  ValueKey以数据作为Key。如：数字，字符 ObjectKey以Object对象作为Key。如：Text() UniqueKey可以保证Key的唯一性  一旦使用它，就不存在Element复用了  GlobalKey抽象类  帮助我们获取到对应Widget的State对象，然后进行操作。">
+  <meta name="description" content="在Flutter中Key非常重要  解决重用问题，提升性能 标识Widget，获取State对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flutter - Key">
 <meta property="og:url" content="https://rencheng.cc/2020/10/27/flutter/FlutterKey/index.html">
 <meta property="og:site_name" content="任成の博客">
-<meta property="og:description" content="Key抽象类 LocalKey抽象类  diff算法的核心所在 Element和Widget比较  ValueKey以数据作为Key。如：数字，字符 ObjectKey以Object对象作为Key。如：Text() UniqueKey可以保证Key的唯一性  一旦使用它，就不存在Element复用了  GlobalKey抽象类  帮助我们获取到对应Widget的State对象，然后进行操作。">
+<meta property="og:description" content="在Flutter中Key非常重要  解决重用问题，提升性能 标识Widget，获取State对象">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-27T09:00:02.000Z">
 <meta property="article:modified_time" content="2020-10-27T09:00:02.000Z">
@@ -330,7 +330,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>183</span>
+      <span>228</span>
     </span>
 </div>
 
@@ -341,7 +341,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="Key"><a href="#Key" class="headerlink" title="Key"></a>Key</h2><p>抽象类</p>
+        <p>在Flutter中Key非常重要</p>
+<ul>
+<li>解决重用问题，提升性能</li>
+<li>标识Widget，获取State对象</li>
+</ul>
+<a id="more"></a>
+<h2 id="Key"><a href="#Key" class="headerlink" title="Key"></a>Key</h2><p>抽象类</p>
 <h3 id="LocalKey"><a href="#LocalKey" class="headerlink" title="LocalKey"></a>LocalKey</h3><p>抽象类</p>
 <ul>
 <li>diff算法的核心所在</li>
