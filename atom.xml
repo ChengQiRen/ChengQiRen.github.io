@@ -23,10 +23,10 @@
     <published>2020-10-27T09:00:02.000Z</published>
     <updated>2020-10-27T09:00:02.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在Flutter中Key非常重要</p><ul><li>解决重用问题，提升性能</li><li>标识Widget，获取State对象</li></ul><a id="more"></a><h2 id="Key"><a href="#Key" class="headerlink" title="Key"></a>Key</h2><p>抽象类</p><h3 id="LocalKey"><a href="#LocalKey" class="headerlink" title="LocalKey"></a>LocalKey</h3><p>抽象类</p><ul><li>diff算法的核心所在</li><li>Element和Widget比较</li></ul><h4 id="ValueKey"><a href="#ValueKey" class="headerlink" title="ValueKey"></a>ValueKey</h4><p>以数据作为Key。如：数字，字符</p><h4 id="ObjectKey"><a href="#ObjectKey" class="headerlink" title="ObjectKey"></a>ObjectKey</h4><p>以Object对象作为Key。如：Text()</p><h4 id="UniqueKey"><a href="#UniqueKey" class="headerlink" title="UniqueKey"></a>UniqueKey</h4><p>可以保证Key的唯一性</p><blockquote><p>一旦使用它，就不存在Element复用了</p></blockquote><h3 id="GlobalKey"><a href="#GlobalKey" class="headerlink" title="GlobalKey"></a>GlobalKey</h3><p>抽象类</p><ul><li>帮助我们获取到对应Widget的State对象，然后进行操作。</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>Flutter中Key非常重要</p><ul><li>解决重用问题，提升性能</li><li>标识Widget，获取State对象</li></ul><a id="more"></a><h2 id="Key"><a href="#Key" class="headerlink" title="Key"></a>Key</h2><p>抽象类</p><h3 id="LocalKey"><a href="#LocalKey" class="headerlink" title="LocalKey"></a>LocalKey</h3><p>抽象类</p><ul><li>diff算法的核心所在</li><li>Element和Widget比较</li></ul><h4 id="ValueKey"><a href="#ValueKey" class="headerlink" title="ValueKey"></a>ValueKey</h4><p>以数据作为Key。如：数字，字符</p><h4 id="ObjectKey"><a href="#ObjectKey" class="headerlink" title="ObjectKey"></a>ObjectKey</h4><p>以Object对象作为Key。如：Text()</p><h4 id="UniqueKey"><a href="#UniqueKey" class="headerlink" title="UniqueKey"></a>UniqueKey</h4><p>可以保证Key的唯一性</p><blockquote><p>一旦使用它，就不存在Element复用了</p></blockquote><h3 id="GlobalKey"><a href="#GlobalKey" class="headerlink" title="GlobalKey"></a>GlobalKey</h3><p>抽象类</p><ul><li>帮助我们获取到对应Widget的State对象，然后进行操作。</li></ul>]]></content>
     
     
-    <summary type="html">&lt;p&gt;在Flutter中Key非常重要&lt;/p&gt;
+    <summary type="html">&lt;p&gt;Flutter中Key非常重要&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;解决重用问题，提升性能&lt;/li&gt;
 &lt;li&gt;标识Widget，获取State对象&lt;/li&gt;
@@ -648,9 +648,9 @@
     
     
     
-    <category term="教程" scheme="https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
+    
+    <category term="教程" scheme="https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -1002,9 +1002,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1025,9 +1025,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1048,9 +1048,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1071,9 +1071,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1094,9 +1094,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1117,9 +1117,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1140,9 +1140,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1164,9 +1164,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1283,10 +1283,10 @@
     <published>2019-07-14T03:51:33.000Z</published>
     <updated>2019-07-14T03:51:33.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在苹果推出iPhoneX后，可以说苹果的机型有很多了，显示屏的大小和形状也变得各式各样，在这里对屏幕尺寸做一下记录，方便以后查看</p><a id="more"></a><table><thead><tr><th>设备</th><th>尺寸</th><th>逻辑分辨率</th><th>Scale</th><th>设备分辨率</th><th>PPI</th></tr></thead><tbody><tr><td>3GS</td><td>3.5</td><td>320x480</td><td>@1x</td><td>320x480</td><td>163</td></tr><tr><td>4s</td><td>3.5</td><td>320x480</td><td>@2x</td><td>640x960</td><td>326</td></tr><tr><td>5/5c/5s/SE</td><td>4</td><td>320x568</td><td>@2x</td><td>640x1136</td><td>326</td></tr><tr><td>6/6s/7/8</td><td>4.7</td><td>375x667</td><td>@2x</td><td>750x1334</td><td>326</td></tr><tr><td>6/6s/7/8 Plus</td><td>5.5</td><td>414x736</td><td>@3x</td><td>1242x2208</td><td>401</td></tr><tr><td>X/XS/11 Pro</td><td>5.8</td><td>375x812</td><td>@3x</td><td>1125x2436</td><td>458</td></tr><tr><td>Xs Max/11 Pro Max</td><td>6.5</td><td>414x896</td><td>@3x</td><td>1242×2688</td><td>458</td></tr><tr><td>XR/11</td><td>6.1</td><td>414x896</td><td>@2x</td><td>828×1792</td><td>326</td></tr></tbody></table><p><a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/#Device%20Screen%20Sizes%20and%20Orientations">https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/#Device%20Screen%20Sizes%20and%20Orientations</a></p>]]></content>
+    <content type="html"><![CDATA[<p>在苹果推出iPhoneX后，可以说苹果的机型有很多了，显示屏的大小和形状也变得各式各样。</p><a id="more"></a><table><thead><tr><th align="left">设备</th><th align="left">尺寸</th><th align="left">逻辑分辨率</th><th align="left">Scale</th><th align="left">设备分辨率</th><th align="left">PPI</th></tr></thead><tbody><tr><td align="left">3GS</td><td align="left">3.5</td><td align="left">320x480</td><td align="left">@1x</td><td align="left">320x480</td><td align="left">163</td></tr><tr><td align="left">4s</td><td align="left">3.5</td><td align="left">320x480</td><td align="left">@2x</td><td align="left">640x960</td><td align="left">326</td></tr><tr><td align="left">5/5c/5s/SE</td><td align="left">4</td><td align="left">320x568</td><td align="left">@2x</td><td align="left">640x1136</td><td align="left">326</td></tr><tr><td align="left">6/6s/7/8/SE2</td><td align="left">4.7</td><td align="left">375x667</td><td align="left">@2x</td><td align="left">750x1334</td><td align="left">326</td></tr><tr><td align="left">6/6s/7/8 Plus</td><td align="left">5.5</td><td align="left">414x736</td><td align="left">@3x</td><td align="left">1242x2208</td><td align="left">401</td></tr><tr><td align="left">X/Xs/11 Pro</td><td align="left">5.8</td><td align="left">375x812</td><td align="left">@3x</td><td align="left">1125x2436</td><td align="left">458</td></tr><tr><td align="left">Xs Max/11 Pro Max</td><td align="left">6.5</td><td align="left">414x896</td><td align="left">@3x</td><td align="left">1242×2688</td><td align="left">458</td></tr><tr><td align="left">XR/11</td><td align="left">6.1</td><td align="left">414x896</td><td align="left">@2x</td><td align="left">828×1792</td><td align="left">326</td></tr><tr><td align="left">12 Mini</td><td align="left">5.4</td><td align="left">375x812</td><td align="left">@3x</td><td align="left">1080×2340</td><td align="left">476</td></tr><tr><td align="left">12/12 Pro</td><td align="left">6.1</td><td align="left">390x844</td><td align="left">@3x</td><td align="left">1170×2532</td><td align="left">460</td></tr><tr><td align="left">12 Pro Max</td><td align="left">6.7</td><td align="left">428x926</td><td align="left">@3x</td><td align="left">1284×2778</td><td align="left">458</td></tr></tbody></table><p><a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/#Device%20Screen%20Sizes%20and%20Orientations">https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/#Device%20Screen%20Sizes%20and%20Orientations</a></p>]]></content>
     
     
-    <summary type="html">&lt;p&gt;在苹果推出iPhoneX后，可以说苹果的机型有很多了，显示屏的大小和形状也变得各式各样，在这里对屏幕尺寸做一下记录，方便以后查看&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;在苹果推出iPhoneX后，可以说苹果的机型有很多了，显示屏的大小和形状也变得各式各样。&lt;/p&gt;</summary>
     
     
     
@@ -1310,9 +1310,9 @@
     
     
     
-    <category term="教程" scheme="https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="hexo" scheme="https://rencheng.cc/tags/hexo/"/>
+    
+    <category term="教程" scheme="https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -1396,9 +1396,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MySQL" scheme="https://rencheng.cc/tags/MySQL/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MySQL" scheme="https://rencheng.cc/tags/MySQL/"/>
     
   </entry>
   
@@ -1419,9 +1419,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MySQL" scheme="https://rencheng.cc/tags/MySQL/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MySQL" scheme="https://rencheng.cc/tags/MySQL/"/>
     
   </entry>
   
