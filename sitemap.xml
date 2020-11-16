@@ -998,21 +998,7 @@
   </url>
   
   <url>
-    <loc>https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rencheng.cc/tags/Swift/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rencheng.cc/tags/LeetCode/</loc>
+    <loc>https://rencheng.cc/tags/Android/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1054,7 +1040,21 @@
   </url>
   
   <url>
-    <loc>https://rencheng.cc/tags/Android/</loc>
+    <loc>https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rencheng.cc/tags/Swift/</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rencheng.cc/tags/LeetCode/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1068,13 +1068,6 @@
   </url>
   
   <url>
-    <loc>https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://rencheng.cc/tags/hexo/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
@@ -1082,7 +1075,7 @@
   </url>
   
   <url>
-    <loc>https://rencheng.cc/tags/%E6%95%99%E8%82%B2/</loc>
+    <loc>https://rencheng.cc/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1090,6 +1083,13 @@
   
   <url>
     <loc>https://rencheng.cc/tags/%E8%BF%90%E7%BB%B4/</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rencheng.cc/tags/%E6%95%99%E8%82%B2/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1104,27 +1104,6 @@
   
   <url>
     <loc>https://rencheng.cc/tags/markdown/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rencheng.cc/tags/MongoDB/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rencheng.cc/tags/MySQL/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1173,6 +1152,34 @@
   </url>
   
   <url>
+    <loc>https://rencheng.cc/tags/MongoDB/</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rencheng.cc/tags/MySQL/</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rencheng.cc/tags/%E6%8E%A8%E8%8D%90/</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://rencheng.cc/tags/Python/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
@@ -1209,13 +1216,6 @@
   
   <url>
     <loc>https://rencheng.cc/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rencheng.cc/tags/%E6%8E%A8%E8%8D%90/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1301,13 +1301,6 @@
   </url>
   
   <url>
-    <loc>https://rencheng.cc/categories/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://rencheng.cc/categories/iOS%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
@@ -1316,6 +1309,13 @@
   
   <url>
     <loc>https://rencheng.cc/categories/%E4%BA%8B%E6%95%85%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rencheng.cc/categories/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
