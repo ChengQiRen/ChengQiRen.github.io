@@ -251,7 +251,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-count">44</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -348,9 +348,12 @@
         <p>今年整体适配强度不大。<br><img src="https://object.renchengqi.com/blog/y3ady.jpg"></p>
 <a id="more"></a>
 
-<h2 id="权限相关"><a href="#权限相关" class="headerlink" title="权限相关"></a>权限相关</h2><p>如果设备开启了本地的服务，会弹出允许本地网络的权限提示框，<br>需要填入文案</p>
+<h2 id="权限相关"><a href="#权限相关" class="headerlink" title="权限相关"></a>权限相关</h2><p>如果设备开启了本地的服务，会弹出允许本地网络的权限提示框。<br>在Info.plist中增加隐私配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Privacy - Local Network Usage Description</span><br><span class="line">    - 使用本地网络进行数据请求访问，作为视频的预缓存</span><br><span class="line"></span><br><span class="line">Bonjour services</span><br><span class="line">    - _http._tcp</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>如果不加该配置，提审会被拒。</p>
+</blockquote>
 <h2 id="模拟器报错"><a href="#模拟器报错" class="headerlink" title="模拟器报错"></a>模拟器报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">building for iOS Simulator, but linking in object file built for iOS, xxxx for architecture arm64</span><br></pre></td></tr></table></figure>
 <p><strong>原因：</strong></p>
 <ul>
@@ -366,7 +369,7 @@
 </blockquote>
 <h2 id="微信-Pasted-from-QQ"><a href="#微信-Pasted-from-QQ" class="headerlink" title="微信 Pasted from QQ"></a>微信 Pasted from QQ</h2><p>打开某款App，频繁提示<code>** Pasted from ***</code></p>
 <blockquote>
-<p>苹果强化了对系统剪切板内容访问的提示，适度减少访问频次吧。 不过现在是大家都玩口令的年代，这很难控制住…</p>
+<p>苹果强化了对系统剪切板内容访问的提示，适度减少访问频次吧。不过现在是大家都玩口令的年代，这很难控制住…</p>
 </blockquote>
 <h2 id="UIPageControl-子视图层级变更-及-新增-API"><a href="#UIPageControl-子视图层级变更-及-新增-API" class="headerlink" title="UIPageControl 子视图层级变更 及 新增 API"></a>UIPageControl 子视图层级变更 及 新增 API</h2><p>iOS14中，苹果对<code>UIPageControl</code>控件进行了调整，定制性更强了。可以通过官方的API设置图片了，而且也有几个样式供我们选择。</p>
 <blockquote>
