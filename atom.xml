@@ -411,7 +411,7 @@
     <published>2020-02-14T04:03:49.000Z</published>
     <updated>2020-02-14T04:03:49.000Z</updated>
     
-    <content type="html"><![CDATA[<p>汇总提审被拒解决方案</p><a id="more"></a><h2 id="支付"><a href="#支付" class="headerlink" title="支付"></a>支付</h2><h3 id="提示有AliPaySDK"><a href="#提示有AliPaySDK" class="headerlink" title="提示有AliPaySDK"></a>提示有AliPaySDK</h3><ol><li>苹果反馈</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Guideline 2.3.1 - Performance</span><br><span class="line"></span><br><span class="line">We discovered that your app contains hidden features. Attempting to hide features, functionality or content in your app is considered egregious behavior and can lead to removal from the Apple Developer Program.</span><br><span class="line"></span><br><span class="line">Specifically, we found that your app includes AliPay (支付寶), which provides access to external payment mechanisms and enables the purchase of content, services, or functionality by means other than the in-app purchase API.</span><br></pre></td></tr></table></figure><ol start="2"><li>排查问题</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.可能是接入了支付宝其它的sdk</span><br><span class="line">2.可能是plist里面有alipay相关选项残留</span><br><span class="line">3.代码中或文件中有支付宝，alipay字样的文本</span><br><span class="line">4.有发送针对支付宝或者淘宝域名的HTTP请求</span><br><span class="line">5.用到的第三方sdk或者软件曾经因为类似原因被拉入了“宁杀错不放过”的名单，比如anysdk</span><br><span class="line">6.该账号曾经因为接入微信或者支付宝请求被拒绝过</span><br><span class="line">7.打包的苹果设备曾经因为接入微信或者支付宝请求被拒绝过</span><br><span class="line">8.创建苹果开发者账号支付所采用的信用卡曾经用于创建另一个因为接入微信或者支付宝请求被拒绝过开发者账号</span><br><span class="line">9.运气不好，被苹果误判；这个概率极小，要验证很简单，不该再提审一次就知道了</span><br></pre></td></tr></table></figure><h2 id="UI设计不规范"><a href="#UI设计不规范" class="headerlink" title="UI设计不规范"></a>UI设计不规范</h2><ol><li>苹果反馈</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">10.6 – Apple and our customers place a high value on simple, refined, creative, well thought through interfaces. They take more work but are worth it. Apple sets a high bar. If your user interface is complex or less than very good, it may be rejected</span><br><span class="line"></span><br><span class="line">10.6 Details  </span><br><span class="line"></span><br><span class="line">Your app includes an update button or alerts the user to update the app. To avoid user confusion, app version updates must utilize the iOS built-in update mechanism. </span><br></pre></td></tr></table></figure><ol start="2"><li>排查问题</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1. 移除检测App更新的按钮和提示</span><br></pre></td></tr></table></figure><h2 id="审核预计耗时很久"><a href="#审核预计耗时很久" class="headerlink" title="审核预计耗时很久"></a>审核预计耗时很久</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Other - Other</span><br><span class="line"></span><br><span class="line">Hello,</span><br><span class="line"></span><br><span class="line">The review of your app is taking longer than expected. Once we have completed our review, we will notify you via Resolution Center.</span><br><span class="line"></span><br><span class="line">If you would like to inquire about the status of this review, you may file a request via the Apple Developer Contact Us page.</span><br><span class="line"></span><br><span class="line">Best regards,</span><br><span class="line"></span><br><span class="line">App Store Review</span><br></pre></td></tr></table></figure><ol start="2"><li>解决方案</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 耐心等待就好了</span><br><span class="line">2. 如果3天没有回复，那就&#96;Apple Developer Contact Us&#96;联系苹果</span><br><span class="line">3. 等待回复就好，别病急乱投医。</span><br></pre></td></tr></table></figure><p><strong>可能原因</strong></p><blockquote><p>苹果审核机制变了；<br>苹果要审查你的账号了；<br>苹果最近太忙了，知道要延迟审核，先给你的 reject 放在那，等轮到你了再说。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>汇总提审被拒解决方案</p><a id="more"></a><h2 id="支付"><a href="#支付" class="headerlink" title="支付"></a>支付</h2><h3 id="提示有AliPaySDK"><a href="#提示有AliPaySDK" class="headerlink" title="提示有AliPaySDK"></a>提示有AliPaySDK</h3><ol><li>苹果反馈</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Guideline 2.3.1 - Performance</span><br><span class="line"></span><br><span class="line">We discovered that your app contains hidden features. Attempting to hide features, functionality or content in your app is considered egregious behavior and can lead to removal from the Apple Developer Program.</span><br><span class="line"></span><br><span class="line">Specifically, we found that your app includes AliPay (支付寶), which provides access to external payment mechanisms and enables the purchase of content, services, or functionality by means other than the in-app purchase API.</span><br></pre></td></tr></table></figure><ol start="2"><li>排查问题</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.可能是接入了支付宝其它的sdk</span><br><span class="line">2.可能是plist里面有alipay相关选项残留</span><br><span class="line">3.代码中或文件中有支付宝，alipay字样的文本</span><br><span class="line">4.有发送针对支付宝或者淘宝域名的HTTP请求</span><br><span class="line">5.用到的第三方sdk或者软件曾经因为类似原因被拉入了“宁杀错不放过”的名单，比如anysdk</span><br><span class="line">6.该账号曾经因为接入微信或者支付宝请求被拒绝过</span><br><span class="line">7.打包的苹果设备曾经因为接入微信或者支付宝请求被拒绝过</span><br><span class="line">8.创建苹果开发者账号支付所采用的信用卡曾经用于创建另一个因为接入微信或者支付宝请求被拒绝过开发者账号</span><br><span class="line">9.运气不好，被苹果误判；这个概率极小，要验证很简单，不该再提审一次就知道了</span><br></pre></td></tr></table></figure><h2 id="UI设计不规范"><a href="#UI设计不规范" class="headerlink" title="UI设计不规范"></a>UI设计不规范</h2><ol><li>苹果反馈</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">10.6 – Apple and our customers place a high value on simple, refined, creative, well thought through interfaces. They take more work but are worth it. Apple sets a high bar. If your user interface is complex or less than very good, it may be rejected</span><br><span class="line"></span><br><span class="line">10.6 Details  </span><br><span class="line"></span><br><span class="line">Your app includes an update button or alerts the user to update the app. To avoid user confusion, app version updates must utilize the iOS built-in update mechanism. </span><br></pre></td></tr></table></figure><ol start="2"><li>排查问题</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1. 移除检测App更新的按钮和提示</span><br></pre></td></tr></table></figure><h2 id="审核预计耗时很久"><a href="#审核预计耗时很久" class="headerlink" title="审核预计耗时很久"></a>审核预计耗时很久</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Other - Other</span><br><span class="line"></span><br><span class="line">Hello,</span><br><span class="line"></span><br><span class="line">The review of your app is taking longer than expected. Once we have completed our review, we will notify you via Resolution Center.</span><br><span class="line"></span><br><span class="line">If you would like to inquire about the status of this review, you may file a request via the Apple Developer Contact Us page.</span><br><span class="line"></span><br><span class="line">Best regards,</span><br><span class="line"></span><br><span class="line">App Store Review</span><br></pre></td></tr></table></figure><ol start="2"><li>解决方案</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 耐心等待就好了</span><br><span class="line">2. 如果3天没有回复，那就&#96;Apple Developer Contact Us&#96;联系苹果</span><br><span class="line">3. 等待回复就好，别病急乱投医。</span><br></pre></td></tr></table></figure><p><strong>可能原因</strong></p><blockquote><ol><li>App第一个版本审核就会很慢</li><li>App内有一些业务是否违反规则，审核人员暂时断定不了。</li><li>之前提交的版本跟目前提交的版本有很大差异（包大小，应用名，logo等关键信息）</li><li>账号出现问题，账号下其他App出现违规行为等</li><li>苹果太忙了，先给一个 reject，等有空再说。</li><li>审核机制有变化</li></ol></blockquote>]]></content>
     
     
     <summary type="html">&lt;p&gt;汇总提审被拒解决方案&lt;/p&gt;</summary>
@@ -1075,9 +1075,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1098,9 +1098,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1121,9 +1121,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1144,9 +1144,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1167,9 +1167,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1190,9 +1190,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1213,9 +1213,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1237,9 +1237,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
-    
     <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://rencheng.cc/tags/MongoDB/"/>
     
   </entry>
   
@@ -1356,7 +1356,7 @@
     <published>2019-07-14T03:51:33.000Z</published>
     <updated>2019-07-14T03:51:33.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在苹果推出iPhoneX后，可以说苹果的机型有很多了，显示屏的大小和形状也变得各式各样。<br>iPhone各型号物理分辨率和逻辑分辨率列举</p><a id="more"></a><table><thead><tr><th align="left">设备</th><th align="left">尺寸</th><th align="left">逻辑分辨率</th><th align="left">Scale</th><th align="left">设备分辨率</th><th align="left">PPI</th></tr></thead><tbody><tr><td align="left">3GS</td><td align="left">3.5</td><td align="left">320x480</td><td align="left">@1x</td><td align="left">320x480</td><td align="left">163</td></tr><tr><td align="left">4s</td><td align="left">3.5</td><td align="left">320x480</td><td align="left">@2x</td><td align="left">640x960</td><td align="left">326</td></tr><tr><td align="left">5/5c/5s/SE</td><td align="left">4</td><td align="left">320x568</td><td align="left">@2x</td><td align="left">640x1136</td><td align="left">326</td></tr><tr><td align="left">6/6s/7/8/SE2</td><td align="left">4.7</td><td align="left">375x667</td><td align="left">@2x</td><td align="left">750x1334</td><td align="left">326</td></tr><tr><td align="left">6/6s/7/8 Plus</td><td align="left">5.5</td><td align="left">414x736</td><td align="left">@3x</td><td align="left">1242x2208</td><td align="left">401</td></tr><tr><td align="left">X/Xs/11 Pro</td><td align="left">5.8</td><td align="left">375x812</td><td align="left">@3x</td><td align="left">1125x2436</td><td align="left">458</td></tr><tr><td align="left">Xs Max/11 Pro Max</td><td align="left">6.5</td><td align="left">414x896</td><td align="left">@3x</td><td align="left">1242×2688</td><td align="left">458</td></tr><tr><td align="left">XR/11</td><td align="left">6.1</td><td align="left">414x896</td><td align="left">@2x</td><td align="left">828×1792</td><td align="left">326</td></tr><tr><td align="left">12 Mini</td><td align="left">5.4</td><td align="left">375x812</td><td align="left">@3x</td><td align="left">1080×2340</td><td align="left">476</td></tr><tr><td align="left">12/12 Pro</td><td align="left">6.1</td><td align="left">390x844</td><td align="left">@3x</td><td align="left">1170×2532</td><td align="left">460</td></tr><tr><td align="left">12 Pro Max</td><td align="left">6.7</td><td align="left">428x926</td><td align="left">@3x</td><td align="left">1284×2778</td><td align="left">458</td></tr></tbody></table><p><a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/#Device%20Screen%20Sizes%20and%20Orientations">https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/#Device%20Screen%20Sizes%20and%20Orientations</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>在苹果推出iPhoneX后，可以说苹果的机型有很多了，显示屏的大小和形状也变得各式各样。<br>iPhone各型号物理分辨率和逻辑分辨率列举</p><a id="more"></a><table><thead><tr><th align="left">设备</th><th align="left">尺寸</th><th align="left">逻辑分辨率</th><th align="left">Scale</th><th align="left">设备分辨率</th><th align="left">PPI</th></tr></thead><tbody><tr><td align="left">3GS</td><td align="left">3.5</td><td align="left">320x480</td><td align="left">@1x</td><td align="left">320x480</td><td align="left">163</td></tr><tr><td align="left">4s</td><td align="left">3.5</td><td align="left">320x480</td><td align="left">@2x</td><td align="left">640x960</td><td align="left">326</td></tr><tr><td align="left">5/5c/5s/SE</td><td align="left">4</td><td align="left">320x568</td><td align="left">@2x</td><td align="left">640x1136</td><td align="left">326</td></tr><tr><td align="left">6/6s/7/8/SE2</td><td align="left">4.7</td><td align="left">375x667</td><td align="left">@2x</td><td align="left">750x1334</td><td align="left">326</td></tr><tr><td align="left">6/6s/7/8 Plus</td><td align="left">5.5</td><td align="left">414x736</td><td align="left">@3x</td><td align="left">1242x2208</td><td align="left">401</td></tr><tr><td align="left">X/Xs/11 Pro</td><td align="left">5.8</td><td align="left">375x812</td><td align="left">@3x</td><td align="left">1125x2436</td><td align="left">458</td></tr><tr><td align="left">Xs Max/11 Pro Max</td><td align="left">6.5</td><td align="left">414x896</td><td align="left">@3x</td><td align="left">1242×2688</td><td align="left">458</td></tr><tr><td align="left">XR/11</td><td align="left">6.1</td><td align="left">414x896</td><td align="left">@2x</td><td align="left">828×1792</td><td align="left">326</td></tr><tr><td align="left">12 Mini</td><td align="left">5.4</td><td align="left">375x812</td><td align="left">@3x</td><td align="left">1080×2340</td><td align="left">476</td></tr><tr><td align="left">12/12 Pro</td><td align="left">6.1</td><td align="left">390x844</td><td align="left">@3x</td><td align="left">1170×2532</td><td align="left">460</td></tr><tr><td align="left">12 Pro Max</td><td align="left">6.7</td><td align="left">428x926</td><td align="left">@3x</td><td align="left">1284×2778</td><td align="left">458</td></tr></tbody></table><p><a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/#Device%20Screen%20Sizes%20and%20Orientations">https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/#Device%20Screen%20Sizes%20and%20Orientations</a></p>]]></content>
     
     
     <summary type="html">&lt;p&gt;在苹果推出iPhoneX后，可以说苹果的机型有很多了，显示屏的大小和形状也变得各式各样。&lt;br&gt;iPhone各型号物理分辨率和逻辑分辨率列举&lt;/p&gt;</summary>
@@ -1469,9 +1469,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MySQL" scheme="https://rencheng.cc/tags/MySQL/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1492,9 +1492,9 @@
     <category term="教程" scheme="https://rencheng.cc/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="MySQL" scheme="https://rencheng.cc/tags/MySQL/"/>
+    
+    <category term="数据库" scheme="https://rencheng.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
