@@ -331,7 +331,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.4k</span>
+      <span>3.8k</span>
     </span>
 </div>
 
@@ -353,9 +353,11 @@
 <li>排查问题</li>
 </ol>
 <p><strong>2.3.1</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.App本身是否使用混淆技术</span><br><span class="line">2.检查集成的SDK是否使用混淆技术</span><br><span class="line">3.给苹果提交反馈，让其提供相关混淆变量或方法名</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.App本身是否使用混淆技术</span><br><span class="line">2.检查集成的SDK是否使用混淆技术</span><br><span class="line">3.是否有一些代码是需要保护的，不希望别人看到的话，需要在Connect备注中说明。</span><br><span class="line">3.给苹果提交反馈，让其提供相关混淆变量或方法名</span><br></pre></td></tr></table></figure>
 <p><strong>3.1.1</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.可能是接入了支付宝或其它支付sdk</span><br><span class="line">2.可能是plist里面有alipay或wechat相关选项残留</span><br><span class="line">3.代码中或文件中有&#96;支付宝，alipay，wechatPay&#96;字样的文本</span><br><span class="line">4.有发送针对支付宝或者淘宝域名的HTTP请求</span><br><span class="line">5.用到的第三方sdk或者软件曾经因为类似原因被拉入了“宁杀错不放过”的名单，比如anysdk</span><br><span class="line">6.该账号曾经因为接入微信或者支付宝请求被拒绝过</span><br><span class="line">7.打包的苹果设备曾经因为接入微信或者支付宝请求被拒绝过</span><br><span class="line">8.创建苹果开发者账号支付所采用的信用卡曾经用于创建另一个因为接入微信或者支付宝请求被拒绝过开发者账号</span><br><span class="line">9.运气不好，被苹果误判；这个概率极小，要验证很简单，再提审一次就知道了</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1.可能是接入了支付宝或其它支付sdk</span><br><span class="line">2.可能检查到App跳转网站进行外部支付的入口</span><br><span class="line">3.可能是plist里面有alipay或wechat相关选项残留</span><br><span class="line">4.代码中或文件中有&#96;支付宝，alipay，wechatPay&#96;字样的文本</span><br><span class="line">5.有发送针对支付宝或者淘宝域名的HTTP请求</span><br><span class="line">6.用到的第三方sdk或者软件曾经因为类似原因被拉入了“宁杀错不放过”的名单，比如anysdk</span><br><span class="line">7.该账号曾经因为接入微信或者支付宝请求被拒绝过</span><br><span class="line">8.打包的苹果设备曾经因为接入微信或者支付宝请求被拒绝过</span><br><span class="line">9.创建苹果开发者账号支付所采用的信用卡曾经用于创建另一个因为接入微信或者支付宝请求被拒绝过开发者账号</span><br><span class="line">10.运气不好，被苹果误判；这个概率极小，要验证很简单，再提审一次就知道了</span><br></pre></td></tr></table></figure>
+<p><strong>软文</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">通过跟审核人员的电话沟通，我方已经了解App存在的问题。</span><br><span class="line">承诺：</span><br><span class="line">1. XXXX非常希望与苹果公司合作，共同盈利。所以我们不会在iOS平台为用户提供任何第三方以及外部支付的环境和入口。</span><br><span class="line">2. XXXX在审核期间，没有任何功能是隐瞒的，更不会刻意的混淆代码以通过审核。</span><br><span class="line"></span><br><span class="line">通过问题排查</span><br><span class="line">1. XXXX项目代码中有关于“charge”关键字的接口和变量名称。为了避免误解，我们将iap功能剥离成独立的支付系统，以及关闭跳转外部浏览器的业务。</span><br><span class="line">2. XXXX在初始化的时候获取了一些动态配置，我们已经删除了所有产品业务显隐开关。（注：之前版本的开关，并没有在审核过程中隐藏任何功能）</span><br><span class="line">3. XXXX是采用U3D游戏引擎开发，导出的资源名称基本都是md5，会不会因为这些文件让审核人员误认为是混淆了？亦或者是我们的变量名称不规范的问题呢？如果审核人员仍认为我们代码存在混淆，请一定帮忙指出具体的混淆代码给我们做出提示。</span><br></pre></td></tr></table></figure>
 
 <h3 id="提示有AliPaySDK"><a href="#提示有AliPaySDK" class="headerlink" title="提示有AliPaySDK"></a>提示有AliPaySDK</h3><ol>
 <li>苹果反馈</li>
@@ -526,7 +528,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">8:04</span>
+    <span title="站点阅读时长">8:05</span>
   </span>
 </div>
 
